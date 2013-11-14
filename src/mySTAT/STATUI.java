@@ -1359,7 +1359,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                     }
                     else
                     {
-                        //contentRelationshipArray[r][c] = "0";
                         //search for a relationship with column stakeholder
                         String searchSH = Stakeholders.get(c).getName();
                         //if stakeholder(r)has a list of relationships, search if (c) is one of them
@@ -1386,7 +1385,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 }//end of column loop
                 }//end of row loop
             }//end of if statement
-            //create fresh table for new projects (no stakeholders yet)
+        //create fresh table for new projects (no stakeholders yet)
         else {
             contentRelationshipArray = new String[2][2];
             for (int i = 0; i < 2; i++){
@@ -1425,6 +1424,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         return convertedStrength;
     }
     
+    //magnitude String converter
     public String magnitudeString(int strength){
         String convertedStrength;
         if (strength == 3){convertedStrength = "High";}
@@ -1440,31 +1440,21 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         {
             int row;
             int column;
-            for (int r = 0; r < Stakeholders.size(); r++)
+            for (int r = 0; r < Stakeholders.size(); r++)//traverse rows
             {
-                for (int c = 0; c < Stakeholders.size(); c++)
+                for (int c = 0; c < Stakeholders.size(); c++)//traverse columns
                 {
-                    row = contentTable.getSelectedRow();
-                    column = contentTable.getSelectedColumn();
-                    /*if ((Stakeholders.get(row).getInfluences()).isEmpty())
-                    {
-                        ArrayList <Relationship> tempInfluences = new ArrayList<>();
-                        int magnitude = Integer.parseInt((String)contentTable.getValueAt(row, column));
-                        tempInfluences.add(new Relationship(Stakeholders.get(column).getName(), magnitude));
-                        Stakeholders.get(row).setInfluences(tempInfluences);
-                    }
-                    else
-                    {*/
-                        ArrayList tempInfluences = Stakeholders.get(row).getInfluences();
-                        //int magnitude = Integer.parseInt((String)contentTable.getValueAt(row, column));
-                        String magnitude = (String) contentTable.getValueAt(row, column);
-                        tempInfluences.add(new Relationship(Stakeholders.get(column).getName(), magnitudeNumber(magnitude)));
-                        Stakeholders.get(row).setInfluences(tempInfluences);
-                    //}
+                    row = contentTable.getSelectedRow();//get row number
+                    column = contentTable.getSelectedColumn();//get column number
+                        ArrayList tempInfluences = Stakeholders.get(row).getInfluences();//get Arraylist of relationships from stakeholder at row header
+                        String magnitude = (String) contentTable.getValueAt(row, column);//read value from influence table
+                        //add code to see if stakeholder relationship already exists in arraylist of relationships
+                        tempInfluences.add(new Relationship(Stakeholders.get(column).getName(), magnitudeNumber(magnitude)));//add relationship to stakeholders Arraylist of relationships
+                        Stakeholders.get(row).setInfluences(tempInfluences);//push the updated arraylist of relationships to stakeholder at row header
                 }//end of col loop
             }//end of row loop
-            
-        }//end of if Stakeholders is empty statement
+        }//end of if Stakeholders is not empty statement
+        //if Stakeholders is empty, do nothing
         else {}
     }
     
