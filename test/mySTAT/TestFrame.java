@@ -20,19 +20,30 @@ import java.awt.BorderLayout;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.math.*;
+import java.util.Iterator;
 /**
  * @author Brian_2
  */
 @SuppressWarnings("serial")
 class RelTest extends JPanel implements ActionListener
 {
+    class Vertex
+    {
+        public Object obj;
+        public String name;
+        
+        public boolean equals(String s) {
+            return name.equals(s);
+        }
+        
+    }
     
     private final mxGraph panGraph = new mxGraph();
     private mxIGraphLayout layout;
     mxGraphComponent graphComponent;
     private Object parent;
     private int numNewNodes;
-    private ArrayList<Object> vertView;
+    private ArrayList<Vertex> vertView;
 //    private ArrayList<Vertex> vertModel;
     
     RelTest()
@@ -44,7 +55,7 @@ class RelTest extends JPanel implements ActionListener
     
     final private void init()
     {
-        vertView = new ArrayList<Object>();
+        vertView = new ArrayList<Vertex>();
 //        vertModel = new ArrayList<Vertex>();
         numNewNodes = 0;
         graphComponent = new mxGraphComponent(panGraph);
@@ -65,15 +76,25 @@ class RelTest extends JPanel implements ActionListener
     
     public void addSHvertex(Stakeholder s)
     {
-        Object v;
+        Vertex v = new Vertex();
         if(s.getPlacementRank()>Stakeholder.UNDEFINED)
         {
-            v = panGraph.insertVertex(parent, null, s.getName(), 100, 100, 
+            v.obj = panGraph.insertVertex(parent, null, s.getName(), 100, 100, 
                     s.getDiameter(), s.getDiameter(), s.getStyle());
         }
         else
         {
-            v = panGraph.insertVertex(parent, null, null, 100, 100, s.getDiameter(), s.getDiameter(), s.getStyle());
+            v.obj = panGraph.insertVertex(parent, null, null, 100, 100, s.getDiameter(), s.getDiameter(), s.getStyle());
+        }
+        v.name = s.getName();
+        
+        for (Iterator<Relationship> it = s.getInfluences().iterator(); it.hasNext();) {
+            Relationship r = it.next();
+            for (Iterator<Vertex> vIter = vertView.iterator(); vIter.hasNext();) {
+                Vertex vertex = vIter.next();
+                if(vertex.equals(r.getId()))
+                    panGraph.insertEdge(parent, null, null, v, vertex, r.getLineStyle());
+            }
         }
         vertView.add(v);
     }
@@ -283,18 +304,16 @@ public class TestFrame extends JFrame
     public static void graphButtonActionPerformed(ActionEvent evt)
     {
         testPanel.graph();
+        for(Relationship r : stakeholders.get(0).getInfluences())
+            System.out.println(r.getId());
     }
     
     public static void makeSHButtonActionPerformed(ActionEvent evt)
     {
         String name = "Stakeholder " + (testPanel.getNumSH()+stakeholders.size());
         boolean a,b,c,d,e;
-        a=false;
-        b=false;
-        c=false;
-        d=false;
-        e=false;
-        int random = (int) (Math.random()*31);
+        a=b=c=d=e=false;
+        int random = (int) (Math.random()*32);
         System.out.println(random);
         if(random >= 16){a = true;random -= 16;}
         if(random >= 8){b = true;random -= 8;}
@@ -319,16 +338,22 @@ public class TestFrame extends JFrame
     
     public static void makeRelationsButtonActionPerformed(ActionEvent evt)
     {
+        System.out.println("In make relationships");
         int k = stakeholders.size();
-        for(int s = 0; s < k; s++)
+        for (Iterator<Stakeholder> s = stakeholders.iterator(); s.hasNext();)
         {
+            Stakeholder stakeholder = s.next();
             int place = (int)Math.pow(2.0, (double)k);
-            int random = (int) (Math.random()*place*2) - 1;
-            for(int i = k; i > 0; i--)
+            int random = (int) (Math.random()*place);
+            place /= 2;
+            System.out.println(random);
+            for(int i = k-1; i >= 0; i--)
             {
+                System.out.printf("if(%d >= %d)\n", random, place);
                 if(random >= place)
                 {
-                    stakeholders.get(s).addInfluence(stakeholders.get(i).getName(), (int)Math.random()*4);
+                    System.out.printf("%s.addI(%s)%n", stakeholder.getName(), stakeholders.get(i).getName());
+                    stakeholder.addInfluence(stakeholders.get(i).getName(), (int)(Math.random()*4));
                     random -= place;
                 }
                 place /= 2;
