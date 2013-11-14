@@ -24,7 +24,7 @@ public class Stakeholder {
     public static final int MIXED = 3;
     public static final int SUPPORTIVE = 4;
     
-    private static final String SH_SHAPE = new String("shape=rectangle;");
+    private static final String SH_SHAPE = new String("shape=ellipse;");
     
     private static final String FORMAT = new String("whiteSpace=wrap;");
     
