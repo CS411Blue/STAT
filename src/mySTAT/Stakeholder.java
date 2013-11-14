@@ -276,7 +276,7 @@ public class Stakeholder {
      public void addInfluence(String id, int m){Influences.add(new Relationship(id, m));}
      public void addInfluence(Relationship r){Influences.add(r);}
     
-     //for saving to an XML file
+     //for saving to XML
      public Map<String, String> getAttributes() {
         Map<String, String> results = new HashMap<>();
         results.put("id", Id);
