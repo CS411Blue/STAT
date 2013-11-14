@@ -23,6 +23,7 @@ public class Relationship {
 public Relationship(String id, int magnitude) {
         this.id = id;
         this.magnitude = magnitude;
+        //System.out.printf("\t%s %d\n", id, magnitude);
     }
     
     public String getId() { return id; }
