@@ -21,7 +21,6 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.math.*;
 /**
- *
  * @author Brian_2
  */
 @SuppressWarnings("serial")
@@ -93,7 +92,6 @@ class RelTest extends JPanel implements ActionListener
                 public void invoke(Object arg0, mxEventObject arg1) {
                     panGraph.getModel().endUpdate();
                 }
-
             });
 
             morph.startAnimation();
