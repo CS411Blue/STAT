@@ -10,7 +10,7 @@ import java.util.Map;
 import java.io.*;
 
 /**
- * Stakeholder class
+ * Stakeholder Class
  * @author Christian
  */
 public class Stakeholder {
