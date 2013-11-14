@@ -225,7 +225,7 @@ public class Stakeholder {
         style = SH_SHAPE + FORMAT + getColor();
         return style;
     }
-    /*Returns the size that the stakeholder will be drawn on the RelGraph*/
+    /*Returns the size that the stakeholder will be drawn on the RelPanel*/
     public int getDiameter()
     {
         switch(getPlacementRank())
