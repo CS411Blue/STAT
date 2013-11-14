@@ -17,10 +17,15 @@ import com.mxgraph.util.mxEventSource;
 import javax.swing.*;
 import com.mxgraph.view.mxGraph;
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.LayoutManager;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.math.*;
 import java.util.Iterator;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 /**
  * @author Brian_2
  */
@@ -92,8 +97,10 @@ class RelTest extends JPanel implements ActionListener
             Relationship r = it.next();
             for (Iterator<Vertex> vIter = vertView.iterator(); vIter.hasNext();) {
                 Vertex vertex = vIter.next();
-                if(vertex.equals(r.getId()))
-                    panGraph.insertEdge(parent, null, null, v, vertex, r.getLineStyle());
+                if(vertex.equals(r.getId())) {
+                    System.out.printf("insertEdge(%s,%s,%s)\n", v.name, vertex.name, r.getLineStyle());
+                    panGraph.insertEdge(parent, null, null, v.obj, vertex.obj, r.getLineStyle());
+                }
             }
         }
         vertView.add(v);
@@ -108,8 +115,6 @@ class RelTest extends JPanel implements ActionListener
             mxMorphing morph = new mxMorphing(graphComponent, 20, 1.2, 20);
 
             morph.addListener(mxEvent.DONE, new mxEventSource.mxIEventListener() {
-
-                @Override
                 public void invoke(Object arg0, mxEventObject arg1) {
                     panGraph.getModel().endUpdate();
                 }
@@ -153,66 +158,6 @@ class RelTest extends JPanel implements ActionListener
 //        addVertex(v1);
         morphLayout();
     }
-
-    
-//    private class Vertex extends Object
-//    {
-//        public String name;
-//        public int sizeRank;
-//        public int colorRank;
-//        public Vertex(Stakeholder s)
-//        {
-//            super();
-//            name = s.getName();
-//            sizeRank = s.getPlacementRank();
-//            colorRank = s.getAttitudeRank();
-//        }
-//        public Vertex(String n, int size, int color)
-//        {
-//            super();
-//            name = n;
-//            sizeRank = size;
-//            colorRank = color;
-//        }
-//        private String getColor()
-//        {
-//            switch(colorRank)
-//            {
-//                case Stakeholder.MARGINAL:
-//                    return WHITE;
-//                case Stakeholder.NONSUPPORTIVE:
-//                    return RED;
-//                case Stakeholder.MIXED:
-//                    return YELLOW;
-//                case Stakeholder.SUPPORTIVE:
-//                    return GREEN;
-//                default:
-//                    return "";
-//            }
-//        }
-//        public String getStyle()
-//        {
-//            String style = new String();
-//            style = SH_SHAPE + FORMAT + getColor();
-//            return style;
-//        }
-//        public int getDiameter()
-//        {
-//            switch(sizeRank)
-//            {
-//                case Stakeholder.DEFINITIVE:
-//                        return DEFINITIVE_SIZE;
-//                case Stakeholder.EXPECTANT:
-//                        return EXPECTANT_SIZE;
-//                case Stakeholder.LATENT:
-//                        return LATENT_SIZE;
-//                case Stakeholder.UNDEFINED:
-//                        return UNDEFINED_SIZE;
-//                default:
-//                    return -1; //error case
-//            }
-//        }
-//    }
 }
 
 
@@ -228,6 +173,7 @@ public class TestFrame extends JFrame
     private static JButton makeSHButton = new JButton("Make Stakeholder");
     private static JButton pushAllSHButton = new JButton("Push to View");
     private static JButton makeRelationsButton = new JButton("Initialize Relations for All Stakeholders");
+    private static JPanel makeEdgePanel = new JPanel();
     
     public static void main(String[] args)
     {
@@ -235,15 +181,13 @@ public class TestFrame extends JFrame
         //Create RelTest JPanel and JFrame
         
         makeSHButton.addActionListener(new ActionListener() {
-
-            @Override
             public void actionPerformed(ActionEvent e) {
                 makeSHButtonActionPerformed(e);
             }
         });
         panel.add(makeSHButton);
         
-        JButton graphButton = new JButton("graph");
+        JButton graphButton = new JButton("morph");
         graphButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 graphButtonActionPerformed(evt);
@@ -252,8 +196,6 @@ public class TestFrame extends JFrame
         panel.add(graphButton);
         
         pushAllSHButton.addActionListener(new ActionListener() {
-
-            @Override
             public void actionPerformed(ActionEvent e) {
                 pushAllSHButtonActionPerformed(e);
             }
@@ -261,21 +203,14 @@ public class TestFrame extends JFrame
         panel.add(pushAllSHButton);
         
         makeRelationsButton.addActionListener(new ActionListener() {
-
-            @Override
             public void actionPerformed(ActionEvent e) {
                 makeRelationsButtonActionPerformed(e);
             }
         });
         panel.add(makeRelationsButton);
-//        Stakeholder s1 = new Stakeholder("Jimmy", "muffins", true, false, true, false, true);
-//        Stakeholder s2 = new Stakeholder("James", "", true, true, true, true, false);
-//        Stakeholder s3 = new Stakeholder("PHIL", "nothing", false, false, true, false, false);
-//        Stakeholder s4 = new Stakeholder("PHIL BIG", "nothing", false, false, true, true, true);
-//        testPanel.addSHvertex(s1);
-//        testPanel.addSHvertex(s3);
-//        testPanel.addSHvertex(s2);
-//        testPanel.addSHvertex(s4);
+        
+        panel.setPreferredSize(new java.awt.Dimension(20,80));
+        panel.setBorder(new LineBorder(Color.black));
         JFrame frame = new JFrame("Relationship Frame");
         frame.setSize(500,500);
         frame.setLocation(10, 10);
@@ -288,6 +223,7 @@ public class TestFrame extends JFrame
     public TestFrame()
     {
         super("Control Window");
+//        setLayout(new FlowLayout());
         setSize(300,300);
         setLocation(500,10);
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
