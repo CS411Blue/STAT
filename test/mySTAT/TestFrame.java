@@ -92,7 +92,7 @@ class RelTest extends JPanel implements ActionListener
                 @Override
                 public void invoke(Object arg0, mxEventObject arg1) {
                     panGraph.getModel().endUpdate();
-                    // fitViewport();
+                    // fitViewport(); this isn't used anymore
                 }
 
             });
