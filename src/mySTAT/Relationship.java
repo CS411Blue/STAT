@@ -13,9 +13,9 @@ public class Relationship {
     public final static int MEDIUM = 2;
     public final static int LOW = 1;
     
-    public final static String HIGH_SIZE = new String("width=10;");
-    public final static String MEDIUM_SIZE = new String("width=5;");
-    public final static String LOW_SIZE = new String("width=3;");
+    public final static String HIGH_SIZE = new String("strokeWidth=5");
+    public final static String MEDIUM_SIZE = new String("strokeWidth=3;");
+    public final static String LOW_SIZE = new String("strokeWidth=1;");
     private String id; //the name of the stakeholder that is being influenced
     private int magnitude; //values of 1, 2, or 3 only
     //private boolean direction; //true if they are influencing the other, false if they are being influenced
@@ -39,7 +39,7 @@ public Relationship(String id, int magnitude) {
             case LOW:
                 return LOW_SIZE;
             default:
-                return "width=1";
+                return "strokeWidth=0;strokeColor=#CCCCCC";
         }
     }
 }

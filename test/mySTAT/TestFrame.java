@@ -240,8 +240,6 @@ public class TestFrame extends JFrame
     public static void graphButtonActionPerformed(ActionEvent evt)
     {
         testPanel.graph();
-        for(Relationship r : stakeholders.get(0).getInfluences())
-            System.out.println(r.getId());
     }
     
     public static void makeSHButtonActionPerformed(ActionEvent evt)
