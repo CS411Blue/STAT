@@ -223,12 +223,12 @@ public class TestFrame extends JFrame
     public TestFrame()
     {
         super("Control Window");
-//        setLayout(new FlowLayout());
-        setSize(300,300);
+        setLayout(new BorderLayout());
+        setSize(400,300);
         setLocation(500,10);
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         panel = new JPanel();
-        getContentPane().add(panel);
+        getContentPane().add(panel, BorderLayout.NORTH);
     }
     public void addMyActionButton(ActionListener listener)
     {
