@@ -280,6 +280,12 @@ public class Stakeholder {
      public void addInfluence(Relationship r){Influences.add(r);}
      public void setGraphNode(Object n){this.graphNode = n;}
     
+     public Object removeGraphNode()
+     {
+         Object o = this.graphNode;
+         this.graphNode = new Object();
+         return o;
+     }
      //for saving to XML
      public Map<String, String> getAttributes() {
         Map<String, String> results = new HashMap<>();
