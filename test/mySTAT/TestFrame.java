@@ -30,26 +30,12 @@ import javax.swing.border.LineBorder;
  * @author Brian_2
  */
 @SuppressWarnings("serial")
-class RelTest extends JPanel implements ActionListener
-{
-    class Vertex
-    {
-        public Object obj;
-        public String name;
-        
-        public boolean equals(String s) {
-            return name.equals(s);
-        }
-        
-    }
-    
+class RelTest extends JPanel
+{   
     private final mxGraph panGraph = new mxGraph();
     private mxIGraphLayout layout;
     mxGraphComponent graphComponent;
     private Object parent;
-    private int numNewNodes;
-    private ArrayList<Vertex> vertView;
-//    private ArrayList<Vertex> vertModel;
     
     RelTest()
     {
@@ -60,50 +46,54 @@ class RelTest extends JPanel implements ActionListener
     
     final private void init()
     {
-        vertView = new ArrayList<Vertex>();
-//        vertModel = new ArrayList<Vertex>();
-        numNewNodes = 0;
         graphComponent = new mxGraphComponent(panGraph);
         add(BorderLayout.CENTER, graphComponent);
         parent = panGraph.getDefaultParent();
         layout = new mxFastOrganicLayout(panGraph);
     }
     
-//    public void addVertex(Vertex v)
-//    {
-//        vertModel.add(v);
-//    }
-    
-    public int getNumSH()
+    public void updateShVertexList(ArrayList<Stakeholder> SHList)
     {
-        return vertView.size();
-    }
-    
-    public void addSHvertex(Stakeholder s)
-    {
-        Vertex v = new Vertex();
-        if(s.getPlacementRank()>Stakeholder.UNDEFINED)
-        {
-            v.obj = panGraph.insertVertex(parent, null, s.getName(), 100, 100, 
-                    s.getDiameter(), s.getDiameter(), s.getStyle());
-        }
-        else
-        {
-            v.obj = panGraph.insertVertex(parent, null, null, 100, 100, s.getDiameter(), s.getDiameter(), s.getStyle());
-        }
-        v.name = s.getName();
+        //remove all stakeholders currently graphed
+        panGraph.removeCells(panGraph.getChildVertices(panGraph.getDefaultParent()), true);
         
-        for (Iterator<Relationship> it = s.getInfluences().iterator(); it.hasNext();) {
-            Relationship r = it.next();
-            for (Iterator<Vertex> vIter = vertView.iterator(); vIter.hasNext();) {
-                Vertex vertex = vIter.next();
-                if(vertex.equals(r.getId())) {
-                    System.out.printf("insertEdge(%s,%s,%s)\n", v.name, vertex.name, r.getLineStyle());
-                    panGraph.insertEdge(parent, null, null, v.obj, vertex.obj, r.getLineStyle());
+        //add all stakeholders to the graph first, no edges
+        for(Iterator<Stakeholder> iter = SHList.iterator(); iter.hasNext();)
+        {
+            Stakeholder s = iter.next();
+            Object v = new Object();
+            if(s.getPlacementRank()>Stakeholder.UNDEFINED)
+            {
+                v = panGraph.insertVertex(parent, null, s.getName(), 100, 100, 
+                        s.getDiameter(), s.getDiameter(), s.getStyle());
+                s.setGraphNode(v);
+            }
+            else
+            {
+                v = panGraph.insertVertex(parent, null, null, 100, 100, s.getDiameter(), s.getDiameter(), s.getStyle());
+                s.setGraphNode(v);
+            }
+        }
+        //now add all edges
+        for(Iterator<Stakeholder> mainShIter = SHList.iterator(); mainShIter.hasNext();)
+        {
+            Stakeholder main = mainShIter.next();
+            for (Iterator<Relationship> it = main.getInfluences().iterator(); it.hasNext();) 
+            {
+                Relationship r = it.next();
+                for (Iterator<Stakeholder> secondaryShIter = SHList.iterator(); secondaryShIter.hasNext();) 
+                {
+                    Stakeholder secondary = secondaryShIter.next();
+                    if(secondary.getName() == r.getId()) 
+                    {
+                        System.out.printf("insertEdge(%s,%s,%s)\n", main.getName(), secondary.getName(), r.getLineStyle());
+                        panGraph.insertEdge(parent, null, null, 
+                                main.getGraphNode(), secondary.getGraphNode(), r.getLineStyle());
+                    }
                 }
             }
         }
-        vertView.add(v);
+        morphLayout();
     }
     
     private void morphLayout()
@@ -126,36 +116,6 @@ class RelTest extends JPanel implements ActionListener
     
     public void graph()
     {
-//        panGraph.getModel().beginUpdate();
-//        try
-//        {
-//            for(int i = 0; i < vertModel.size(); i++)
-//            {
-//                Vertex v = vertModel.get(i);
-//                Object o1 = panGraph.insertVertex(parent, null, v.name, 100, 100, v.getDiameter(), v.getDiameter(), v.getStyle());
-//                vertView.add(o1);
-//            }
-//        }
-//        finally
-//        {
-//            panGraph.getModel().endUpdate();
-//        }
-//        
-//        // define layout
-//        layout = new mxFastOrganicLayout(panGraph);
-//        // layout using morphing
-        morphLayout();
-    }
-    
-    public void actionPerformed(ActionEvent e)
-    {
-//        String name = "new node " + (vertView.size() + 1);
-//        
-//        Object o1 = panGraph.insertVertex(parent, null, v1.name,100, 
-//                100, v1.getDiameter(), v1.getDiameter(), v1.getStyle());
-//        panGraph.insertEdge(parent,null, null, o1, vertView.get(0));
-//        vertView.add(o1);
-//        addVertex(v1);
         morphLayout();
     }
 }
@@ -230,13 +190,7 @@ public class TestFrame extends JFrame
         panel = new JPanel();
         getContentPane().add(panel, BorderLayout.NORTH);
     }
-    public void addMyActionButton(ActionListener listener)
-    {
-        JButton button = new JButton("morph");
-        button.addActionListener(listener);
-        panel.add(button);
-        repaint();
-    }
+
     public static void graphButtonActionPerformed(ActionEvent evt)
     {
         testPanel.graph();
@@ -244,7 +198,7 @@ public class TestFrame extends JFrame
     
     public static void makeSHButtonActionPerformed(ActionEvent evt)
     {
-        String name = "Stakeholder " + (testPanel.getNumSH()+stakeholders.size());
+        String name = "Stakeholder " + (stakeholders.size());
         boolean a,b,c,d,e;
         a=b=c=d=e=false;
         int random = (int) (Math.random()*32);
@@ -257,17 +211,12 @@ public class TestFrame extends JFrame
         System.out.printf("Stakeholder(%s, ,%b,%b,%b,%b,%b)%n", name, a,b,c,d,e);
         Stakeholder s = new Stakeholder(name, "", a, b, c, d, e);
         stakeholders.add(s);
-        pushAllSHButton.setText("" + stakeholders.size());
+        pushAllSHButton.setText("Push " + stakeholders.size()+" to View");
     }
     
     public static void pushAllSHButtonActionPerformed(ActionEvent evt)
     {
-        int s = stakeholders.size();
-        for(int i = 0; i < s; i++)
-        {
-            testPanel.addSHvertex(stakeholders.remove(0));
-        }
-        pushAllSHButton.setText("" + stakeholders.size());
+        testPanel.updateShVertexList(stakeholders);
     }
     
     public static void makeRelationsButtonActionPerformed(ActionEvent evt)
