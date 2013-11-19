@@ -58,6 +58,7 @@ public class Stakeholder {
     private String Responsible;
     private String Notes;
     private ArrayList<Relationship> Influences;
+    private Object graphNode;
     
     public Stakeholder(){};
     
@@ -262,6 +263,7 @@ public class Stakeholder {
      public String getNotes() { return Notes; }
      public ArrayList<Relationship> getInfluences() { return Influences; }
      public Relationship getInfluenceNumber(int index) { return Influences.get(index); }
+     public Object getGraphNode(){return graphNode;}
      
      //setter functions
      public void setName(String name) { this.Name = name; }
@@ -276,6 +278,7 @@ public class Stakeholder {
      public void setInfluences(ArrayList<Relationship> influences) { this.Influences = influences; }
      public void addInfluence(String id, int m){Influences.add(new Relationship(id, m));}
      public void addInfluence(Relationship r){Influences.add(r);}
+     public void setGraphNode(Object n){this.graphNode = n;}
     
      //for saving to XML
      public Map<String, String> getAttributes() {
