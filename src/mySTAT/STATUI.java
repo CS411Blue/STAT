@@ -111,14 +111,14 @@ public class STATUI extends javax.swing.JFrame {
         StakeholderListLabel = new javax.swing.JLabel();
         classificationPanel = new javax.swing.JPanel();
         classLayeredPane = new javax.swing.JLayeredPane();
-        NonStakeHolderList = new javax.swing.JComboBox();
-        DormantStakeHolderList = new javax.swing.JComboBox();
-        DiscretionaryStakeHolderList = new javax.swing.JComboBox();
-        DominantStakeHolderList = new javax.swing.JComboBox();
-        DefinitiveStakeHolderList = new javax.swing.JComboBox();
-        DangerousStakeHolderList = new javax.swing.JComboBox();
-        DependentStakeHolderList = new javax.swing.JComboBox();
-        DemandingStakeHolderList = new javax.swing.JComboBox();
+        NonStakeHolderList = new AutoComboBox();
+        DormantStakeHolderList = new AutoComboBox();
+        DiscretionaryStakeHolderList = new AutoComboBox();
+        DominantStakeHolderList = new AutoComboBox();
+        DefinitiveStakeHolderList = new AutoComboBox();
+        DangerousStakeHolderList = new AutoComboBox();
+        DependentStakeHolderList = new AutoComboBox();
+        DemandingStakeHolderList = new AutoComboBox();
         vennLabel = new javax.swing.JLabel();
         actionPanel = new javax.swing.JPanel();
         actionLayeredPane = new javax.swing.JLayeredPane();
@@ -627,35 +627,35 @@ public class STATUI extends javax.swing.JFrame {
 
         NonStakeHolderList.setMaximumRowCount(Stakeholders.size());
         NonStakeHolderList.setAutoscrolls(true);
-        NonStakeHolderList.setBounds(310, 340, 60, 20);
+        NonStakeHolderList.setBounds(300, 340, 70, 20);
         classLayeredPane.add(NonStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DormantStakeHolderList.setMaximumRowCount(Stakeholders.size());
-        DormantStakeHolderList.setBounds(70, 60, 60, 20);
+        DormantStakeHolderList.setBounds(60, 60, 70, 20);
         classLayeredPane.add(DormantStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DiscretionaryStakeHolderList.setMaximumRowCount(Stakeholders.size());
-        DiscretionaryStakeHolderList.setBounds(270, 130, 60, 20);
+        DiscretionaryStakeHolderList.setBounds(260, 130, 70, 20);
         classLayeredPane.add(DiscretionaryStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DominantStakeHolderList.setMaximumRowCount(Stakeholders.size());
-        DominantStakeHolderList.setBounds(160, 100, 60, 20);
+        DominantStakeHolderList.setBounds(150, 100, 70, 20);
         classLayeredPane.add(DominantStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DefinitiveStakeHolderList.setMaximumRowCount(Stakeholders.size());
-        DefinitiveStakeHolderList.setBounds(140, 180, 60, 20);
+        DefinitiveStakeHolderList.setBounds(130, 180, 70, 20);
         classLayeredPane.add(DefinitiveStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DangerousStakeHolderList.setMaximumRowCount(Stakeholders.size());
-        DangerousStakeHolderList.setBounds(40, 210, 60, 20);
+        DangerousStakeHolderList.setBounds(30, 210, 70, 20);
         classLayeredPane.add(DangerousStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DependentStakeHolderList.setMaximumRowCount(Stakeholders.size());
-        DependentStakeHolderList.setBounds(200, 260, 60, 20);
+        DependentStakeHolderList.setBounds(190, 260, 70, 20);
         classLayeredPane.add(DependentStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DemandingStakeHolderList.setMaximumRowCount(Stakeholders.size());
-        DemandingStakeHolderList.setBounds(90, 300, 60, 20);
+        DemandingStakeHolderList.setBounds(80, 300, 70, 20);
         classLayeredPane.add(DemandingStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         vennLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mySTAT/classification.png"))); // NOI18N

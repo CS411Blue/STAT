@@ -975,9 +975,12 @@
                     </Property>
                     <Property name="autoscrolls" type="boolean" value="true"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="310" y="340" width="60" height="-1" layer="0" position="-1"/>
+                      <JLayeredPaneConstraints x="300" y="340" width="70" height="-1" layer="0" position="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -987,9 +990,12 @@
                       <Connection code="Stakeholders.size()" type="code"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="70" y="60" width="60" height="-1" layer="0" position="-1"/>
+                      <JLayeredPaneConstraints x="60" y="60" width="70" height="-1" layer="0" position="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -999,9 +1005,12 @@
                       <Connection code="Stakeholders.size()" type="code"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="270" y="130" width="60" height="-1" layer="0" position="-1"/>
+                      <JLayeredPaneConstraints x="260" y="130" width="70" height="-1" layer="0" position="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1011,9 +1020,12 @@
                       <Connection code="Stakeholders.size()" type="code"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="160" y="100" width="60" height="-1" layer="0" position="-1"/>
+                      <JLayeredPaneConstraints x="150" y="100" width="70" height="-1" layer="0" position="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1023,9 +1035,12 @@
                       <Connection code="Stakeholders.size()" type="code"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="140" y="180" width="60" height="-1" layer="0" position="-1"/>
+                      <JLayeredPaneConstraints x="130" y="180" width="70" height="-1" layer="0" position="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1035,9 +1050,12 @@
                       <Connection code="Stakeholders.size()" type="code"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="40" y="210" width="60" height="-1" layer="0" position="-1"/>
+                      <JLayeredPaneConstraints x="30" y="210" width="70" height="-1" layer="0" position="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1047,9 +1065,12 @@
                       <Connection code="Stakeholders.size()" type="code"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="200" y="260" width="60" height="-1" layer="0" position="-1"/>
+                      <JLayeredPaneConstraints x="190" y="260" width="70" height="-1" layer="0" position="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1059,9 +1080,12 @@
                       <Connection code="Stakeholders.size()" type="code"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="90" y="300" width="60" height="-1" layer="0" position="-1"/>
+                      <JLayeredPaneConstraints x="80" y="300" width="70" height="-1" layer="0" position="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
