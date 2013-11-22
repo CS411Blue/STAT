@@ -971,7 +971,7 @@
                 <Component class="javax.swing.JComboBox" name="NonStakeHolderList">
                   <Properties>
                     <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Stakeholders.size()" type="code"/>
+                      <Connection code="10" type="code"/>
                     </Property>
                     <Property name="autoscrolls" type="boolean" value="true"/>
                   </Properties>
@@ -987,7 +987,7 @@
                 <Component class="javax.swing.JComboBox" name="DormantStakeHolderList">
                   <Properties>
                     <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Stakeholders.size()" type="code"/>
+                      <Connection code="10" type="code"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -1002,7 +1002,7 @@
                 <Component class="javax.swing.JComboBox" name="DiscretionaryStakeHolderList">
                   <Properties>
                     <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Stakeholders.size()" type="code"/>
+                      <Connection code="10" type="code"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -1017,7 +1017,7 @@
                 <Component class="javax.swing.JComboBox" name="DominantStakeHolderList">
                   <Properties>
                     <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Stakeholders.size()" type="code"/>
+                      <Connection code="10" type="code"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -1032,7 +1032,7 @@
                 <Component class="javax.swing.JComboBox" name="DefinitiveStakeHolderList">
                   <Properties>
                     <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Stakeholders.size()" type="code"/>
+                      <Connection code="10" type="code"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -1047,7 +1047,7 @@
                 <Component class="javax.swing.JComboBox" name="DangerousStakeHolderList">
                   <Properties>
                     <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Stakeholders.size()" type="code"/>
+                      <Connection code="10" type="code"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -1062,7 +1062,7 @@
                 <Component class="javax.swing.JComboBox" name="DependentStakeHolderList">
                   <Properties>
                     <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Stakeholders.size()" type="code"/>
+                      <Connection code="10" type="code"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -1077,7 +1077,7 @@
                 <Component class="javax.swing.JComboBox" name="DemandingStakeHolderList">
                   <Properties>
                     <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Stakeholders.size()" type="code"/>
+                      <Connection code="10" type="code"/>
                     </Property>
                   </Properties>
                   <AuxValues>

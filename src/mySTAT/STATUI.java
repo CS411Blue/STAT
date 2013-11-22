@@ -625,36 +625,36 @@ public class STATUI extends javax.swing.JFrame {
 
         classificationPanel.setLayout(new java.awt.GridBagLayout());
 
-        NonStakeHolderList.setMaximumRowCount(Stakeholders.size());
+        NonStakeHolderList.setMaximumRowCount(10);
         NonStakeHolderList.setAutoscrolls(true);
         NonStakeHolderList.setBounds(300, 340, 70, 20);
         classLayeredPane.add(NonStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        DormantStakeHolderList.setMaximumRowCount(Stakeholders.size());
+        DormantStakeHolderList.setMaximumRowCount(10);
         DormantStakeHolderList.setBounds(60, 60, 70, 20);
         classLayeredPane.add(DormantStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        DiscretionaryStakeHolderList.setMaximumRowCount(Stakeholders.size());
+        DiscretionaryStakeHolderList.setMaximumRowCount(10);
         DiscretionaryStakeHolderList.setBounds(260, 130, 70, 20);
         classLayeredPane.add(DiscretionaryStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        DominantStakeHolderList.setMaximumRowCount(Stakeholders.size());
+        DominantStakeHolderList.setMaximumRowCount(10);
         DominantStakeHolderList.setBounds(150, 100, 70, 20);
         classLayeredPane.add(DominantStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        DefinitiveStakeHolderList.setMaximumRowCount(Stakeholders.size());
+        DefinitiveStakeHolderList.setMaximumRowCount(10);
         DefinitiveStakeHolderList.setBounds(130, 180, 70, 20);
         classLayeredPane.add(DefinitiveStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        DangerousStakeHolderList.setMaximumRowCount(Stakeholders.size());
+        DangerousStakeHolderList.setMaximumRowCount(10);
         DangerousStakeHolderList.setBounds(30, 210, 70, 20);
         classLayeredPane.add(DangerousStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        DependentStakeHolderList.setMaximumRowCount(Stakeholders.size());
+        DependentStakeHolderList.setMaximumRowCount(10);
         DependentStakeHolderList.setBounds(190, 260, 70, 20);
         classLayeredPane.add(DependentStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        DemandingStakeHolderList.setMaximumRowCount(Stakeholders.size());
+        DemandingStakeHolderList.setMaximumRowCount(10);
         DemandingStakeHolderList.setBounds(80, 300, 70, 20);
         classLayeredPane.add(DemandingStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
