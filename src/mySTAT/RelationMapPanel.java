@@ -109,7 +109,6 @@ class RelTest extends JPanel
                     panGraph.getModel().endUpdate();
                 }
             });
-
             morph.startAnimation();
         }
     }
