@@ -122,22 +122,22 @@ public class STATUI extends javax.swing.JFrame {
         vennLabel = new javax.swing.JLabel();
         actionPanel = new javax.swing.JPanel();
         actionLayeredPane = new javax.swing.JLayeredPane();
-        Supportive_UndefinedBox = new javax.swing.JComboBox();
-        Mixed_UndefinedBox = new javax.swing.JComboBox();
-        NonSupportive_UndefinedBox = new javax.swing.JComboBox();
-        Marginal_UndefinedBox = new javax.swing.JComboBox();
-        Supportive_LatentBox = new javax.swing.JComboBox();
-        Mixed_LatentBox = new javax.swing.JComboBox();
-        NonSupportive_LatentBox = new javax.swing.JComboBox();
-        Marginal_LatentBox = new javax.swing.JComboBox();
-        Supportive_ExpectantBox = new javax.swing.JComboBox();
-        Mixed_ExpectantBox = new javax.swing.JComboBox();
-        NonSupportive_ExpectantBox = new javax.swing.JComboBox();
-        Marginal_ExpectantBox = new javax.swing.JComboBox();
-        Supportive_DefinitiveBox = new javax.swing.JComboBox();
-        Mixed_DefinitiveBox = new javax.swing.JComboBox();
-        NonSupportive_DefinitiveBox = new javax.swing.JComboBox();
-        Marginal_DefinitiveBox = new javax.swing.JComboBox();
+        Supportive_UndefinedBox = new AutoComboBox();
+        Mixed_UndefinedBox = new AutoComboBox();
+        NonSupportive_UndefinedBox = new AutoComboBox();
+        Marginal_UndefinedBox = new AutoComboBox();
+        Supportive_LatentBox = new AutoComboBox();
+        Mixed_LatentBox = new AutoComboBox();
+        NonSupportive_LatentBox = new AutoComboBox();
+        Marginal_LatentBox = new AutoComboBox();
+        Supportive_ExpectantBox = new AutoComboBox();
+        Mixed_ExpectantBox = new AutoComboBox();
+        NonSupportive_ExpectantBox = new AutoComboBox();
+        Marginal_ExpectantBox = new AutoComboBox();
+        Supportive_DefinitiveBox = new AutoComboBox();
+        Mixed_DefinitiveBox = new AutoComboBox();
+        NonSupportive_DefinitiveBox = new AutoComboBox();
+        Marginal_DefinitiveBox = new AutoComboBox();
         actionLabel = new javax.swing.JLabel();
         influencePanel = new javax.swing.JPanel();
         influenceScrollPane = new javax.swing.JScrollPane();
@@ -680,19 +680,19 @@ public class STATUI extends javax.swing.JFrame {
 
         actionLayeredPane.setOpaque(true);
 
-        Supportive_UndefinedBox.setMaximumRowCount(Stakeholders.size());
+        Supportive_UndefinedBox.setMaximumRowCount(10);
         Supportive_UndefinedBox.setBounds(190, 180, 60, 20);
         actionLayeredPane.add(Supportive_UndefinedBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        Mixed_UndefinedBox.setMaximumRowCount(Stakeholders.size());
+        Mixed_UndefinedBox.setMaximumRowCount(10);
         Mixed_UndefinedBox.setBounds(190, 210, 60, 20);
         actionLayeredPane.add(Mixed_UndefinedBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        NonSupportive_UndefinedBox.setMaximumRowCount(Stakeholders.size());
+        NonSupportive_UndefinedBox.setMaximumRowCount(10);
         NonSupportive_UndefinedBox.setBounds(190, 240, 60, 20);
         actionLayeredPane.add(NonSupportive_UndefinedBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        Marginal_UndefinedBox.setMaximumRowCount(Stakeholders.size());
+        Marginal_UndefinedBox.setMaximumRowCount(10);
         Marginal_UndefinedBox.setBounds(190, 270, 60, 20);
         actionLayeredPane.add(Marginal_UndefinedBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -712,35 +712,35 @@ public class STATUI extends javax.swing.JFrame {
         Marginal_LatentBox.setBounds(270, 270, 60, 20);
         actionLayeredPane.add(Marginal_LatentBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        Supportive_ExpectantBox.setMaximumRowCount(Stakeholders.size());
+        Supportive_ExpectantBox.setMaximumRowCount(10);
         Supportive_ExpectantBox.setBounds(350, 180, 60, 20);
         actionLayeredPane.add(Supportive_ExpectantBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        Mixed_ExpectantBox.setMaximumRowCount(Stakeholders.size());
+        Mixed_ExpectantBox.setMaximumRowCount(10);
         Mixed_ExpectantBox.setBounds(350, 210, 60, 20);
         actionLayeredPane.add(Mixed_ExpectantBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        NonSupportive_ExpectantBox.setMaximumRowCount(Stakeholders.size());
+        NonSupportive_ExpectantBox.setMaximumRowCount(10);
         NonSupportive_ExpectantBox.setBounds(350, 240, 60, 20);
         actionLayeredPane.add(NonSupportive_ExpectantBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        Marginal_ExpectantBox.setMaximumRowCount(Stakeholders.size());
+        Marginal_ExpectantBox.setMaximumRowCount(10);
         Marginal_ExpectantBox.setBounds(350, 270, 60, 20);
         actionLayeredPane.add(Marginal_ExpectantBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        Supportive_DefinitiveBox.setMaximumRowCount(Stakeholders.size());
+        Supportive_DefinitiveBox.setMaximumRowCount(10);
         Supportive_DefinitiveBox.setBounds(430, 180, 60, 20);
         actionLayeredPane.add(Supportive_DefinitiveBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        Mixed_DefinitiveBox.setMaximumRowCount(Stakeholders.size());
+        Mixed_DefinitiveBox.setMaximumRowCount(10);
         Mixed_DefinitiveBox.setBounds(430, 210, 60, 20);
         actionLayeredPane.add(Mixed_DefinitiveBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        NonSupportive_DefinitiveBox.setMaximumRowCount(Stakeholders.size());
+        NonSupportive_DefinitiveBox.setMaximumRowCount(10);
         NonSupportive_DefinitiveBox.setBounds(430, 240, 60, 20);
         actionLayeredPane.add(NonSupportive_DefinitiveBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        Marginal_DefinitiveBox.setMaximumRowCount(Stakeholders.size());
+        Marginal_DefinitiveBox.setMaximumRowCount(10);
         Marginal_DefinitiveBox.setBounds(430, 270, 60, 20);
         actionLayeredPane.add(Marginal_DefinitiveBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
