@@ -1491,7 +1491,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 {
                     //column = contentTable.getSelectedColumn();//get column number
                     column = c;
-                    magnitude = (String) contentTable.getValueAt(row, column);//read value from influence table
+                    if (row == column)
+                    {magnitude = "0";}
+                    else
+                    {magnitude = (String) contentTable.getValueAt(row, column);}//read value from influence table
                     //add code to see if stakeholder relationship already exists in arraylist of relationships
                     tempInfluences.add(new Relationship(Stakeholders.get(column).getName(), magnitudeNumber(magnitude)));//add relationship to stakeholders Arraylist of relationships
                 }//end of col loop
