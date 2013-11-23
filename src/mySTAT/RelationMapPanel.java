@@ -29,23 +29,40 @@ import javax.swing.border.LineBorder;
 /**
  * @author Brian_2
  */
-@SuppressWarnings("serial")
-class RelTest extends JPanel
+
+public class RelationMapPanel extends JPanel
 {   
-    private final mxGraph panGraph = new mxGraph();
+    private static final long serialVersionUID = 1L;
+    private mxGraph panGraph;
     private mxIGraphLayout layout;
-    mxGraphComponent graphComponent;
+    private mxGraphComponent graphComponent;
     private Object parent;
     
-    RelTest()
-    {
-        super(new BorderLayout());
-        setSize(500, 500);
+    public RelationMapPanel() {
+        super();
         init();
     }
     
-    final private void init()
+    public RelationMapPanel(LayoutManager l)  {
+        super(l);
+        init();
+    }
+
+    public RelationMapPanel(boolean isDoubleBuffered) {
+        super(isDoubleBuffered);
+        init();
+    }
+
+    public RelationMapPanel(LayoutManager layout, boolean isDoubleBuffered) {
+        super(layout, isDoubleBuffered);
+        init();
+    }
+    
+    
+    
+    private void init()
     {
+        panGraph = new mxGraph();
         graphComponent = new mxGraphComponent(panGraph);
         add(BorderLayout.CENTER, graphComponent);
         parent = panGraph.getDefaultParent();
