@@ -20,6 +20,13 @@ public class Relationship {
     private int magnitude; //values of 1, 2, or 3 only
     //private boolean direction; //true if they are influencing the other, false if they are being influenced
     
+public Relationship(){}
+
+public Relationship(Relationship r) {
+    this.id = r.id;
+    this.magnitude = r.magnitude;
+}
+    
 public Relationship(String id, int magnitude) {
         this.id = id;
         this.magnitude = magnitude;

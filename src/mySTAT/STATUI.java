@@ -153,6 +153,10 @@ public class STATUI extends javax.swing.JFrame {
         managementPlanPanel = new javax.swing.JPanel();
         managementPlanScrollPane = new javax.swing.JScrollPane();
         managementPlanTable = new javax.swing.JTable();
+        TestPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         MenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         newMenuItem = new javax.swing.JMenuItem();
@@ -989,6 +993,35 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     mainTabbedPane.addTab("<html>\n<br>\nManagement Plan<br>\n<br>", managementPlanPanel);
 
+    jLabel1.setText("This panel just for testing. Will Erase later");
+
+    jTextArea1.setColumns(20);
+    jTextArea1.setRows(5);
+    jScrollPane1.setViewportView(jTextArea1);
+
+    javax.swing.GroupLayout TestPanelLayout = new javax.swing.GroupLayout(TestPanel);
+    TestPanel.setLayout(TestPanelLayout);
+    TestPanelLayout.setHorizontalGroup(
+        TestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(TestPanelLayout.createSequentialGroup()
+            .addGap(51, 51, 51)
+            .addGroup(TestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addContainerGap(204, Short.MAX_VALUE))
+    );
+    TestPanelLayout.setVerticalGroup(
+        TestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(TestPanelLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(290, Short.MAX_VALUE))
+    );
+
+    mainTabbedPane.addTab("<html> <br> Test Panel<br><br>", TestPanel);
+
     MenuBar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     MenuBar.setName(""); // NOI18N
 
@@ -1350,39 +1383,42 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             contentRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];
             for (int r = 0; r < Stakeholders.size(); r++)
                 {
-                for (int c = 0; c < Stakeholders.size(); c++)
-                {
-                    //contentRelationshipArray[r][c] = magnitude;
-                    if (r == c)
-                    { 
-                        contentRelationshipArray[r][c] = "0";
-                    }
-                    else
+                    //get row stakeholder's list of relationships
+                    ArrayList<Relationship> tempRelationships = new ArrayList<>();
+                    tempRelationships.addAll(Stakeholders.get(r).getInfluences());
+                    //travers list of relationships for each row stakeholder
+                    for (int c = 0; c < Stakeholders.size(); c++)
                     {
-                        //search for a relationship with column stakeholder
-                        String searchSH = Stakeholders.get(c).getName();
-                        //if stakeholder(r)has a list of relationships, search if (c) is one of them
-                        if (!(Stakeholders.get(r).getInfluences().isEmpty()))
+                        if (r == c) //for row stakeholder matches column stakeholder, default to zero
+                        { 
+                            contentRelationshipArray[r][c] = "0";
+                        }
+                        //if relationship is with stakeholders other than itself
+                        else
                         {
-                            //search stakeholder(r)'s arrayList of relationships
-                            ArrayList<Relationship> tempRelationships = Stakeholders.get(r).getInfluences();
-                            for (int i = 0; i < tempRelationships.size(); i++)
+                            //search for a relationship with column stakeholder
+                            String searchSH = Stakeholders.get(c).getName();
+                            //if stakeholder(r)has a list of relationships, search if (c) is one of them
+                            if (!(Stakeholders.get(r).getInfluences().isEmpty()))
                             {
-                            if (tempRelationships.get(i).getId().equals(searchSH))
+                                //search stakeholder(r)'s arrayList of relationships
+                                for (int i = 0; i < tempRelationships.size(); i++)
                                 {
-                                    int tempValue = tempRelationships.get(i).getMagnitude();
-                                    contentRelationshipArray[r][c] = magnitudeString(tempValue);
-                                }
-                            //if stakeholder(r) does not have a relationship with stakeholder(c)
+                                    if (tempRelationships.get(i).getId().equals(searchSH))
+                                    {
+                                        int tempValue = tempRelationships.get(i).getMagnitude();
+                                        contentRelationshipArray[r][c] = magnitudeString(tempValue);
+                                    }
+                                    //if stakeholder(r) does not have a relationship with stakeholder(c)
+                                    else
+                                        contentRelationshipArray[r][c] = "0";
+                                }//end of relationship search loop
+                            }//end of if relationships not empty boolean if statement
+                            //if stakeholder(r) has no relationships, write zero
                             else
                                 contentRelationshipArray[r][c] = "0";
-                            }//end of relationship search loop
-                        }//end of if relationships not empty boolean if statement
-                        //if stakeholder(r) has no relationships
-                        else
-                                contentRelationshipArray[r][c] = "0";
-                    }
-                }//end of column loop
+                        }//end of else statement row stakeholder is not same as column stakeholder
+                    }//end of column loop
                 }//end of row loop
             }//end of if statement
         //create fresh table for new projects (no stakeholders yet)
@@ -1440,18 +1476,26 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         {
             int row;
             int column;
+            String magnitude;
+            Relationship buddy;
             for (int r = 0; r < Stakeholders.size(); r++)//traverse rows
             {
+                //row = contentTable.getSelectedRow();//get row number
+                row = r;
+                ArrayList <Relationship> tempInfluences = new ArrayList<>();
+                for(Relationship partner: Stakeholders.get(row).getInfluences()){
+                    buddy = new Relationship(partner);
+                    tempInfluences.add(buddy);}
+                //tempInfluences.addAll(Stakeholders.get(row).getInfluences());//get Arraylist of relationships from stakeholder at row header
                 for (int c = 0; c < Stakeholders.size(); c++)//traverse columns
                 {
-                    row = contentTable.getSelectedRow();//get row number
-                    column = contentTable.getSelectedColumn();//get column number
-                        ArrayList tempInfluences = Stakeholders.get(row).getInfluences();//get Arraylist of relationships from stakeholder at row header
-                        String magnitude = (String) contentTable.getValueAt(row, column);//read value from influence table
-                        //add code to see if stakeholder relationship already exists in arraylist of relationships
-                        tempInfluences.add(new Relationship(Stakeholders.get(column).getName(), magnitudeNumber(magnitude)));//add relationship to stakeholders Arraylist of relationships
-                        Stakeholders.get(row).setInfluences(tempInfluences);//push the updated arraylist of relationships to stakeholder at row header
+                    //column = contentTable.getSelectedColumn();//get column number
+                    column = c;
+                    magnitude = (String) contentTable.getValueAt(row, column);//read value from influence table
+                    //add code to see if stakeholder relationship already exists in arraylist of relationships
+                    tempInfluences.add(new Relationship(Stakeholders.get(column).getName(), magnitudeNumber(magnitude)));//add relationship to stakeholders Arraylist of relationships
                 }//end of col loop
+                Stakeholders.get(row).setInfluences(tempInfluences);//push the updated arraylist of relationships to stakeholder at row header
             }//end of row loop
         }//end of if Stakeholders is not empty statement
         //if Stakeholders is empty, do nothing
@@ -1535,8 +1579,30 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private void influenceSaveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_influenceSaveButtonMouseClicked
         // TODO add your handling code here:
         relationshipUpdate();
+        //ERASE LATER!!!!!!!!!!!!!!!!!!!!!!
+        displayStakeholderRelationships();
     }//GEN-LAST:event_influenceSaveButtonMouseClicked
 
+    //ERASE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!
+    public void displayStakeholderRelationships()
+    {
+        String displayedRelationships = "";
+        for (int i = 0; i < Stakeholders.size(); i++)
+        {
+            ArrayList <Relationship> tempInfluences;
+            tempInfluences = Stakeholders.get(i).getInfluences();
+            if (!tempInfluences.isEmpty())
+            {
+                displayedRelationships += ("Stakeholder Name: " + tempInfluences.get(i).getId() + ", relationship magnitudes: ");
+                for (int e = 0; e < tempInfluences.size(); e++)
+                {
+                    displayedRelationships += (tempInfluences.get(e).getMagnitude() + ", ");
+                }
+                displayedRelationships += ("\nTotal Relationships = " + tempInfluences.size() + "\n\n");
+            }
+        }
+        jTextArea1.setText(displayedRelationships);
+    }
    
     private void classificationDiagramUpdate()
     {
@@ -1732,6 +1798,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JComboBox Supportive_ExpectantBox;
     private javax.swing.JComboBox Supportive_LatentBox;
     private javax.swing.JComboBox Supportive_UndefinedBox;
+    private javax.swing.JPanel TestPanel;
     private javax.swing.JLabel ThreatLabel;
     private javax.swing.JRadioButton ThreatNRadioButton;
     private javax.swing.JRadioButton ThreatYRadioButton;
@@ -1762,10 +1829,13 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JPanel influencePanel;
     private javax.swing.JButton influenceSaveButton;
     private javax.swing.JScrollPane influenceScrollPane;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTabbedPane mainTabbedPane;
     private javax.swing.JPanel managementPlanPanel;
     private javax.swing.JScrollPane managementPlanScrollPane;
