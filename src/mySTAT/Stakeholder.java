@@ -318,4 +318,15 @@ public class Stakeholder {
          this.Threat = threat;
          this.setAttitude(cooperation, threat);
      }
+     //function to add relationship of new stakeholder
+     public void addRelationship(String name, int magnitude)
+     {
+         Relationship r = new Relationship(name, magnitude);
+         this.Influences.add(r);
+     }
+     //function to delete removed stakeholder
+     public void removeRelationship(int deleted)
+     {
+         this.Influences.remove(deleted);
+     }
 }

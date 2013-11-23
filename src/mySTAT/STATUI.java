@@ -1251,8 +1251,15 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         // TODO add your handling code here:
         //remove stakeholder from arraylist
         String tempName = (String) StakeholderList.getSelectedValue();
+        //remove stakeholder from arrayList Stakeholders
         for (int i = 0; i < Stakeholders.size(); i++){
             if (Stakeholders.get(i).getName().equals(tempName) ){
+                //remove relationship from each member
+                for (Stakeholder member: Stakeholders) 
+                {
+                    member.removeRelationship(i);
+                }
+                //remove from arrayList
                 Stakeholders.remove(i);
                 break;
             }
@@ -1261,10 +1268,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         DefaultListModel model = (DefaultListModel) StakeholderList.getModel();
         int selectedIndex = StakeholderList.getSelectedIndex();
         if (selectedIndex != -1) {
-        model.remove(selectedIndex);
-        StakeholderList.setModel(model);
-        InformationLabel.setText("Stakeholder " + tempName + " removed");
-        }
+            model.remove(selectedIndex);
+            StakeholderList.setModel(model);
+            InformationLabel.setText("Stakeholder " + tempName + " removed");
+            }
         //disable stakeholder editing buttons until one is chosen
         SHSaveButton.setEnabled(false);
         SHEditButton.setEnabled(false);
@@ -1339,6 +1346,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         String headerRelationshipArray[][];
         String columnRelationshipArray[][];
         String stakeholderString[];
+        Relationship buddy;
+        String searchSH;
         if (!Stakeholders.isEmpty())
         {
             stakeholderString = new String[Stakeholders.size()];
@@ -1381,11 +1390,25 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         //Display already created stakeholder list items
         if (!Stakeholders.isEmpty()){
             contentRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];
+            //ensure each stakeholder has the matching number of influences
+            //add default relationship to each stakeholder in arrayList recently added
+            for (Stakeholder member: Stakeholders){
+                int difference = Stakeholders.size() - member.getInfluences().size();
+                if (difference > 0)
+                {
+                    for (int i = member.getInfluences().size(); i < Stakeholders.size(); i++)
+                    {
+                        member.addRelationship(Stakeholders.get(i).getName(), 0);
+                    }
+                }
+            }
             for (int r = 0; r < Stakeholders.size(); r++)
                 {
                     //get row stakeholder's list of relationships
-                    ArrayList<Relationship> tempRelationships = new ArrayList<>();
-                    tempRelationships.addAll(Stakeholders.get(r).getInfluences());
+                    ArrayList <Relationship> tempRelationships = new ArrayList<>();
+                    for(Relationship partner: Stakeholders.get(r).getInfluences()){
+                        buddy = new Relationship(partner);
+                        tempRelationships.add(buddy);}
                     //travers list of relationships for each row stakeholder
                     for (int c = 0; c < Stakeholders.size(); c++)
                     {
@@ -1394,30 +1417,31 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                             contentRelationshipArray[r][c] = "0";
                         }
                         //if relationship is with stakeholders other than itself
-                        else
-                        {
+                        //else
+                        //{
                             //search for a relationship with column stakeholder
-                            String searchSH = Stakeholders.get(c).getName();
+                            //searchSH = Stakeholders.get(c).getName();
                             //if stakeholder(r)has a list of relationships, search if (c) is one of them
-                            if (!(Stakeholders.get(r).getInfluences().isEmpty()))
+                        else if (!(Stakeholders.get(r).getInfluences().isEmpty()))
                             {
                                 //search stakeholder(r)'s arrayList of relationships
-                                for (int i = 0; i < tempRelationships.size(); i++)
-                                {
-                                    if (tempRelationships.get(i).getId().equals(searchSH))
-                                    {
-                                        int tempValue = tempRelationships.get(i).getMagnitude();
+                                //for (int i = 0; i < tempRelationships.size(); i++)
+                                //{
+                                    //if (tempRelationships.get(i).getId().equals(searchSH))
+                                    //{
+                                        //int tempValue = tempRelationships.get(i).getMagnitude();
+                                        int tempValue = tempRelationships.get(c).getMagnitude();
                                         contentRelationshipArray[r][c] = magnitudeString(tempValue);
-                                    }
+                                    //}
                                     //if stakeholder(r) does not have a relationship with stakeholder(c)
-                                    else
-                                        contentRelationshipArray[r][c] = "0";
-                                }//end of relationship search loop
+                                    //else
+                                        //contentRelationshipArray[r][c] = "0";
+                                //}//end of relationship search loop
                             }//end of if relationships not empty boolean if statement
                             //if stakeholder(r) has no relationships, write zero
                             else
                                 contentRelationshipArray[r][c] = "0";
-                        }//end of else statement row stakeholder is not same as column stakeholder
+                        //}//end of else statement row stakeholder is not same as column stakeholder
                     }//end of column loop
                 }//end of row loop
             }//end of if statement
@@ -1474,31 +1498,27 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private void relationshipUpdate(){
         if (!Stakeholders.isEmpty())
         {
-            int row;
-            int column;
             String magnitude;
             Relationship buddy;
             for (int r = 0; r < Stakeholders.size(); r++)//traverse rows
             {
                 //row = contentTable.getSelectedRow();//get row number
-                row = r;
                 ArrayList <Relationship> tempInfluences = new ArrayList<>();
-                for(Relationship partner: Stakeholders.get(row).getInfluences()){
-                    buddy = new Relationship(partner);
-                    tempInfluences.add(buddy);}
+                //for(Relationship partner: Stakeholders.get(row).getInfluences()){
+                //    buddy = new Relationship(partner);
+                //    tempInfluences.add(buddy);}
                 //tempInfluences.addAll(Stakeholders.get(row).getInfluences());//get Arraylist of relationships from stakeholder at row header
                 for (int c = 0; c < Stakeholders.size(); c++)//traverse columns
                 {
                     //column = contentTable.getSelectedColumn();//get column number
-                    column = c;
-                    if (row == column)
+                    if (r == c) //can't let stakeholders be partners with themselves now can we? They might go blind
                     {magnitude = "0";}
                     else
-                    {magnitude = (String) contentTable.getValueAt(row, column);}//read value from influence table
+                    {magnitude = (String) contentTable.getValueAt(r, c);}//read value from influence table
                     //add code to see if stakeholder relationship already exists in arraylist of relationships
-                    tempInfluences.add(new Relationship(Stakeholders.get(column).getName(), magnitudeNumber(magnitude)));//add relationship to stakeholders Arraylist of relationships
+                    tempInfluences.add(new Relationship(Stakeholders.get(c).getName(), magnitudeNumber(magnitude)));//add relationship to stakeholders Arraylist of relationships
                 }//end of col loop
-                Stakeholders.get(row).setInfluences(tempInfluences);//push the updated arraylist of relationships to stakeholder at row header
+                Stakeholders.get(r).setInfluences(tempInfluences);//push the updated arraylist of relationships to stakeholder at row header
             }//end of row loop
         }//end of if Stakeholders is not empty statement
         //if Stakeholders is empty, do nothing
