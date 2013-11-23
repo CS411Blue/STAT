@@ -29,6 +29,7 @@ public class STATUI extends javax.swing.JFrame {
     
     public STATUI() {
         this.Stakeholders = new ArrayList<>();
+        testWindow();
         initComponents();
     }
 
@@ -149,7 +150,7 @@ public class STATUI extends javax.swing.JFrame {
         influenceLabel2 = new javax.swing.JLabel();
         influenceLabel3 = new javax.swing.JLabel();
         influenceSaveButton = new javax.swing.JButton();
-        relationshipMapPanel = new javax.swing.JPanel();
+        relationMapPanel = new mySTAT.RelationMapPanel();
         managementPlanPanel = new javax.swing.JPanel();
         managementPlanScrollPane = new javax.swing.JScrollPane();
         managementPlanTable = new javax.swing.JTable();
@@ -924,18 +925,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", influencePanel);
 
-    javax.swing.GroupLayout relationshipMapPanelLayout = new javax.swing.GroupLayout(relationshipMapPanel);
-    relationshipMapPanel.setLayout(relationshipMapPanelLayout);
-    relationshipMapPanelLayout.setHorizontalGroup(
-        relationshipMapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 769, Short.MAX_VALUE)
-    );
-    relationshipMapPanelLayout.setVerticalGroup(
-        relationshipMapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 628, Short.MAX_VALUE)
-    );
-
-    mainTabbedPane.addTab("<html>\n<br>\nRelationship Map<br>\n<br>", relationshipMapPanel);
+    relationMapPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+    relationMapPanel.updateShVertexList(Stakeholders);
+    mainTabbedPane.addTab("<html> <br> Relation Map <br><br>", relationMapPanel);
 
     String tempArray[][];
     if (!Stakeholders.isEmpty()){
@@ -1477,9 +1469,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     //magnitude int converter
     public int magnitudeNumber(String strength){
         int convertedStrength;
-        if (strength.equals("High")){convertedStrength = 3;}
-        else if (strength.equals("Med")){convertedStrength = 2;}
-        else if (strength.equals("Low")){convertedStrength = 1;}
+        if (strength.equals("High")){convertedStrength = Relationship.HIGH;}
+        else if (strength.equals("Med")){convertedStrength = Relationship.MEDIUM;}
+        else if (strength.equals("Low")){convertedStrength = Relationship.LOW;}
         else convertedStrength = 0;
         return convertedStrength;
     }
@@ -1487,9 +1479,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     //magnitude String converter
     public String magnitudeString(int strength){
         String convertedStrength;
-        if (strength == 3){convertedStrength = "High";}
-        else if (strength == 2){convertedStrength = "Med";}
-        else if (strength == 1){convertedStrength = "Low";}
+        if (strength == Relationship.HIGH){convertedStrength = "High";}
+        else if (strength == Relationship.MEDIUM){convertedStrength = "Med";}
+        else if (strength == Relationship.LOW){convertedStrength = "Low";}
         else convertedStrength = "0";
         return convertedStrength;
     }
@@ -1594,6 +1586,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
            classificationDiagramUpdate();
            actionTableUpdate();
            influenceTableUpdate();
+           relationMapPanel.updateShVertexList(Stakeholders);
            //relationshipUpdate();
            //System.out.println("Selected paneNo : " + pane.getSelectedIndex());
         }
@@ -1708,11 +1701,17 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
           else if(Stakeholders.get(i).getPlacement().equals("Definitive")&&Stakeholders.get(i).getAttitude().equals("Non-Supportive"))
              NonSupportive_DefinitiveBox.addItem(Stakeholders.get(i).getName());
           else
-              Marginal_DefinitiveBox.addItem(Stakeholders.get(i).getName());
-      
-      
-      
+              Marginal_DefinitiveBox.addItem(Stakeholders.get(i).getName());   
+    }
     
+    //Creates test Driver window
+    public void testWindow()
+    {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TestDriver(Stakeholders).setVisible(true);
+            }
+        });
     }
     /**
      * @param args the command line arguments
@@ -1868,7 +1867,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JTable pitcherTable;
     private javax.swing.JMenuItem recentMenuItem;
-    private javax.swing.JPanel relationshipMapPanel;
+    private mySTAT.RelationMapPanel relationMapPanel;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JPanel stakeholdersPanel;
