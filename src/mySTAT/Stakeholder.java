@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.io.*;
+import com.mxgraph.util.mxConstants;
 
 /**
  * Stakeholder Class
@@ -25,13 +26,14 @@ public class Stakeholder {
     public static final int SUPPORTIVE = 4;
     
     private static final String SH_SHAPE = new 
-            String("shape=ellipse;perimeter=ellipsePerimeter");
+            String("shape=rhombus;");
+    //shape=ellipse;perimeter=ellipsePerimeter
     
-    private static final String FORMAT = new String("whiteSpace=wrap;");
+    private static final String FORMAT = new String("whiteSpace=wrap;fontSize=16;");
     
-    private static final int DEFINITIVE_SIZE = 150;
-    private static final int EXPECTANT_SIZE = 100;
-    private static final int LATENT_SIZE = 50;
+    private static final int DEFINITIVE_SIZE = 130;
+    private static final int EXPECTANT_SIZE = 90;
+    private static final int LATENT_SIZE = 40;
     private static final int UNDEFINED_SIZE = 5;
     
     private static final String WHITE = new String("fillColor=white;");

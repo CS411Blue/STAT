@@ -35,8 +35,8 @@ public class RelationMapPanel extends JPanel
     private mxGraph panGraph;
     private mxIGraphLayout layout;
     private mxGraphComponent graphComponent;
-    private Object parent;
-    private JScrollPane pane;
+    private Object graphParent;
+
     public RelationMapPanel() {
         super();
         init();
@@ -65,10 +65,10 @@ public class RelationMapPanel extends JPanel
         graphComponent = new mxGraphComponent(panGraph);
         
         add(graphComponent);
-        parent = panGraph.getDefaultParent();
+        graphParent = panGraph.getDefaultParent();
         panGraph.setAllowDanglingEdges(false);
-        panGraph.setEnabled(true);
-        layout = new mxFastOrganicLayout(panGraph);
+        panGraph.setEnabled(false);
+        layout = new mxCircleLayout(panGraph);
     }
     
     public void updateShVertexList(ArrayList<Stakeholder> SHList)
@@ -83,14 +83,16 @@ public class RelationMapPanel extends JPanel
             Object v = new Object();
             if(s.getPlacementRank()>Stakeholder.UNDEFINED)
             {
-                v = panGraph.insertVertex(parent, null, s.getName(), 100, 100, 
-                        s.getDiameter(), s.getDiameter(), s.getStyle());
+                panGraph.getModel().beginUpdate();
+                try{v = panGraph.insertVertex(graphParent, null, s.getName(), 100, 100, 
+                        s.getDiameter(), s.getDiameter(), s.getStyle());}
+                finally{panGraph.getModel().endUpdate();}
                 s.setGraphNode(v);
             }
             //What to do if a stakeholder is a "non-stakeholder"
             else
             {
-//                v = panGraph.insertVertex(parent, null, null, 100, 100, s.getDiameter(), s.getDiameter(), s.getStyle());
+//                v = panGraph.insertVertex(graphParent, null, null, 100, 100, s.getDiameter(), s.getDiameter(), s.getStyle());
 //                s.setGraphNode(v);
             }
         }
@@ -101,6 +103,7 @@ public class RelationMapPanel extends JPanel
             for (Iterator<Relationship> it = main.getInfluences().iterator(); it.hasNext();) 
             {
                 Relationship r = it.next();
+                //If the relationship magnitude is zero, don't graph it.
                 if(r.getMagnitude() != 0)
                 {
                     for (Iterator<Stakeholder> secondaryShIter = SHList.iterator(); secondaryShIter.hasNext();) 
@@ -109,21 +112,27 @@ public class RelationMapPanel extends JPanel
                         if(secondary.getName() == r.getId()) 
                         {
                             System.out.printf("insertEdge(%s,%s,%s)\n", main.getName(), secondary.getName(), r.getLineStyle());
-                            panGraph.insertEdge(parent, null, null, 
-                                    main.getGraphNode(), secondary.getGraphNode(), r.getLineStyle());
+                            panGraph.getModel().beginUpdate();
+                            try{panGraph.insertEdge(graphParent, null, null, 
+                                    main.getGraphNode(), secondary.getGraphNode(), r.getLineStyle());}
+                            finally{panGraph.getModel().endUpdate();}
                         }
                     }
                 }
             }
         }
         morphLayout();
+        System.out.println(getSize().toString());
+        System.out.println(getVisibleRect().toString());
+        System.out.println(panGraph.getView().getGraphBounds().toString());
+        System.out.println(panGraph.getGraphBounds().toString());
     }
     
     private void morphLayout()
     {
         panGraph.getModel().beginUpdate();
         try {
-            layout.execute(parent);
+            layout.execute(graphParent);
         } finally {
             mxMorphing morph = new mxMorphing(graphComponent, 20, 1.2, 20);
 

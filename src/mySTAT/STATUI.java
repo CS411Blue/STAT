@@ -28,6 +28,7 @@ public class STATUI extends javax.swing.JFrame {
     public ArrayList<Stakeholder> Stakeholders;
     
     public STATUI() {
+        super("STAT");
         this.Stakeholders = new ArrayList<>();
         testWindow();
         initComponents();
@@ -150,7 +151,6 @@ public class STATUI extends javax.swing.JFrame {
         influenceLabel2 = new javax.swing.JLabel();
         influenceLabel3 = new javax.swing.JLabel();
         influenceSaveButton = new javax.swing.JButton();
-        relationMapPanel = new mySTAT.RelationMapPanel();
         managementPlanPanel = new javax.swing.JPanel();
         managementPlanScrollPane = new javax.swing.JScrollPane();
         managementPlanTable = new javax.swing.JTable();
@@ -158,6 +158,9 @@ public class STATUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        relationMapParentPanel = new javax.swing.JPanel();
+        relationMapScrollPane = new javax.swing.JScrollPane();
+        JGraphPanel = new mySTAT.RelationMapPanel();
         MenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         newMenuItem = new javax.swing.JMenuItem();
@@ -925,10 +928,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", influencePanel);
 
-    relationMapPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-    relationMapPanel.updateShVertexList(Stakeholders);
-    mainTabbedPane.addTab("<html> <br> Relation Map <br><br>", relationMapPanel);
-
     String tempArray[][];
     if (!Stakeholders.isEmpty()){
         tempArray = new String[Stakeholders.size()][10];
@@ -979,8 +978,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         managementPlanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(managementPlanPanelLayout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(203, Short.MAX_VALUE))
+            .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(202, Short.MAX_VALUE))
     );
 
     mainTabbedPane.addTab("<html>\n<br>\nManagement Plan<br>\n<br>", managementPlanPanel);
@@ -1013,6 +1012,30 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     );
 
     mainTabbedPane.addTab("<html> <br> Test Panel<br><br>", TestPanel);
+
+    relationMapScrollPane.setViewportView(JGraphPanel);
+
+    javax.swing.GroupLayout relationMapParentPanelLayout = new javax.swing.GroupLayout(relationMapParentPanel);
+    relationMapParentPanel.setLayout(relationMapParentPanelLayout);
+    relationMapParentPanelLayout.setHorizontalGroup(
+        relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 769, Short.MAX_VALUE)
+        .addGroup(relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relationMapParentPanelLayout.createSequentialGroup()
+                .addComponent(relationMapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE)
+                .addContainerGap()))
+    );
+    relationMapParentPanelLayout.setVerticalGroup(
+        relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 628, Short.MAX_VALUE)
+        .addGroup(relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(relationMapParentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(relationMapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(202, Short.MAX_VALUE)))
+    );
+
+    mainTabbedPane.addTab("<html> <br> Relation Map<br><br>", relationMapParentPanel);
 
     MenuBar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     MenuBar.setName(""); // NOI18N
@@ -1586,7 +1609,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
            classificationDiagramUpdate();
            actionTableUpdate();
            influenceTableUpdate();
-           relationMapPanel.updateShVertexList(Stakeholders);
+           JGraphPanel.updateShVertexList(Stakeholders);
            //relationshipUpdate();
            //System.out.println("Selected paneNo : " + pane.getSelectedIndex());
         }
@@ -1755,6 +1778,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JComboBox DominantStakeHolderList;
     private javax.swing.JComboBox DormantStakeHolderList;
     private javax.swing.JLabel InformationLabel;
+    private mySTAT.RelationMapPanel JGraphPanel;
     private javax.swing.JLabel LegitimacyLabel;
     private javax.swing.JRadioButton LegitimacyNRadioButton;
     private javax.swing.JRadioButton LegitimacyYRadioButton;
@@ -1867,7 +1891,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JTable pitcherTable;
     private javax.swing.JMenuItem recentMenuItem;
-    private mySTAT.RelationMapPanel relationMapPanel;
+    private javax.swing.JPanel relationMapParentPanel;
+    private javax.swing.JScrollPane relationMapScrollPane;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JPanel stakeholdersPanel;
