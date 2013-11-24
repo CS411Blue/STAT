@@ -8,7 +8,6 @@ package mySTAT;
 import com.mxgraph.layout.*;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
 import com.mxgraph.layout.mxIGraphLayout;
-import com.mxgraph.layout.orthogonal.mxOrthogonalLayout;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.swing.util.mxMorphing;
 import com.mxgraph.util.mxEvent;
@@ -37,7 +36,7 @@ public class RelationMapPanel extends JPanel
     private mxIGraphLayout layout;
     private mxGraphComponent graphComponent;
     private Object parent;
-    
+    private JScrollPane pane;
     public RelationMapPanel() {
         super();
         init();
@@ -64,8 +63,11 @@ public class RelationMapPanel extends JPanel
     {
         panGraph = new mxGraph();
         graphComponent = new mxGraphComponent(panGraph);
-        add(BorderLayout.CENTER, graphComponent);
+        
+        add(graphComponent);
         parent = panGraph.getDefaultParent();
+        panGraph.setAllowDanglingEdges(false);
+        panGraph.setEnabled(true);
         layout = new mxFastOrganicLayout(panGraph);
     }
     
@@ -85,10 +87,11 @@ public class RelationMapPanel extends JPanel
                         s.getDiameter(), s.getDiameter(), s.getStyle());
                 s.setGraphNode(v);
             }
+            //What to do if a stakeholder is a "non-stakeholder"
             else
             {
-                v = panGraph.insertVertex(parent, null, null, 100, 100, s.getDiameter(), s.getDiameter(), s.getStyle());
-                s.setGraphNode(v);
+//                v = panGraph.insertVertex(parent, null, null, 100, 100, s.getDiameter(), s.getDiameter(), s.getStyle());
+//                s.setGraphNode(v);
             }
         }
         //now add all edges
@@ -98,14 +101,17 @@ public class RelationMapPanel extends JPanel
             for (Iterator<Relationship> it = main.getInfluences().iterator(); it.hasNext();) 
             {
                 Relationship r = it.next();
-                for (Iterator<Stakeholder> secondaryShIter = SHList.iterator(); secondaryShIter.hasNext();) 
+                if(r.getMagnitude() != 0)
                 {
-                    Stakeholder secondary = secondaryShIter.next();
-                    if(secondary.getName() == r.getId()) 
+                    for (Iterator<Stakeholder> secondaryShIter = SHList.iterator(); secondaryShIter.hasNext();) 
                     {
-                        System.out.printf("insertEdge(%s,%s,%s)\n", main.getName(), secondary.getName(), r.getLineStyle());
-                        panGraph.insertEdge(parent, null, null, 
-                                main.getGraphNode(), secondary.getGraphNode(), r.getLineStyle());
+                        Stakeholder secondary = secondaryShIter.next();
+                        if(secondary.getName() == r.getId()) 
+                        {
+                            System.out.printf("insertEdge(%s,%s,%s)\n", main.getName(), secondary.getName(), r.getLineStyle());
+                            panGraph.insertEdge(parent, null, null, 
+                                    main.getGraphNode(), secondary.getGraphNode(), r.getLineStyle());
+                        }
                     }
                 }
             }
