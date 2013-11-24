@@ -1298,21 +1298,11 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         //get edited fields
         name = SHNameTextArea.getText();
         wants = SHWantsTextArea.getText();
-        if (SHPowerYRadioButton.isSelected())
-            {power = true;}
-            else {power = false;}
-        if (SHLegitimacyYRadioButton.isSelected())
-            {legitimacy = true;}
-            else {legitimacy = false;}
-        if (SHUrgencyYRadioButton.isSelected())
-            {urgency = true;}
-            else {urgency = false;}
-        if (SHCooperationYRadioButton.isSelected())
-            {cooperation = true;}
-            else {cooperation = false;}
-        if (SHThreatYRadioButton.isSelected())
-            {threat = true;}
-            else {threat = false;}
+        power = SHPowerYRadioButton.isSelected();
+        legitimacy = SHLegitimacyYRadioButton.isSelected();
+        urgency = SHUrgencyYRadioButton.isSelected();
+        cooperation = SHCooperationYRadioButton.isSelected();
+        threat = SHThreatYRadioButton.isSelected();
         //find the stakeholder in arraylist and edit
         for (int i = 0; i < Stakeholders.size(); i++){
             if (Stakeholders.get(i).getName().equals(findName) ){
