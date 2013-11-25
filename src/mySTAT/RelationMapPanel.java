@@ -36,6 +36,12 @@ public class RelationMapPanel extends JPanel
     private mxIGraphLayout layout;
     private mxGraphComponent graphComponent;
     private Object graphParent;
+    
+    public final static int FASTORGANIC = 1;
+    public final static int CIRCLE = 2;
+    public final static int HIERARCHICAL = 3;
+    public final static int COMPACTTREE = 4;
+    public final static int STACK = 5;
 
     public RelationMapPanel() {
         super();
@@ -69,6 +75,26 @@ public class RelationMapPanel extends JPanel
         panGraph.setAllowDanglingEdges(false);
         panGraph.setEnabled(false);
         layout = new mxCircleLayout(panGraph);
+        setSize(750, 394);
+    }
+    
+    public void setMxLayout(int l)
+    {
+        switch(l)
+        {
+            case FASTORGANIC:
+                layout = new mxFastOrganicLayout(panGraph);
+            case CIRCLE:
+                layout = new mxCircleLayout(panGraph);
+            case HIERARCHICAL:
+                layout = new mxHierarchicalLayout(panGraph, SwingConstants.NORTH);
+            case COMPACTTREE:
+                layout = new mxCompactTreeLayout(panGraph);
+            case STACK:
+                layout = new mxStackLayout(panGraph, true, 10);
+            default:
+                layout = new mxFastOrganicLayout(panGraph);
+        }
     }
     
     public void updateShVertexList(ArrayList<Stakeholder> SHList)
