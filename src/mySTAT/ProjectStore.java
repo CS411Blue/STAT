@@ -29,7 +29,7 @@ import org.jdom2.output.XMLOutputter;
 public class ProjectStore {
 
     private static final String[] METADATA_ATTRIBS = {"title", "description", "created", "updated"};
-    private static final String[] STAKEHOLDER_ATTRIBS = {"id", "name", "wants", "notes", "classification", "attitude", "strategy", "engagement", "lastengaged", "responsible"};
+    private static final String[] STAKEHOLDER_ATTRIBS = {"name", "power", "legitimacy", "urgency", "cooperation", "threat", "wants", "notes", "strategy", "method", "responsible"};
 
     private static final ProjectStore INSTANCE = new ProjectStore();
 
@@ -41,7 +41,9 @@ public class ProjectStore {
         stakeholders = new HashMap<>();
     }
 
-    public void openProjectFile(String statFilePath) {
+    public ArrayList<Stakeholder> openProjectFile(String statFilePath) {
+        ArrayList<Stakeholder> stakeholdersList = new ArrayList<>();
+        
         try {
             SAXBuilder builder = new SAXBuilder();
             File statFile = new File(statFilePath);
@@ -129,6 +131,7 @@ public class ProjectStore {
                     Map<String, String> stakeholderAttributes = new HashMap<>();
                     Element stakeElement = stakeItr.next();
 
+                    //TODO change this to validate data
                     for (String attrib : STAKEHOLDER_ATTRIBS) {
                         stakeholderAttributes.put(attrib, stakeElement.getChildText(attrib));
                     }
@@ -147,7 +150,7 @@ public class ProjectStore {
                         influences.add(new Relationship(infId, strength));
                     }
 
-                    stakeholders.put(stakeholderAttributes.get("id"), new Stakeholder(stakeholderAttributes, influences));
+                    stakeholdersList.add(new Stakeholder(stakeholderAttributes, influences));
                 }
             } catch (ProjectStoreException ex) {
                 JOptionPane.showMessageDialog(null,
@@ -159,6 +162,8 @@ public class ProjectStore {
             ex.printStackTrace();
             System.exit(1);
         }
+        
+        return stakeholdersList;
     }
 
     public void saveProject(String statFilePath, ArrayList<Stakeholder> stakeholders, String title, String description, String createdBy, String dateCreated) {

@@ -102,20 +102,49 @@ public class Stakeholder {
     public Stakeholder(Map<String, String> attributes, ArrayList<Relationship> influences) {
 //        Id = attributes.get("id");
         Name = attributes.get("name");
+        
+        if(attributes.get("power") == null)
+            Power = false;
+        else
+            Power = Boolean.parseBoolean(attributes.get("power"));
+        
+        if(attributes.get("legitimacy") == null)
+            Legitimacy = false;
+        else
+            Legitimacy = Boolean.parseBoolean(attributes.get("legitimacy"));
+        
+        if(attributes.get("urgency") == null)
+            Urgency = false;
+        else
+            Urgency = Boolean.parseBoolean(attributes.get("urgency"));
+        
+        if(attributes.get("cooperation") == null)
+            Cooperation = false;
+        else
+            Cooperation = Boolean.parseBoolean(attributes.get("cooperation"));
+        
+        if(attributes.get("threat") == null)
+            Threat = false;
+        else
+            Threat = Boolean.parseBoolean(attributes.get("threat"));
+        
         Wants = attributes.get("wants");
-        Classification = attributes.get("classification");
-        Attitude = attributes.get("attitude");
-        Influence = attributes.get("influence");
         Strategy = attributes.get("strategy");
-        Engagement = attributes.get("engagement");
-        LastEngaged = attributes.get("lastEngaged");
+        Engagement = attributes.get("method");
+        //LastEngaged = attributes.get("lastEngaged");
         Responsible = attributes.get("responsible");
         Notes = attributes.get("notes");
         Influences = influences;
+        
+        setClassification(Power, Legitimacy, Urgency);
+        setAttitude(Cooperation, Threat);
+
     }
+    
+    
     //Classification Identification
     @SuppressWarnings("UnusedAssignment")
-    public void setClassification(boolean power, boolean legitimacy, boolean urgency){
+    private void setClassification(boolean power, boolean legitimacy, boolean urgency){
         String thisClassification;
         if ((power==true)&&(legitimacy==true)&&(urgency==true))
             thisClassification = "Definitive";
@@ -137,7 +166,7 @@ public class Stakeholder {
     }
     //Attitude Identification
      @SuppressWarnings("UnusedAssignment")
-    public void setAttitude(boolean cooperation, boolean threat){
+    private void setAttitude(boolean cooperation, boolean threat){
         String thisAttitude;
         if ((cooperation==true)&&(threat==true))
             thisAttitude = "Mixed";
