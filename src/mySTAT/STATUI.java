@@ -1136,12 +1136,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         int returnVal = openFileChooser.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = openFileChooser.getSelectedFile();
-            /*try {
-                // What to do with the file, e.g. display it in a TextArea
-                jTextArea1.read( new FileReader( file.getAbsolutePath() ), null );
-            } catch (IOException ex) {
-                System.out.println("problem accessing file"+file.getAbsolutePath());
-            }*/
+            ProjectStore project = ProjectStore.getInstance();
+            this.Stakeholders = project.openProjectFile(file.getPath());
             //} else {
             //   System.out.println("File access cancelled by user.");
         }
