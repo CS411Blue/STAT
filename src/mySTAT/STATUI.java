@@ -4,6 +4,7 @@
  */
 package mySTAT;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeEvent;
 import java.io.File;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultCellEditor;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JFileChooser;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
@@ -1595,13 +1597,34 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         if (evt.getSource() instanceof JTabbedPane) 
         {
            JTabbedPane pane = (JTabbedPane) evt.getSource();
-           managementPlanUpdate();
-           classificationDiagramUpdate();
-           actionTableUpdate();
-           influenceTableUpdate();
-           JGraphPanel.updateShVertexList(Stakeholders);
-           //relationshipUpdate();
-           //System.out.println("Selected paneNo : " + pane.getSelectedIndex());
+           Component currentTab = mainTabbedPane.getSelectedComponent();
+           if(currentTab.equals(relationMapParentPanel)){
+               JGraphPanel.updateShVertexList(Stakeholders);
+           }
+           else if(currentTab.equals(classificationPanel)){
+               classificationDiagramUpdate();
+           }
+           else if(currentTab.equals(actionPanel)){
+               actionTableUpdate();
+           }
+           else if(currentTab.equals(influencePanel)){
+               influenceTableUpdate();
+           }
+           else if(currentTab.equals(managementPlanPanel)){
+               managementPlanUpdate();
+           }
+           else{
+               managementPlanUpdate();
+               classificationDiagramUpdate();
+               actionTableUpdate();
+               influenceTableUpdate();
+               JGraphPanel.updateShVertexList(Stakeholders);
+               //relationshipUpdate();
+               //System.out.println("Selected paneNo : " + pane.getSelectedIndex());
+               System.out.println("update catch branch failed for: tab " 
+                       +mainTabbedPane.indexOfComponent(currentTab)
+                       +"\n Component: "+currentTab.toString());
+           }
         }
     }//GEN-LAST:event_mainTabbedPaneStateChanged
 
