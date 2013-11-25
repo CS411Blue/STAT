@@ -185,7 +185,7 @@ public class ProjectStore {
         if(createdBy == null)
             createdBy = "temp";
         
-        metaDataElement.addContent(new Element("createdBy").setText(createdBy));
+        metaDataElement.addContent(new Element("createdby").setText(createdBy));
         
         // take this out when implemented
         if(dateCreated == null) {
@@ -193,7 +193,7 @@ public class ProjectStore {
             dateCreated = new Timestamp(date.getTime()).toString();
         }
         
-        metaDataElement.addContent(new Element("dateCreated").setText(dateCreated));
+        metaDataElement.addContent(new Element("datecreated").setText(dateCreated));
         
         statDoc.getRootElement().addContent(metaDataElement);
         
@@ -205,47 +205,47 @@ public class ProjectStore {
             
             //TODO add assert
             String attrib = tempAttribs.get("name");
-            metaDataElement.addContent(new Element("name").setText(attrib));
+            stakeholderElement.addContent(new Element("name").setText(attrib));
             
             attrib = tempAttribs.get("power");
             if(attrib != null && !attrib.isEmpty())
-                metaDataElement.addContent(new Element("power").setText(attrib));
+                stakeholderElement.addContent(new Element("power").setText(attrib));
             
             attrib = tempAttribs.get("legitimacy");
             if(attrib != null && !attrib.isEmpty())
-                metaDataElement.addContent(new Element("legitimacy").setText(attrib));
+                stakeholderElement.addContent(new Element("legitimacy").setText(attrib));
             
             attrib = tempAttribs.get("urgency");
             if(attrib != null && !attrib.isEmpty())
-                metaDataElement.addContent(new Element("urgency").setText(attrib));
+                stakeholderElement.addContent(new Element("urgency").setText(attrib));
             
             attrib = tempAttribs.get("cooperation");
             if(attrib != null && !attrib.isEmpty())
-                metaDataElement.addContent(new Element("cooperation").setText(attrib));
+                stakeholderElement.addContent(new Element("cooperation").setText(attrib));
             
             attrib = tempAttribs.get("threat");
             if(attrib != null && !attrib.isEmpty())
-                metaDataElement.addContent(new Element("threat").setText(attrib));
+                stakeholderElement.addContent(new Element("threat").setText(attrib));
             
             attrib = tempAttribs.get("wants");
             if(attrib != null && !attrib.isEmpty())
-                metaDataElement.addContent(new Element("wants").setText(attrib));
+                stakeholderElement.addContent(new Element("wants").setText(attrib));
             
             attrib = tempAttribs.get("strategy");
             if(attrib != null && !attrib.isEmpty())
-                metaDataElement.addContent(new Element("strategy").setText(attrib));
+                stakeholderElement.addContent(new Element("strategy").setText(attrib));
             
             attrib = tempAttribs.get("method");
             if(attrib != null && !attrib.isEmpty())
-                metaDataElement.addContent(new Element("method").setText(attrib));
+                stakeholderElement.addContent(new Element("method").setText(attrib));
             
             attrib = tempAttribs.get("responsible");
             if(attrib != null && !attrib.isEmpty())
-                metaDataElement.addContent(new Element("responsible").setText(attrib));
+                stakeholderElement.addContent(new Element("responsible").setText(attrib));
             
             attrib = tempAttribs.get("notes");
             if(attrib != null && !attrib.isEmpty())
-                metaDataElement.addContent(new Element("notes").setText(attrib));
+                stakeholderElement.addContent(new Element("notes").setText(attrib));
             
             //load influences for this stakeholder
             Element influencesElement = new Element("influences");
