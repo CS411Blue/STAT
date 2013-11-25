@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import javax.swing.Action;
 import javax.swing.DefaultCellEditor;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JFileChooser;
@@ -33,6 +34,8 @@ public class STATUI extends javax.swing.JFrame {
     
     public STATUI() {
         super("STAT");
+//        ImageIcon statIcon = new ImageIcon(getClass().getResource("/mySTAT/logo.png"));
+//        setIconImage(statIcon.getImage());
         this.Stakeholders = new ArrayList<>();
         testWindow();
         initComponents();
@@ -49,6 +52,7 @@ public class STATUI extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         openFileChooser = new javax.swing.JFileChooser();
+        saveFileChooser = new javax.swing.JFileChooser();
         stakeholdersPanel = new javax.swing.JPanel();
         PowerbuttonGroup = new javax.swing.ButtonGroup();
         LegitimacybuttonGroup = new javax.swing.ButtonGroup();
@@ -623,7 +627,7 @@ public class STATUI extends javax.swing.JFrame {
                                         .addComponent(CooperationNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(StakeholdersPanelLayout.createSequentialGroup()
                                 .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(AddStakeholderButton, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                                    .addComponent(AddStakeholderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(ThreatYRadioButton))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(ThreatNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -639,40 +643,40 @@ public class STATUI extends javax.swing.JFrame {
 
         NonStakeHolderList.setMaximumRowCount(10);
         NonStakeHolderList.setAutoscrolls(true);
+        classLayeredPane.add(NonStakeHolderList);
         NonStakeHolderList.setBounds(300, 340, 70, 20);
-        classLayeredPane.add(NonStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DormantStakeHolderList.setMaximumRowCount(10);
+        classLayeredPane.add(DormantStakeHolderList);
         DormantStakeHolderList.setBounds(60, 60, 70, 20);
-        classLayeredPane.add(DormantStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DiscretionaryStakeHolderList.setMaximumRowCount(10);
+        classLayeredPane.add(DiscretionaryStakeHolderList);
         DiscretionaryStakeHolderList.setBounds(260, 130, 70, 20);
-        classLayeredPane.add(DiscretionaryStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DominantStakeHolderList.setMaximumRowCount(10);
+        classLayeredPane.add(DominantStakeHolderList);
         DominantStakeHolderList.setBounds(150, 100, 70, 20);
-        classLayeredPane.add(DominantStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DefinitiveStakeHolderList.setMaximumRowCount(10);
+        classLayeredPane.add(DefinitiveStakeHolderList);
         DefinitiveStakeHolderList.setBounds(130, 180, 70, 20);
-        classLayeredPane.add(DefinitiveStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DangerousStakeHolderList.setMaximumRowCount(10);
+        classLayeredPane.add(DangerousStakeHolderList);
         DangerousStakeHolderList.setBounds(30, 210, 70, 20);
-        classLayeredPane.add(DangerousStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DependentStakeHolderList.setMaximumRowCount(10);
+        classLayeredPane.add(DependentStakeHolderList);
         DependentStakeHolderList.setBounds(190, 260, 70, 20);
-        classLayeredPane.add(DependentStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         DemandingStakeHolderList.setMaximumRowCount(10);
+        classLayeredPane.add(DemandingStakeHolderList);
         DemandingStakeHolderList.setBounds(80, 300, 70, 20);
-        classLayeredPane.add(DemandingStakeHolderList, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         vennLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mySTAT/classification.png"))); // NOI18N
+        classLayeredPane.add(vennLabel);
         vennLabel.setBounds(0, 0, 646, 454);
-        classLayeredPane.add(vennLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -689,72 +693,72 @@ public class STATUI extends javax.swing.JFrame {
         actionLayeredPane.setOpaque(true);
 
         Supportive_UndefinedBox.setMaximumRowCount(10);
+        actionLayeredPane.add(Supportive_UndefinedBox);
         Supportive_UndefinedBox.setBounds(190, 180, 60, 20);
-        actionLayeredPane.add(Supportive_UndefinedBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Mixed_UndefinedBox.setMaximumRowCount(10);
+        actionLayeredPane.add(Mixed_UndefinedBox);
         Mixed_UndefinedBox.setBounds(190, 210, 60, 20);
-        actionLayeredPane.add(Mixed_UndefinedBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         NonSupportive_UndefinedBox.setMaximumRowCount(10);
+        actionLayeredPane.add(NonSupportive_UndefinedBox);
         NonSupportive_UndefinedBox.setBounds(190, 240, 60, 20);
-        actionLayeredPane.add(NonSupportive_UndefinedBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Marginal_UndefinedBox.setMaximumRowCount(10);
+        actionLayeredPane.add(Marginal_UndefinedBox);
         Marginal_UndefinedBox.setBounds(190, 270, 60, 20);
-        actionLayeredPane.add(Marginal_UndefinedBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Supportive_LatentBox.setMaximumRowCount(Stakeholders.size());
+        actionLayeredPane.add(Supportive_LatentBox);
         Supportive_LatentBox.setBounds(270, 180, 60, 20);
-        actionLayeredPane.add(Supportive_LatentBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Mixed_LatentBox.setMaximumRowCount(Stakeholders.size());
+        actionLayeredPane.add(Mixed_LatentBox);
         Mixed_LatentBox.setBounds(270, 210, 60, 20);
-        actionLayeredPane.add(Mixed_LatentBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         NonSupportive_LatentBox.setMaximumRowCount(Stakeholders.size());
+        actionLayeredPane.add(NonSupportive_LatentBox);
         NonSupportive_LatentBox.setBounds(270, 240, 60, 20);
-        actionLayeredPane.add(NonSupportive_LatentBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Marginal_LatentBox.setMaximumRowCount(Stakeholders.size());
+        actionLayeredPane.add(Marginal_LatentBox);
         Marginal_LatentBox.setBounds(270, 270, 60, 20);
-        actionLayeredPane.add(Marginal_LatentBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Supportive_ExpectantBox.setMaximumRowCount(10);
+        actionLayeredPane.add(Supportive_ExpectantBox);
         Supportive_ExpectantBox.setBounds(350, 180, 60, 20);
-        actionLayeredPane.add(Supportive_ExpectantBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Mixed_ExpectantBox.setMaximumRowCount(10);
+        actionLayeredPane.add(Mixed_ExpectantBox);
         Mixed_ExpectantBox.setBounds(350, 210, 60, 20);
-        actionLayeredPane.add(Mixed_ExpectantBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         NonSupportive_ExpectantBox.setMaximumRowCount(10);
+        actionLayeredPane.add(NonSupportive_ExpectantBox);
         NonSupportive_ExpectantBox.setBounds(350, 240, 60, 20);
-        actionLayeredPane.add(NonSupportive_ExpectantBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Marginal_ExpectantBox.setMaximumRowCount(10);
+        actionLayeredPane.add(Marginal_ExpectantBox);
         Marginal_ExpectantBox.setBounds(350, 270, 60, 20);
-        actionLayeredPane.add(Marginal_ExpectantBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Supportive_DefinitiveBox.setMaximumRowCount(10);
+        actionLayeredPane.add(Supportive_DefinitiveBox);
         Supportive_DefinitiveBox.setBounds(430, 180, 60, 20);
-        actionLayeredPane.add(Supportive_DefinitiveBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Mixed_DefinitiveBox.setMaximumRowCount(10);
+        actionLayeredPane.add(Mixed_DefinitiveBox);
         Mixed_DefinitiveBox.setBounds(430, 210, 60, 20);
-        actionLayeredPane.add(Mixed_DefinitiveBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         NonSupportive_DefinitiveBox.setMaximumRowCount(10);
+        actionLayeredPane.add(NonSupportive_DefinitiveBox);
         NonSupportive_DefinitiveBox.setBounds(430, 240, 60, 20);
-        actionLayeredPane.add(NonSupportive_DefinitiveBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Marginal_DefinitiveBox.setMaximumRowCount(10);
+        actionLayeredPane.add(Marginal_DefinitiveBox);
         Marginal_DefinitiveBox.setBounds(430, 270, 60, 20);
-        actionLayeredPane.add(Marginal_DefinitiveBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         actionLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mySTAT/actionTable.png"))); // NOI18N
+        actionLayeredPane.add(actionLabel);
         actionLabel.setBounds(30, 40, 670, 330);
-        actionLayeredPane.add(actionLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1068,6 +1072,11 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     saveMenuItem.setText("Save");
     saveMenuItem.setToolTipText("Save the project");
+    saveMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            saveMenuItemActionPerformed(evt);
+        }
+    });
     fileMenu.add(saveMenuItem);
 
     saveAsMenuItem.setText("Save As");
@@ -1637,6 +1646,17 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         displayStakeholderRelationships();
     }//GEN-LAST:event_influenceSaveButtonMouseClicked
 
+    private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
+        // TODO add your handling code here:
+        int returnVal = saveFileChooser.showSaveDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = saveFileChooser.getSelectedFile();
+            System.out.println(file.toString());
+            ProjectStore project = ProjectStore.getInstance();
+            project.saveProject(file.getPath(), Stakeholders, file.getName(), null, null, null);
+        }
+    }//GEN-LAST:event_saveMenuItemActionPerformed
+
     //ERASE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!
     public void displayStakeholderRelationships()
     {
@@ -1946,6 +1966,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JPanel relationMapParentPanel;
     private javax.swing.JScrollPane relationMapScrollPane;
     private javax.swing.JMenuItem saveAsMenuItem;
+    private javax.swing.JFileChooser saveFileChooser;
     private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JPanel stakeholdersPanel;
     private javax.swing.JLabel vennLabel;
