@@ -1794,6 +1794,12 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             }
         });
         
+        t.layoutButtons.get(RelationMapPanel.PARALLEL).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JGraphPanel.setMxLayout(RelationMapPanel.PARALLEL);
+            }
+        });
+        
         t.layoutButtons.get(RelationMapPanel.STACK).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Stack");
