@@ -37,11 +37,11 @@ public class RelationMapPanel extends JPanel
     private mxGraphComponent graphComponent;
     private Object graphParent;
     
-    public final static int FASTORGANIC = 1;
-    public final static int CIRCLE = 2;
-    public final static int HIERARCHICAL = 3;
-    public final static int COMPACTTREE = 4;
-    public final static int STACK = 5;
+    public static final int FASTORGANIC = 0;
+    public static final int CIRCLE = 1;
+    public static final int HIERARCHICAL = 2;
+    public static final int COMPACTTREE = 3;
+    public static final int STACK = 4;
 
     public RelationMapPanel() {
         super();
@@ -74,7 +74,7 @@ public class RelationMapPanel extends JPanel
         graphParent = panGraph.getDefaultParent();
         panGraph.setAllowDanglingEdges(false);
         panGraph.setEnabled(false);
-        layout = new mxCircleLayout(panGraph);
+        layout = new mxFastOrganicLayout(panGraph);
         setSize(750, 394);
     }
     
@@ -82,18 +82,21 @@ public class RelationMapPanel extends JPanel
     {
         switch(l)
         {
-            case FASTORGANIC:
-                layout = new mxFastOrganicLayout(panGraph);
-            case CIRCLE:
-                layout = new mxCircleLayout(panGraph);
-            case HIERARCHICAL:
-                layout = new mxHierarchicalLayout(panGraph, SwingConstants.NORTH);
-            case COMPACTTREE:
-                layout = new mxCompactTreeLayout(panGraph);
-            case STACK:
-                layout = new mxStackLayout(panGraph, true, 10);
+            case FASTORGANIC: layout = new mxFastOrganicLayout(panGraph);
+                break;
+            case CIRCLE: layout = new mxCircleLayout(panGraph);
+                break;
+            case HIERARCHICAL: layout = new mxHierarchicalLayout(panGraph, SwingConstants.NORTH);
+                break;
+            case COMPACTTREE: layout = new mxCompactTreeLayout(panGraph);
+                break;
+            case STACK: layout = new mxStackLayout(panGraph, true, 10);
+                break;
             default:
+            {
+                System.out.println("Resulted to default");
                 layout = new mxFastOrganicLayout(panGraph);
+            }
         }
     }
     
