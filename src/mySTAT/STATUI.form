@@ -1628,6 +1628,12 @@
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JScrollPane" name="relationMapScrollPane">
+              <Properties>
+                <Property name="autoscrolls" type="boolean" value="true"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="relationMapScrollPane.getVerticalScrollBar().setUnitIncrement(16);&#xd;&#xa;relationMapScrollPane.getHorizontalScrollBar().setUnitIncrement(16);&#xd;&#xa;"/>
+              </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>

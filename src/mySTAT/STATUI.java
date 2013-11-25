@@ -936,6 +936,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", influencePanel);
 
+    relationMapScrollPane.setAutoscrolls(true);
+    relationMapScrollPane.getVerticalScrollBar().setUnitIncrement(16);
+    relationMapScrollPane.getHorizontalScrollBar().setUnitIncrement(16);
     relationMapScrollPane.setViewportView(JGraphPanel);
 
     javax.swing.GroupLayout relationMapParentPanelLayout = new javax.swing.GroupLayout(relationMapParentPanel);
