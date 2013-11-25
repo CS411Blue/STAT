@@ -20,6 +20,11 @@ public class TestDriver extends JFrame {
     private ArrayList<Stakeholder> stakeholders;
     private JButton makeSHButton;
     private JButton makeRelationsButton;
+    private JPanel layoutPanel;
+    private JPanel container;
+    
+    public ArrayList<JRadioButton> layoutButtons;
+    public JButton morphButton;
     
     public TestDriver(ArrayList<Stakeholder> stakeholders)
     {
@@ -46,9 +51,30 @@ public class TestDriver extends JFrame {
         });
         panel.add(makeRelationsButton);
         
+        layoutPanel = new JPanel();
+        ButtonGroup rbGroup = new ButtonGroup();
+        layoutButtons = new ArrayList<JRadioButton>();
+        layoutButtons.add(new JRadioButton("Fast Organic", true));
+        layoutButtons.add(new JRadioButton("Circle"));
+        layoutButtons.add(new JRadioButton("Hierarchical"));
+        layoutButtons.add(new JRadioButton("Compact Tree"));
+        layoutButtons.add(new JRadioButton("Stack"));
+        for(JRadioButton rb : layoutButtons){rbGroup.add(rb);}
+        for(JRadioButton rb : layoutButtons){layoutPanel.add(rb);}
+        
+        morphButton = new JButton("Morph");
+        panel.add(morphButton);
+        
         panel.setPreferredSize(new java.awt.Dimension(20,80));
         panel.setBorder(new LineBorder(Color.black));
-        add(panel);
+        layoutPanel.setBorder(new LineBorder(Color.black));
+//        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        
+        container.add(panel);
+        container.add(layoutPanel);
+        add(container);
     }
     
     public void makeSHButtonActionPerformed(ActionEvent evt)
@@ -63,7 +89,7 @@ public class TestDriver extends JFrame {
         if(random >= 4){c = true;random -= 4;}
         if(random >= 2){d = true;random -= 2;}
         if(random >= 1){e = true;random -= 1;}
-        System.out.printf("Stakeholder(%s, ,%b,%b,%b,%b,%b)%n", name, a,b,c,d,e);
+//        System.out.printf("Stakeholder(%s, ,%b,%b,%b,%b,%b)%n", name, a,b,c,d,e);
         Stakeholder s = new Stakeholder(name, "", a, b, c, d, e);
         stakeholders.add(s);
 //        pushAllSHButton.setText("Push " + stakeholders.size()+" to View");
@@ -71,7 +97,7 @@ public class TestDriver extends JFrame {
     
     public void makeRelationsButtonActionPerformed(ActionEvent evt)
     {
-        System.out.println("In make relationships");
+//        System.out.println("In make relationships");
         int k = stakeholders.size();
         for (Iterator<Stakeholder> s = stakeholders.iterator(); s.hasNext();)
         {
@@ -79,13 +105,13 @@ public class TestDriver extends JFrame {
             int place = (int)Math.pow(2.0, (double)k);
             int random = (int) (Math.random()*place);
             place /= 2;
-            System.out.println(random);
+//            System.out.println(random);
             for(int i = k-1; i >= 0; i--)
             {
-                System.out.printf("if(%d >= %d)\n", random, place);
+//                System.out.printf("if(%d >= %d)\n", random, place);
                 if(random >= place)
                 {
-                    System.out.printf("%s.addI(%s)%n", stakeholder.getName(), stakeholders.get(i).getName());
+//                    System.out.printf("%s.addI(%s)%n", stakeholder.getName(), stakeholders.get(i).getName());
                     stakeholder.addInfluence(stakeholders.get(i).getName(), (int)(Math.random()*4));
                     random -= place;
                 }
