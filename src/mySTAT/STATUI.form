@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.JFileChooser" name="openFileChooser">
     </Component>
@@ -323,7 +323,7 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="AddStakeholderButton" pref="39" max="32767" attributes="0"/>
+                                          <Component id="AddStakeholderButton" max="32767" attributes="0"/>
                                           <Component id="ThreatYRadioButton" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -966,7 +966,9 @@
                 </Constraint>
               </Constraints>
 
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout"/>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                <Property name="useNullLayout" type="boolean" value="true"/>
+              </Layout>
               <SubComponents>
                 <Component class="javax.swing.JComboBox" name="NonStakeHolderList">
                   <Properties>
@@ -979,8 +981,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="300" y="340" width="70" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="300" y="340" width="70" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -994,8 +996,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="60" y="60" width="70" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="60" y="60" width="70" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1009,8 +1011,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="260" y="130" width="70" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="260" y="130" width="70" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1024,8 +1026,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="150" y="100" width="70" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="150" y="100" width="70" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1039,8 +1041,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="130" y="180" width="70" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="130" y="180" width="70" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1054,8 +1056,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="30" y="210" width="70" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="30" y="210" width="70" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1069,8 +1071,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="190" y="260" width="70" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="190" y="260" width="70" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1084,8 +1086,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="80" y="300" width="70" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="80" y="300" width="70" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1096,8 +1098,8 @@
                     </Property>
                   </Properties>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="0" y="0" width="646" height="454" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="0" y="0" width="646" height="454"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1126,7 +1128,9 @@
                 </Constraint>
               </Constraints>
 
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout"/>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                <Property name="useNullLayout" type="boolean" value="true"/>
+              </Layout>
               <SubComponents>
                 <Component class="javax.swing.JComboBox" name="Supportive_UndefinedBox">
                   <Properties>
@@ -1141,8 +1145,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="190" y="180" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="190" y="180" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1159,8 +1163,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="190" y="210" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="190" y="210" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1177,8 +1181,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="190" y="240" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="190" y="240" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1195,8 +1199,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="190" y="270" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="190" y="270" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1213,8 +1217,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="270" y="180" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="270" y="180" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1231,8 +1235,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="270" y="210" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="270" y="210" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1249,8 +1253,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="270" y="240" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="270" y="240" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1267,8 +1271,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="270" y="270" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="270" y="270" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1285,8 +1289,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="350" y="180" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="350" y="180" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1303,8 +1307,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="350" y="210" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="350" y="210" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1321,8 +1325,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="350" y="240" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="350" y="240" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1339,8 +1343,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="350" y="270" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="350" y="270" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1357,8 +1361,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="430" y="180" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="430" y="180" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1375,8 +1379,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="430" y="210" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="430" y="210" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1393,8 +1397,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="430" y="240" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="430" y="240" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1411,8 +1415,8 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
                   </AuxValues>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="430" y="270" width="60" height="-1" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="430" y="270" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1423,8 +1427,8 @@
                     </Property>
                   </Properties>
                   <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                      <JLayeredPaneConstraints x="30" y="40" width="670" height="330" layer="0" position="-1"/>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="30" y="40" width="670" height="330"/>
                     </Constraint>
                   </Constraints>
                 </Component>

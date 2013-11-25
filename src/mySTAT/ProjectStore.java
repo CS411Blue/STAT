@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -160,6 +161,113 @@ public class ProjectStore {
         }
     }
 
+    public void saveProject(String statFilePath, ArrayList<Stakeholder> stakeholders, String title, String description, String createdBy, String dateCreated) {
+        //TODO add asserts for valid data
+        
+        Element stat = new Element("stat");
+        Document statDoc = new Document(stat);
+
+        //load meta-data elements
+        Element metaDataElement = new Element("metadata");
+        
+        if(title != null && !title.isEmpty())
+            metaDataElement.addContent(new Element("title").setText(title));
+        
+        if(description != null && !description.isEmpty())
+            metaDataElement.addContent(new Element("description").setText(description));
+        
+        // take this out when implemented
+        if(createdBy == null)
+            createdBy = "temp";
+        
+        metaDataElement.addContent(new Element("createdBy").setText(createdBy));
+        
+        // take this out when implemented
+        if(dateCreated == null) {
+            Date date= new Date();        
+            dateCreated = new Timestamp(date.getTime()).toString();
+        }
+        
+        metaDataElement.addContent(new Element("dateCreated").setText(dateCreated));
+        
+        statDoc.getRootElement().addContent(metaDataElement);
+        
+        //load stakeholders
+        Element stakeholdersElement = new Element("stakeholders");
+        for(Stakeholder stakeholder : stakeholders) {
+            Element stakeholderElement = new Element("stakeholder");
+            Map<String, String> tempAttribs = stakeholder.getAttributes();
+            
+            //TODO add assert
+            String attrib = tempAttribs.get("name");
+            metaDataElement.addContent(new Element("name").setText(attrib));
+            
+            attrib = tempAttribs.get("power");
+            if(attrib != null && !attrib.isEmpty())
+                metaDataElement.addContent(new Element("power").setText(attrib));
+            
+            attrib = tempAttribs.get("legitimacy");
+            if(attrib != null && !attrib.isEmpty())
+                metaDataElement.addContent(new Element("legitimacy").setText(attrib));
+            
+            attrib = tempAttribs.get("urgency");
+            if(attrib != null && !attrib.isEmpty())
+                metaDataElement.addContent(new Element("urgency").setText(attrib));
+            
+            attrib = tempAttribs.get("cooperation");
+            if(attrib != null && !attrib.isEmpty())
+                metaDataElement.addContent(new Element("cooperation").setText(attrib));
+            
+            attrib = tempAttribs.get("threat");
+            if(attrib != null && !attrib.isEmpty())
+                metaDataElement.addContent(new Element("threat").setText(attrib));
+            
+            attrib = tempAttribs.get("wants");
+            if(attrib != null && !attrib.isEmpty())
+                metaDataElement.addContent(new Element("wants").setText(attrib));
+            
+            attrib = tempAttribs.get("strategy");
+            if(attrib != null && !attrib.isEmpty())
+                metaDataElement.addContent(new Element("strategy").setText(attrib));
+            
+            attrib = tempAttribs.get("method");
+            if(attrib != null && !attrib.isEmpty())
+                metaDataElement.addContent(new Element("method").setText(attrib));
+            
+            attrib = tempAttribs.get("responsible");
+            if(attrib != null && !attrib.isEmpty())
+                metaDataElement.addContent(new Element("responsible").setText(attrib));
+            
+            attrib = tempAttribs.get("notes");
+            if(attrib != null && !attrib.isEmpty())
+                metaDataElement.addContent(new Element("notes").setText(attrib));
+            
+            //load influences for this stakeholder
+            Element influencesElement = new Element("influences");
+            ArrayList<Relationship> influences = stakeholder.getInfluences();
+            for (Relationship relationship : influences) {
+                Element influenceElement = new Element("influence");
+                influenceElement.addContent(new Element("id").setText(relationship.getName()));
+                influenceElement.addContent(new Element("strength").setText(String.valueOf(relationship.getMagnitude())));
+                influencesElement.addContent(influenceElement);
+            }
+            
+            stakeholderElement.addContent(influencesElement);
+            stakeholdersElement.addContent(stakeholderElement);
+            
+        }
+        
+        statDoc.getRootElement().addContent(stakeholdersElement);
+
+        XMLOutputter statOutput = new XMLOutputter(Format.getPrettyFormat());
+        try {
+            statOutput.output(statDoc, new FileWriter(statFilePath));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+    }
+    
     public void saveProjectFile(String statFilePath) {
 
         Element stat = new Element("stat");
@@ -193,7 +301,7 @@ public class ProjectStore {
             ArrayList<Relationship> influences = stakeHolder.getInfluences();
             for (Relationship relationship : influences) {
                 Element influenceElement = new Element("influence");
-                influenceElement.addContent(new Element("id").setText(relationship.getId()));
+                influenceElement.addContent(new Element("id").setText(relationship.getName()));
                 influenceElement.addContent(new Element("strength").setText(String.valueOf(relationship.getMagnitude())));
                 influencesElement.addContent(influenceElement);
             }
@@ -257,9 +365,9 @@ public class ProjectStore {
         return stakeholders;
     }
 
-    public void putStakeholder(Stakeholder stakeholder) {
-        stakeholders.put(stakeholder.getId(), stakeholder);
-    }
+    //public void putStakeholder(Stakeholder stakeholder) {
+    //    stakeholders.put(stakeholder.getId(), stakeholder);
+    //}
 
     public void putAllStakeholders(Map<String, Stakeholder> newStakeholders) {
         stakeholders = newStakeholders;

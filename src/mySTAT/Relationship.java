@@ -17,24 +17,24 @@ public class Relationship {
     public final static String MEDIUM_SIZE = new String("strokeWidth=3;");
     public final static String LOW_SIZE = new String("strokeWidth=1;");
     public final static String UNDEFINED_SIZE = new String("strokeWidth=0;strokeColor=#CCCCCC");
-    private String id; //the name of the stakeholder that is being influenced
+    private String name; //the name of the stakeholder that is being influenced
     private int magnitude; //values of 1, 2, or 3 only
     //private boolean direction; //true if they are influencing the other, false if they are being influenced
     
 public Relationship(){}
 
 public Relationship(Relationship r) {
-    this.id = r.id;
+    this.name = r.name;
     this.magnitude = r.magnitude;
 }
     
-public Relationship(String id, int magnitude) {
-        this.id = id;
+public Relationship(String name, int magnitude) {
+        this.name = name;
         this.magnitude = magnitude;
-        //System.out.printf("\t%s %d\n", id, magnitude);
+        //System.out.printf("\t%s %d\n", name, magnitude);
     }
     
-    public String getId() { return id; }
+    public String getName() { return name; }
     public int getMagnitude() { return magnitude; }
     public String getLineStyle()
     {

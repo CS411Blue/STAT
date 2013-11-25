@@ -42,7 +42,7 @@ public class Stakeholder {
     private static final String RED = new String("fillColor=red;");
     private static final String BLUE = new String("fillColor=blue;");
     
-    private String Id;
+    //private String Id; removing this if no objections
     private String Name;
     private String Wants;
     private boolean Power;
@@ -100,7 +100,7 @@ public class Stakeholder {
     
     //for loading from XML file
     public Stakeholder(Map<String, String> attributes, ArrayList<Relationship> influences) {
-        Id = attributes.get("id");
+//        Id = attributes.get("id");
         Name = attributes.get("name");
         Wants = attributes.get("wants");
         Classification = attributes.get("classification");
@@ -246,7 +246,7 @@ public class Stakeholder {
         }
     }
      //getter functions
-     public String getId() { return Id; }
+    // public String getId() { return Id; }
      public String getName() { return Name; }
      public String getWants() { return Wants; }
      public boolean getPower() { return Power; }
@@ -284,14 +284,16 @@ public class Stakeholder {
      //for saving to XML
      public Map<String, String> getAttributes() {
         Map<String, String> results = new HashMap<>();
-        results.put("id", Id);
         results.put("name", Name);
+        results.put("power", String.valueOf(Power));
+        results.put("legitimacy", String.valueOf(Legitimacy));
+        results.put("urgency", String.valueOf(Urgency));
+        results.put("cooperation", String.valueOf(Cooperation));
+        results.put("threat", String.valueOf(Threat));
         results.put("wants", Wants);
-        results.put("classification", Classification);
-        results.put("attitude", Attitude);
         results.put("strategy", Strategy);
-        results.put("engagement", Engagement);
-        results.put("lastEngaged", LastEngaged);
+        results.put("method", Engagement);
+        results.put("lastEngaged", LastEngaged); //do we need this?
         results.put("responsible", Responsible);
         results.put("notes", Notes);
         return results;
