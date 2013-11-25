@@ -1645,7 +1645,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             tempInfluences = Stakeholders.get(i).getInfluences();
             if (!tempInfluences.isEmpty())
             {
-                displayedRelationships += ("Stakeholder Name: " + tempInfluences.get(i).getId() + ", relationship magnitudes: ");
+                displayedRelationships += ("Stakeholder Name: " + tempInfluences.get(i).getName() + ", relationship magnitudes: ");
                 for (int e = 0; e < tempInfluences.size(); e++)
                 {
                     displayedRelationships += (tempInfluences.get(e).getMagnitude() + ", ");

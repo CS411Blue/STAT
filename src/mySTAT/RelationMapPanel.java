@@ -135,7 +135,7 @@ public class RelationMapPanel extends JPanel
                     for (Iterator<Stakeholder> secondaryShIter = SHList.iterator(); secondaryShIter.hasNext();) 
                     {
                         Stakeholder secondary = secondaryShIter.next();
-                        if(secondary.getName() == r.getId()) 
+                        if(secondary.getName() == r.getName()) 
                         {
                             System.out.printf("insertEdge(%s,%s,%s)\n", main.getName(), secondary.getName(), r.getLineStyle());
                             panGraph.getModel().beginUpdate();
