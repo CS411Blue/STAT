@@ -32,8 +32,8 @@ import javax.swing.border.LineBorder;
 public class RelationMapPanel extends JPanel
 {   
     private static final long serialVersionUID = 1L;
-    private mxGraph panGraph;
-    private mxIGraphLayout layout;
+    private StatMxGraph panGraph;
+    private mxGraphLayout layout;
     private mxGraphComponent graphComponent;
     private Object graphParent;
     
@@ -67,14 +67,19 @@ public class RelationMapPanel extends JPanel
     
     private void init()
     {
-        panGraph = new mxGraph();
+        panGraph = new StatMxGraph();
         graphComponent = new mxGraphComponent(panGraph);
         
         add(graphComponent);
         graphParent = panGraph.getDefaultParent();
         panGraph.setAllowDanglingEdges(false);
         panGraph.setEnabled(false);
+        panGraph.setCellsCloneable(false);
+        panGraph.setCellsEditable(false);
+        panGraph.setCellsSelectable(true);
+        //Default layout
         layout = new mxFastOrganicLayout(panGraph);
+        panGraph.setMultigraph(true);
         setSize(750, 394);
     }
     
@@ -88,7 +93,7 @@ public class RelationMapPanel extends JPanel
                 break;
             case HIERARCHICAL: layout = new mxHierarchicalLayout(panGraph, SwingConstants.NORTH);
                 break;
-            case COMPACTTREE: layout = new mxCompactTreeLayout(panGraph);
+            case COMPACTTREE: layout = new mxCompactTreeLayout(panGraph,false);
                 break;
             case STACK: layout = new mxStackLayout(panGraph, true, 10);
                 break;
@@ -150,7 +155,7 @@ public class RelationMapPanel extends JPanel
                 }
             }
         }
-        morphLayout();
+        graph();
         System.out.println(getSize().toString());
         System.out.println(getVisibleRect().toString());
         System.out.println(panGraph.getView().getGraphBounds().toString());
@@ -177,5 +182,6 @@ public class RelationMapPanel extends JPanel
     public void graph()
     {
         morphLayout();
+        graphComponent.setConnectable(false);
     }
 }
