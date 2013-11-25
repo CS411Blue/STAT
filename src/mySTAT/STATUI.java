@@ -6,9 +6,11 @@ package mySTAT;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.io.File;
 import java.util.ArrayList;
+import javax.swing.Action;
 import javax.swing.DefaultCellEditor;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
@@ -1743,9 +1745,46 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     //Creates test Driver window
     public void testWindow()
     {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TestDriver(Stakeholders).setVisible(true);
+        TestDriver t = new TestDriver(Stakeholders);
+        t.setVisible(true);
+        t.layoutButtons.get(RelationMapPanel.FASTORGANIC).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Fast Organic");
+                JGraphPanel.setMxLayout(RelationMapPanel.FASTORGANIC);
+            }
+        });
+        
+        t.layoutButtons.get(RelationMapPanel.CIRCLE).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Circle");
+                JGraphPanel.setMxLayout(RelationMapPanel.CIRCLE);
+            }
+        });
+        
+        t.layoutButtons.get(RelationMapPanel.HIERARCHICAL).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Hierachical");
+                JGraphPanel.setMxLayout(RelationMapPanel.HIERARCHICAL);
+            }
+        });
+        
+        t.layoutButtons.get(RelationMapPanel.COMPACTTREE).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Compact Tree");
+                JGraphPanel.setMxLayout(RelationMapPanel.COMPACTTREE);
+            }
+        });
+        
+        t.layoutButtons.get(RelationMapPanel.STACK).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Stack");
+                JGraphPanel.setMxLayout(RelationMapPanel.STACK);
+            }
+        });
+        
+        t.morphButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JGraphPanel.graph();
             }
         });
     }
