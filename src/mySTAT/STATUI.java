@@ -1157,6 +1157,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 model1.addElement(obj.getName());
             }
             StakeholderList.setModel(model1);
+            testWindow();
             //} else {
             //   System.out.println("File access cancelled by user.");
         }
