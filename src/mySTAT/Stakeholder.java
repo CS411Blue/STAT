@@ -52,7 +52,7 @@ public class Stakeholder {
     private boolean Cooperation;
     private boolean Threat;
     private String Attitude;
-    private String Influence; //the value from the NCSOSE formula. used for the management plan
+    private double Influence; //the value from the NCSOSE formula. used for the management plan
     private String Strategy;
     private String Engagement;
     private String LastEngaged;
@@ -74,8 +74,8 @@ public class Stakeholder {
         this.Cooperation = cooperation;
         this.Threat = threat;
         this.setAttitude(cooperation, threat);
-        this.Influence = "Pending";
-        this.Strategy = "Pending";
+        this.Influence = 0;
+        this.setStrategy(this.getClassification(), this.getAttitude());
         this.Engagement = "Pending";
         this.LastEngaged = "Pending";
         this.Responsible = "Pending";
@@ -138,7 +138,7 @@ public class Stakeholder {
         
         setClassification(Power, Legitimacy, Urgency);
         setAttitude(Cooperation, Threat);
-
+        setStrategy(this.getClassification(), this.getAttitude());
     }
     
     
@@ -177,6 +177,44 @@ public class Stakeholder {
         else
             thisAttitude = "Marginal";
         Attitude = thisAttitude;
+     }
+    
+    //Strategy Identification
+     @SuppressWarnings("UnusedAssignment")
+    private void setStrategy(String classification, String attitude){
+        //break classifications into categories
+        String category;
+        if (classification.equals("Definitive"))
+            category = "Definitive";
+        else if ((classification.equals("Dominant"))||(classification.equals("Dangerous"))||(classification.equals("Dependent")))
+            category = "Expectant";
+        else if ((classification.equals("Dormant"))||(classification.equals("Discretionary"))||(classification.equals("Demanding")))
+            category = "Latent";
+        else
+            category = "Undefined";
+        //assign recommended action strategy for stakeholder
+        String thisStrategy;
+        if (category.equals("Undefined"))
+            thisStrategy = "No Action";
+        else if ((category.equals("Latent"))&&(attitude.equals("Marginal")))
+            thisStrategy = "Monitor";
+        else if ((category.equals("Expectant"))&&(attitude.equals("Marginal")))
+            thisStrategy = "Monitor";
+        else if ((category.equals("Expectant"))&&(attitude.equals("Supportive")))
+            thisStrategy = "Involve";
+        else if ((category.equals("Definitive"))&&(attitude.equals("Supportive")))
+            thisStrategy = "Involve";
+        else if ((category.equals("Definitive"))&&(attitude.equals("Mixed")))
+            thisStrategy = "Involve";
+        else if ((category.equals("Latent"))&&(attitude.equals("Supportive")))
+            thisStrategy = "Collaborate";
+        else if ((category.equals("Expectant"))&&(attitude.equals("Mixed")))
+            thisStrategy = "Collaborate";
+        else if ((category.equals("Definitive"))&&(attitude.equals("Non-Supportive")))
+            thisStrategy = "Collaborate";
+        else
+            thisStrategy = "Defend";
+        this.Strategy = thisStrategy;
      }
      
      public int getPlacementRank()
@@ -285,7 +323,7 @@ public class Stakeholder {
      public boolean getCooperation() { return Cooperation; }
      public boolean getThreat() { return Threat; }
      public String getAttitude() { return Attitude; }
-     public String getInfluence() { return Influence; }
+     public double getInfluence() { return Influence; }
      public String getStrategy() { return Strategy; }
      public String getEngagement() { return Engagement; }
      public String getLastEngaged() { return LastEngaged; }
@@ -300,6 +338,7 @@ public class Stakeholder {
      public void setWants(String wants) { this.Wants = wants; }
      public void setClassification(String classification) { this.Classification = classification; }
      public void setAttitude(String attitude) { this.Attitude = attitude; }
+     public void setInfluence(double influence) { this.Influence = influence; }
      public void setStrategy(String strategy) { this.Strategy = strategy; }
      public void setEngagement(String engagement) { this.Engagement = engagement; }
      public void setLastEngaged(String lastEngaged) { this.LastEngaged = lastEngaged; }
