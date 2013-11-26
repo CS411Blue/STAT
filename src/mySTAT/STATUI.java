@@ -1065,6 +1065,11 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     newMenuItem.setText("New");
     newMenuItem.setToolTipText("Create a new project file");
+    newMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            newMenuItemActionPerformed(evt);
+        }
+    });
     fileMenu.add(newMenuItem);
     fileMenu.add(jSeparator1);
 
@@ -1776,6 +1781,13 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         }
     }//GEN-LAST:event_saveMenuItemActionPerformed
 
+    private void newMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newMenuItemActionPerformed
+        //erase contents of Stakeholders arraylist
+        Stakeholders.clear();
+        updateStakehodlerList();
+        mainTabbedPane.setSelectedComponent(StakeholdersPanel);
+    }//GEN-LAST:event_newMenuItemActionPerformed
+    
     //ERASE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!
     public void displayStakeholderRelationships()
     {
