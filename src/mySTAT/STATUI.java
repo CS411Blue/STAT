@@ -155,10 +155,10 @@ public class STATUI extends javax.swing.JFrame {
         pitcherTable = new javax.swing.JTable();
         contentTable = new javax.swing.JTable();
         catcherTable = new javax.swing.JTable();
+        influenceSaveButton = new javax.swing.JButton();
         influenceLabel1 = new javax.swing.JLabel();
         influenceLabel2 = new javax.swing.JLabel();
         influenceLabel3 = new javax.swing.JLabel();
-        influenceSaveButton = new javax.swing.JButton();
         relationMapParentPanel = new javax.swing.JPanel();
         relationMapScrollPane = new javax.swing.JScrollPane();
         JGraphPanel = new mySTAT.RelationMapPanel();
@@ -208,6 +208,8 @@ public class STATUI extends javax.swing.JFrame {
                 mainTabbedPaneStateChanged(evt);
             }
         });
+
+        StakeholdersPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         NameLabel.setText("Name");
 
@@ -637,7 +639,7 @@ public class STATUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(StakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap(228, Short.MAX_VALUE))
         );
 
         mainTabbedPane.addTab("<html>\n<br>\nStakeholders<br>\n<br>", null, StakeholdersPanel, "");
@@ -773,6 +775,10 @@ public class STATUI extends javax.swing.JFrame {
 
         mainTabbedPane.addTab("<html>\n<br>\nActions<br>\n<br>", actionPanel);
 
+        influenceScrollPane.setAutoscrolls(true);
+        influenceScrollPane.getVerticalScrollBar().setUnitIncrement(16);
+        influenceScrollPane.getHorizontalScrollBar().setUnitIncrement(16);
+
         String headerRelationshipArray[][];
         String[] headerString = new String[Stakeholders.size()];
         for (int i = 0; i < Stakeholders.size(); i++)
@@ -840,12 +846,17 @@ public class STATUI extends javax.swing.JFrame {
     contentTable.setModel(new javax.swing.table.DefaultTableModel(
         contentRelationshipArray,
         contentString));
+contentTable.addFocusListener(new java.awt.event.FocusAdapter() {
+    public void focusGained(java.awt.event.FocusEvent evt) {
+        contentTableFocusGained(evt);
+    }
+    });
 
-String catcherRelationshipArray[][];
-String[] catcherString = new String[Stakeholders.size()];
-for (int i = 0; i < Stakeholders.size(); i++)
-{
-    catcherString[i] = Stakeholders.get(i).getName();
+    String catcherRelationshipArray[][];
+    String[] catcherString = new String[Stakeholders.size()];
+    for (int i = 0; i < Stakeholders.size(); i++)
+    {
+        catcherString[i] = Stakeholders.get(i).getName();
     }
     //Display already created stakeholder list items
     if (!Stakeholders.isEmpty())
@@ -867,12 +878,6 @@ for (int i = 0; i < Stakeholders.size(); i++)
         catcherRelationshipArray,
         catcherString));
 
-influenceLabel1.setText("jLabel1");
-
-influenceLabel2.setText("jLabel2");
-
-influenceLabel3.setText("jLabel3");
-
 influenceSaveButton.setText("<html><center>Save<br>Updates</center></html>");
 influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -887,54 +892,63 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         .addGroup(influenceMatrixPanelLayout.createSequentialGroup()
             .addGap(33, 33, 33)
             .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(pitcherTable, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(influenceMatrixPanelLayout.createSequentialGroup()
-                    .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(pitcherTable, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(influenceMatrixPanelLayout.createSequentialGroup()
-                            .addGap(25, 25, 25)
-                            .addComponent(influenceSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(18, 18, 18)
-                    .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(catcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
-                        .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(influenceMatrixPanelLayout.createSequentialGroup()
-                    .addComponent(influenceLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(77, 77, 77)
-                    .addComponent(influenceLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(65, 65, 65)
-                    .addComponent(influenceLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(25, 25, 25)
+                    .addComponent(influenceSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(18, 18, 18)
+            .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(catcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
+                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addContainerGap(41, Short.MAX_VALUE))
     );
     influenceMatrixPanelLayout.setVerticalGroup(
         influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(influenceMatrixPanelLayout.createSequentialGroup()
-            .addGap(15, 15, 15)
-            .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(influenceLabel1)
-                .addComponent(influenceLabel2)
-                .addComponent(influenceLabel3))
-            .addGap(18, 18, 18)
+            .addContainerGap()
             .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(catcherTable, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(influenceSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(pitcherTable, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(contentTable, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(236, Short.MAX_VALUE))
+                .addComponent(pitcherTable, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(contentTable, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addContainerGap(212, Short.MAX_VALUE))
     );
 
     influenceScrollPane.setViewportView(influenceMatrixPanel);
+
+    influenceLabel1.setText("jLabel1");
+
+    influenceLabel2.setText("jLabel2");
+
+    influenceLabel3.setText("jLabel3");
 
     javax.swing.GroupLayout influencePanelLayout = new javax.swing.GroupLayout(influencePanel);
     influencePanel.setLayout(influencePanelLayout);
     influencePanelLayout.setHorizontalGroup(
         influencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE)
+        .addComponent(influenceScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        .addGroup(influencePanelLayout.createSequentialGroup()
+            .addGap(37, 37, 37)
+            .addComponent(influenceLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(27, 27, 27)
+            .addComponent(influenceLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(influenceLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+            .addGap(246, 246, 246))
     );
     influencePanelLayout.setVerticalGroup(
         influencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(influenceScrollPane)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, influencePanelLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(influencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(influenceLabel1)
+                .addComponent(influenceLabel2)
+                .addComponent(influenceLabel3))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(influenceScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(214, Short.MAX_VALUE))
     );
 
     mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", influencePanel);
@@ -956,12 +970,12 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     );
     relationMapParentPanelLayout.setVerticalGroup(
         relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 628, Short.MAX_VALUE)
+        .addGap(0, 695, Short.MAX_VALUE)
         .addGroup(relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(relationMapParentPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(relationMapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(202, Short.MAX_VALUE)))
+                .addContainerGap(269, Short.MAX_VALUE)))
     );
 
     mainTabbedPane.addTab("<html> <br> Relation Map<br><br>", relationMapParentPanel);
@@ -1017,7 +1031,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         .addGroup(managementPlanPanelLayout.createSequentialGroup()
             .addContainerGap()
             .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(202, Short.MAX_VALUE))
+            .addContainerGap(269, Short.MAX_VALUE))
     );
 
     mainTabbedPane.addTab("<html>\n<br>\nManagement Plan<br>\n<br>", managementPlanPanel);
@@ -1053,7 +1067,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(139, Short.MAX_VALUE))
+            .addContainerGap(206, Short.MAX_VALUE))
     );
 
     mainTabbedPane.addTab("<html> <br> Test Panel<br><br>", TestPanel);
@@ -1759,7 +1773,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                situationalInfluenceUpdate();
                managementPlanUpdate();
                //ERASE THIS TOO!!!!!!!!!!!!!1!!!!
-               displaySituationalInfluences();
+               //displaySituationalInfluences();
            }
            else{
                managementPlanUpdate();
@@ -1780,7 +1794,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         // TODO add your handling code here:
         relationshipUpdate();
         //ERASE LATER!!!!!!!!!!!!!!!!!!!!!!
-        displayStakeholderRelationships();
+        //displayStakeholderRelationships();
     }//GEN-LAST:event_influenceSaveButtonMouseClicked
 
     private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
@@ -1800,9 +1814,22 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         updateStakehodlerList();
         mainTabbedPane.setSelectedComponent(StakeholdersPanel);
     }//GEN-LAST:event_newMenuItemActionPerformed
+
+    private void contentTableFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_contentTableFocusGained
+        // TODO add your handling code here:
+        String row;
+        String column;
+        String magnitude;
+        row = Stakeholders.get(contentTable.getSelectedRow()).getName();
+        column = Stakeholders.get(contentTable.getSelectedColumn()).getName();
+        magnitude = (String)contentTable.getValueAt(contentTable.getSelectedRow(), contentTable.getSelectedColumn());
+        influenceLabel1.setText(row);
+        influenceLabel2.setText("has a " + magnitude + " influence on ");
+        influenceLabel3.setText(column);
+    }//GEN-LAST:event_contentTableFocusGained
     
     //ERASE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!
-    public void displayStakeholderRelationships()
+    /*public void displayStakeholderRelationships()
     {
         String displayedRelationships = "";
         for (int i = 0; i < Stakeholders.size(); i++)
@@ -1830,7 +1857,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             displayedInfluences += ("Stakeholder Name: " + Stakeholders.get(i).getName() + ", " + Stakeholders.get(i).getInfluence() + "\n");
         }
         jTextArea2.setText(displayedInfluences);
-    }
+    }*/
    
     private void classificationDiagramUpdate()
     {

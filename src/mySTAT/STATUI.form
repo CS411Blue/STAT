@@ -206,6 +206,11 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="StakeholdersPanel">
+          <Properties>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Default Cursor"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Stakeholders&lt;br&gt;&#xa;&lt;br&gt;" toolTip="">
@@ -364,7 +369,7 @@
                           </Group>
                           <Component id="StakeholderScrollPane" min="-2" pref="424" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="161" max="32767" attributes="0"/>
+                      <EmptySpace pref="228" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1477,17 +1482,42 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="influenceScrollPane" alignment="0" pref="769" max="32767" attributes="0"/>
+                  <Component id="influenceScrollPane" alignment="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="influenceLabel1" min="-2" pref="101" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="influenceLabel2" min="-2" pref="138" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="influenceLabel3" pref="210" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="influenceScrollPane" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="influenceLabel1" alignment="3" max="-2" attributes="0"/>
+                          <Component id="influenceLabel2" alignment="3" max="-2" attributes="0"/>
+                          <Component id="influenceLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="influenceScrollPane" min="-2" pref="450" max="-2" attributes="0"/>
+                      <EmptySpace pref="214" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JScrollPane" name="influenceScrollPane">
+              <Properties>
+                <Property name="autoscrolls" type="boolean" value="true"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="influenceScrollPane.getVerticalScrollBar().setUnitIncrement(16);&#xa;influenceScrollPane.getHorizontalScrollBar().setUnitIncrement(16);"/>
+              </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
@@ -1499,27 +1529,16 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="pitcherTable" min="-2" pref="121" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                              <Component id="influenceSaveButton" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="catcherTable" pref="589" max="32767" attributes="0"/>
-                                          <Component id="contentTable" max="32767" attributes="0"/>
-                                      </Group>
+                                  <Component id="pitcherTable" min="-2" pref="121" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="influenceSaveButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="influenceLabel1" min="-2" pref="123" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                                      <Component id="influenceLabel2" min="-2" pref="127" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                      <Component id="influenceLabel3" min="-2" pref="114" max="-2" attributes="0"/>
-                                  </Group>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="catcherTable" pref="589" max="32767" attributes="0"/>
+                                  <Component id="contentTable" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace pref="41" max="32767" attributes="0"/>
                           </Group>
@@ -1528,23 +1547,17 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="influenceLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="influenceLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="influenceLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="catcherTable" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                                   <Component id="influenceSaveButton" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="pitcherTable" alignment="3" min="-2" pref="300" max="-2" attributes="0"/>
-                                  <Component id="contentTable" alignment="3" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="pitcherTable" alignment="3" min="-2" pref="360" max="-2" attributes="0"/>
+                                  <Component id="contentTable" alignment="3" min="-2" pref="360" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="236" max="32767" attributes="0"/>
+                              <EmptySpace pref="212" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1573,6 +1586,9 @@
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="contentTableFocusGained"/>
+                      </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//Array of strings to hold column names&#xa;String[] contentString = new String[Stakeholders.size()];&#xa;   for (int i = 0; i &lt; Stakeholders.size(); i++)&#xa;   {&#xa;&#x9;contentString[i] = Stakeholders.get(i).getName();&#xa;   }&#xa;String contentRelationshipArray[][];&#xa;//Display already created stakeholder list items&#xa;if (!Stakeholders.isEmpty()){&#xa;    contentRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];&#xa;    for (int r = 0; r &lt; Stakeholders.size(); r++)&#xa;&#x9;{&#xa;&#x9;for (int c = 0; c &lt; Stakeholders.size(); c++)&#xa;        {&#xa;            if (r == c)&#xa;            { contentRelationshipArray[r][c] = &quot;N/A&quot;;}&#xa;            else&#xa;            {&#xa;                if (!Stakeholders.get(c).getInfluences().isEmpty())&#xa;                {&#xa;                    int tempMagnitude = Stakeholders.get(c).getInfluenceNumber(r).getMagnitude();&#xa;                    contentRelationshipArray[r][c] = Integer.toString(tempMagnitude);&#xa;                }&#xa;                    else&#xa;                    { contentRelationshipArray[r][c] = &quot;select&quot;;}&#xa;            }//end of else&#xa;&#x9;}//end of column for loop&#xa;        }//end of row for loop&#xa;    }//end of if arraylist not empty&#xa;    //create fresh table for new projects (no stakeholders yet)&#xa;else {&#xa;    contentRelationshipArray = new String[2][2];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        for (int e = 0; e &lt; 2; e++){&#xa;        contentRelationshipArray[i][e] = &quot;nada&quot;;&#xa;        }&#xa;       }&#xa;    }"/>
                       </AuxValues>
@@ -1587,21 +1603,6 @@
                         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String catcherRelationshipArray[][];&#xa;String[] catcherString = new String[Stakeholders.size()];&#xa;        for (int i = 0; i &lt; Stakeholders.size(); i++)&#xa;        {&#xa;             catcherString[i] = Stakeholders.get(i).getName();&#xa;        }&#xa;//Display already created stakeholder list items&#xa;if (!Stakeholders.isEmpty())&#xa;    {&#xa;        catcherRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];&#xa;        for (int c = 0; c &lt;= Stakeholders.size(); c++)&#xa;        {&#xa;            catcherRelationshipArray[0][c] = Stakeholders.get(c).getName();&#xa;        }&#xa;    }&#xa;//create fresh table for new projects (no stakeholders yet)&#xa;else {&#xa;    catcherRelationshipArray = new String [1][2];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        catcherRelationshipArray[0][i] = &quot;Empty&quot;;&#xa;        }&#xa;    }"/>
                       </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="influenceLabel1">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jLabel1"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="influenceLabel2">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jLabel2"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="influenceLabel3">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jLabel3"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JButton" name="influenceSaveButton">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;Save&lt;br&gt;Updates&lt;/center&gt;&lt;/html&gt;"/>
@@ -1614,6 +1615,21 @@
                 </Container>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JLabel" name="influenceLabel1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="influenceLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="influenceLabel3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel3"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="relationMapParentPanel">
@@ -1639,12 +1655,12 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="628" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="695" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="relationMapScrollPane" min="-2" pref="415" max="-2" attributes="0"/>
-                          <EmptySpace pref="202" max="32767" attributes="0"/>
+                          <EmptySpace pref="269" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -1690,7 +1706,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="managementPlanScrollPane" min="-2" pref="415" max="-2" attributes="0"/>
-                      <EmptySpace pref="202" max="32767" attributes="0"/>
+                      <EmptySpace pref="269" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1759,7 +1775,7 @@
                       <Component id="jScrollPane1" min="-2" pref="286" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="145" max="-2" attributes="0"/>
-                      <EmptySpace pref="139" max="32767" attributes="0"/>
+                      <EmptySpace pref="206" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
