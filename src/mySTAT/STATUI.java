@@ -169,6 +169,8 @@ public class STATUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         MenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         newMenuItem = new javax.swing.JMenuItem();
@@ -575,7 +577,7 @@ public class STATUI extends javax.swing.JFrame {
                             .addComponent(PotentialLabel)
                             .addGap(102, 102, 102)))
                     .addComponent(SHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(StakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(91, 91, 91))
         );
@@ -814,7 +816,7 @@ public class STATUI extends javax.swing.JFrame {
                 { contentRelationshipArray[r][c] = "N/A";}
                 else
                 {
-                    if (!Stakeholders.get(c).getInfluence().isEmpty())
+                    if (!Stakeholders.get(c).getInfluences().isEmpty())
                     {
                         int tempMagnitude = Stakeholders.get(c).getInfluenceNumber(r).getMagnitude();
                         contentRelationshipArray[r][c] = Integer.toString(tempMagnitude);
@@ -968,7 +970,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             tempArray[i][1] = Stakeholders.get(i).getWants();
             tempArray[i][2] = Stakeholders.get(i).getClassification();
             tempArray[i][3] = Stakeholders.get(i).getAttitude();
-            tempArray[i][4] = Stakeholders.get(i).getInfluence();
+            tempArray[i][4] = String.format("%.3f", Stakeholders.get(i).getInfluence());
             tempArray[i][5] = Stakeholders.get(i).getStrategy();
             tempArray[i][6] = Stakeholders.get(i).getEngagement();
             tempArray[i][7] = Stakeholders.get(i).getLastEngaged();
@@ -1022,14 +1024,19 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     jTextArea1.setRows(5);
     jScrollPane1.setViewportView(jTextArea1);
 
+    jTextArea2.setColumns(20);
+    jTextArea2.setRows(5);
+    jScrollPane2.setViewportView(jTextArea2);
+
     javax.swing.GroupLayout TestPanelLayout = new javax.swing.GroupLayout(TestPanel);
     TestPanel.setLayout(TestPanelLayout);
     TestPanelLayout.setHorizontalGroup(
         TestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(TestPanelLayout.createSequentialGroup()
             .addGap(51, 51, 51)
-            .addGroup(TestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(TestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(jScrollPane2)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addContainerGap(204, Short.MAX_VALUE))
     );
@@ -1040,7 +1047,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(290, Short.MAX_VALUE))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(139, Short.MAX_VALUE))
     );
 
     mainTabbedPane.addTab("<html> <br> Test Panel<br><br>", TestPanel);
@@ -1554,7 +1563,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 tempArray[i][1] = Stakeholders.get(i).getWants();
                 tempArray[i][2] = Stakeholders.get(i).getClassification();
                 tempArray[i][3] = Stakeholders.get(i).getAttitude();
-                tempArray[i][4] = Stakeholders.get(i).getInfluence();
+                tempArray[i][4] = String.format("%.3f", Stakeholders.get(i).getInfluence());
                 tempArray[i][5] = Stakeholders.get(i).getStrategy();
                 tempArray[i][6] = Stakeholders.get(i).getEngagement();
                 tempArray[i][7] = Stakeholders.get(i).getLastEngaged();
@@ -1581,6 +1590,96 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         //for (int i = 0; i < 10; i++) {
         //    managementPlanTable.getColumnModel().getColumn(i).setCellRenderer(new TableCellLongTextRenderer ());
         //}
+    }
+    
+    private double classificationConverter(String classification)
+    {
+        double convertedClassification;
+        if (classification.equals("Definitive"))
+            convertedClassification = 1.0;
+        else if (classification.equals("Dependent"))
+            convertedClassification = 2.0/3.0;
+        else if (classification.equals("Dangerous"))
+            convertedClassification = 2.0/3.0;
+        else if (classification.equals("Dominant"))
+            convertedClassification = 2.0/3.0;
+        else if (classification.equals("Demanding"))
+            convertedClassification = 1.0/3.0;
+        else if (classification.equals("Dormant"))
+            convertedClassification = 1.0/3.0;
+        else if (classification.equals("Discretionary"))
+            convertedClassification = 1.0/3;
+        else
+            convertedClassification = 0;
+        return convertedClassification;
+    }
+    
+    private double attitudeConverter(String attitude)
+    {
+        double convertedAttitude;
+        if (attitude.equals("Supportive"))
+            convertedAttitude = 0;
+        else if (attitude.equals("Mixed"))
+            convertedAttitude = 1.0/3.0;
+        else if (attitude.equals("Marginal"))
+            convertedAttitude = 2.0/3.0;
+        else 
+            convertedAttitude = 1.0;
+        return convertedAttitude;
+    }
+    
+    private double influenceConverter(int magnitude)
+    {
+        double convertedMagnitude;
+        if (magnitude == 3)
+            convertedMagnitude = 1.0;
+        else if (magnitude == 2)
+            convertedMagnitude = 0.5;
+        else if (magnitude == 1)
+            convertedMagnitude = 0.25;
+        else 
+            convertedMagnitude = 0;
+        return convertedMagnitude;
+    }
+    
+    private void situationalInfluenceUpdate()
+    {   
+        //array to hold each stakeholder's numerator value
+        double[] stakeholderNumerators = new double[Stakeholders.size()];
+        double stakeholderDenominator = 0;
+        //tally up each stakeholder's list of relationships
+        for (int i = 0; i < Stakeholders.size(); i++)
+        {
+            //temp Relationship to hold stakeholder's relationship
+            Relationship buddy;
+            //temp arrayList to hold stakeholder's relationships
+            ArrayList <Relationship> tempRelationships = new ArrayList<>();
+                    for(Relationship partner: Stakeholders.get(i).getInfluences()){
+                        buddy = new Relationship(partner);
+                        tempRelationships.add(buddy);}
+            double stakeholderInfluenceNumerator = 0;
+            double magnitudeValue;
+            double classificationValue;
+            double attitudeValue;
+            //iterate through each stakeholder's relationships
+            for (int j = 0; j < tempRelationships.size(); j++)
+            {
+                magnitudeValue = influenceConverter(tempRelationships.get(j).getMagnitude());
+                classificationValue = classificationConverter(Stakeholders.get(j).getClassification());
+                attitudeValue = attitudeConverter(Stakeholders.get(j).getAttitude());
+                stakeholderInfluenceNumerator += (magnitudeValue*classificationValue*attitudeValue);
+            }
+            //store stakeholder's influence number in array
+            stakeholderNumerators[i] = stakeholderInfluenceNumerator;
+            stakeholderDenominator += stakeholderInfluenceNumerator;
+        }//end of get each stakeholder's influence numerator loop
+        //calculate each stakeholder's situational influence
+        for (int i = 0; i < Stakeholders.size(); i++)
+        {
+            double situationalInfluence = stakeholderNumerators[i]/stakeholderDenominator;
+            //save each stakeholder's individual situational influence
+            Stakeholders.get(i).setInfluence(situationalInfluence);
+        }
     }
     
     private void mainTabbedPaneStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_mainTabbedPaneStateChanged
@@ -1622,7 +1721,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                influenceTableUpdate();
            }
            else if(currentTab.equals(managementPlanPanel)){
+               situationalInfluenceUpdate();
                managementPlanUpdate();
+               //ERASE THIS TOO!!!!!!!!!!!!!1!!!!
+               displaySituationalInfluences();
            }
            else{
                managementPlanUpdate();
@@ -1676,6 +1778,16 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             }
         }
         jTextArea1.setText(displayedRelationships);
+    }
+    
+    public void displaySituationalInfluences()
+    {
+        String displayedInfluences = "";
+        for (int i = 0; i < Stakeholders.size(); i++)
+        {
+            displayedInfluences += ("Stakeholder Name: " + Stakeholders.get(i).getName() + ", " + Stakeholders.get(i).getInfluence() + "\n");
+        }
+        jTextArea2.setText(displayedInfluences);
     }
    
     private void classificationDiagramUpdate()
@@ -1949,11 +2061,13 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JScrollPane influenceScrollPane;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTabbedPane mainTabbedPane;
     private javax.swing.JPanel managementPlanPanel;
     private javax.swing.JScrollPane managementPlanScrollPane;

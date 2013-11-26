@@ -266,7 +266,7 @@
                           </Group>
                           <Component id="SHPanel" min="-2" pref="415" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="54" max="32767" attributes="0"/>
+                      <EmptySpace pref="57" max="32767" attributes="0"/>
                       <Component id="StakeholderScrollPane" min="-2" pref="190" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                   </Group>
@@ -1550,7 +1550,7 @@
                         </Property>
                       </Properties>
                       <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//Array of strings to hold column names&#xa;String[] contentString = new String[Stakeholders.size()];&#xa;   for (int i = 0; i &lt; Stakeholders.size(); i++)&#xa;   {&#xa;&#x9;contentString[i] = Stakeholders.get(i).getName();&#xa;   }&#xa;String contentRelationshipArray[][];&#xa;//Display already created stakeholder list items&#xa;if (!Stakeholders.isEmpty()){&#xa;    contentRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];&#xa;    for (int r = 0; r &lt; Stakeholders.size(); r++)&#xa;&#x9;{&#xa;&#x9;for (int c = 0; c &lt; Stakeholders.size(); c++)&#xa;        {&#xa;            if (r == c)&#xa;            { contentRelationshipArray[r][c] = &quot;N/A&quot;;}&#xa;            else&#xa;            {&#xa;                if (!Stakeholders.get(c).getInfluence().isEmpty())&#xa;                {&#xa;                    int tempMagnitude = Stakeholders.get(c).getInfluenceNumber(r).getMagnitude();&#xa;                    contentRelationshipArray[r][c] = Integer.toString(tempMagnitude);&#xa;                }&#xa;                    else&#xa;                    { contentRelationshipArray[r][c] = &quot;select&quot;;}&#xa;            }//end of else&#xa;&#x9;}//end of column for loop&#xa;        }//end of row for loop&#xa;    }//end of if arraylist not empty&#xa;    //create fresh table for new projects (no stakeholders yet)&#xa;else {&#xa;    contentRelationshipArray = new String[2][2];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        for (int e = 0; e &lt; 2; e++){&#xa;        contentRelationshipArray[i][e] = &quot;nada&quot;;&#xa;        }&#xa;       }&#xa;    }"/>
+                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//Array of strings to hold column names&#xa;String[] contentString = new String[Stakeholders.size()];&#xa;   for (int i = 0; i &lt; Stakeholders.size(); i++)&#xa;   {&#xa;&#x9;contentString[i] = Stakeholders.get(i).getName();&#xa;   }&#xa;String contentRelationshipArray[][];&#xa;//Display already created stakeholder list items&#xa;if (!Stakeholders.isEmpty()){&#xa;    contentRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];&#xa;    for (int r = 0; r &lt; Stakeholders.size(); r++)&#xa;&#x9;{&#xa;&#x9;for (int c = 0; c &lt; Stakeholders.size(); c++)&#xa;        {&#xa;            if (r == c)&#xa;            { contentRelationshipArray[r][c] = &quot;N/A&quot;;}&#xa;            else&#xa;            {&#xa;                if (!Stakeholders.get(c).getInfluences().isEmpty())&#xa;                {&#xa;                    int tempMagnitude = Stakeholders.get(c).getInfluenceNumber(r).getMagnitude();&#xa;                    contentRelationshipArray[r][c] = Integer.toString(tempMagnitude);&#xa;                }&#xa;                    else&#xa;                    { contentRelationshipArray[r][c] = &quot;select&quot;;}&#xa;            }//end of else&#xa;&#x9;}//end of column for loop&#xa;        }//end of row for loop&#xa;    }//end of if arraylist not empty&#xa;    //create fresh table for new projects (no stakeholders yet)&#xa;else {&#xa;    contentRelationshipArray = new String[2][2];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        for (int e = 0; e &lt; 2; e++){&#xa;        contentRelationshipArray[i][e] = &quot;nada&quot;;&#xa;        }&#xa;       }&#xa;    }"/>
                       </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTable" name="catcherTable">
@@ -1690,7 +1690,7 @@
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable()"/>
-                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String tempArray[][];&#xa;if (!Stakeholders.isEmpty()){&#xa;    tempArray = new String[Stakeholders.size()][10];&#xa;    for (int i = 0; i &lt; Stakeholders.size(); i++){&#xa;        tempArray[i][0] = Stakeholders.get(i).getName();&#xa;        tempArray[i][1] = Stakeholders.get(i).getWants();&#xa;        tempArray[i][2] = Stakeholders.get(i).getClassification();&#xa;        tempArray[i][3] = Stakeholders.get(i).getAttitude();&#xa;        tempArray[i][4] = Stakeholders.get(i).getInfluence();&#xa;        tempArray[i][5] = Stakeholders.get(i).getStrategy();&#xa;        tempArray[i][6] = Stakeholders.get(i).getEngagement();&#xa;        tempArray[i][7] = Stakeholders.get(i).getLastEngaged();&#xa;        tempArray[i][8] = Stakeholders.get(i).getResponsible();&#xa;        tempArray[i][9] = Stakeholders.get(i).getNotes();&#xa;    }&#xa;}&#xa;else {&#xa;    tempArray = new String [2][10];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        for (int e = 0; e &lt; 10; e++){&#xa;        tempArray[i][e] = &quot;nada&quot;;&#xa;        }&#xa;       }&#xa;    }"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String tempArray[][];&#xa;if (!Stakeholders.isEmpty()){&#xa;    tempArray = new String[Stakeholders.size()][10];&#xa;    for (int i = 0; i &lt; Stakeholders.size(); i++){&#xa;        tempArray[i][0] = Stakeholders.get(i).getName();&#xa;        tempArray[i][1] = Stakeholders.get(i).getWants();&#xa;        tempArray[i][2] = Stakeholders.get(i).getClassification();&#xa;        tempArray[i][3] = Stakeholders.get(i).getAttitude();&#xa;        tempArray[i][4] = String.format(&quot;%.3f&quot;, Stakeholders.get(i).getInfluence());&#xa;        tempArray[i][5] = Stakeholders.get(i).getStrategy();&#xa;        tempArray[i][6] = Stakeholders.get(i).getEngagement();&#xa;        tempArray[i][7] = Stakeholders.get(i).getLastEngaged();&#xa;        tempArray[i][8] = Stakeholders.get(i).getResponsible();&#xa;        tempArray[i][9] = Stakeholders.get(i).getNotes();&#xa;    }&#xa;}&#xa;else {&#xa;    tempArray = new String [2][10];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        for (int e = 0; e &lt; 10; e++){&#xa;        tempArray[i][e] = &quot;nada&quot;;&#xa;        }&#xa;       }&#xa;    }"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
@@ -1711,8 +1711,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="514" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" pref="514" max="32767" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="473" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="204" max="32767" attributes="0"/>
@@ -1726,7 +1727,9 @@
                       <Component id="jLabel1" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="286" max="-2" attributes="0"/>
-                      <EmptySpace pref="290" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="145" max="-2" attributes="0"/>
+                      <EmptySpace pref="139" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1745,6 +1748,21 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="jTextArea1">
+                  <Properties>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="rows" type="int" value="5"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="jTextArea2">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
