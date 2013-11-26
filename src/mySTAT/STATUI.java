@@ -710,19 +710,19 @@ public class STATUI extends javax.swing.JFrame {
         actionLayeredPane.add(Marginal_UndefinedBox);
         Marginal_UndefinedBox.setBounds(190, 270, 60, 20);
 
-        Supportive_LatentBox.setMaximumRowCount(Stakeholders.size());
+        Supportive_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_LatentBox);
         Supportive_LatentBox.setBounds(270, 180, 60, 20);
 
-        Mixed_LatentBox.setMaximumRowCount(Stakeholders.size());
+        Mixed_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_LatentBox);
         Mixed_LatentBox.setBounds(270, 210, 60, 20);
 
-        NonSupportive_LatentBox.setMaximumRowCount(Stakeholders.size());
+        NonSupportive_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_LatentBox);
         NonSupportive_LatentBox.setBounds(270, 240, 60, 20);
 
-        Marginal_LatentBox.setMaximumRowCount(Stakeholders.size());
+        Marginal_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_LatentBox);
         Marginal_LatentBox.setBounds(270, 270, 60, 20);
 
@@ -938,6 +938,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", influencePanel);
 
+    relationMapScrollPane.setAutoscrolls(true);
+    relationMapScrollPane.getVerticalScrollBar().setUnitIncrement(16);
+    relationMapScrollPane.getHorizontalScrollBar().setUnitIncrement(16);
     relationMapScrollPane.setViewportView(JGraphPanel);
 
     javax.swing.GroupLayout relationMapParentPanelLayout = new javax.swing.GroupLayout(relationMapParentPanel);
@@ -1145,12 +1148,15 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         int returnVal = openFileChooser.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = openFileChooser.getSelectedFile();
-            /*try {
-                // What to do with the file, e.g. display it in a TextArea
-                jTextArea1.read( new FileReader( file.getAbsolutePath() ), null );
-            } catch (IOException ex) {
-                System.out.println("problem accessing file"+file.getAbsolutePath());
-            }*/
+            ProjectStore project = ProjectStore.getInstance();
+            this.Stakeholders = project.openProjectFile(file.getPath());
+            
+            DefaultListModel model1 = new DefaultListModel();
+            for (int i = 0; i < Stakeholders.size(); i++) {
+                Stakeholder obj=Stakeholders.get(i);
+                model1.addElement(obj.getName());
+            }
+            StakeholderList.setModel(model1);
             //} else {
             //   System.out.println("File access cancelled by user.");
         }
@@ -1904,6 +1910,12 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Compact Tree");
                 JGraphPanel.setMxLayout(RelationMapPanel.COMPACTTREE);
+            }
+        });
+        
+        t.layoutButtons.get(RelationMapPanel.PARALLEL).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JGraphPanel.setMxLayout(RelationMapPanel.PARALLEL);
             }
         });
         

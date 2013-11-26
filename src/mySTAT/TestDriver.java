@@ -28,7 +28,7 @@ public class TestDriver extends JFrame {
     
     public TestDriver(ArrayList<Stakeholder> stakeholders)
     {
-        super("Control Window");
+        super("Test Engine - FOR TESTING ONLY");
         this.stakeholders = stakeholders;
         setSize(400, 400);
         setLocation(500,10);
@@ -58,6 +58,7 @@ public class TestDriver extends JFrame {
         layoutButtons.add(new JRadioButton("Circle"));
         layoutButtons.add(new JRadioButton("Hierarchical"));
         layoutButtons.add(new JRadioButton("Compact Tree"));
+        layoutButtons.add(new JRadioButton("Parallel"));
         layoutButtons.add(new JRadioButton("Stack"));
         for(JRadioButton rb : layoutButtons){rbGroup.add(rb);}
         for(JRadioButton rb : layoutButtons){layoutPanel.add(rb);}
@@ -97,7 +98,13 @@ public class TestDriver extends JFrame {
     
     public void makeRelationsButtonActionPerformed(ActionEvent evt)
     {
+        //erase all relationships in all stakeholders
+        for(Stakeholder s : stakeholders)
+        {
+            s.setInfluences(new ArrayList<Relationship>());
+        }
 //        System.out.println("In make relationships");
+        //now randomize
         int k = stakeholders.size();
         for (Iterator<Stakeholder> s = stakeholders.iterator(); s.hasNext();)
         {
@@ -111,8 +118,11 @@ public class TestDriver extends JFrame {
 //                System.out.printf("if(%d >= %d)\n", random, place);
                 if(random >= place)
                 {
-//                    System.out.printf("%s.addI(%s)%n", stakeholder.getName(), stakeholders.get(i).getName());
-                    stakeholder.addInfluence(stakeholders.get(i).getName(), (int)(Math.random()*4));
+                    //do nothing if the stakeholder is itself
+                    if(stakeholders.get(i).getName().equals(stakeholder.getName())){}
+                    else{
+                        stakeholder.addInfluence(stakeholders.get(i).getName(), (int)(Math.random()*4));
+                    }
                     random -= place;
                 }
                 place /= 2;

@@ -23,6 +23,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.math.*;
 import java.util.Iterator;
+import java.util.List;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 /**
@@ -32,16 +33,18 @@ import javax.swing.border.LineBorder;
 public class RelationMapPanel extends JPanel
 {   
     private static final long serialVersionUID = 1L;
-    private mxGraph panGraph;
-    private mxIGraphLayout layout;
+    private StatMxGraph panGraph;
+    private mxGraphLayout layout;
     private mxGraphComponent graphComponent;
     private Object graphParent;
+    private int currentLayout;
     
     public static final int FASTORGANIC = 0;
     public static final int CIRCLE = 1;
     public static final int HIERARCHICAL = 2;
     public static final int COMPACTTREE = 3;
-    public static final int STACK = 4;
+    public static final int PARALLEL = 4;
+    public static final int STACK = 5;
 
     public RelationMapPanel() {
         super();
@@ -67,20 +70,26 @@ public class RelationMapPanel extends JPanel
     
     private void init()
     {
-        panGraph = new mxGraph();
+        panGraph = new StatMxGraph();
         graphComponent = new mxGraphComponent(panGraph);
         
         add(graphComponent);
         graphParent = panGraph.getDefaultParent();
         panGraph.setAllowDanglingEdges(false);
-        panGraph.setEnabled(false);
+        panGraph.setCellsDisconnectable(false);
+        panGraph.setCellsCloneable(false);
+        panGraph.setCellsEditable(false);
+        panGraph.setCellsSelectable(true);
+        //Default layout
         layout = new mxFastOrganicLayout(panGraph);
+        panGraph.setMultigraph(true);
         setSize(750, 394);
     }
     
     public void setMxLayout(int l)
     {
-        switch(l)
+        currentLayout = l;
+        switch(currentLayout)
         {
             case FASTORGANIC: layout = new mxFastOrganicLayout(panGraph);
                 break;
@@ -88,7 +97,9 @@ public class RelationMapPanel extends JPanel
                 break;
             case HIERARCHICAL: layout = new mxHierarchicalLayout(panGraph, SwingConstants.NORTH);
                 break;
-            case COMPACTTREE: layout = new mxCompactTreeLayout(panGraph);
+            case COMPACTTREE: layout = new mxCompactTreeLayout(panGraph,false);
+                break;
+            case PARALLEL: layout = new mxParallelEdgeLayout(panGraph, 20);
                 break;
             case STACK: layout = new mxStackLayout(panGraph, true, 10);
                 break;
@@ -150,7 +161,7 @@ public class RelationMapPanel extends JPanel
                 }
             }
         }
-        morphLayout();
+        graph();
         System.out.println(getSize().toString());
         System.out.println(getVisibleRect().toString());
         System.out.println(panGraph.getView().getGraphBounds().toString());
@@ -176,6 +187,14 @@ public class RelationMapPanel extends JPanel
     
     public void graph()
     {
+        
+        layout = new mxStackLayout(panGraph, false, 10, 20, 20, 2);
         morphLayout();
+        setMxLayout(currentLayout);
+        morphLayout();
+        layout = new mxParallelEdgeLayout(panGraph, 20);
+        morphLayout();
+        graphComponent.setConnectable(false);
+        setMxLayout(currentLayout);
     }
 }
