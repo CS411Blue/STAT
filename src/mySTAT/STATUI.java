@@ -1202,6 +1202,17 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         //add new stakeholder to arraylist
         Stakeholders.add(temp);
         InformationLabel.setText("Stakeholder " + temp.getName() + " added");
+        //add relationship to each stakeholder
+        for (Stakeholder member: Stakeholders){
+                int difference = Stakeholders.size() - member.getInfluences().size();
+                if (difference > 0)
+                {
+                    for (int i = member.getInfluences().size(); i < Stakeholders.size(); i++)
+                    {
+                        member.addRelationship(Stakeholders.get(i).getName(), 0);
+                    }
+                }
+            }
         
         DefaultListModel model1 = new DefaultListModel();
         for (int i = 0; i < Stakeholders.size(); i++) {
