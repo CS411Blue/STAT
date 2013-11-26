@@ -1073,6 +1073,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     fileMenu.add(newMenuItem);
     fileMenu.add(jSeparator1);
 
+    recentMenuItem.setForeground(new java.awt.Color(153, 153, 153));
     recentMenuItem.setText("Recent");
     recentMenuItem.setToolTipText("Open a recent project");
     fileMenu.add(recentMenuItem);
@@ -1096,20 +1097,24 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     });
     fileMenu.add(saveMenuItem);
 
+    saveAsMenuItem.setForeground(new java.awt.Color(153, 153, 153));
     saveAsMenuItem.setText("Save As");
     saveAsMenuItem.setToolTipText("Save in desired location as desired type");
     fileMenu.add(saveAsMenuItem);
     fileMenu.add(jSeparator3);
 
+    encryptMenuItem.setForeground(new java.awt.Color(153, 153, 153));
     encryptMenuItem.setText("Encrypt");
     encryptMenuItem.setToolTipText("Encrypt the Save File");
     fileMenu.add(encryptMenuItem);
 
+    exportMenuItem.setForeground(new java.awt.Color(153, 153, 153));
     exportMenuItem.setText("Export");
     exportMenuItem.setToolTipText("Export the Management Plan");
     fileMenu.add(exportMenuItem);
     fileMenu.add(jSeparator4);
 
+    exitMenuItem.setForeground(new java.awt.Color(153, 153, 153));
     exitMenuItem.setText("Exit");
     exitMenuItem.setToolTipText("Exit STAT");
     exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -1121,6 +1126,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     MenuBar.add(fileMenu);
 
+    editMenu.setForeground(new java.awt.Color(153, 153, 153));
     editMenu.setText("Edit");
     editMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     MenuBar.add(editMenu);
