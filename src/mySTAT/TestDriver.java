@@ -82,6 +82,11 @@ public class TestDriver extends JFrame {
         add(container);
     }
     
+    public void updateModel(ArrayList<Stakeholder> shs)
+    {
+        stakeholders = shs;
+    }
+    
     public void makeSHButtonActionPerformed(ActionEvent evt)
     {
         String name = "Stakeholder " + (this.stakeholders.size());

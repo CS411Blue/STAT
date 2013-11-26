@@ -1164,7 +1164,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             this.Stakeholders = project.openProjectFile(file.getPath());
             
             updateStakehodlerList();
-            testWindow();
+            testFrame.updateModel(Stakeholders);
             //} else {
             //   System.out.println("File access cancelled by user.");
         }
@@ -1917,60 +1917,59 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     }
     
     //Creates test Driver window
+    private TestDriver testFrame;
     public void testWindow()
     {
-        TestDriver t = new TestDriver(Stakeholders);
-        t.setVisible(true);
-        t.layoutButtons.get(RelationMapPanel.FASTORGANIC).addActionListener(new ActionListener() {
+        testFrame = new TestDriver(Stakeholders);
+        testFrame.setVisible(true);
+        testFrame.layoutButtons.get(RelationMapPanel.FASTORGANIC).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Fast Organic");
                 JGraphPanel.setMxLayout(RelationMapPanel.FASTORGANIC);
             }
         });
         
-        t.layoutButtons.get(RelationMapPanel.CIRCLE).addActionListener(new ActionListener() {
+        testFrame.layoutButtons.get(RelationMapPanel.CIRCLE).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Circle");
                 JGraphPanel.setMxLayout(RelationMapPanel.CIRCLE);
             }
         });
         
-        t.layoutButtons.get(RelationMapPanel.HIERARCHICAL).addActionListener(new ActionListener() {
+        testFrame.layoutButtons.get(RelationMapPanel.HIERARCHICAL).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Hierachical");
                 JGraphPanel.setMxLayout(RelationMapPanel.HIERARCHICAL);
             }
         });
         
-        t.layoutButtons.get(RelationMapPanel.COMPACTTREE).addActionListener(new ActionListener() {
+        testFrame.layoutButtons.get(RelationMapPanel.COMPACTTREE).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Compact Tree");
                 JGraphPanel.setMxLayout(RelationMapPanel.COMPACTTREE);
             }
         });
         
-        t.layoutButtons.get(RelationMapPanel.PARALLEL).addActionListener(new ActionListener() {
+        testFrame.layoutButtons.get(RelationMapPanel.PARALLEL).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JGraphPanel.setMxLayout(RelationMapPanel.PARALLEL);
             }
         });
         
-        t.layoutButtons.get(RelationMapPanel.STACK).addActionListener(new ActionListener() {
+        testFrame.layoutButtons.get(RelationMapPanel.STACK).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Stack");
                 JGraphPanel.setMxLayout(RelationMapPanel.STACK);
             }
         });
         
-        t.morphButton.addActionListener(new ActionListener() {
+        testFrame.morphButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JGraphPanel.graph();
             }
         });
         
-        t.updateShListButton.addActionListener(new ActionListener() {
-
-            @Override
+        testFrame.updateShListButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 updateStakehodlerList();
             }
