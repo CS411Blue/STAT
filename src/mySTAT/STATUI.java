@@ -7,9 +7,13 @@ package mySTAT;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.beans.PropertyChangeEvent;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Action;
 import javax.swing.DefaultCellEditor;
 import javax.swing.DefaultListModel;
@@ -1952,6 +1956,23 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         testFrame.updateShListButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 updateStakehodlerList();
+            }
+        });
+        
+        testFrame.parallelButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JGraphPanel.snapEdgesToFit();
+            }
+        });
+        
+        testFrame.exportMapToPNGButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    BufferedImage bi = ScreenImage.createImage(JGraphPanel);
+                    ScreenImage.writeImage(bi, "panel.png");
+                } catch (IOException ex) {
+                    Logger.getLogger(STATUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

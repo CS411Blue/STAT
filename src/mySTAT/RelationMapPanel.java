@@ -20,6 +20,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.LayoutManager;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.math.*;
 import java.util.Iterator;
@@ -196,5 +197,19 @@ public class RelationMapPanel extends JPanel
         morphLayout();
         graphComponent.setConnectable(false);
         setMxLayout(currentLayout);
+    }
+    
+    public void snapEdgesToFit()
+    {
+        setMxLayout(PARALLEL);
+        morphLayout();
+        setMxLayout(currentLayout);
+    }
+    
+    //draws an image of the current map
+    public void exportToPNG(String filename)
+    {
+//        BufferedImage bi = ScreenImage.createImage(this);
+//        ScreenImage.writeImage(bi, "panel.png");
     }
 }

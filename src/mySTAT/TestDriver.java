@@ -26,6 +26,8 @@ public class TestDriver extends JFrame {
     public ArrayList<JRadioButton> layoutButtons;
     public JButton morphButton;
     public JButton updateShListButton;
+    public JButton parallelButton;
+    public JButton exportMapToPNGButton;
     
     public TestDriver(ArrayList<Stakeholder> stakeholders)
     {
@@ -67,8 +69,14 @@ public class TestDriver extends JFrame {
         morphButton = new JButton("Morph");
 //        panel.add(morphButton);
         
+        parallelButton  = new JButton("Snap Lines to Vertices");
+        panel.add(parallelButton);
+        
         updateShListButton = new JButton("Update Stakeholder List");
         panel.add(updateShListButton);
+        
+        exportMapToPNGButton = new JButton("Export Relation Map");
+        panel.add(exportMapToPNGButton);
         
         panel.setPreferredSize(new java.awt.Dimension(20,80));
         panel.setBorder(new LineBorder(Color.black));
