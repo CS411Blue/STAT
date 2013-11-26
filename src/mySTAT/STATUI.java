@@ -525,61 +525,62 @@ public class STATUI extends javax.swing.JFrame {
         StakeholdersPanelLayout.setHorizontalGroup(
             StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(InformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(StakeholderListLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111))
-            .addGroup(StakeholdersPanelLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(NameLabel)
-                        .addComponent(NameScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(WantsLabel)
-                        .addComponent(WantsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(StakeholdersPanelLayout.createSequentialGroup()
+                        .addComponent(InformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(StakeholderListLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(111, 111, 111))
+                    .addGroup(StakeholdersPanelLayout.createSequentialGroup()
+                        .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(NameLabel)
+                                .addComponent(NameScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(WantsLabel)
+                                .addComponent(WantsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                    .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(PowerYRadioButton)
-                                        .addComponent(PowerNRadioButton))
+                                    .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(StakeholdersPanelLayout.createSequentialGroup()
+                                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(PowerYRadioButton)
+                                                .addComponent(PowerNRadioButton))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(LegitimacyYRadioButton)
+                                                .addComponent(LegitimacyNRadioButton)))
+                                        .addGroup(StakeholdersPanelLayout.createSequentialGroup()
+                                            .addComponent(PowerLabel)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(LegitimacyLabel)))
                                     .addGap(18, 18, 18)
                                     .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(LegitimacyYRadioButton)
-                                        .addComponent(LegitimacyNRadioButton)))
-                                .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                    .addComponent(PowerLabel)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(LegitimacyLabel)))
-                            .addGap(18, 18, 18)
-                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(UrgencyYRadioButton)
-                                .addComponent(UrgencyNRadioButton)
-                                .addComponent(UrgencyLabel))
-                            .addGap(18, 18, 18)
-                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                    .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(CooperationYRadioButton)
-                                        .addComponent(CooperationNRadioButton))
+                                        .addComponent(UrgencyYRadioButton)
+                                        .addComponent(UrgencyNRadioButton)
+                                        .addComponent(UrgencyLabel))
                                     .addGap(18, 18, 18)
                                     .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(ThreatYRadioButton)
-                                        .addComponent(ThreatNRadioButton)))
-                                .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                    .addComponent(CooperationLabel)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(ThreatLabel)))
-                            .addGap(24, 24, 24)
-                            .addComponent(AddStakeholderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StakeholdersPanelLayout.createSequentialGroup()
-                            .addComponent(PotentialLabel)
-                            .addGap(102, 102, 102)))
-                    .addComponent(SHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addComponent(StakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(91, 91, 91))
+                                        .addGroup(StakeholdersPanelLayout.createSequentialGroup()
+                                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(CooperationYRadioButton)
+                                                .addComponent(CooperationNRadioButton))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(ThreatYRadioButton)
+                                                .addComponent(ThreatNRadioButton)))
+                                        .addGroup(StakeholdersPanelLayout.createSequentialGroup()
+                                            .addComponent(CooperationLabel)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(ThreatLabel)))
+                                    .addGap(24, 24, 24)
+                                    .addComponent(AddStakeholderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StakeholdersPanelLayout.createSequentialGroup()
+                                    .addComponent(PotentialLabel)
+                                    .addGap(102, 102, 102)))
+                            .addComponent(SHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                        .addComponent(StakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(91, 91, 91))))
         );
         StakeholdersPanelLayout.setVerticalGroup(
             StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -636,7 +637,7 @@ public class STATUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(StakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         mainTabbedPane.addTab("<html>\n<br>\nStakeholders<br>\n<br>", null, StakeholdersPanel, "");
@@ -1200,23 +1201,29 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         }
         //create new stakeholder
         Stakeholder temp = new Stakeholder(NameTextArea.getText(), WantsTextArea.getText(), power, legitimacy, urgency, cooperation, threat);
-        //add new stakeholder to arraylist
-        Stakeholders.add(temp);
-        InformationLabel.setText("Stakeholder " + temp.getName() + " added");
-        //add relationship to each stakeholder
-        for (Stakeholder member: Stakeholders){
-                int difference = Stakeholders.size() - member.getInfluences().size();
-                if (difference > 0)
-                {
-                    for (int i = member.getInfluences().size(); i < Stakeholders.size(); i++)
+        if (NameTextArea.getText().isEmpty())
+        {
+            InformationLabel.setText("Stakeholder not added. Please enter a stakeholder name");
+        }
+        else
+        {
+            //add new stakeholder to arraylist
+            Stakeholders.add(temp);
+            InformationLabel.setText("Stakeholder " + temp.getName() + " added");
+            //add relationship to each stakeholder
+            for (Stakeholder member: Stakeholders){
+                    int difference = Stakeholders.size() - member.getInfluences().size();
+                    if (difference > 0)
                     {
-                        member.addRelationship(Stakeholders.get(i).getName(), 0);
+                        for (int i = member.getInfluences().size(); i < Stakeholders.size(); i++)
+                        {
+                            member.addRelationship(Stakeholders.get(i).getName(), 0);
+                        }
                     }
                 }
-            }
-        
-        updateStakehodlerList();
-        
+
+            updateStakehodlerList();
+        }
         //clear all fields
         NameTextArea.setText("");
         WantsTextArea.setText("");
