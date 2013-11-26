@@ -165,12 +165,6 @@ public class STATUI extends javax.swing.JFrame {
         managementPlanPanel = new javax.swing.JPanel();
         managementPlanScrollPane = new javax.swing.JScrollPane();
         managementPlanTable = new javax.swing.JTable();
-        TestPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
         MenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         newMenuItem = new javax.swing.JMenuItem();
@@ -920,12 +914,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     influenceScrollPane.setViewportView(influenceMatrixPanel);
 
-    influenceLabel1.setText("jLabel1");
-
-    influenceLabel2.setText("jLabel2");
-
-    influenceLabel3.setText("jLabel3");
-
     javax.swing.GroupLayout influencePanelLayout = new javax.swing.GroupLayout(influencePanel);
     influencePanel.setLayout(influencePanelLayout);
     influencePanelLayout.setHorizontalGroup(
@@ -950,7 +938,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 .addComponent(influenceLabel3))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(influenceScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(214, Short.MAX_VALUE))
+            .addContainerGap(228, Short.MAX_VALUE))
     );
 
     mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", influencePanel);
@@ -1038,42 +1026,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     mainTabbedPane.addTab("<html>\n<br>\nManagement Plan<br>\n<br>", managementPlanPanel);
 
-    jLabel1.setText("This panel just for testing. Will Erase later");
-
-    jTextArea1.setColumns(20);
-    jTextArea1.setRows(5);
-    jScrollPane1.setViewportView(jTextArea1);
-
-    jTextArea2.setColumns(20);
-    jTextArea2.setRows(5);
-    jScrollPane2.setViewportView(jTextArea2);
-
-    javax.swing.GroupLayout TestPanelLayout = new javax.swing.GroupLayout(TestPanel);
-    TestPanel.setLayout(TestPanelLayout);
-    TestPanelLayout.setHorizontalGroup(
-        TestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(TestPanelLayout.createSequentialGroup()
-            .addGap(51, 51, 51)
-            .addGroup(TestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                .addComponent(jScrollPane2)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(204, Short.MAX_VALUE))
-    );
-    TestPanelLayout.setVerticalGroup(
-        TestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(TestPanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(206, Short.MAX_VALUE))
-    );
-
-    mainTabbedPane.addTab("<html> <br> Test Panel<br><br>", TestPanel);
-
     MenuBar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     MenuBar.setName(""); // NOI18N
 
@@ -1131,7 +1083,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     fileMenu.add(exportMenuItem);
     fileMenu.add(jSeparator4);
 
-    exitMenuItem.setForeground(new java.awt.Color(153, 153, 153));
     exitMenuItem.setText("Exit");
     exitMenuItem.setToolTipText("Exit STAT");
     exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -1972,25 +1923,25 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             }
         });
         
-        testFrame.layoutButtons.get(RelationMapPanel.COMPACTTREE).addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Compact Tree");
-                JGraphPanel.setMxLayout(RelationMapPanel.COMPACTTREE);
-            }
-        });
-        
-        testFrame.layoutButtons.get(RelationMapPanel.PARALLEL).addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JGraphPanel.setMxLayout(RelationMapPanel.PARALLEL);
-            }
-        });
-        
-        testFrame.layoutButtons.get(RelationMapPanel.STACK).addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Stack");
-                JGraphPanel.setMxLayout(RelationMapPanel.STACK);
-            }
-        });
+//        testFrame.layoutButtons.get(RelationMapPanel.COMPACTTREE).addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                System.out.println("Compact Tree");
+//                JGraphPanel.setMxLayout(RelationMapPanel.COMPACTTREE);
+//            }
+//        });
+//        
+//        testFrame.layoutButtons.get(RelationMapPanel.PARALLEL).addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                JGraphPanel.setMxLayout(RelationMapPanel.PARALLEL);
+//            }
+//        });
+//        
+//        testFrame.layoutButtons.get(RelationMapPanel.STACK).addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                System.out.println("Stack");
+//                JGraphPanel.setMxLayout(RelationMapPanel.STACK);
+//            }
+//        });
         
         testFrame.morphButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -2112,7 +2063,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JComboBox Supportive_ExpectantBox;
     private javax.swing.JComboBox Supportive_LatentBox;
     private javax.swing.JComboBox Supportive_UndefinedBox;
-    private javax.swing.JPanel TestPanel;
     private javax.swing.JLabel ThreatLabel;
     private javax.swing.JRadioButton ThreatNRadioButton;
     private javax.swing.JRadioButton ThreatYRadioButton;
@@ -2143,15 +2093,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JPanel influencePanel;
     private javax.swing.JButton influenceSaveButton;
     private javax.swing.JScrollPane influenceScrollPane;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTabbedPane mainTabbedPane;
     private javax.swing.JPanel managementPlanPanel;
     private javax.swing.JScrollPane managementPlanScrollPane;

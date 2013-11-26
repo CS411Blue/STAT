@@ -130,9 +130,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="exitMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="99" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Exit"/>
                 <Property name="toolTipText" type="java.lang.String" value="Exit STAT"/>
               </Properties>
@@ -1505,7 +1502,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="influenceScrollPane" min="-2" pref="450" max="-2" attributes="0"/>
-                      <EmptySpace pref="214" max="32767" attributes="0"/>
+                      <EmptySpace pref="228" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1618,19 +1615,10 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JLabel" name="influenceLabel1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="influenceLabel2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel2"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="influenceLabel3">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel3"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -1740,81 +1728,6 @@
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable()"/>
                     <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String tempArray[][];&#xa;if (!Stakeholders.isEmpty()){&#xa;    tempArray = new String[Stakeholders.size()][10];&#xa;    for (int i = 0; i &lt; Stakeholders.size(); i++){&#xa;        tempArray[i][0] = Stakeholders.get(i).getName();&#xa;        tempArray[i][1] = Stakeholders.get(i).getWants();&#xa;        tempArray[i][2] = Stakeholders.get(i).getClassification();&#xa;        tempArray[i][3] = Stakeholders.get(i).getAttitude();&#xa;        tempArray[i][4] = String.format(&quot;%.3f&quot;, Stakeholders.get(i).getInfluence());&#xa;        tempArray[i][5] = Stakeholders.get(i).getStrategy();&#xa;        tempArray[i][6] = Stakeholders.get(i).getEngagement();&#xa;        tempArray[i][7] = Stakeholders.get(i).getLastEngaged();&#xa;        tempArray[i][8] = Stakeholders.get(i).getResponsible();&#xa;        tempArray[i][9] = Stakeholders.get(i).getNotes();&#xa;    }&#xa;}&#xa;else {&#xa;    tempArray = new String [2][10];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        for (int e = 0; e &lt; 10; e++){&#xa;        tempArray[i][e] = &quot;nada&quot;;&#xa;        }&#xa;       }&#xa;    }"/>
                   </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="TestPanel">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&lt;html&gt; &lt;br&gt; Test Panel&lt;br&gt;&lt;br&gt;">
-                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt; &lt;br&gt; Test Panel&lt;br&gt;&lt;br&gt;"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jScrollPane2" max="32767" attributes="0"/>
-                          <Component id="jScrollPane1" pref="514" max="32767" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="473" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="204" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="286" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" pref="145" max="-2" attributes="0"/>
-                      <EmptySpace pref="206" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="This panel just for testing. Will Erase later"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea1">
-                  <Properties>
-                    <Property name="columns" type="int" value="20"/>
-                    <Property name="rows" type="int" value="5"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea2">
-                  <Properties>
-                    <Property name="columns" type="int" value="20"/>
-                    <Property name="rows" type="int" value="5"/>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

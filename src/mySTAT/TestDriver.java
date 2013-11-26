@@ -58,16 +58,16 @@ public class TestDriver extends JFrame {
         layoutButtons.add(new JRadioButton("Fast Organic", true));
         layoutButtons.add(new JRadioButton("Circle"));
         layoutButtons.add(new JRadioButton("Hierarchical"));
-        layoutButtons.add(new JRadioButton("Compact Tree"));
-        layoutButtons.add(new JRadioButton("Parallel"));
-        layoutButtons.add(new JRadioButton("Stack"));
+//        layoutButtons.add(new JRadioButton("Compact Tree"));
+//        layoutButtons.add(new JRadioButton("Parallel"));
+//        layoutButtons.add(new JRadioButton("Stack"));
         for(JRadioButton rb : layoutButtons){rbGroup.add(rb);}
         for(JRadioButton rb : layoutButtons){layoutPanel.add(rb);}
         
         morphButton = new JButton("Morph");
-        panel.add(morphButton);
+//        panel.add(morphButton);
         
-        updateShListButton = new JButton("Update ShList");
+        updateShListButton = new JButton("Update Stakeholder List");
         panel.add(updateShListButton);
         
         panel.setPreferredSize(new java.awt.Dimension(20,80));
