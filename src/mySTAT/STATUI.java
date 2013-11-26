@@ -708,19 +708,19 @@ public class STATUI extends javax.swing.JFrame {
         actionLayeredPane.add(Marginal_UndefinedBox);
         Marginal_UndefinedBox.setBounds(190, 270, 60, 20);
 
-        Supportive_LatentBox.setMaximumRowCount(Stakeholders.size());
+        Supportive_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_LatentBox);
         Supportive_LatentBox.setBounds(270, 180, 60, 20);
 
-        Mixed_LatentBox.setMaximumRowCount(Stakeholders.size());
+        Mixed_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_LatentBox);
         Mixed_LatentBox.setBounds(270, 210, 60, 20);
 
-        NonSupportive_LatentBox.setMaximumRowCount(Stakeholders.size());
+        NonSupportive_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_LatentBox);
         NonSupportive_LatentBox.setBounds(270, 240, 60, 20);
 
-        Marginal_LatentBox.setMaximumRowCount(Stakeholders.size());
+        Marginal_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_LatentBox);
         Marginal_LatentBox.setBounds(270, 270, 60, 20);
 

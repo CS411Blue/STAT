@@ -1212,7 +1212,7 @@
                 <Component class="javax.swing.JComboBox" name="Supportive_LatentBox">
                   <Properties>
                     <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Stakeholders.size()" type="code"/>
+                      <Connection code="10" type="code"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="0"/>
@@ -1230,7 +1230,7 @@
                 <Component class="javax.swing.JComboBox" name="Mixed_LatentBox">
                   <Properties>
                     <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Stakeholders.size()" type="code"/>
+                      <Connection code="10" type="code"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="0"/>
@@ -1248,7 +1248,7 @@
                 <Component class="javax.swing.JComboBox" name="NonSupportive_LatentBox">
                   <Properties>
                     <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Stakeholders.size()" type="code"/>
+                      <Connection code="10" type="code"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="0"/>
@@ -1266,7 +1266,7 @@
                 <Component class="javax.swing.JComboBox" name="Marginal_LatentBox">
                   <Properties>
                     <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="Stakeholders.size()" type="code"/>
+                      <Connection code="10" type="code"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="0"/>
