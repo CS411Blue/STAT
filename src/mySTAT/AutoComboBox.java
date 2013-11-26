@@ -82,7 +82,7 @@ public class AutoComboBox extends JComboBox {
         }
         // kludge to allow for BasicComboPopup insets (default 1 left + 1 right) which are subtracted from the
         // returned width (see BasicComboPopup.getPopupLocation()).
-        return width + 3;
+        return width + 10;
     }
 
     /**
