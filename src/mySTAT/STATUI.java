@@ -804,6 +804,7 @@ public class STATUI extends javax.swing.JFrame {
         pitcherTable.setModel(new javax.swing.table.DefaultTableModel(
             headerRelationshipArray,
             new String [] {"Stakeholders"}));
+    pitcherTable.setFillsViewportHeight(true);
 
     //Array of strings to hold column names
     String[] contentString = new String[Stakeholders.size()];
@@ -846,6 +847,7 @@ public class STATUI extends javax.swing.JFrame {
     contentTable.setModel(new javax.swing.table.DefaultTableModel(
         contentRelationshipArray,
         contentString));
+contentTable.setFillsViewportHeight(true);
 contentTable.addFocusListener(new java.awt.event.FocusAdapter() {
     public void focusGained(java.awt.event.FocusEvent evt) {
         contentTableFocusGained(evt);
@@ -911,8 +913,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 .addComponent(influenceSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(pitcherTable, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(contentTable, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(pitcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addContainerGap(212, Short.MAX_VALUE))
     );
 

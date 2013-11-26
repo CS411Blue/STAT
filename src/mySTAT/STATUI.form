@@ -1554,8 +1554,8 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="pitcherTable" alignment="3" min="-2" pref="360" max="-2" attributes="0"/>
-                                  <Component id="contentTable" alignment="3" min="-2" pref="360" max="-2" attributes="0"/>
+                                  <Component id="pitcherTable" alignment="3" pref="360" max="32767" attributes="0"/>
+                                  <Component id="contentTable" alignment="3" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace pref="212" max="32767" attributes="0"/>
                           </Group>
@@ -1568,6 +1568,7 @@
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    headerRelationshipArray,&#xa;    new String [] {&quot;Stakeholders&quot;})" type="code"/>
                         </Property>
+                        <Property name="fillsViewportHeight" type="boolean" value="true"/>
                       </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable()"/>
@@ -1582,6 +1583,7 @@
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0"/>
                         </Property>
+                        <Property name="fillsViewportHeight" type="boolean" value="true"/>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
