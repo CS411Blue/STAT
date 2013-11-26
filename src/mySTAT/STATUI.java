@@ -1150,8 +1150,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             File file = openFileChooser.getSelectedFile();
             ProjectStore project = ProjectStore.getInstance();
             this.Stakeholders = project.openProjectFile(file.getPath());
-
-            relationshipUpdate();
+            
             updateStakehodlerList();
             testWindow();
             //} else {
@@ -1749,7 +1748,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                classificationDiagramUpdate();
                actionTableUpdate();
                influenceTableUpdate();
-               updateStakehodlerList();
+               JGraphPanel.updateShVertexList(Stakeholders);
                //relationshipUpdate();
                //System.out.println("Selected paneNo : " + pane.getSelectedIndex());
                System.out.println("update catch branch failed for: tab " 
@@ -1773,7 +1772,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             File file = saveFileChooser.getSelectedFile();
             System.out.println(file.toString());
             ProjectStore project = ProjectStore.getInstance();
-            project.saveProject((file.getPath() + ".stat"), Stakeholders, file.getName(), null, null, null);
+            project.saveProject(file.getPath(), Stakeholders, file.getName(), null, null, null);
         }
     }//GEN-LAST:event_saveMenuItemActionPerformed
 
