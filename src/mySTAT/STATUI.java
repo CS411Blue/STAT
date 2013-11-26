@@ -1151,12 +1151,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             ProjectStore project = ProjectStore.getInstance();
             this.Stakeholders = project.openProjectFile(file.getPath());
             
-            DefaultListModel model1 = new DefaultListModel();
-            for (int i = 0; i < Stakeholders.size(); i++) {
-                Stakeholder obj=Stakeholders.get(i);
-                model1.addElement(obj.getName());
-            }
-            StakeholderList.setModel(model1);
+            updateStakehodlerList();
             testWindow();
             //} else {
             //   System.out.println("File access cancelled by user.");
@@ -1215,12 +1210,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 }
             }
         
-        DefaultListModel model1 = new DefaultListModel();
-        for (int i = 0; i < Stakeholders.size(); i++) {
-            Stakeholder obj=Stakeholders.get(i);
-            model1.addElement(obj.getName());
-        }
-        StakeholderList.setModel(model1);
+        updateStakehodlerList();
         
         //clear all fields
         NameTextArea.setText("");
@@ -1301,6 +1291,15 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         
     }//GEN-LAST:event_StakeholderListValueChanged
 
+    private void updateStakehodlerList()
+    {
+        DefaultListModel model1 = new DefaultListModel();
+        for (int i = 0; i < Stakeholders.size(); i++) {
+            Stakeholder obj=Stakeholders.get(i);
+            model1.addElement(obj.getName());
+        }
+        StakeholderList.setModel(model1);
+    }
     //remove selected stakeholder
     private void SHRemoveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SHRemoveButtonActionPerformed
         // TODO add your handling code here:
@@ -1941,6 +1940,14 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         t.morphButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JGraphPanel.graph();
+            }
+        });
+        
+        t.updateShListButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateStakehodlerList();
             }
         });
     }

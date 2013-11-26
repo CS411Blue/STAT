@@ -25,6 +25,7 @@ public class TestDriver extends JFrame {
     
     public ArrayList<JRadioButton> layoutButtons;
     public JButton morphButton;
+    public JButton updateShListButton;
     
     public TestDriver(ArrayList<Stakeholder> stakeholders)
     {
@@ -65,6 +66,9 @@ public class TestDriver extends JFrame {
         
         morphButton = new JButton("Morph");
         panel.add(morphButton);
+        
+        updateShListButton = new JButton("Update ShList");
+        panel.add(updateShListButton);
         
         panel.setPreferredSize(new java.awt.Dimension(20,80));
         panel.setBorder(new LineBorder(Color.black));
