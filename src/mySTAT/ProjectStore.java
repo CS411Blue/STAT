@@ -168,7 +168,7 @@ public class ProjectStore {
 
     public void saveProject(String statFilePath, ArrayList<Stakeholder> stakeholders, String title, String description, String createdBy, String dateCreated) {
         //TODO add asserts for valid data
-        
+        Date date= new Date();
         Element stat = new Element("stat");
         Document statDoc = new Document(stat);
 
@@ -188,12 +188,12 @@ public class ProjectStore {
         metaDataElement.addContent(new Element("createdby").setText(createdBy));
         
         // take this out when implemented
-        if(dateCreated == null) {
-            Date date= new Date();        
+        if(dateCreated == null) 
             dateCreated = new Timestamp(date.getTime()).toString();
-        }
         
-        metaDataElement.addContent(new Element("datecreated").setText(dateCreated));
+        metaDataElement.addContent(new Element("datecreated").setText(dateCreated));     
+        
+        metaDataElement.addContent(new Element("datesaved").setText(new Timestamp(date.getTime()).toString()));
         
         statDoc.getRootElement().addContent(metaDataElement);
         
