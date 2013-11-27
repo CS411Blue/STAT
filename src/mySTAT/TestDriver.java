@@ -28,6 +28,7 @@ public class TestDriver extends JFrame {
     public JButton updateShListButton;
     public JButton parallelButton;
     public JButton exportMapToPNGButton;
+    public JButton exportManagementPlanButton;
     
     public TestDriver(ArrayList<Stakeholder> stakeholders)
     {
@@ -77,6 +78,9 @@ public class TestDriver extends JFrame {
         
         exportMapToPNGButton = new JButton("Export Relation Map");
         panel.add(exportMapToPNGButton);
+        
+        exportManagementPlanButton = new JButton("Export Management Plan");
+        panel.add(exportManagementPlanButton);
         
         panel.setPreferredSize(new java.awt.Dimension(20,80));
         panel.setBorder(new LineBorder(Color.black));

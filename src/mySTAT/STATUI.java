@@ -10,7 +10,9 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.beans.PropertyChangeEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -1900,6 +1902,22 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
               Marginal_DefinitiveBox.addItem(Stakeholders.get(i).getName());   
     }
     
+    //export Management plan to CSV
+    public void exportManagementToCSV(String filePath) throws FileNotFoundException
+    {
+            PrintWriter fileOut;
+            fileOut = new PrintWriter(filePath);
+            String str = str = "Name,Wants,Classification,Attitude,Influence,"
+                    +"Influence,Strategy,Method of Engagement,"
+                    +"Last Engaged,Responsible Party,Notes,";
+            fileOut.println(str);
+            for(Stakeholder sh : Stakeholders)
+            {
+                sh.exportStakeholderCSV(fileOut);
+            }
+            fileOut.close();
+    }
+    
     //Creates test Driver window
     private TestDriver testFrame;
     public void testWindow()
@@ -1971,6 +1989,16 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                     BufferedImage bi = ScreenImage.createImage(JGraphPanel);
                     ScreenImage.writeImage(bi, "panel.png");
                 } catch (IOException ex) {
+                    Logger.getLogger(STATUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        
+        testFrame.exportManagementPlanButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    exportManagementToCSV("managementPlan.csv");
+                } catch (FileNotFoundException ex) {
                     Logger.getLogger(STATUI.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }

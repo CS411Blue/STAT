@@ -368,12 +368,12 @@ public class Stakeholder {
     }
     /*Writes this stakeholder as a line on a CSV,
       simply outputs every private member of the stakeholder*/
-    public void exportManagementCSV(PrintWriter out)
+    public void exportStakeholderCSV(PrintWriter out)
     {
         String str = new String();
         str = Name+","+Wants+","+Classification+","+Attitude+","+Influence+
                 ","+Strategy+","+Engagement+","+LastEngaged+","+Responsible+
-                ","+Notes;
+                ","+Notes+",";
         out.println(str);
     }
      //function to update stakeholder data using the edit button
