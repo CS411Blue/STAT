@@ -1985,12 +1985,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         
         testFrame.exportMapToPNGButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                try {
-                    BufferedImage bi = ScreenImage.createImage(JGraphPanel);
-                    ScreenImage.writeImage(bi, "panel.png");
-                } catch (IOException ex) {
-                    Logger.getLogger(STATUI.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                JGraphPanel.exportToPNG("graph.png");
             }
         });
         

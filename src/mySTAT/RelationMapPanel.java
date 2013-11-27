@@ -21,10 +21,13 @@ import java.awt.FlowLayout;
 import java.awt.LayoutManager;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.math.*;
 import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 /**
@@ -209,7 +212,11 @@ public class RelationMapPanel extends JPanel
     //draws an image of the current map
     public void exportToPNG(String filename)
     {
-//        BufferedImage bi = ScreenImage.createImage(this);
-//        ScreenImage.writeImage(bi, "panel.png");
+        try {
+            BufferedImage bi = ScreenImage.createImage(graphComponent);
+            ScreenImage.writeImage(bi, "panel.png");
+        } catch (IOException ex) {
+            Logger.getLogger(RelationMapPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
