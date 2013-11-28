@@ -204,7 +204,7 @@ public class RelationMapPanel extends JPanel
     
     public void snapEdgesToFit()
     {
-        setMxLayout(PARALLEL);
+        layout = new mxParallelEdgeLayout(panGraph);
         morphLayout();
         setMxLayout(currentLayout);
     }
