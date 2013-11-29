@@ -50,4 +50,11 @@ public Relationship(String name, int magnitude) {
                 return "";
         }
     }
+    
+    public String toString()
+    {
+        String str;
+        str = new String("Relationship{"+name+","+magnitude+"}");
+        return str;
+    }
 }
