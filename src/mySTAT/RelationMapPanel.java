@@ -117,7 +117,7 @@ public class RelationMapPanel extends JPanel
     
     public void updateShVertexList(ArrayList<Stakeholder> SHList)
     {
-        //remove all stakeholders currently graphed
+        //remove all vertices and edges currently graphed
         panGraph.removeCells(panGraph.getChildVertices(panGraph.getDefaultParent()), true);
         
         //add all stakeholders to the graph first, no edges
@@ -153,9 +153,9 @@ public class RelationMapPanel extends JPanel
                     for (Iterator<Stakeholder> secondaryShIter = SHList.iterator(); secondaryShIter.hasNext();) 
                     {
                         Stakeholder secondary = secondaryShIter.next();
-                        if(secondary.getName() == r.getName()) 
+                        if(secondary.getName().equals(r.getName())) 
                         {
-                            System.out.printf("insertEdge(%s,%s,%s)\n", main.getName(), secondary.getName(), r.getLineStyle());
+//                            System.out.printf("insertEdge(%s,%s,%s)\n", main.getName(), secondary.getName(), r.getLineStyle());
                             panGraph.getModel().beginUpdate();
                             try{panGraph.insertEdge(graphParent, null, null, 
                                     main.getGraphNode(), secondary.getGraphNode(), r.getLineStyle());}
@@ -166,10 +166,6 @@ public class RelationMapPanel extends JPanel
             }
         }
         graph();
-        System.out.println(getSize().toString());
-        System.out.println(getVisibleRect().toString());
-        System.out.println(panGraph.getView().getGraphBounds().toString());
-        System.out.println(panGraph.getGraphBounds().toString());
     }
     
     private void morphLayout()
@@ -214,7 +210,7 @@ public class RelationMapPanel extends JPanel
     {
         try {
             BufferedImage bi = ScreenImage.createImage(graphComponent);
-            ScreenImage.writeImage(bi, "panel.png");
+            ScreenImage.writeImage(bi, filename);
         } catch (IOException ex) {
             Logger.getLogger(RelationMapPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
