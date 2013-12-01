@@ -1735,13 +1735,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                //displaySituationalInfluences();
            }
            else{
-               managementPlanUpdate();
-               classificationDiagramUpdate();
-               actionTableUpdate();
-               influenceTableUpdate();
-               JGraphPanel.updateShVertexList(Stakeholders);
                //relationshipUpdate();
                //System.out.println("Selected paneNo : " + pane.getSelectedIndex());
+               updateStakehodlerList();
                System.out.println("update catch branch failed for: tab " 
                        +mainTabbedPane.indexOfComponent(currentTab)
                        +"\n Component: "+currentTab.toString());
@@ -1908,7 +1904,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             PrintWriter fileOut;
             fileOut = new PrintWriter(filePath);
             String str = str = "Name,Wants,Classification,Attitude,Influence,"
-                    +"Influence,Strategy,Method of Engagement,"
+                    +"Strategy,Method of Engagement,"
                     +"Last Engaged,Responsible Party,Notes,";
             fileOut.println(str);
             for(Stakeholder sh : Stakeholders)
