@@ -13,7 +13,7 @@ public class Relationship {
     public final static int MEDIUM = 2;
     public final static int LOW = 1;
     
-    public final static String HIGH_SIZE = new String("strokeWidth=5");
+    public final static String HIGH_SIZE = new String("strokeWidth=6");
     public final static String MEDIUM_SIZE = new String("strokeWidth=3;");
     public final static String LOW_SIZE = new String("strokeWidth=1;");
     public final static String UNDEFINED_SIZE = new String("strokeWidth=0;strokeColor=#CCCCCC");
