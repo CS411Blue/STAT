@@ -166,7 +166,7 @@ public class ProjectStore {
         return stakeholdersList;
     }
 
-    public void saveProject(String statFilePath, ArrayList<Stakeholder> stakeholders, String title, String description, String createdBy, String dateCreated, boolean isEncrypted) {
+    public void saveProject(String statFilePath, ArrayList<Stakeholder> stakeholders, String title, String description, String createdBy, String dateCreated, boolean isEncrypted, String passPhrase) {
         //TODO add asserts for valid data
         Date date= new Date();
         Element stat = new Element("stat");
