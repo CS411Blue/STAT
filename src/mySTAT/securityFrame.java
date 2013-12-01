@@ -16,9 +16,14 @@ public class securityFrame extends javax.swing.JFrame {
      * Creates new form securityFrame
      */
     public securityFrame() {
+        super();
         initComponents();
     }
 
+    public securityFrame(String title) {
+        super(title);
+        initComponents();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -176,6 +181,19 @@ public class securityFrame extends javax.swing.JFrame {
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_okButtonActionPerformed
+
+
+    public void defaultInit(boolean isEnc, String passwd)
+    {
+            onButton.setSelected(isEnc);
+            offButton.setSelected(!isEnc);
+            passLabel.setEnabled(isEnc);
+            passField.setEnabled(isEnc);
+            repassLabel.setEnabled(isEnc);
+            repassField.setEnabled(isEnc);
+            passField.setText(passwd);
+            repassField.setText(passwd);
+    }
 
     /**
      * @param args the command line arguments
