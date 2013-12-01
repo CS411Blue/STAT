@@ -182,7 +182,7 @@ public class securityFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_okButtonActionPerformed
 
-
+//sets up the default state of the window when it is opened
     public void defaultInit(boolean isEnc, String passwd)
     {
             onButton.setSelected(isEnc);
