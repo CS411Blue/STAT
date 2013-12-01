@@ -37,6 +37,7 @@ public class STATUI extends javax.swing.JFrame {
      * Creates new form STATUI
      */
     public ArrayList<Stakeholder> Stakeholders;
+    private boolean isEncrypted = false;
     
     public STATUI() {
         super("STAT");
@@ -1758,7 +1759,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             File file = saveFileChooser.getSelectedFile();
             System.out.println(file.toString());
             ProjectStore project = ProjectStore.getInstance();
-            project.saveProject(file.getPath(), Stakeholders, file.getName(), null, null, null);
+            project.saveProject(file.getPath(), Stakeholders, file.getName(), null, null, null, isEncrypted);
         }
     }//GEN-LAST:event_saveMenuItemActionPerformed
 
@@ -2161,3 +2162,4 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
+
