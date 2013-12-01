@@ -28,7 +28,7 @@ import org.jdom2.output.XMLOutputter;
  */
 public class ProjectStore {
 
-    private static final String[] METADATA_ATTRIBS = {"title", "description", "created", "updated"};
+    private static final String[] METADATA_ATTRIBS = {"title", "description", "created", "updated", "encrypted"};
     private static final String[] STAKEHOLDER_ATTRIBS = {"name", "power", "legitimacy", "urgency", "cooperation", "threat", "wants", "notes", "strategy", "method", "responsible"};
 
     private static final ProjectStore INSTANCE = new ProjectStore();
@@ -166,7 +166,7 @@ public class ProjectStore {
         return stakeholdersList;
     }
 
-    public void saveProject(String statFilePath, ArrayList<Stakeholder> stakeholders, String title, String description, String createdBy, String dateCreated) {
+    public void saveProject(String statFilePath, ArrayList<Stakeholder> stakeholders, String title, String description, String createdBy, String dateCreated, boolean isEncrypted) {
         //TODO add asserts for valid data
         Date date= new Date();
         Element stat = new Element("stat");
@@ -195,7 +195,10 @@ public class ProjectStore {
         
         metaDataElement.addContent(new Element("datesaved").setText(new Timestamp(date.getTime()).toString()));
         
+        metaDataElement.addContent(new Element("encrypted").setText((Boolean.toString(isEncrypted))));
+        
         statDoc.getRootElement().addContent(metaDataElement);
+        
         
         //load stakeholders
         Element stakeholdersElement = new Element("stakeholders");
