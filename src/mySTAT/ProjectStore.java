@@ -35,6 +35,9 @@ public class ProjectStore {
 
     private Map<String, String> metaData; //key/value pairs that contain project meta-data
     private Map<String, Stakeholder> stakeholders; //stakeholderId/stakeholder objects
+    
+    private boolean isEncrypted = false;
+    private String passPhrase;
 
     private ProjectStore() {
         metaData = new HashMap<>();
@@ -166,7 +169,7 @@ public class ProjectStore {
         return stakeholdersList;
     }
 
-    public void saveProject(String statFilePath, ArrayList<Stakeholder> stakeholders, String title, String description, String createdBy, String dateCreated, boolean isEncrypted, String passPhrase) {
+    public void saveProject(String statFilePath, ArrayList<Stakeholder> stakeholders, String title, String description, String createdBy, String dateCreated) {
         //TODO add asserts for valid data
         Date date= new Date();
         Element stat = new Element("stat");
@@ -384,6 +387,11 @@ public class ProjectStore {
     public static ProjectStore getInstance() {
         return INSTANCE;
     }
+    
+    public void setPassPhrase(String passPhrase) {
+        this.passPhrase = passPhrase;
+        isEncrypted = true;
+    }
 
     /**
      * For throwing Exceptions that happen when reading or writing XML files.
@@ -399,5 +407,5 @@ public class ProjectStore {
         }
 
     }
-
+    
 }
