@@ -1913,7 +1913,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             }
             fileOut.close();
     }
-    
+    public void securityWindow()
+    {
+        
+    }
     //Creates test Driver window
     private TestDriver testFrame;
     public void testWindow()
@@ -1941,25 +1944,25 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             }
         });
         
-//        testFrame.layoutButtons.get(RelationMapPanel.COMPACTTREE).addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                System.out.println("Compact Tree");
-//                JGraphPanel.setMxLayout(RelationMapPanel.COMPACTTREE);
-//            }
-//        });
-//        
-//        testFrame.layoutButtons.get(RelationMapPanel.PARALLEL).addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                JGraphPanel.setMxLayout(RelationMapPanel.PARALLEL);
-//            }
-//        });
-//        
-//        testFrame.layoutButtons.get(RelationMapPanel.STACK).addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                System.out.println("Stack");
-//                JGraphPanel.setMxLayout(RelationMapPanel.STACK);
-//            }
-//        });
+        testFrame.layoutButtons.get(RelationMapPanel.COMPACTTREE).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Compact Tree");
+                JGraphPanel.setMxLayout(RelationMapPanel.COMPACTTREE);
+            }
+        });
+        
+        testFrame.layoutButtons.get(RelationMapPanel.PARALLEL).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JGraphPanel.setMxLayout(RelationMapPanel.PARALLEL);
+            }
+        });
+        
+        testFrame.layoutButtons.get(RelationMapPanel.STACK).addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Stack");
+                JGraphPanel.setMxLayout(RelationMapPanel.STACK);
+            }
+        });
         
         testFrame.morphButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
