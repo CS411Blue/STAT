@@ -37,8 +37,6 @@ public class STATUI extends javax.swing.JFrame {
      * Creates new form STATUI
      */
     public ArrayList<Stakeholder> Stakeholders;
-    private boolean isEncrypted = false;
-    private String passPhrase;
     
     public STATUI() {
         super("STAT");
@@ -1760,7 +1758,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             File file = saveFileChooser.getSelectedFile();
             System.out.println(file.toString());
             ProjectStore project = ProjectStore.getInstance();
-            project.saveProject(file.getPath(), Stakeholders, file.getName(), null, null, null, isEncrypted, passPhrase);
+            project.saveProject(file.getPath(), Stakeholders, file.getName(), null, null, null);
         }
     }//GEN-LAST:event_saveMenuItemActionPerformed
 
