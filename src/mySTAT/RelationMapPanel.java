@@ -106,7 +106,7 @@ public class RelationMapPanel extends JPanel
                 break;
             case PARALLEL: layout = new mxParallelEdgeLayout(panGraph, 20);
                 break;
-            case STACK: layout = new mxStackLayout(panGraph, true, 10);
+            case STACK: layout = new mxPartitionLayout(panGraph, true, 10, 2);
                 break;
             default:
             {
@@ -172,30 +172,34 @@ public class RelationMapPanel extends JPanel
     private void morphLayout()
     {
         panGraph.getModel().beginUpdate();
-        try {
-            layout.execute(graphParent);
-        } finally {
-            mxMorphing morph = new mxMorphing(graphComponent, 20, 1.2, 20);
-
-            morph.addListener(mxEvent.DONE, new mxEventSource.mxIEventListener() {
-                public void invoke(Object arg0, mxEventObject arg1) {
-                    panGraph.getModel().endUpdate();
-                }
-            });
-            morph.startAnimation();
-        }
+        layout.execute(graphParent);
+        panGraph.getModel().endUpdate();
     }
     
     public void graph()
     {
-        layout = new mxStackLayout(panGraph, false, 10, 20, 20, 2);
-        morphLayout();
-        setMxLayout(currentLayout);
-        morphLayout();
-        layout = new mxParallelEdgeLayout(panGraph, 20);
-        morphLayout();
+        if(currentLayout == FASTORGANIC)
+        {
+            layout = new mxStackLayout(panGraph, false, 10, 20, 20, 2);
+            morphLayout();
+            setMxLayout(currentLayout);
+            morphLayout();
+            layout = new mxParallelEdgeLayout(panGraph, 20);
+            morphLayout();
+            setMxLayout(currentLayout);
+        }
+        else if(currentLayout == CIRCLE)
+        {
+            morphLayout();
+            layout = new mxParallelEdgeLayout(panGraph, 20);
+            morphLayout();
+            setMxLayout(currentLayout);
+        }
+        else
+        {
+            morphLayout();
+        }
         graphComponent.setConnectable(false);
-        setMxLayout(currentLayout);        
     }
     
     public void snapEdgesToFit()
