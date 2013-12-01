@@ -1760,7 +1760,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             File file = saveFileChooser.getSelectedFile();
             System.out.println(file.toString());
             ProjectStore project = ProjectStore.getInstance();
-            project.saveProject(file.getPath(), Stakeholders, file.getName(), null, null, null, isEncrypted, String passPhrase);
+            project.saveProject(file.getPath(), Stakeholders, file.getName(), null, null, null, isEncrypted, passPhrase);
         }
     }//GEN-LAST:event_saveMenuItemActionPerformed
 
