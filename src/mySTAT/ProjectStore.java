@@ -388,9 +388,14 @@ public class ProjectStore {
         return INSTANCE;
     }
     
-    public void setPassPhrase(String passPhrase) {
+    public void enableEncryption(String passPhrase) {
+        // TODO add assert for valid pass phrase
         this.passPhrase = passPhrase;
         isEncrypted = true;
+    }
+    
+    public void disableEncryption() {
+        isEncrypted = false;
     }
 
     /**
