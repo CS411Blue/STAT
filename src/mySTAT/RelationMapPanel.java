@@ -19,6 +19,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.LayoutManager;
+import java.awt.Rectangle;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -187,7 +188,6 @@ public class RelationMapPanel extends JPanel
     
     public void graph()
     {
-        
         layout = new mxStackLayout(panGraph, false, 10, 20, 20, 2);
         morphLayout();
         setMxLayout(currentLayout);
@@ -195,7 +195,7 @@ public class RelationMapPanel extends JPanel
         layout = new mxParallelEdgeLayout(panGraph, 20);
         morphLayout();
         graphComponent.setConnectable(false);
-        setMxLayout(currentLayout);
+        setMxLayout(currentLayout);        
     }
     
     public void snapEdgesToFit()
@@ -215,4 +215,40 @@ public class RelationMapPanel extends JPanel
             Logger.getLogger(RelationMapPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+//    @Override
+//    public void repaint()
+//    {
+//        super.repaint();
+//        System.out.println("RelationMapPanel repaint()");
+//    }
+//    
+//    @Override
+//    public void repaint(Rectangle r)
+//    {
+//        super.repaint(r);
+//        System.out.println("RelationMapPanel repaint(rect)");
+//    }
+//    
+//    @Override
+//    public void repaint(long tm)
+//    {
+//        super.repaint(tm);
+//        System.out.println("RelationMapPanel repaint(tm)");
+//    }
+//    
+//    @Override
+//    public void repaint(int x, int y, int width, int height)
+//    {
+//        super.repaint(x, y, width, height);
+//        System.out.println("RelationMapPanel repaint(x,y,w,h)");
+//    }
+//    
+//    @Override
+//    public void repaint(long tm, int x, int y, int width, int height)
+//    {
+//        super.repaint(tm, x, y, width, height);
+//        System.out.printf("RelationMapPanel repaint(%d,%d,%d,%d,%d)\n", 
+//                tm, x, y, width, height);
+//    }
 }
