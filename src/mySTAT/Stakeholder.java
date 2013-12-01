@@ -28,7 +28,8 @@ public class Stakeholder {
     private static final String SH_SHAPE = new 
             String("shape=ellipse;perimeter=ellipsePerimeter;");
     
-    private static final String FORMAT = new String("whiteSpace=wrap;fontSize=12;");
+    private static final String FORMAT = new 
+        String("whiteSpace=wrap;fontSize=12;fontStyle=1;");
     
     private static final int DEFINITIVE_SIZE = 130;
     private static final int EXPECTANT_SIZE = 90;
