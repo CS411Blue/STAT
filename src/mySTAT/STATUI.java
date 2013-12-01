@@ -1639,11 +1639,11 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private double influenceConverter(int magnitude)
     {
         double convertedMagnitude;
-        if (magnitude == 3)
+        if (magnitude == Relationship.HIGH)
             convertedMagnitude = 1.0;
-        else if (magnitude == 2)
+        else if (magnitude == Relationship.MEDIUM)
             convertedMagnitude = 0.5;
-        else if (magnitude == 1)
+        else if (magnitude == Relationship.LOW)
             convertedMagnitude = 0.25;
         else 
             convertedMagnitude = 0;
