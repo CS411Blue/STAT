@@ -181,7 +181,7 @@ public class STATUI extends javax.swing.JFrame {
         saveMenuItem = new javax.swing.JMenuItem();
         saveAsMenuItem = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
-        encryptMenuItem = new javax.swing.JMenuItem();
+        securityMenuItem = new javax.swing.JMenuItem();
         exportMenuItem = new javax.swing.JMenuItem();
         jSeparator4 = new javax.swing.JPopupMenu.Separator();
         exitMenuItem = new javax.swing.JMenuItem();
@@ -649,35 +649,35 @@ public class STATUI extends javax.swing.JFrame {
         NonStakeHolderList.setMaximumRowCount(10);
         NonStakeHolderList.setAutoscrolls(true);
         classLayeredPane.add(NonStakeHolderList);
-        NonStakeHolderList.setBounds(300, 340, 70, 20);
+        NonStakeHolderList.setBounds(300, 340, 70, 27);
 
         DormantStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DormantStakeHolderList);
-        DormantStakeHolderList.setBounds(60, 60, 70, 20);
+        DormantStakeHolderList.setBounds(60, 60, 70, 27);
 
         DiscretionaryStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DiscretionaryStakeHolderList);
-        DiscretionaryStakeHolderList.setBounds(260, 130, 70, 20);
+        DiscretionaryStakeHolderList.setBounds(260, 130, 70, 27);
 
         DominantStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DominantStakeHolderList);
-        DominantStakeHolderList.setBounds(150, 100, 70, 20);
+        DominantStakeHolderList.setBounds(150, 100, 70, 27);
 
         DefinitiveStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DefinitiveStakeHolderList);
-        DefinitiveStakeHolderList.setBounds(130, 180, 70, 20);
+        DefinitiveStakeHolderList.setBounds(130, 180, 70, 27);
 
         DangerousStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DangerousStakeHolderList);
-        DangerousStakeHolderList.setBounds(30, 210, 70, 20);
+        DangerousStakeHolderList.setBounds(30, 210, 70, 27);
 
         DependentStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DependentStakeHolderList);
-        DependentStakeHolderList.setBounds(190, 260, 70, 20);
+        DependentStakeHolderList.setBounds(190, 260, 70, 27);
 
         DemandingStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DemandingStakeHolderList);
-        DemandingStakeHolderList.setBounds(80, 300, 70, 20);
+        DemandingStakeHolderList.setBounds(80, 300, 70, 27);
 
         vennLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mySTAT/classification.png"))); // NOI18N
         classLayeredPane.add(vennLabel);
@@ -699,67 +699,67 @@ public class STATUI extends javax.swing.JFrame {
 
         Supportive_UndefinedBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_UndefinedBox);
-        Supportive_UndefinedBox.setBounds(190, 180, 60, 20);
+        Supportive_UndefinedBox.setBounds(190, 180, 60, 27);
 
         Mixed_UndefinedBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_UndefinedBox);
-        Mixed_UndefinedBox.setBounds(190, 210, 60, 20);
+        Mixed_UndefinedBox.setBounds(190, 210, 60, 27);
 
         NonSupportive_UndefinedBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_UndefinedBox);
-        NonSupportive_UndefinedBox.setBounds(190, 240, 60, 20);
+        NonSupportive_UndefinedBox.setBounds(190, 240, 60, 27);
 
         Marginal_UndefinedBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_UndefinedBox);
-        Marginal_UndefinedBox.setBounds(190, 270, 60, 20);
+        Marginal_UndefinedBox.setBounds(190, 270, 60, 27);
 
         Supportive_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_LatentBox);
-        Supportive_LatentBox.setBounds(270, 180, 60, 20);
+        Supportive_LatentBox.setBounds(270, 180, 60, 27);
 
         Mixed_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_LatentBox);
-        Mixed_LatentBox.setBounds(270, 210, 60, 20);
+        Mixed_LatentBox.setBounds(270, 210, 60, 27);
 
         NonSupportive_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_LatentBox);
-        NonSupportive_LatentBox.setBounds(270, 240, 60, 20);
+        NonSupportive_LatentBox.setBounds(270, 240, 60, 27);
 
         Marginal_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_LatentBox);
-        Marginal_LatentBox.setBounds(270, 270, 60, 20);
+        Marginal_LatentBox.setBounds(270, 270, 60, 27);
 
         Supportive_ExpectantBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_ExpectantBox);
-        Supportive_ExpectantBox.setBounds(350, 180, 60, 20);
+        Supportive_ExpectantBox.setBounds(350, 180, 60, 27);
 
         Mixed_ExpectantBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_ExpectantBox);
-        Mixed_ExpectantBox.setBounds(350, 210, 60, 20);
+        Mixed_ExpectantBox.setBounds(350, 210, 60, 27);
 
         NonSupportive_ExpectantBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_ExpectantBox);
-        NonSupportive_ExpectantBox.setBounds(350, 240, 60, 20);
+        NonSupportive_ExpectantBox.setBounds(350, 240, 60, 27);
 
         Marginal_ExpectantBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_ExpectantBox);
-        Marginal_ExpectantBox.setBounds(350, 270, 60, 20);
+        Marginal_ExpectantBox.setBounds(350, 270, 60, 27);
 
         Supportive_DefinitiveBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_DefinitiveBox);
-        Supportive_DefinitiveBox.setBounds(430, 180, 60, 20);
+        Supportive_DefinitiveBox.setBounds(430, 180, 60, 27);
 
         Mixed_DefinitiveBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_DefinitiveBox);
-        Mixed_DefinitiveBox.setBounds(430, 210, 60, 20);
+        Mixed_DefinitiveBox.setBounds(430, 210, 60, 27);
 
         NonSupportive_DefinitiveBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_DefinitiveBox);
-        NonSupportive_DefinitiveBox.setBounds(430, 240, 60, 20);
+        NonSupportive_DefinitiveBox.setBounds(430, 240, 60, 27);
 
         Marginal_DefinitiveBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_DefinitiveBox);
-        Marginal_DefinitiveBox.setBounds(430, 270, 60, 20);
+        Marginal_DefinitiveBox.setBounds(430, 270, 60, 27);
 
         actionLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mySTAT/actionTable.png"))); // NOI18N
         actionLayeredPane.add(actionLabel);
@@ -1078,10 +1078,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     fileMenu.add(saveAsMenuItem);
     fileMenu.add(jSeparator3);
 
-    encryptMenuItem.setForeground(new java.awt.Color(153, 153, 153));
-    encryptMenuItem.setText("Encrypt");
-    encryptMenuItem.setToolTipText("Encrypt the Save File");
-    fileMenu.add(encryptMenuItem);
+    securityMenuItem.setText("Security");
+    securityMenuItem.setToolTipText("Encrypt the Save File");
+    fileMenu.add(securityMenuItem);
 
     exportMenuItem.setForeground(new java.awt.Color(153, 153, 153));
     exportMenuItem.setText("Export");
@@ -2125,7 +2124,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JPanel classificationPanel;
     private javax.swing.JTable contentTable;
     private javax.swing.JMenu editMenu;
-    private javax.swing.JMenuItem encryptMenuItem;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenuItem exportMenuItem;
     private javax.swing.JMenu fileMenu;
@@ -2154,6 +2152,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JFileChooser saveFileChooser;
     private javax.swing.JMenuItem saveMenuItem;
+    private javax.swing.JMenuItem securityMenuItem;
     private javax.swing.JPanel stakeholdersPanel;
     private javax.swing.JLabel vennLabel;
     // End of variables declaration//GEN-END:variables

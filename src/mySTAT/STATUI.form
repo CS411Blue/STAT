@@ -108,12 +108,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator3">
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="encryptMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="securityMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="99" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Encrypt"/>
+                <Property name="text" type="java.lang.String" value="Security"/>
                 <Property name="toolTipText" type="java.lang.String" value="Encrypt the Save File"/>
               </Properties>
             </MenuItem>
