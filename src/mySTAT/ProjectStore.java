@@ -195,8 +195,6 @@ public class ProjectStore {
         
         metaDataElement.addContent(new Element("datesaved").setText(new Timestamp(date.getTime()).toString()));
         
-        metaDataElement.addContent(new Element("encrypted").setText((Boolean.toString(isEncrypted))));
-        
         statDoc.getRootElement().addContent(metaDataElement);
         
         
