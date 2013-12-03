@@ -35,9 +35,6 @@ public class ProjectStore {
 
     private Map<String, String> metaData; //key/value pairs that contain project meta-data
     private Map<String, Stakeholder> stakeholders; //stakeholderId/stakeholder objects
-    
-    private boolean isEncrypted = false;
-    private String passPhrase;
 
     private ProjectStore() {
         metaData = new HashMap<>();
@@ -386,16 +383,6 @@ public class ProjectStore {
 
     public static ProjectStore getInstance() {
         return INSTANCE;
-    }
-    
-    public void enableEncryption(String passPhrase) {
-        // TODO add assert for valid pass phrase
-        this.passPhrase = passPhrase;
-        isEncrypted = true;
-    }
-    
-    public void disableEncryption() {
-        isEncrypted = false;
     }
 
     /**
