@@ -177,11 +177,9 @@ public class STATUI extends javax.swing.JFrame {
         fileMenu = new javax.swing.JMenu();
         newMenuItem = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        recentMenuItem = new javax.swing.JMenuItem();
         openMenuItem = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         securityMenuItem = new javax.swing.JMenuItem();
         exportMenuItem = new javax.swing.JMenuItem();
@@ -204,6 +202,7 @@ public class STATUI extends javax.swing.JFrame {
 
         mainTabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         mainTabbedPane.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        mainTabbedPane.setPreferredSize(new java.awt.Dimension(898, 727));
         mainTabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 mainTabbedPaneStateChanged(evt);
@@ -532,9 +531,8 @@ public class STATUI extends javax.swing.JFrame {
                 .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(StakeholdersPanelLayout.createSequentialGroup()
                         .addComponent(InformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(StakeholderListLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(111, 111, 111))
+                        .addGap(147, 147, 147)
+                        .addComponent(StakeholderListLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(StakeholdersPanelLayout.createSequentialGroup()
                         .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -581,9 +579,9 @@ public class STATUI extends javax.swing.JFrame {
                                     .addComponent(PotentialLabel)
                                     .addGap(102, 102, 102)))
                             .addComponent(SHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                        .addComponent(StakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91))))
+                        .addGap(57, 57, 57)
+                        .addComponent(StakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(109, 109, 109))
         );
         StakeholdersPanelLayout.setVerticalGroup(
             StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -640,7 +638,7 @@ public class STATUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(StakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         mainTabbedPane.addTab("<html>\n<br>\nStakeholders<br>\n<br>", null, StakeholdersPanel, "");
@@ -903,7 +901,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                 .addComponent(catcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
                 .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addContainerGap(41, Short.MAX_VALUE))
+            .addContainerGap(316, Short.MAX_VALUE))
     );
     influenceMatrixPanelLayout.setVerticalGroup(
         influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -932,7 +930,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addGap(27, 27, 27)
             .addComponent(influenceLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(influenceLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+            .addComponent(influenceLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
             .addGap(246, 246, 246))
     );
     influencePanelLayout.setVerticalGroup(
@@ -945,7 +943,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 .addComponent(influenceLabel3))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(influenceScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(228, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", influencePanel);
@@ -959,23 +957,26 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     relationMapParentPanel.setLayout(relationMapParentPanelLayout);
     relationMapParentPanelLayout.setHorizontalGroup(
         relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 769, Short.MAX_VALUE)
+        .addGap(0, 790, Short.MAX_VALUE)
         .addGroup(relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relationMapParentPanelLayout.createSequentialGroup()
-                .addComponent(relationMapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE)
+                .addComponent(relationMapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
                 .addContainerGap()))
     );
     relationMapParentPanelLayout.setVerticalGroup(
         relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 695, Short.MAX_VALUE)
+        .addGap(0, 488, Short.MAX_VALUE)
         .addGroup(relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(relationMapParentPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(relationMapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(269, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
     );
 
     mainTabbedPane.addTab("<html> <br> Relation Map<br><br>", relationMapParentPanel);
+
+    managementPlanScrollPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+    managementPlanScrollPane.setPreferredSize(new java.awt.Dimension(200, 100));
 
     String tempArray[][];
     if (!Stakeholders.isEmpty()){
@@ -1011,6 +1012,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     ));
     managementPlanTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     managementPlanTable.setCellSelectionEnabled(true);
+    managementPlanTable.setFillsViewportHeight(true);
     managementPlanTable.setRowHeight(50);
     managementPlanScrollPane.setViewportView(managementPlanTable);
     managementPlanTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
@@ -1020,18 +1022,17 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     managementPlanPanelLayout.setHorizontalGroup(
         managementPlanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(managementPlanPanelLayout.createSequentialGroup()
-            .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE)
-            .addContainerGap())
+            .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
+            .addGap(20, 20, 20))
     );
     managementPlanPanelLayout.setVerticalGroup(
         managementPlanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(managementPlanPanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(269, Short.MAX_VALUE))
+            .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
+            .addGap(20, 20, 20))
     );
 
-    mainTabbedPane.addTab("<html>\n<br>\nManagement Plan<br>\n<br>", managementPlanPanel);
+    mainTabbedPane.addTab("<html>\n<br>\nManagement Plan<br>\n<br>", null, managementPlanPanel, "Click here to view the management plan");
 
     MenuBar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     MenuBar.setName(""); // NOI18N
@@ -1048,11 +1049,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     });
     fileMenu.add(newMenuItem);
     fileMenu.add(jSeparator1);
-
-    recentMenuItem.setForeground(new java.awt.Color(153, 153, 153));
-    recentMenuItem.setText("Recent");
-    recentMenuItem.setToolTipText("Open a recent project");
-    fileMenu.add(recentMenuItem);
 
     openMenuItem.setText("Open");
     openMenuItem.setToolTipText("Open a STAT file");
@@ -1072,11 +1068,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         }
     });
     fileMenu.add(saveMenuItem);
-
-    saveAsMenuItem.setForeground(new java.awt.Color(153, 153, 153));
-    saveAsMenuItem.setText("Save As");
-    saveAsMenuItem.setToolTipText("Save in desired location as desired type");
-    fileMenu.add(saveAsMenuItem);
     fileMenu.add(jSeparator3);
 
     securityMenuItem.setText("Security");
@@ -1111,14 +1102,14 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(mainTabbedPane)
+        .addComponent(mainTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(mainTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(mainTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
     );
 
-    setSize(new java.awt.Dimension(914, 560));
+    setSize(new java.awt.Dimension(914, 558));
     setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -2170,10 +2161,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JFileChooser openFileChooser;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JTable pitcherTable;
-    private javax.swing.JMenuItem recentMenuItem;
     private javax.swing.JPanel relationMapParentPanel;
     private javax.swing.JScrollPane relationMapScrollPane;
-    private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JFileChooser saveFileChooser;
     private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JMenuItem securityMenuItem;
