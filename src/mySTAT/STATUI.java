@@ -23,6 +23,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.table.TableColumn;
@@ -1177,9 +1178,19 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         if (ThreatbuttonGroup.getSelection().equals(ThreatNRadioButton.getModel())) {
             threat = false;
         }
-        //create new stakeholder
+        //create new stakeholder section below///////////////
+        boolean noDuplicates = true;
+        for (int i = 0; i < Stakeholders.size(); i++)
+        {
+            if (NameTextArea.getText().equals(Stakeholders.get(i).getName()))
+                    { noDuplicates = false; }
+        }
         Stakeholder temp = new Stakeholder(NameTextArea.getText(), WantsTextArea.getText(), power, legitimacy, urgency, cooperation, threat);
-        if (NameTextArea.getText().isEmpty())
+        if (noDuplicates == false)
+        {
+            InformationLabel.setText("Stakeholder not added. " + NameTextArea.getText() + " already exists");
+        }
+        else if (NameTextArea.getText().isEmpty())
         {
             InformationLabel.setText("Stakeholder not added. Please enter a stakeholder name");
         }
@@ -1594,6 +1605,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         "<html>Responsible<br>Party", "Notes"
         }
         ));
+        for (int i = 0; i < Stakeholders.size(); i++)
+        {
+            managementPlanTable.getColumnModel().getColumn(i).setCellRenderer(new TableCellLongTextRenderer ());
+        }
         //for (int i = 0; i < 10; i++) {
         //    managementPlanTable.getColumnModel().getColumn(i).setCellRenderer(new TableCellLongTextRenderer ());
         //}
@@ -1763,10 +1778,16 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     }//GEN-LAST:event_saveMenuItemActionPerformed
 
     private void newMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newMenuItemActionPerformed
-        //erase contents of Stakeholders arraylist
-        Stakeholders.clear();
-        updateStakehodlerList();
-        mainTabbedPane.setSelectedComponent(StakeholdersPanel);
+        String newPopUp = "Are you sure you want to start a new project?\n All unsaved progress will be lost.";
+        int confirm = JOptionPane.showConfirmDialog(null, newPopUp, "Confirm new project creation", JOptionPane.OK_CANCEL_OPTION);
+        if (confirm == 0)
+        {
+            //erase contents of Stakeholders arraylist
+            Stakeholders.clear();
+            updateStakehodlerList();
+            mainTabbedPane.setSelectedComponent(StakeholdersPanel);
+            InformationLabel.setText("New Project");
+        }
     }//GEN-LAST:event_newMenuItemActionPerformed
 
     private void contentTableFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_contentTableFocusGained
