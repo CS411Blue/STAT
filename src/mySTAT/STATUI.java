@@ -15,6 +15,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Action;
@@ -42,12 +45,14 @@ public class STATUI extends javax.swing.JFrame {
      * Creates new form STATUI
      */
     public ArrayList<Stakeholder> Stakeholders;
+    public ArrayList<Stakeholder> OriginalStakeholders;
     
     public STATUI() {
         super("STAT");
 //        ImageIcon statIcon = new ImageIcon(getClass().getResource("/mySTAT/logo.png"));
 //        setIconImage(statIcon.getImage());
         this.Stakeholders = new ArrayList<>();
+        this.OriginalStakeholders = new ArrayList<>();
         testWindow();
         initComponents();
     }
@@ -1627,20 +1632,28 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     //update the managementPlan
     private void managementPlanUpdate() {
         // TODO add your handling code here:
+        //copy Stakeholders into a new Arraylist for display purposes
+        ArrayList<Stakeholder> Fakeholders = new ArrayList(Stakeholders);
+        Collections.copy(Fakeholders,Stakeholders);
+        //sort Fakeholders by Influence value
+        Collections.sort(Fakeholders, new Comparator<Stakeholder>(){
+            public int compare(Stakeholder s1, Stakeholder s2) {
+            return Double.compare(s2.getInfluence(), s1.getInfluence());}});
+        //create an array of arrays to hold all values in chart form
         String tempArray[][];
         if (!Stakeholders.isEmpty()){
-            tempArray = new String[Stakeholders.size()][10];
-            for (int i = 0; i < Stakeholders.size(); i++){
-                tempArray[i][0] = Stakeholders.get(i).getName();
-                tempArray[i][1] = Stakeholders.get(i).getWants();
-                tempArray[i][2] = Stakeholders.get(i).getClassification();
-                tempArray[i][3] = Stakeholders.get(i).getAttitude();
-                tempArray[i][4] = String.format("%.3f", Stakeholders.get(i).getInfluence());
-                tempArray[i][5] = Stakeholders.get(i).getStrategy();
-                tempArray[i][6] = Stakeholders.get(i).getEngagement();
-                tempArray[i][7] = Stakeholders.get(i).getLastEngaged();
-                tempArray[i][8] = Stakeholders.get(i).getResponsible();
-                tempArray[i][9] = Stakeholders.get(i).getNotes();
+            tempArray = new String[Fakeholders.size()][10];
+            for (int i = 0; i < Fakeholders.size(); i++){
+                tempArray[i][0] = Fakeholders.get(i).getName();
+                tempArray[i][1] = Fakeholders.get(i).getWants();
+                tempArray[i][2] = Fakeholders.get(i).getClassification();
+                tempArray[i][3] = Fakeholders.get(i).getAttitude();
+                tempArray[i][4] = String.format("%.3f", Fakeholders.get(i).getInfluence());
+                tempArray[i][5] = Fakeholders.get(i).getStrategy();
+                tempArray[i][6] = Fakeholders.get(i).getEngagement();
+                tempArray[i][7] = Fakeholders.get(i).getLastEngaged();
+                tempArray[i][8] = Fakeholders.get(i).getResponsible();
+                tempArray[i][9] = Fakeholders.get(i).getNotes();
             }
         }
         else {
@@ -1651,6 +1664,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 }
                }
             }
+        //set the table model
         managementPlanTable.setModel(new javax.swing.table.DefaultTableModel(
         tempArray,
         new String [] {
@@ -1675,8 +1689,100 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         {
             managementPlanTable.getColumnModel().getColumn(i).setCellRenderer(new TableCellLongTextRenderer ());
         }
+        //make table headers clickable
+        managementPlanTable.getTableHeader().addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+        ManagementPlanColumnMouseClicked(evt);}});
+        //copy back the original order of the stakeholders if sorting was performed
+        if (!OriginalStakeholders.isEmpty()){
+            Stakeholders.clear();
+            for(Stakeholder s : OriginalStakeholders)
+            { Stakeholders.add(s); }
+        }
+        else
+        {
+            for(Stakeholder s : Stakeholders)
+            { OriginalStakeholders.add(s); }
+        }
     }
-    
+    //sort if header clicked
+    private void ManagementPlanColumnMouseClicked(java.awt.event.MouseEvent evt)
+    {
+        int selectedColumnId = managementPlanTable.getTableHeader().columnAtPoint(evt.getPoint());
+        //copy original order into another arraylist
+        Collections.copy(OriginalStakeholders,Stakeholders);
+        //String colName = managementPlanTable.getColumnName(managementPlanTable.getTableHeader().columnAtPoint(evt.getPoint()));
+        if (selectedColumnId == 0)
+        {
+            Collections.sort(Stakeholders, new Comparator<Stakeholder>(){
+            public int compare(Stakeholder s1, Stakeholder s2) {
+            return s1.getName().compareToIgnoreCase(s2.getName());}});
+            managementPlanUpdate();
+        }
+        if (selectedColumnId == 1)
+        {
+            Collections.sort(Stakeholders, new Comparator<Stakeholder>(){
+            public int compare(Stakeholder s1, Stakeholder s2) {
+            return s1.getWants().compareToIgnoreCase(s2.getWants());}});
+            managementPlanUpdate();
+        }
+        if (selectedColumnId == 2)
+        {
+            Collections.sort(Stakeholders, new Comparator<Stakeholder>(){
+            public int compare(Stakeholder s1, Stakeholder s2) {
+            return s1.getClassification().compareToIgnoreCase(s2.getClassification());}});
+            managementPlanUpdate();
+        }
+        if (selectedColumnId == 3)
+        {
+            Collections.sort(Stakeholders, new Comparator<Stakeholder>(){
+            public int compare(Stakeholder s1, Stakeholder s2) {
+            return s1.getAttitude().compareToIgnoreCase(s2.getAttitude());}});
+            managementPlanUpdate();
+        }
+        if (selectedColumnId == 4)
+        {
+            Collections.sort(Stakeholders, new Comparator<Stakeholder>(){
+            public int compare(Stakeholder s1, Stakeholder s2) {
+            return Double.compare(s2.getInfluence(), s1.getInfluence());}});
+            managementPlanUpdate();
+        }
+        if (selectedColumnId == 5)
+        {
+            Collections.sort(Stakeholders, new Comparator<Stakeholder>(){
+            public int compare(Stakeholder s1, Stakeholder s2) {
+            return s1.getStrategy().compareToIgnoreCase(s2.getStrategy());}});
+            managementPlanUpdate();
+        }
+        if (selectedColumnId == 6)
+        {
+            Collections.sort(Stakeholders, new Comparator<Stakeholder>(){
+            public int compare(Stakeholder s1, Stakeholder s2) {
+            return s1.getEngagement().compareToIgnoreCase(s2.getEngagement());}});
+            managementPlanUpdate();
+        }
+        if (selectedColumnId == 7)
+        {
+            Collections.sort(Stakeholders, new Comparator<Stakeholder>(){
+            public int compare(Stakeholder s1, Stakeholder s2) {
+            return s1.getLastEngaged().compareToIgnoreCase(s2.getLastEngaged());}});
+            managementPlanUpdate();
+        }
+        if (selectedColumnId == 8)
+        {
+            Collections.sort(Stakeholders, new Comparator<Stakeholder>(){
+            public int compare(Stakeholder s1, Stakeholder s2) {
+            return s1.getResponsible().compareToIgnoreCase(s2.getResponsible());}});
+            managementPlanUpdate();
+        }
+        if (selectedColumnId == 9)
+        {
+            Collections.sort(Stakeholders, new Comparator<Stakeholder>(){
+            public int compare(Stakeholder s1, Stakeholder s2) {
+            return s1.getNotes().compareToIgnoreCase(s2.getNotes());}});
+            managementPlanUpdate();
+        }
+    }
     private double classificationConverter(String classification)
     {
         double convertedClassification;
