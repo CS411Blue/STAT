@@ -181,9 +181,6 @@ public class STATUI extends javax.swing.JFrame {
         managementPlanPanel = new javax.swing.JPanel();
         managementPlanScrollPane = new javax.swing.JScrollPane();
         managementPlanTable = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         MenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         newMenuItem = new javax.swing.JMenuItem();
@@ -1061,46 +1058,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     );
 
     mainTabbedPane.addTab("<html>\n<br>\nManagement Plan<br>\n<br>", null, managementPlanPanel, "Click here to view the management plan");
-
-    jTable1.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-            {null, null, null, null},
-            {null, null, null, null},
-            {null, null, null, null},
-            {null, null, null, null}
-        },
-        new String [] {
-            "Title 1", "Title 2", "Title 3", "Title 4"
-        }
-    ) {
-        boolean[] canEdit = new boolean [] {
-            false, false, true, true
-        };
-
-        public boolean isCellEditable(int rowIndex, int columnIndex) {
-            return canEdit [columnIndex];
-        }
-    });
-    jScrollPane1.setViewportView(jTable1);
-
-    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-    jPanel1.setLayout(jPanel1Layout);
-    jPanel1Layout.setHorizontalGroup(
-        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(jPanel1Layout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(328, Short.MAX_VALUE))
-    );
-    jPanel1Layout.setVerticalGroup(
-        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(jPanel1Layout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(50, Short.MAX_VALUE))
-    );
-
-    mainTabbedPane.addTab("tab7", jPanel1);
 
     MenuBar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     MenuBar.setName(""); // NOI18N
@@ -2342,13 +2299,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JPanel influencePanel;
     private javax.swing.JButton influenceSaveButton;
     private javax.swing.JScrollPane influenceScrollPane;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTabbedPane mainTabbedPane;
     private javax.swing.JPanel managementPlanPanel;
     private javax.swing.JScrollPane managementPlanScrollPane;
