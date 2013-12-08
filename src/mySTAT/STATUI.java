@@ -27,7 +27,10 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -173,6 +176,9 @@ public class STATUI extends javax.swing.JFrame {
         managementPlanPanel = new javax.swing.JPanel();
         managementPlanScrollPane = new javax.swing.JScrollPane();
         managementPlanTable = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         MenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         newMenuItem = new javax.swing.JMenuItem();
@@ -912,9 +918,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 .addComponent(influenceSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(pitcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                .addComponent(pitcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
                 .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addContainerGap(212, Short.MAX_VALUE))
+            .addGap(10, 10, 10))
     );
 
     influenceScrollPane.setViewportView(influenceMatrixPanel);
@@ -942,8 +948,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 .addComponent(influenceLabel2)
                 .addComponent(influenceLabel3))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(influenceScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+            .addGap(21, 21, 21))
     );
 
     mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", influencePanel);
@@ -975,7 +981,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     mainTabbedPane.addTab("<html> <br> Relation Map<br><br>", relationMapParentPanel);
 
-    managementPlanScrollPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+    managementPlanScrollPane.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(0, 0, 0)));
     managementPlanScrollPane.setPreferredSize(new java.awt.Dimension(200, 100));
 
     String tempArray[][];
@@ -1009,13 +1015,30 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             "<html>Method of<br>Engagement", "<html>Last<br>Engaged",
             "<html>Responsible<br>Party", "Notes"
         }
-    ));
+    ){
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false, false, false, true, true, true, true
+        };
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    managementPlanTable.getTableHeader().setPreferredSize(new Dimension(managementPlanTable.getColumnModel().getTotalColumnWidth(), 32));
     managementPlanTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     managementPlanTable.setCellSelectionEnabled(true);
     managementPlanTable.setFillsViewportHeight(true);
     managementPlanTable.setRowHeight(50);
+    managementPlanTable.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        public void propertyChange(java.beans.PropertyChangeEvent evt) {
+            managementPlanTablePropertyChange(evt);
+        }
+    });
     managementPlanScrollPane.setViewportView(managementPlanTable);
     managementPlanTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+    //allow table word wrap
+    for (int i = 0; i < 10; i++)
+    { managementPlanTable.getColumnModel().getColumn(i).setCellRenderer(new TableCellLongTextRenderer ()); }
 
     javax.swing.GroupLayout managementPlanPanelLayout = new javax.swing.GroupLayout(managementPlanPanel);
     managementPlanPanel.setLayout(managementPlanPanelLayout);
@@ -1033,6 +1056,46 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     );
 
     mainTabbedPane.addTab("<html>\n<br>\nManagement Plan<br>\n<br>", null, managementPlanPanel, "Click here to view the management plan");
+
+    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null}
+        },
+        new String [] {
+            "Title 1", "Title 2", "Title 3", "Title 4"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false, true, true
+        };
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    jScrollPane1.setViewportView(jTable1);
+
+    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+    jPanel1.setLayout(jPanel1Layout);
+    jPanel1Layout.setHorizontalGroup(
+        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel1Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(328, Short.MAX_VALUE))
+    );
+    jPanel1Layout.setVerticalGroup(
+        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel1Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(50, Short.MAX_VALUE))
+    );
+
+    mainTabbedPane.addTab("tab7", jPanel1);
 
     MenuBar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     MenuBar.setName(""); // NOI18N
@@ -1595,17 +1658,23 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         "<html>Method of<br>Engagement", "<html>Last<br>Engaged",
         "<html>Responsible<br>Party", "Notes"
         }
-        ));
+        ){
+            boolean[] canEdit = new boolean [] {
+            false, false, false, false, false, false, true, true, true, true};
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];}
+        });
+        //add a listener to save changes in editable columns
+        managementPlanTable.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        public void propertyChange(java.beans.PropertyChangeEvent evt) {
+        managementPlanTablePropertyChange(evt);}});
         //set table header height
         managementPlanTable.getTableHeader().setPreferredSize(new Dimension(managementPlanTable.getColumnModel().getTotalColumnWidth(), 32));
         //allow table word wrap
-        for (int i = 0; i < Stakeholders.size(); i++)
+        for (int i = 0; i < 10; i++)
         {
             managementPlanTable.getColumnModel().getColumn(i).setCellRenderer(new TableCellLongTextRenderer ());
         }
-        //for (int i = 0; i < 10; i++) {
-        //    managementPlanTable.getColumnModel().getColumn(i).setCellRenderer(new TableCellLongTextRenderer ());
-        //}
     }
     
     private double classificationConverter(String classification)
@@ -1697,7 +1766,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             Stakeholders.get(i).setInfluence(situationalInfluence);
         }
     }
-    
+
     private void mainTabbedPaneStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_mainTabbedPaneStateChanged
         // TODO add your handling code here:
         //managementPlanUpdate();
@@ -1719,7 +1788,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         frame.pack();
         frame.setVisible(true);
         */
-             
+        //checkManagementPlanListener();
         if (evt.getSource() instanceof JTabbedPane) 
         {
            JTabbedPane pane = (JTabbedPane) evt.getSource();
@@ -1739,12 +1808,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
            else if(currentTab.equals(managementPlanPanel)){
                situationalInfluenceUpdate();
                managementPlanUpdate();
-               //ERASE THIS TOO!!!!!!!!!!!!!1!!!!
-               //displaySituationalInfluences();
            }
            else{
-               //relationshipUpdate();
-               //System.out.println("Selected paneNo : " + pane.getSelectedIndex());
                updateStakehodlerList();
                System.out.println("update catch branch failed for: tab " 
                        +mainTabbedPane.indexOfComponent(currentTab)
@@ -1796,6 +1861,28 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         influenceLabel2.setText("has a " + magnitude + " influence on ");
         influenceLabel3.setText(column);
     }//GEN-LAST:event_contentTableFocusGained
+
+    private void managementPlanTablePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_managementPlanTablePropertyChange
+        // TODO add your handling code here:
+        JTable target = (JTable)evt.getSource();
+        int row = target.getSelectedRow();
+        int column = target.getSelectedColumn();
+        //prevent ArrayIndexOutOfBounds problems at startup
+            if (column > 9){column = 9;}
+            if (column < 0){column = 0;}
+            if (row < 0 ){row = 0;}
+        // do some action
+        String newEntry = (String)target.getValueAt(row, column);
+        if (column == 6)
+        { Stakeholders.get(row).setEngagement(newEntry); }
+        else if (column == 7)
+        { Stakeholders.get(row).setLastEngaged(newEntry); }
+        else if (column == 8)
+        { Stakeholders.get(row).setResponsible(newEntry); }
+        else if (column == 9)
+        { Stakeholders.get(row).setNotes(newEntry); }
+        else {}
+    }//GEN-LAST:event_managementPlanTablePropertyChange
     
     //ERASE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!
     /*public void displayStakeholderRelationships()
@@ -2149,10 +2236,13 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JPanel influencePanel;
     private javax.swing.JButton influenceSaveButton;
     private javax.swing.JScrollPane influenceScrollPane;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTabbedPane mainTabbedPane;
     private javax.swing.JPanel managementPlanPanel;
     private javax.swing.JScrollPane managementPlanScrollPane;
