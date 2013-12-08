@@ -1930,20 +1930,28 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         JTable target = (JTable)evt.getSource();
         int row = target.getSelectedRow();
         int column = target.getSelectedColumn();
+        
+       
         //prevent ArrayIndexOutOfBounds problems at startup
             if (column > 9){column = 9;}
             if (column < 0){column = 0;}
             if (row < 0 ){row = 0;}
         // do some action
+        String name = (String) target.getValueAt(row, 0);
+        int stakeholderToEdit = 0;
+        for(int i = 0; i < Stakeholders.size(); i++) {
+            if(Stakeholders.get(i).getName().equals(name))
+                stakeholderToEdit = i;
+        }
         String newEntry = (String)target.getValueAt(row, column);
         if (column == 6)
-        { Stakeholders.get(row).setEngagement(newEntry); }
+        { Stakeholders.get(stakeholderToEdit).setEngagement(newEntry); }
         else if (column == 7)
-        { Stakeholders.get(row).setLastEngaged(newEntry); }
+        { Stakeholders.get(stakeholderToEdit).setLastEngaged(newEntry); }
         else if (column == 8)
-        { Stakeholders.get(row).setResponsible(newEntry); }
+        { Stakeholders.get(stakeholderToEdit).setResponsible(newEntry); }
         else if (column == 9)
-        { Stakeholders.get(row).setNotes(newEntry); }
+        { Stakeholders.get(stakeholderToEdit).setNotes(newEntry); }
         else {}
     }//GEN-LAST:event_managementPlanTablePropertyChange
     

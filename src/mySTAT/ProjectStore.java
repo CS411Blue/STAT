@@ -29,7 +29,7 @@ import org.jdom2.output.XMLOutputter;
 public class ProjectStore {
 
     private static final String[] METADATA_ATTRIBS = {"title", "description", "created", "updated", "encrypted"};
-    private static final String[] STAKEHOLDER_ATTRIBS = {"name", "power", "legitimacy", "urgency", "cooperation", "threat", "wants", "notes", "strategy", "method", "responsible"};
+    private static final String[] STAKEHOLDER_ATTRIBS = {"name", "power", "legitimacy", "urgency", "cooperation", "threat", "wants", "notes", "strategy", "method", "responsible", "lastengaged"};
 
     private static final ProjectStore INSTANCE = new ProjectStore();
 
@@ -239,6 +239,10 @@ public class ProjectStore {
             attrib = tempAttribs.get("method");
             if(attrib != null && !attrib.isEmpty())
                 stakeholderElement.addContent(new Element("method").setText(attrib));
+            
+            attrib = tempAttribs.get("lastengaged");
+            if(attrib != null && !attrib.isEmpty())
+                stakeholderElement.addContent(new Element("lastengaged").setText(attrib));
             
             attrib = tempAttribs.get("responsible");
             if(attrib != null && !attrib.isEmpty())

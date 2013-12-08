@@ -132,7 +132,7 @@ public class Stakeholder {
         Wants = attributes.get("wants");
         Strategy = attributes.get("strategy");
         Engagement = attributes.get("method");
-        //LastEngaged = attributes.get("lastEngaged");
+        LastEngaged = attributes.get("lastengaged");
         Responsible = attributes.get("responsible");
         Notes = attributes.get("notes");
         Influences = influences;
@@ -362,7 +362,7 @@ public class Stakeholder {
         results.put("wants", Wants);
         results.put("strategy", Strategy);
         results.put("method", Engagement);
-        results.put("lastEngaged", LastEngaged); //do we need this?
+        results.put("lastengaged", LastEngaged);
         results.put("responsible", Responsible);
         results.put("notes", Notes);
         return results;
