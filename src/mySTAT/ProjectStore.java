@@ -132,10 +132,118 @@ public class ProjectStore {
                     Element stakeElement = stakeItr.next();
 
                     //TODO change this to validate data
-                    for (String attrib : STAKEHOLDER_ATTRIBS) {
-                        stakeholderAttributes.put(attrib, stakeElement.getChildText(attrib));
+                    // "name", "power", "legitimacy", "urgency", "cooperation", "threat", "wants", "notes", "strategy", "method", "responsible", "lastengaged"
+                    
+                    // read stakeholder name
+                    tempAttrib = stakeElement.getChildText("name");
+                    if(tempAttrib == null || tempAttrib.isEmpty())
+                        throw new ProjectStoreException("Stakeholder name tag is empty or missing");
+                    
+                    if(tempAttrib.length() > 60)
+                        throw new ProjectStoreException("stakeholder>>name tag is too large");
+                    
+                    stakeholderAttributes.put("name", tempAttrib);
+                    
+                     //read in stakeholder power
+                    tempAttrib = stakeElement.getChildText("power");
+                    if(tempAttrib != null && !tempAttrib.isEmpty()){
+                                
+                        if(!tempAttrib.equalsIgnoreCase("true") && !tempAttrib.equalsIgnoreCase("false"))
+                            throw new ProjectStoreException("stakeholder>>power tag is invalid");
+                                       
+                        stakeholderAttributes.put("power", tempAttrib);
                     }
-
+                    
+                    //read in stakeholder legitimacy
+                    tempAttrib = stakeElement.getChildText("legitimacy");
+                    if(tempAttrib != null && !tempAttrib.isEmpty()){
+                                
+                        if(!tempAttrib.equalsIgnoreCase("true") && !tempAttrib.equalsIgnoreCase("false"))
+                            throw new ProjectStoreException("stakeholder>>legitimacy tag is invalid");
+                                       
+                        stakeholderAttributes.put("legitimacy", tempAttrib);
+                    }
+                    
+                    //read in stakeholder urgency
+                    tempAttrib = stakeElement.getChildText("urgency");
+                    if(tempAttrib != null && !tempAttrib.isEmpty()){
+                                
+                        if(!tempAttrib.equalsIgnoreCase("true") && !tempAttrib.equalsIgnoreCase("false"))
+                            throw new ProjectStoreException("stakeholder>>urgency tag is invalid");
+                                       
+                        stakeholderAttributes.put("urgency", tempAttrib);
+                    }
+                    
+                    //read in stakeholder cooperation
+                    tempAttrib = stakeElement.getChildText("cooperation");
+                    if(tempAttrib != null && !tempAttrib.isEmpty()){
+                                
+                        if(!tempAttrib.equalsIgnoreCase("true") && !tempAttrib.equalsIgnoreCase("false"))
+                            throw new ProjectStoreException("stakeholder>>cooperation tag is invalid");
+                                       
+                        stakeholderAttributes.put("cooperation", tempAttrib);
+                    }
+                    
+                    //read in stakeholder threat
+                    tempAttrib = stakeElement.getChildText("threat");
+                    if(tempAttrib != null && !tempAttrib.isEmpty()){
+                                
+                        if(!tempAttrib.equalsIgnoreCase("true") && !tempAttrib.equalsIgnoreCase("false"))
+                            throw new ProjectStoreException("stakeholder>>threat tag is invalid");
+                                       
+                        stakeholderAttributes.put("threat", tempAttrib);
+                    }
+                    
+                    //read in stakeholder wants
+                    tempAttrib = stakeElement.getChildText("wants");
+                    if(tempAttrib != null && !tempAttrib.isEmpty()){
+                                
+                        if(tempAttrib.length() > 1024)
+                            throw new ProjectStoreException("stakeholder>>wants tag is too long");
+                                       
+                        stakeholderAttributes.put("wants", tempAttrib);
+                    }
+                    
+                    //read in stakeholder notes
+                    tempAttrib = stakeElement.getChildText("notes");
+                    if(tempAttrib != null && !tempAttrib.isEmpty()){
+                                
+                        if(tempAttrib.length() > 1024)
+                            throw new ProjectStoreException("stakeholder>>notes tag is too long");
+                                       
+                        stakeholderAttributes.put("notes", tempAttrib);
+                    }
+                    
+                    //read in stakeholder method
+                    tempAttrib = stakeElement.getChildText("method");
+                    if(tempAttrib != null && !tempAttrib.isEmpty()){
+                                
+                        if(tempAttrib.length() > 1024)
+                            throw new ProjectStoreException("stakeholder>>method tag is too long");
+                                       
+                        stakeholderAttributes.put("method", tempAttrib);
+                    }
+                    
+                    //read in stakeholder responsible
+                    tempAttrib = stakeElement.getChildText("responsible");
+                    if(tempAttrib != null && !tempAttrib.isEmpty()){
+                                
+                        if(tempAttrib.length() > 60)
+                            throw new ProjectStoreException("stakeholder>>responsible tag is too long");
+                                       
+                        stakeholderAttributes.put("responsible", tempAttrib);
+                    }
+                    
+                    //read in stakeholder lastengaged
+                    tempAttrib = stakeElement.getChildText("lastengaged");
+                    if(tempAttrib != null && !tempAttrib.isEmpty()){
+                                
+                        if(tempAttrib.length() > 60)
+                            throw new ProjectStoreException("stakeholder>>lastengaged tag is too long");
+                                       
+                        stakeholderAttributes.put("lastengaged", tempAttrib);
+                    }
+                    
                     List<Element> influenceList = stakeElement.getChild("influences").getChildren("influence");
                     Iterator<Element> influenceItr = influenceList.iterator();
 
@@ -181,14 +289,14 @@ public class ProjectStore {
         if(description != null && !description.isEmpty())
             metaDataElement.addContent(new Element("description").setText(description));
         
-        // take this out when implemented
-        if(createdBy == null)
-            createdBy = "temp";
+       
+        if(createdBy == null || createdBy.isEmpty())
+            createdBy = System.getProperty("user.name");
         
         metaDataElement.addContent(new Element("createdby").setText(createdBy));
         
-        // take this out when implemented
-        if(dateCreated == null) 
+        
+        if(dateCreated == null || dateCreated.isEmpty()) 
             dateCreated = new Timestamp(date.getTime()).toString();
         
         metaDataElement.addContent(new Element("datecreated").setText(dateCreated));     
@@ -231,11 +339,7 @@ public class ProjectStore {
             attrib = tempAttribs.get("wants");
             if(attrib != null && !attrib.isEmpty())
                 stakeholderElement.addContent(new Element("wants").setText(attrib));
-            
-            attrib = tempAttribs.get("strategy");
-            if(attrib != null && !attrib.isEmpty())
-                stakeholderElement.addContent(new Element("strategy").setText(attrib));
-            
+                        
             attrib = tempAttribs.get("method");
             if(attrib != null && !attrib.isEmpty())
                 stakeholderElement.addContent(new Element("method").setText(attrib));
