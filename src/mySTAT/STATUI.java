@@ -224,6 +224,7 @@ public class STATUI extends javax.swing.JFrame {
         WantsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         WantsTextArea.setColumns(20);
+        WantsTextArea.setLineWrap(true);
         WantsTextArea.setRows(5);
         WantsScrollPane.setViewportView(WantsTextArea);
 
@@ -306,6 +307,7 @@ public class STATUI extends javax.swing.JFrame {
         SHWantsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         SHWantsTextArea.setColumns(20);
+        SHWantsTextArea.setLineWrap(true);
         SHWantsTextArea.setRows(5);
         SHWantsTextArea.setEnabled(false);
         SHWantsScrollPane.setViewportView(SHWantsTextArea);
