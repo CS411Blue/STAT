@@ -1460,10 +1460,16 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="influencePanel">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[800, 497]"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Influences&lt;br&gt;&#xa;&lt;br&gt;">
+              <JTabbedPaneConstraints tabName="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Influences&lt;br&gt;&#xa;&lt;br&gt;" toolTip="Click here to modify the stakeholder relationships">
                 <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Influences&lt;br&gt;&#xa;&lt;br&gt;"/>
+                <Property name="tabToolTip" type="java.lang.String" value="Click here to modify the stakeholder relationships"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -1471,30 +1477,32 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="influenceScrollPane" alignment="0" pref="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="influenceLabel1" min="-2" pref="101" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="influenceLabel2" min="-2" pref="138" max="-2" attributes="0"/>
+                      <Component id="influenceScrollPane" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                      <Component id="influenceLabel1" min="-2" pref="104" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="influenceLabel2" min="-2" pref="143" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="influenceLabel3" pref="231" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
+                      <Component id="influenceLabel3" min="-2" pref="139" max="-2" attributes="0"/>
+                      <EmptySpace pref="204" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="influenceLabel1" alignment="3" max="-2" attributes="0"/>
-                          <Component id="influenceLabel2" alignment="3" max="-2" attributes="0"/>
-                          <Component id="influenceLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="influenceLabel2" alignment="0" pref="22" max="32767" attributes="0"/>
+                          <Component id="influenceLabel1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="influenceLabel3" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="influenceScrollPane" pref="450" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="influenceScrollPane" pref="427" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1503,6 +1511,9 @@
             <Container class="javax.swing.JScrollPane" name="influenceScrollPane">
               <Properties>
                 <Property name="autoscrolls" type="boolean" value="true"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 100]"/>
+                </Property>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="influenceScrollPane.getVerticalScrollBar().setUnitIncrement(16);&#xa;influenceScrollPane.getHorizontalScrollBar().setUnitIncrement(16);"/>
@@ -1524,12 +1535,12 @@
                                       <Component id="influenceSaveButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="catcherTable" pref="589" max="32767" attributes="0"/>
-                                  <Component id="contentTable" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="contentTable" pref="561" max="32767" attributes="0"/>
+                                  <Component id="catcherTable" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="316" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1541,10 +1552,10 @@
                                   <Component id="catcherTable" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                                   <Component id="influenceSaveButton" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="pitcherTable" alignment="3" pref="367" max="32767" attributes="0"/>
-                                  <Component id="contentTable" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="pitcherTable" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="contentTable" alignment="3" pref="361" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           </Group>
@@ -1679,7 +1690,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="managementPlanScrollPane" pref="780" max="32767" attributes="0"/>
+                      <Component id="managementPlanScrollPane" pref="770" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
               </Group>

@@ -656,35 +656,35 @@ public class STATUI extends javax.swing.JFrame {
         NonStakeHolderList.setMaximumRowCount(10);
         NonStakeHolderList.setAutoscrolls(true);
         classLayeredPane.add(NonStakeHolderList);
-        NonStakeHolderList.setBounds(300, 340, 70, 28);
+        NonStakeHolderList.setBounds(300, 340, 70, 20);
 
         DormantStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DormantStakeHolderList);
-        DormantStakeHolderList.setBounds(60, 60, 70, 28);
+        DormantStakeHolderList.setBounds(60, 60, 70, 20);
 
         DiscretionaryStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DiscretionaryStakeHolderList);
-        DiscretionaryStakeHolderList.setBounds(260, 130, 70, 28);
+        DiscretionaryStakeHolderList.setBounds(260, 130, 70, 20);
 
         DominantStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DominantStakeHolderList);
-        DominantStakeHolderList.setBounds(150, 100, 70, 28);
+        DominantStakeHolderList.setBounds(150, 100, 70, 20);
 
         DefinitiveStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DefinitiveStakeHolderList);
-        DefinitiveStakeHolderList.setBounds(130, 180, 70, 28);
+        DefinitiveStakeHolderList.setBounds(130, 180, 70, 20);
 
         DangerousStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DangerousStakeHolderList);
-        DangerousStakeHolderList.setBounds(30, 210, 70, 28);
+        DangerousStakeHolderList.setBounds(30, 210, 70, 20);
 
         DependentStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DependentStakeHolderList);
-        DependentStakeHolderList.setBounds(190, 260, 70, 28);
+        DependentStakeHolderList.setBounds(190, 260, 70, 20);
 
         DemandingStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DemandingStakeHolderList);
-        DemandingStakeHolderList.setBounds(80, 300, 70, 28);
+        DemandingStakeHolderList.setBounds(80, 300, 70, 20);
 
         vennLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mySTAT/classification.png"))); // NOI18N
         classLayeredPane.add(vennLabel);
@@ -706,67 +706,67 @@ public class STATUI extends javax.swing.JFrame {
 
         Supportive_UndefinedBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_UndefinedBox);
-        Supportive_UndefinedBox.setBounds(190, 180, 60, 28);
+        Supportive_UndefinedBox.setBounds(190, 180, 60, 20);
 
         Mixed_UndefinedBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_UndefinedBox);
-        Mixed_UndefinedBox.setBounds(190, 210, 60, 28);
+        Mixed_UndefinedBox.setBounds(190, 210, 60, 20);
 
         NonSupportive_UndefinedBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_UndefinedBox);
-        NonSupportive_UndefinedBox.setBounds(190, 240, 60, 28);
+        NonSupportive_UndefinedBox.setBounds(190, 240, 60, 20);
 
         Marginal_UndefinedBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_UndefinedBox);
-        Marginal_UndefinedBox.setBounds(190, 270, 60, 28);
+        Marginal_UndefinedBox.setBounds(190, 270, 60, 20);
 
         Supportive_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_LatentBox);
-        Supportive_LatentBox.setBounds(270, 180, 60, 28);
+        Supportive_LatentBox.setBounds(270, 180, 60, 20);
 
         Mixed_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_LatentBox);
-        Mixed_LatentBox.setBounds(270, 210, 60, 28);
+        Mixed_LatentBox.setBounds(270, 210, 60, 20);
 
         NonSupportive_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_LatentBox);
-        NonSupportive_LatentBox.setBounds(270, 240, 60, 28);
+        NonSupportive_LatentBox.setBounds(270, 240, 60, 20);
 
         Marginal_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_LatentBox);
-        Marginal_LatentBox.setBounds(270, 270, 60, 28);
+        Marginal_LatentBox.setBounds(270, 270, 60, 20);
 
         Supportive_ExpectantBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_ExpectantBox);
-        Supportive_ExpectantBox.setBounds(350, 180, 60, 28);
+        Supportive_ExpectantBox.setBounds(350, 180, 60, 20);
 
         Mixed_ExpectantBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_ExpectantBox);
-        Mixed_ExpectantBox.setBounds(350, 210, 60, 28);
+        Mixed_ExpectantBox.setBounds(350, 210, 60, 20);
 
         NonSupportive_ExpectantBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_ExpectantBox);
-        NonSupportive_ExpectantBox.setBounds(350, 240, 60, 28);
+        NonSupportive_ExpectantBox.setBounds(350, 240, 60, 20);
 
         Marginal_ExpectantBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_ExpectantBox);
-        Marginal_ExpectantBox.setBounds(350, 270, 60, 28);
+        Marginal_ExpectantBox.setBounds(350, 270, 60, 20);
 
         Supportive_DefinitiveBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_DefinitiveBox);
-        Supportive_DefinitiveBox.setBounds(430, 180, 60, 28);
+        Supportive_DefinitiveBox.setBounds(430, 180, 60, 20);
 
         Mixed_DefinitiveBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_DefinitiveBox);
-        Mixed_DefinitiveBox.setBounds(430, 210, 60, 28);
+        Mixed_DefinitiveBox.setBounds(430, 210, 60, 20);
 
         NonSupportive_DefinitiveBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_DefinitiveBox);
-        NonSupportive_DefinitiveBox.setBounds(430, 240, 60, 28);
+        NonSupportive_DefinitiveBox.setBounds(430, 240, 60, 20);
 
         Marginal_DefinitiveBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_DefinitiveBox);
-        Marginal_DefinitiveBox.setBounds(430, 270, 60, 28);
+        Marginal_DefinitiveBox.setBounds(430, 270, 60, 20);
 
         actionLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mySTAT/actionTable.png"))); // NOI18N
         actionLayeredPane.add(actionLabel);
@@ -782,7 +782,10 @@ public class STATUI extends javax.swing.JFrame {
 
         mainTabbedPane.addTab("<html>\n<br>\nActions<br>\n<br>", actionPanel);
 
+        influencePanel.setPreferredSize(new java.awt.Dimension(800, 497));
+
         influenceScrollPane.setAutoscrolls(true);
+        influenceScrollPane.setPreferredSize(new java.awt.Dimension(200, 100));
         influenceScrollPane.getVerticalScrollBar().setUnitIncrement(16);
         influenceScrollPane.getHorizontalScrollBar().setUnitIncrement(16);
 
@@ -906,10 +909,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                     .addGap(25, 25, 25)
                     .addComponent(influenceSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGap(18, 18, 18)
-            .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                .addComponent(catcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
-                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addContainerGap(316, Short.MAX_VALUE))
+            .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
+                .addComponent(catcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(20, 20, 20))
     );
     influenceMatrixPanelLayout.setVerticalGroup(
         influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -920,8 +923,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 .addComponent(influenceSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(pitcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
-                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pitcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE))
             .addGap(10, 10, 10))
     );
 
@@ -931,30 +934,31 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     influencePanel.setLayout(influencePanelLayout);
     influencePanelLayout.setHorizontalGroup(
         influencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(influenceScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         .addGroup(influencePanelLayout.createSequentialGroup()
-            .addGap(37, 37, 37)
-            .addComponent(influenceLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(27, 27, 27)
-            .addComponent(influenceLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(35, 35, 35))
+        .addGroup(influencePanelLayout.createSequentialGroup()
+            .addGap(184, 184, 184)
+            .addComponent(influenceLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(influenceLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(influenceLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-            .addGap(246, 246, 246))
+            .addComponent(influenceLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(204, Short.MAX_VALUE))
     );
     influencePanelLayout.setVerticalGroup(
         influencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, influencePanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addGroup(influencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(influenceLabel1)
-                .addComponent(influenceLabel2)
-                .addComponent(influenceLabel3))
+        .addGroup(influencePanelLayout.createSequentialGroup()
+            .addGroup(influencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addComponent(influenceLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                .addComponent(influenceLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(influenceLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
-            .addGap(21, 21, 21))
+            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
+            .addGap(33, 33, 33))
     );
 
-    mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", influencePanel);
+    mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", null, influencePanel, "Click here to modify the stakeholder relationships");
 
     relationMapScrollPane.setAutoscrolls(true);
     relationMapScrollPane.getVerticalScrollBar().setUnitIncrement(16);
@@ -1047,7 +1051,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     managementPlanPanelLayout.setHorizontalGroup(
         managementPlanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(managementPlanPanelLayout.createSequentialGroup()
-            .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
+            .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
             .addGap(20, 20, 20))
     );
     managementPlanPanelLayout.setVerticalGroup(
@@ -1135,7 +1139,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(mainTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 493, Short.MAX_VALUE)
+        .addComponent(mainTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
     );
 
     setSize(new java.awt.Dimension(914, 558));
@@ -1540,7 +1544,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             influenceColumn.setCellEditor(new DefaultCellEditor(magnitude));
         }
         }//end of influenceTableUpdate
-   
     //magnitude int converter
     public int magnitudeNumber(String strength){
         int convertedStrength;
@@ -1550,7 +1553,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         else convertedStrength = 0;
         return convertedStrength;
     }
-    
     //magnitude String converter
     public String magnitudeString(int strength){
         String convertedStrength;
@@ -1560,7 +1562,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         else convertedStrength = "0";
         return convertedStrength;
     }
-    
     //cell change action listener event
     private void relationshipUpdate(){
         if (!Stakeholders.isEmpty())
@@ -1591,8 +1592,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         //if Stakeholders is empty, do nothing
         else {}
     }
-    
-    //update the managementPlan
+    //update the managementPlan contents
     private void managementPlanUpdate() {
         // TODO add your handling code here:
         //create an array of arrays to hold all values in chart form
@@ -1650,6 +1650,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         for(Stakeholder s : OriginalStakeholders)
         { Stakeholders.add(s); }
     }
+    //called when the managment plan tab is clicked
     private void viewManagementPlan() {
         //save original order of Stakeholders
         OriginalStakeholders.clear();
@@ -1839,26 +1840,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     private void mainTabbedPaneStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_mainTabbedPaneStateChanged
         // TODO add your handling code here:
-        //managementPlanUpdate();
-        
-        //Create a new pop-up window for troubleshooting
-        /*
-        JFrame frame = new JFrame("HelloWorldSwing");
-        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);     
-        //read filename and print it in pop-up window
-        JLabel label = new JLabel("nothing");
-        if (!Stakeholders.isEmpty()) {
-        label.setText("Stakeholders List exists!! Size is " + Stakeholders.size()); }
-        else {
-            label.setText("Stakeholders List is empty");
-        }
-        frame.getContentPane().add(label);
-
-        //Display the window.
-        frame.pack();
-        frame.setVisible(true);
-        */
-        //checkManagementPlanListener();
         if (evt.getSource() instanceof JTabbedPane) 
         {
            JTabbedPane pane = (JTabbedPane) evt.getSource();
@@ -1890,9 +1871,11 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     private void influenceSaveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_influenceSaveButtonMouseClicked
         // TODO add your handling code here:
+        influenceLabel1.setText(" ");
+        influenceLabel2.setText(" ");
+        influenceLabel3.setText(" ");
         relationshipUpdate();
-        //ERASE LATER!!!!!!!!!!!!!!!!!!!!!!
-        //displayStakeholderRelationships();
+        
     }//GEN-LAST:event_influenceSaveButtonMouseClicked
 
     private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
@@ -1961,37 +1944,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         { Stakeholders.get(stakeholderToEdit).setNotes(newEntry); }
         else {}
     }//GEN-LAST:event_managementPlanTablePropertyChange
-    
-    //ERASE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!
-    /*public void displayStakeholderRelationships()
-    {
-        String displayedRelationships = "";
-        for (int i = 0; i < Stakeholders.size(); i++)
-        {
-            ArrayList <Relationship> tempInfluences;
-            tempInfluences = Stakeholders.get(i).getInfluences();
-            if (!tempInfluences.isEmpty())
-            {
-                displayedRelationships += ("Stakeholder Name: " + tempInfluences.get(i).getName() + ", relationship magnitudes: ");
-                for (int e = 0; e < tempInfluences.size(); e++)
-                {
-                    displayedRelationships += (tempInfluences.get(e).getMagnitude() + ", ");
-                }
-                displayedRelationships += ("\nTotal Relationships = " + tempInfluences.size() + "\n\n");
-            }
-        }
-        jTextArea1.setText(displayedRelationships);
-    }
-    
-    public void displaySituationalInfluences()
-    {
-        String displayedInfluences = "";
-        for (int i = 0; i < Stakeholders.size(); i++)
-        {
-            displayedInfluences += ("Stakeholder Name: " + Stakeholders.get(i).getName() + ", " + Stakeholders.get(i).getInfluence() + "\n");
-        }
-        jTextArea2.setText(displayedInfluences);
-    }*/
    
     private void classificationDiagramUpdate()
     {
