@@ -46,7 +46,6 @@ public class STATUI extends javax.swing.JFrame {
      */
     public ArrayList<Stakeholder> Stakeholders;
     public ArrayList<Stakeholder> OriginalStakeholders;
-    
     public STATUI() {
         super("STAT");
 //        ImageIcon statIcon = new ImageIcon(getClass().getResource("/mySTAT/logo.png"));
@@ -56,6 +55,7 @@ public class STATUI extends javax.swing.JFrame {
         testWindow();
         initComponents();
     }
+    private boolean mouseListenerExists = false;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -1217,6 +1217,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         else
         {
             //add new stakeholder to arraylist
+            if (WantsTextArea.getText().isEmpty())
+            { temp.setWants(" "); }
             Stakeholders.add(temp);
             InformationLabel.setText("Stakeholder " + temp.getName() + " added");
             //add relationship to each stakeholder
@@ -1593,28 +1595,21 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     //update the managementPlan
     private void managementPlanUpdate() {
         // TODO add your handling code here:
-        //copy Stakeholders into a new Arraylist for display purposes
-        ArrayList<Stakeholder> Fakeholders = new ArrayList(Stakeholders);
-        Collections.copy(Fakeholders,Stakeholders);
-        //sort Fakeholders by Influence value
-        Collections.sort(Fakeholders, new Comparator<Stakeholder>(){
-            public int compare(Stakeholder s1, Stakeholder s2) {
-            return Double.compare(s2.getInfluence(), s1.getInfluence());}});
         //create an array of arrays to hold all values in chart form
         String tempArray[][];
         if (!Stakeholders.isEmpty()){
-            tempArray = new String[Fakeholders.size()][10];
-            for (int i = 0; i < Fakeholders.size(); i++){
-                tempArray[i][0] = Fakeholders.get(i).getName();
-                tempArray[i][1] = Fakeholders.get(i).getWants();
-                tempArray[i][2] = Fakeholders.get(i).getClassification();
-                tempArray[i][3] = Fakeholders.get(i).getAttitude();
-                tempArray[i][4] = String.format("%.3f", Fakeholders.get(i).getInfluence());
-                tempArray[i][5] = Fakeholders.get(i).getStrategy();
-                tempArray[i][6] = Fakeholders.get(i).getEngagement();
-                tempArray[i][7] = Fakeholders.get(i).getLastEngaged();
-                tempArray[i][8] = Fakeholders.get(i).getResponsible();
-                tempArray[i][9] = Fakeholders.get(i).getNotes();
+            tempArray = new String[Stakeholders.size()][10];
+            for (int i = 0; i < Stakeholders.size(); i++){
+                tempArray[i][0] = Stakeholders.get(i).getName();
+                tempArray[i][1] = Stakeholders.get(i).getWants();
+                tempArray[i][2] = Stakeholders.get(i).getClassification();
+                tempArray[i][3] = Stakeholders.get(i).getAttitude();
+                tempArray[i][4] = String.format("%.3f", Stakeholders.get(i).getInfluence());
+                tempArray[i][5] = Stakeholders.get(i).getStrategy();
+                tempArray[i][6] = Stakeholders.get(i).getEngagement();
+                tempArray[i][7] = Stakeholders.get(i).getLastEngaged();
+                tempArray[i][8] = Stakeholders.get(i).getResponsible();
+                tempArray[i][9] = Stakeholders.get(i).getNotes();
             }
         }
         else {
@@ -1650,20 +1645,28 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         {
             managementPlanTable.getColumnModel().getColumn(i).setCellRenderer(new TableCellLongTextRenderer ());
         }
-        //make table headers clickable
-        managementPlanTable.getTableHeader().addMouseListener(new java.awt.event.MouseAdapter() {
-        public void mouseClicked(java.awt.event.MouseEvent evt) {
-        ManagementPlanColumnMouseClicked(evt);}});
         //copy back the original order of the stakeholders if sorting was performed
-        if (!OriginalStakeholders.isEmpty()){
-            Stakeholders.clear();
-            for(Stakeholder s : OriginalStakeholders)
-            { Stakeholders.add(s); }
-        }
-        else
+        Stakeholders.clear();
+        for(Stakeholder s : OriginalStakeholders)
+        { Stakeholders.add(s); }
+    }
+    private void viewManagementPlan() {
+        //save original order of Stakeholders
+        OriginalStakeholders.clear();
+        for(Stakeholder s : Stakeholders)
+        { OriginalStakeholders.add(s); }
+        //sort Stakeholders by Influence value
+        Collections.sort(Stakeholders, new Comparator<Stakeholder>(){
+            public int compare(Stakeholder s1, Stakeholder s2) {
+            return Double.compare(s2.getInfluence(), s1.getInfluence());}});
+        managementPlanUpdate();
+        //make table headers clickable
+        if (mouseListenerExists == false)
         {
-            for(Stakeholder s : Stakeholders)
-            { OriginalStakeholders.add(s); }
+            managementPlanTable.getTableHeader().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            ManagementPlanColumnMouseClicked(evt);}});
+            mouseListenerExists = true;
         }
     }
     //sort if header clicked
@@ -1874,7 +1877,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
            }
            else if(currentTab.equals(managementPlanPanel)){
                situationalInfluenceUpdate();
-               managementPlanUpdate();
+               viewManagementPlan();
            }
            else{
                updateStakehodlerList();
