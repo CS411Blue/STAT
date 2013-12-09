@@ -77,10 +77,10 @@ public class Stakeholder {
         this.setAttitude(cooperation, threat);
         this.Influence = 0;
         this.setStrategy(this.getClassification(), this.getAttitude());
-        this.Engagement = "Pending";
-        this.LastEngaged = "Pending";
-        this.Responsible = "Pending";
-        this.Notes = "Pending";
+        this.Engagement = "";
+        this.LastEngaged = "";
+        this.Responsible = "";
+        this.Notes = "";
         this.Influences = new ArrayList<>();
     }
     //I don't think we'll need this part...
