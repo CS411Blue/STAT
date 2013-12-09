@@ -1211,48 +1211,51 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             if (NameTextArea.getText().equals(Stakeholders.get(i).getName()))
                     { noDuplicates = false; }
         }
-        Stakeholder temp = new Stakeholder(NameTextArea.getText(), WantsTextArea.getText(), power, legitimacy, urgency, cooperation, threat);
-        if (noDuplicates == false)
-        {
-            InformationLabel.setText("Stakeholder not added. " + NameTextArea.getText() + " already exists");
-        }
-        else if (NameTextArea.getText().isEmpty())
-        {
-            InformationLabel.setText("Stakeholder not added. Please enter a stakeholder name");
-        }
-        else
-        {
-            //add new stakeholder to arraylist
-            if (WantsTextArea.getText().isEmpty())
-            { temp.setWants(" "); }
-            Stakeholders.add(temp);
-            InformationLabel.setText("Stakeholder " + temp.getName() + " added");
-            //add relationship to each stakeholder
-            for (Stakeholder member: Stakeholders){
+        
+        // check for valid values
+        if(NameTextArea.getText().length() > 60) 
+            updateStakeholderError("Stakeholder Name must be 60 characters or less!");
+        else if(WantsTextArea.getText().length() > 1024)
+            updateStakeholderError("Stakeholder Wants must be 1024 characters or less!");
+        else {
+        
+            Stakeholder temp = new Stakeholder(NameTextArea.getText(), WantsTextArea.getText(), power, legitimacy, urgency, cooperation, threat);
+            if (noDuplicates == false) {
+                InformationLabel.setText("Stakeholder not added. " + NameTextArea.getText() + " already exists");
+            } else if (NameTextArea.getText().isEmpty()) {
+                InformationLabel.setText("Stakeholder not added. Please enter a stakeholder name");
+            } else {
+                //add new stakeholder to arraylist
+                if (WantsTextArea.getText().isEmpty()) {
+                    temp.setWants(" ");
+                }
+                Stakeholders.add(temp);
+                InformationLabel.setText("Stakeholder " + temp.getName() + " added");
+                //add relationship to each stakeholder
+                for (Stakeholder member : Stakeholders) {
                     int difference = Stakeholders.size() - member.getInfluences().size();
-                    if (difference > 0)
-                    {
-                        for (int i = member.getInfluences().size(); i < Stakeholders.size(); i++)
-                        {
+                    if (difference > 0) {
+                        for (int i = member.getInfluences().size(); i < Stakeholders.size(); i++) {
                             member.addRelationship(Stakeholders.get(i).getName(), 0);
                         }
                     }
                 }
 
-            updateStakehodlerList();
+                updateStakehodlerList();
+            }
+            //clear all fields
+            NameTextArea.setText("");
+            WantsTextArea.setText("");
+            PowerNRadioButton.setSelected(true);
+            LegitimacyNRadioButton.setSelected(true);
+            UrgencyNRadioButton.setSelected(true);
+            CooperationNRadioButton.setSelected(true);
+            ThreatNRadioButton.setSelected(true);
+            //disable stakeholder editing buttons until one is chosen
+            SHSaveButton.setEnabled(false);
+            SHEditButton.setEnabled(false);
+            SHRemoveButton.setEnabled(false);
         }
-        //clear all fields
-        NameTextArea.setText("");
-        WantsTextArea.setText("");
-        PowerNRadioButton.setSelected(true);
-        LegitimacyNRadioButton.setSelected(true);
-        UrgencyNRadioButton.setSelected(true);
-        CooperationNRadioButton.setSelected(true);
-        ThreatNRadioButton.setSelected(true);
-        //disable stakeholder editing buttons until one is chosen
-        SHSaveButton.setEnabled(false);
-        SHEditButton.setEnabled(false);
-        SHRemoveButton.setEnabled(false);
     }//GEN-LAST:event_AddStakeholderButtonActionPerformed
 
     //function to display Stakeholder data in orange window
@@ -1265,42 +1268,48 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 tempSH = Stakeholders.get(i);
                 break;
             }
-        }
+        }                
         //set name
         SHNameTextArea.setText(tempSH.getName());
         //set wants
         SHWantsTextArea.setText(tempSH.getWants());
         //set booleans
-        if (tempSH.getPower() == true){
+        if (tempSH.getPower() == true) {
             SHPowerYRadioButton.setSelected(true);
-            SHPowerNRadioButton.setSelected(false);}
-            else {
+            SHPowerNRadioButton.setSelected(false);
+        } else {
             SHPowerYRadioButton.setSelected(false);
-            SHPowerNRadioButton.setSelected(true);}
-        if (tempSH.getLegitimacy() == true){
+            SHPowerNRadioButton.setSelected(true);
+        }
+        if (tempSH.getLegitimacy() == true) {
             SHLegitimacyYRadioButton.setSelected(true);
-            SHLegitimacyNRadioButton.setSelected(false);}
-            else {
+            SHLegitimacyNRadioButton.setSelected(false);
+        } else {
             SHLegitimacyYRadioButton.setSelected(false);
-            SHLegitimacyNRadioButton.setSelected(true);}
-        if (tempSH.getUrgency() == true){
+            SHLegitimacyNRadioButton.setSelected(true);
+        }
+        if (tempSH.getUrgency() == true) {
             SHUrgencyYRadioButton.setSelected(true);
-            SHUrgencyNRadioButton.setSelected(false);}
-            else {
+            SHUrgencyNRadioButton.setSelected(false);
+        } else {
             SHUrgencyYRadioButton.setSelected(false);
-            SHUrgencyNRadioButton.setSelected(true);}
-        if (tempSH.getCooperation() == true){
+            SHUrgencyNRadioButton.setSelected(true);
+        }
+        if (tempSH.getCooperation() == true) {
             SHCooperationYRadioButton.setSelected(true);
-            SHCooperationNRadioButton.setSelected(false);}
-            else {
+            SHCooperationNRadioButton.setSelected(false);
+        } else {
             SHCooperationYRadioButton.setSelected(false);
-            SHCooperationNRadioButton.setSelected(true);}
-        if (tempSH.getThreat() == true){
+            SHCooperationNRadioButton.setSelected(true);
+        }
+        if (tempSH.getThreat() == true) {
             SHThreatYRadioButton.setSelected(true);
-            SHThreatNRadioButton.setSelected(false);}
-            else {
+            SHThreatNRadioButton.setSelected(false);
+        } else {
             SHThreatYRadioButton.setSelected(false);
-            SHThreatNRadioButton.setSelected(true);}
+            SHThreatNRadioButton.setSelected(true);
+        }
+
         //set all areas to non-editable
         SHNameTextArea.setEnabled(false);
         SHWantsTextArea.setEnabled(false);
@@ -1317,9 +1326,16 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         SHSaveButton.setEnabled(false);
         SHEditButton.setEnabled(true);
         SHRemoveButton.setEnabled(true);
-        
+
     }//GEN-LAST:event_StakeholderListValueChanged
 
+    private void updateStakeholderError(String msg){
+        JOptionPane.showMessageDialog(null,
+                        msg,
+                        "Error updateing Stakeholder",
+                        JOptionPane.ERROR_MESSAGE);
+    }
+    
     private void updateStakehodlerList()
     {
         DefaultListModel model1 = new DefaultListModel();
@@ -1394,20 +1410,29 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         urgency = SHUrgencyYRadioButton.isSelected();
         cooperation = SHCooperationYRadioButton.isSelected();
         threat = SHThreatYRadioButton.isSelected();
-        //find the stakeholder in arraylist and edit
-        for (int i = 0; i < Stakeholders.size(); i++){
-            if (Stakeholders.get(i).getName().equals(findName) ){
-                Stakeholders.get(i).edit(name, wants, power, legitimacy, urgency, cooperation, threat);
-                break;
+        
+        // check for valid values
+        if(name.length() > 60) 
+            updateStakeholderError("Stakeholder Name must be 60 characters or less!");
+        else if(wants.length() > 1024)
+            updateStakeholderError("Stakeholder Wants must be 1024 characters or less!");
+        else {
+        
+                //find the stakeholder in arraylist and edit
+            for (int i = 0; i < Stakeholders.size(); i++) {
+                if (Stakeholders.get(i).getName().equals(findName)) {
+                    Stakeholders.get(i).edit(name, wants, power, legitimacy, urgency, cooperation, threat);
+                    break;
+                }
             }
-        }
-        //find the stakeholder name in the jlist and change
-        DefaultListModel model = (DefaultListModel) StakeholderList.getModel();
-        int selectedIndex = StakeholderList.getSelectedIndex();
-        if (selectedIndex != -1) {
-        model.setElementAt(name, selectedIndex);
-        StakeholderList.setModel(model);
-        InformationLabel.setText("Stakeholder " + name + " updated");
+            //find the stakeholder name in the jlist and change
+            DefaultListModel model = (DefaultListModel) StakeholderList.getModel();
+            int selectedIndex = StakeholderList.getSelectedIndex();
+            if (selectedIndex != -1) {
+                model.setElementAt(name, selectedIndex);
+                StakeholderList.setModel(model);
+                InformationLabel.setText("Stakeholder " + name + " updated");
+            }
         }
         
     }//GEN-LAST:event_SHSaveButtonActionPerformed
