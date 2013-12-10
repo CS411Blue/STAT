@@ -1219,32 +1219,37 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             updateStakeholderError("Stakeholder Name must be 60 characters or less!");
         else if(WantsTextArea.getText().length() > 1024)
             updateStakeholderError("Stakeholder Wants must be 1024 characters or less!");
+        else if (noDuplicates == false) {
+                String errMsg = new String("Stakeholder not added. " + NameTextArea.getText( )+ " already exists.");
+                InformationLabel.setText("Stakeholder name must be unique!");
+                updateStakeholderError(errMsg);
+            }
+        else if (NameTextArea.getText().isEmpty()) {
+                InformationLabel.setText("Stakeholder not added. Please enter a stakeholder name.");
+                updateStakeholderError("Stakeholder Name must not be empty.");
+            }
         else {
         
             Stakeholder temp = new Stakeholder(NameTextArea.getText(), WantsTextArea.getText(), power, legitimacy, urgency, cooperation, threat);
-            if (noDuplicates == false) {
-                InformationLabel.setText("Stakeholder not added. " + NameTextArea.getText() + " already exists");
-            } else if (NameTextArea.getText().isEmpty()) {
-                InformationLabel.setText("Stakeholder not added. Please enter a stakeholder name");
-            } else {
-                //add new stakeholder to arraylist
-                if (WantsTextArea.getText().isEmpty()) {
-                    temp.setWants(" ");
-                }
-                Stakeholders.add(temp);
-                InformationLabel.setText("Stakeholder " + temp.getName() + " added");
-                //add relationship to each stakeholder
-                for (Stakeholder member : Stakeholders) {
-                    int difference = Stakeholders.size() - member.getInfluences().size();
-                    if (difference > 0) {
-                        for (int i = member.getInfluences().size(); i < Stakeholders.size(); i++) {
-                            member.addRelationship(Stakeholders.get(i).getName(), 0);
-                        }
+            
+            //add new stakeholder to arraylist
+            if (WantsTextArea.getText().isEmpty()) {
+                temp.setWants(" ");
+            }
+            Stakeholders.add(temp);
+            InformationLabel.setText("Stakeholder " + temp.getName() + " added");
+            //add relationship to each stakeholder
+            for (Stakeholder member : Stakeholders) {
+                int difference = Stakeholders.size() - member.getInfluences().size();
+                if (difference > 0) {
+                    for (int i = member.getInfluences().size(); i < Stakeholders.size(); i++) {
+                        member.addRelationship(Stakeholders.get(i).getName(), 0);
                     }
                 }
-
-                updateStakehodlerList();
             }
+
+            updateStakehodlerList();
+
             //clear all fields
             NameTextArea.setText("");
             WantsTextArea.setText("");
@@ -1334,7 +1339,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private void updateStakeholderError(String msg){
         JOptionPane.showMessageDialog(null,
                         msg,
-                        "Error updateing Stakeholder",
+                        "Error updating Stakeholder",
                         JOptionPane.ERROR_MESSAGE);
     }
     
