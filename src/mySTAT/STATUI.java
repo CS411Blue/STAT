@@ -4,6 +4,7 @@
  */
 package mySTAT;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -30,10 +31,13 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
+import javax.swing.text.TableView.TableRow;
 
 /**
  *
@@ -174,7 +178,11 @@ public class STATUI extends javax.swing.JFrame {
         influenceScrollPane = new javax.swing.JScrollPane();
         influenceMatrixPanel = new javax.swing.JPanel();
         pitcherTable = new javax.swing.JTable();
-        contentTable = new javax.swing.JTable();
+        contentTable = new javax.swing.JTable()//{@Override
+            //public boolean isCellSelected(int row, int column) {
+                //    return isColumnSelected(column) || isRowSelected(row);
+                //}}
+        ;
         catcherTable = new javax.swing.JTable();
         influenceSaveButton = new javax.swing.JButton();
         influenceLabel1 = new javax.swing.JLabel();
@@ -824,6 +832,16 @@ public class STATUI extends javax.swing.JFrame {
     pitcherTable.setEnabled(false);
     pitcherTable.setFillsViewportHeight(true);
 
+    //ListSelectionListener listener = new ListSelectionListener() {
+
+        //@Override
+        //public void valueChanged(ListSelectionEvent e) {
+            //  contentTable.repaint();
+            //}
+        //};
+    //contentTable.getSelectionModel().addListSelectionListener(listener);
+    //contentTable.getColumnModel().getSelectionModel().addListSelectionListener(listener);
+
     //Array of strings to hold column names
     String[] contentString = new String[Stakeholders.size()];
     for (int i = 0; i < Stakeholders.size(); i++)
@@ -865,7 +883,10 @@ public class STATUI extends javax.swing.JFrame {
     contentTable.setModel(new javax.swing.table.DefaultTableModel(
         contentRelationshipArray,
         contentString));
+contentTable.setToolTipText("Click a cell to change the relationship strength");
+contentTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 contentTable.setFillsViewportHeight(true);
+contentTable.setRowSelectionAllowed(false);
 contentTable.addFocusListener(new java.awt.event.FocusAdapter() {
     public void focusGained(java.awt.event.FocusEvent evt) {
         contentTableFocusGained(evt);
@@ -1462,7 +1483,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         String columnRelationshipArray[][];
         String stakeholderString[];
         Relationship buddy;
-        String searchSH;
+        //String searchSH;
         if (!Stakeholders.isEmpty())
         {
             stakeholderString = new String[Stakeholders.size()];
@@ -1576,17 +1597,20 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             contentString));
 
         //add drop downs to the table
-        for (int c = 0; c < Stakeholders.size(); c++)
-        {
-            TableColumn influenceColumn = contentTable.getColumnModel().getColumn(c);
-            JComboBox magnitude = new JComboBox();
-            magnitude.addItem("0");
-            magnitude.addItem("Low");
-            magnitude.addItem("Med");
-            magnitude.addItem("High");
-            magnitude.setSelectedIndex(0);
-            influenceColumn.setCellEditor(new DefaultCellEditor(magnitude));
-        }
+            int influenceRow = contentTable.getSelectedRow();
+            for (int c = 0; c < Stakeholders.size(); c++)
+            {
+                TableColumn influenceColumn = contentTable.getColumnModel().getColumn(c);
+                JComboBox magnitude = new JComboBox();
+                magnitude.addItem("0");
+                magnitude.addItem("Low");
+                magnitude.addItem("Med");
+                magnitude.addItem("High");
+                magnitude.setSelectedIndex(0);
+                influenceColumn.setCellEditor(new DefaultCellEditor(magnitude));
+                //change cells of same row and col to black
+                influenceColumn.setCellRenderer(new CustomRenderer());
+            }
         }//end of influenceTableUpdate
     //magnitude int converter
     public int magnitudeNumber(String strength){
