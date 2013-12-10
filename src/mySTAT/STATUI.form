@@ -104,6 +104,9 @@
                 <Property name="text" type="java.lang.String" value="Security"/>
                 <Property name="toolTipText" type="java.lang.String" value="Encrypt the Save File"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="securityMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="exportMenuItem">
               <Properties>

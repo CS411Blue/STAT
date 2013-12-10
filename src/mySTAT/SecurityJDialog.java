@@ -7,28 +7,33 @@
 package mySTAT;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Brian_2
  */
-public class SecurityFrame extends javax.swing.JFrame {
+public class SecurityJDialog extends javax.swing.JDialog {
+    
     private boolean encButtonState;
     private boolean defaultEncButtonState;
     private String password;
+//    private int defaultPswdWidth;
 
     /**
-     * Creates new form securityFrame
+     * Creates new form NewJDialog
      */
-    public SecurityFrame() {
-        super();
+    public SecurityJDialog(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
+        initComponents();
+        
+    }
+    
+    public SecurityJDialog(java.awt.Frame parent, String title, boolean modal) {
+        super(parent, title, modal);
         initComponents();
     }
 
-    public SecurityFrame(String title) {
-        super(title);
-        initComponents();
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,9 +58,7 @@ public class SecurityFrame extends javax.swing.JFrame {
         okButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
-        setResizable(false);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         encryptionPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -106,12 +109,10 @@ public class SecurityFrame extends javax.swing.JFrame {
         passLabel.setText("Password");
 
         passField.setText("jPasswordField1");
-        passField.setMinimumSize(passField.getPreferredSize());
 
         repassLabel.setText("Re-type Password");
 
         repassField.setText("jPasswordField2");
-        repassField.setMinimumSize(repassField.getPreferredSize());
 
         badPassLabel.setText("Password's must match and contain at least one character");
 
@@ -128,7 +129,7 @@ public class SecurityFrame extends javax.swing.JFrame {
                             .addComponent(repassLabel))
                         .addGap(18, 18, 18)
                         .addGroup(passwordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(passField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(passField)
                             .addComponent(repassField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(badPassLabel))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -187,9 +188,11 @@ public class SecurityFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(encryptionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 144, Short.MAX_VALUE))
                     .addComponent(confirmPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(passwordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(encryptionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passwordPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -207,30 +210,35 @@ public class SecurityFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        if(passwordAcceptable())
-        {
-            setVisible(false);
-        }
-        //OK button does nothing if password is not acceptable
-        else{}
-    }//GEN-LAST:event_okButtonActionPerformed
+    private void onButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onButtonActionPerformed
+        encButtonState = true;
+        encButtonChanged();
+    }//GEN-LAST:event_onButtonActionPerformed
 
     private void offButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_offButtonActionPerformed
         encButtonState = false;
         encButtonChanged();
     }//GEN-LAST:event_offButtonActionPerformed
 
-    private void onButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onButtonActionPerformed
-        encButtonState = true;
-        encButtonChanged();
-    }//GEN-LAST:event_onButtonActionPerformed
+    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
+        if(passwordAcceptable())
+        {
+            badPassLabel.setText("Password's must match and contain at least one character");
+            badPassLabel.setForeground(Color.black);
+            setVisible(false);
+        }
+        //OK button does nothing if password is not acceptable
+        else{}
+    }//GEN-LAST:event_okButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+//        passField.setColumns(defaultPswdWidth);
+//        repassField.setColumns(defaultPswdWidth);
         defaultInit(defaultEncButtonState);
         setVisible(false);
     }//GEN-LAST:event_cancelButtonActionPerformed
 
+    
 //sets up the default state of the window when it is opened
     public void defaultInit(boolean isEnc)
     {
@@ -239,7 +247,12 @@ public class SecurityFrame extends javax.swing.JFrame {
         onButton.setSelected(isEnc);
         offButton.setSelected(!isEnc);
         encButtonChanged();
+//        defaultPswdWidth = passField.getColumns();
     }
+    
+    public boolean getEncryptionChoice(){return encButtonState;}
+    
+    public String getPassword(){return password;}
     
     private void encButtonChanged()
     {
@@ -261,6 +274,9 @@ public class SecurityFrame extends javax.swing.JFrame {
         {
             badPassLabel.setText("Password must have at least one character");
             badPassLabel.setForeground(Color.red);
+//            JOptionPane.showMessageDialog(rootPane, 
+//                    "Password must have at least one character", 
+//                    "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
         if(pass1.length != pass2.length)
@@ -274,9 +290,12 @@ public class SecurityFrame extends javax.swing.JFrame {
         {
             badPassLabel.setText("Password must have at least one character");
             badPassLabel.setForeground(Color.red);
+//            JOptionPane.showMessageDialog(null, 
+//                    "Password must have at least one character", 
+//                    "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-        for(int i = 0; i < length; length++)
+        for(int i = 0; i < length; i++)
         {
             if(pass1[i] != pass2[i])
             {
@@ -286,14 +305,13 @@ public class SecurityFrame extends javax.swing.JFrame {
             }
         }
         password = new String(pass1);
-        for(int i = 0; i < length; length++)
+        for(int i = 0; i < length; i++)
         {
             pass1[i] = 0;
             pass2[i] = 0;
         }
         return true;
     }
-
     /**
      * @param args the command line arguments
      */
@@ -311,21 +329,29 @@ public class SecurityFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SecurityFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SecurityJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SecurityFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SecurityJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SecurityFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SecurityJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SecurityFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SecurityJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the form */
-        SecurityFrame frame = new SecurityFrame("Security");
-        frame.defaultInit(true);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        /* Create and display the dialog */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                SecurityJDialog dialog = new SecurityJDialog(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -54,6 +54,11 @@ public class STATUI extends javax.swing.JFrame {
         this.OriginalStakeholders = new ArrayList<>();
         testWindow();
         initComponents();
+
+        securityDialogBox = new SecurityJDialog(this, "Security", true);
+        password = new String();
+        isEncrypted = false;
+        
     }
     private boolean mouseListenerExists = false;
 
@@ -658,35 +663,35 @@ public class STATUI extends javax.swing.JFrame {
         NonStakeHolderList.setMaximumRowCount(10);
         NonStakeHolderList.setAutoscrolls(true);
         classLayeredPane.add(NonStakeHolderList);
-        NonStakeHolderList.setBounds(300, 340, 70, 28);
+        NonStakeHolderList.setBounds(300, 340, 70, 20);
 
         DormantStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DormantStakeHolderList);
-        DormantStakeHolderList.setBounds(60, 60, 70, 28);
+        DormantStakeHolderList.setBounds(60, 60, 70, 20);
 
         DiscretionaryStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DiscretionaryStakeHolderList);
-        DiscretionaryStakeHolderList.setBounds(260, 130, 70, 28);
+        DiscretionaryStakeHolderList.setBounds(260, 130, 70, 20);
 
         DominantStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DominantStakeHolderList);
-        DominantStakeHolderList.setBounds(150, 100, 70, 28);
+        DominantStakeHolderList.setBounds(150, 100, 70, 20);
 
         DefinitiveStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DefinitiveStakeHolderList);
-        DefinitiveStakeHolderList.setBounds(130, 180, 70, 28);
+        DefinitiveStakeHolderList.setBounds(130, 180, 70, 20);
 
         DangerousStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DangerousStakeHolderList);
-        DangerousStakeHolderList.setBounds(30, 210, 70, 28);
+        DangerousStakeHolderList.setBounds(30, 210, 70, 20);
 
         DependentStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DependentStakeHolderList);
-        DependentStakeHolderList.setBounds(190, 260, 70, 28);
+        DependentStakeHolderList.setBounds(190, 260, 70, 20);
 
         DemandingStakeHolderList.setMaximumRowCount(10);
         classLayeredPane.add(DemandingStakeHolderList);
-        DemandingStakeHolderList.setBounds(80, 300, 70, 28);
+        DemandingStakeHolderList.setBounds(80, 300, 70, 20);
 
         vennLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mySTAT/classification.png"))); // NOI18N
         classLayeredPane.add(vennLabel);
@@ -708,67 +713,67 @@ public class STATUI extends javax.swing.JFrame {
 
         Supportive_UndefinedBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_UndefinedBox);
-        Supportive_UndefinedBox.setBounds(190, 180, 60, 28);
+        Supportive_UndefinedBox.setBounds(190, 180, 60, 20);
 
         Mixed_UndefinedBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_UndefinedBox);
-        Mixed_UndefinedBox.setBounds(190, 210, 60, 28);
+        Mixed_UndefinedBox.setBounds(190, 210, 60, 20);
 
         NonSupportive_UndefinedBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_UndefinedBox);
-        NonSupportive_UndefinedBox.setBounds(190, 240, 60, 28);
+        NonSupportive_UndefinedBox.setBounds(190, 240, 60, 20);
 
         Marginal_UndefinedBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_UndefinedBox);
-        Marginal_UndefinedBox.setBounds(190, 270, 60, 28);
+        Marginal_UndefinedBox.setBounds(190, 270, 60, 20);
 
         Supportive_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_LatentBox);
-        Supportive_LatentBox.setBounds(270, 180, 60, 28);
+        Supportive_LatentBox.setBounds(270, 180, 60, 20);
 
         Mixed_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_LatentBox);
-        Mixed_LatentBox.setBounds(270, 210, 60, 28);
+        Mixed_LatentBox.setBounds(270, 210, 60, 20);
 
         NonSupportive_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_LatentBox);
-        NonSupportive_LatentBox.setBounds(270, 240, 60, 28);
+        NonSupportive_LatentBox.setBounds(270, 240, 60, 20);
 
         Marginal_LatentBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_LatentBox);
-        Marginal_LatentBox.setBounds(270, 270, 60, 28);
+        Marginal_LatentBox.setBounds(270, 270, 60, 20);
 
         Supportive_ExpectantBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_ExpectantBox);
-        Supportive_ExpectantBox.setBounds(350, 180, 60, 28);
+        Supportive_ExpectantBox.setBounds(350, 180, 60, 20);
 
         Mixed_ExpectantBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_ExpectantBox);
-        Mixed_ExpectantBox.setBounds(350, 210, 60, 28);
+        Mixed_ExpectantBox.setBounds(350, 210, 60, 20);
 
         NonSupportive_ExpectantBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_ExpectantBox);
-        NonSupportive_ExpectantBox.setBounds(350, 240, 60, 28);
+        NonSupportive_ExpectantBox.setBounds(350, 240, 60, 20);
 
         Marginal_ExpectantBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_ExpectantBox);
-        Marginal_ExpectantBox.setBounds(350, 270, 60, 28);
+        Marginal_ExpectantBox.setBounds(350, 270, 60, 20);
 
         Supportive_DefinitiveBox.setMaximumRowCount(10);
         actionLayeredPane.add(Supportive_DefinitiveBox);
-        Supportive_DefinitiveBox.setBounds(430, 180, 60, 28);
+        Supportive_DefinitiveBox.setBounds(430, 180, 60, 20);
 
         Mixed_DefinitiveBox.setMaximumRowCount(10);
         actionLayeredPane.add(Mixed_DefinitiveBox);
-        Mixed_DefinitiveBox.setBounds(430, 210, 60, 28);
+        Mixed_DefinitiveBox.setBounds(430, 210, 60, 20);
 
         NonSupportive_DefinitiveBox.setMaximumRowCount(10);
         actionLayeredPane.add(NonSupportive_DefinitiveBox);
-        NonSupportive_DefinitiveBox.setBounds(430, 240, 60, 28);
+        NonSupportive_DefinitiveBox.setBounds(430, 240, 60, 20);
 
         Marginal_DefinitiveBox.setMaximumRowCount(10);
         actionLayeredPane.add(Marginal_DefinitiveBox);
-        Marginal_DefinitiveBox.setBounds(430, 270, 60, 28);
+        Marginal_DefinitiveBox.setBounds(430, 270, 60, 20);
 
         actionLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mySTAT/actionTable.png"))); // NOI18N
         actionLayeredPane.add(actionLabel);
@@ -1108,6 +1113,11 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     securityMenuItem.setText("Security");
     securityMenuItem.setToolTipText("Encrypt the Save File");
+    securityMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            securityMenuItemActionPerformed(evt);
+        }
+    });
     fileMenu.add(securityMenuItem);
 
     exportMenuItem.setForeground(new java.awt.Color(153, 153, 153));
@@ -1143,7 +1153,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(mainTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 493, Short.MAX_VALUE)
+        .addComponent(mainTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
     );
 
     setSize(new java.awt.Dimension(914, 558));
@@ -1978,6 +1988,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         { Stakeholders.get(stakeholderToEdit).setNotes(newEntry); }
         else {}
     }//GEN-LAST:event_managementPlanTablePropertyChange
+
+    private void securityMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_securityMenuItemActionPerformed
+        securityWindow();
+    }//GEN-LAST:event_securityMenuItemActionPerformed
    
     private void classificationDiagramUpdate()
     {
@@ -2078,9 +2092,20 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             }
             fileOut.close();
     }
+    
     public void securityWindow()
     {
-        
+        securityDialogBox.defaultInit(isEncrypted);
+        securityDialogBox.setResizable(false);
+        securityDialogBox.setVisible(true);
+        securityDialogBox.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        /*According to testing, the program should not execute this code until
+         the securityJDialog has been closed or hidden. This may not be
+         gauranteed though.*/
+        isEncrypted = securityDialogBox.getEncryptionChoice();
+        if(isEncrypted)
+            password = securityDialogBox.getPassword();
+        System.out.println("<pswd>" + password + "</pswd>");
     }
     //Creates test Driver window
     private TestDriver testFrame;
@@ -2324,5 +2349,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private void managmementPlanUpdate() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    private SecurityJDialog securityDialogBox;
+    private boolean isEncrypted;
+    private String password;
 }
 
