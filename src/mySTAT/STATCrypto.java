@@ -53,10 +53,10 @@ public class STATCrypto {
             return tagBase64;
         
         } catch (NoSuchAlgorithmException e) {
-            System.out.println("Error while creating tag:" + e);
+            System.out.println("Error while creating tag: " + e);
             return null;
         } catch (InvalidKeyException e) {
-            System.out.println("Bad pass phrase:" + e);
+            System.out.println("Bad pass phrase: " + e);
             return null;
         }
     }
@@ -89,7 +89,7 @@ public class STATCrypto {
             return DatatypeConverter.printBase64Binary(ivWithCipherText);
             
         } catch (InvalidKeyException e) {
-            System.out.println("Bad pass phrase:" + e);
+            System.out.println("Bad pass phrase: " + e);
             return null;
         } catch (GeneralSecurityException e) {
             System.out.println("Error while encrypting: " + e);
