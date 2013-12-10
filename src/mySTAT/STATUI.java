@@ -178,11 +178,7 @@ public class STATUI extends javax.swing.JFrame {
         influenceScrollPane = new javax.swing.JScrollPane();
         influenceMatrixPanel = new javax.swing.JPanel();
         pitcherTable = new javax.swing.JTable();
-        contentTable = new javax.swing.JTable()//{@Override
-            //public boolean isCellSelected(int row, int column) {
-                //    return isColumnSelected(column) || isRowSelected(row);
-                //}}
-        ;
+        contentTable = new javax.swing.JTable();
         catcherTable = new javax.swing.JTable();
         influenceSaveButton = new javax.swing.JButton();
         influenceLabel1 = new javax.swing.JLabel();
@@ -832,16 +828,6 @@ public class STATUI extends javax.swing.JFrame {
     pitcherTable.setEnabled(false);
     pitcherTable.setFillsViewportHeight(true);
 
-    //ListSelectionListener listener = new ListSelectionListener() {
-
-        //@Override
-        //public void valueChanged(ListSelectionEvent e) {
-            //  contentTable.repaint();
-            //}
-        //};
-    //contentTable.getSelectionModel().addListSelectionListener(listener);
-    //contentTable.getColumnModel().getSelectionModel().addListSelectionListener(listener);
-
     //Array of strings to hold column names
     String[] contentString = new String[Stakeholders.size()];
     for (int i = 0; i < Stakeholders.size(); i++)
@@ -876,7 +862,7 @@ public class STATUI extends javax.swing.JFrame {
         contentRelationshipArray = new String[2][2];
         for (int i = 0; i < 2; i++){
             for (int e = 0; e < 2; e++){
-                contentRelationshipArray[i][e] = "nada";
+                contentRelationshipArray[i][e] = "0";
             }
         }
     }
@@ -968,13 +954,13 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGap(35, 35, 35))
         .addGroup(influencePanelLayout.createSequentialGroup()
-            .addGap(184, 184, 184)
-            .addComponent(influenceLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(influenceLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(influenceLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(204, Short.MAX_VALUE))
+            .addGap(191, 191, 191)
+            .addComponent(influenceLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addGap(12, 12, 12)
+            .addComponent(influenceLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+            .addGap(8, 8, 8)
+            .addComponent(influenceLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+            .addGap(308, 308, 308))
     );
     influencePanelLayout.setVerticalGroup(
         influencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1978,9 +1964,24 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         row = Stakeholders.get(contentTable.getSelectedRow()).getName();
         column = Stakeholders.get(contentTable.getSelectedColumn()).getName();
         magnitude = (String)contentTable.getValueAt(contentTable.getSelectedRow(), contentTable.getSelectedColumn());
-        influenceLabel1.setText(row);
-        influenceLabel2.setText("has a " + magnitude + " influence on ");
-        influenceLabel3.setText(column);
+        if (contentTable.getSelectedRow() == contentTable.getSelectedColumn())
+        {
+            influenceLabel1.setForeground(Color.red);
+            influenceLabel2.setForeground(Color.red);
+            influenceLabel3.setForeground(Color.red);
+            influenceLabel1.setText("Error: " + row);
+            influenceLabel2.setText(" cannot have a relationship ");
+            influenceLabel3.setText("with itself. ");
+        }
+        else
+        {
+            influenceLabel1.setForeground(Color.black);
+            influenceLabel2.setForeground(Color.black);
+            influenceLabel3.setForeground(Color.black);
+            influenceLabel1.setText(row);
+            influenceLabel2.setText("has a " + magnitude + " influence on ");
+            influenceLabel3.setText(column);
+        }
     }//GEN-LAST:event_contentTableFocusGained
 
     private void managementPlanTablePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_managementPlanTablePropertyChange
