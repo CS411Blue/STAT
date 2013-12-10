@@ -15,28 +15,20 @@ import java.nio.charset.Charset;
 
 /**
  *
- * @author Chris S. <chris.spillers@cspillers.com>
+ * @author Chris S.
  */
 public class STATCrypto {
     private String passPhrase;
     private byte[] key;
     
-    // TODO remove from production code
-    public String getPassPhrase() {
-        return passPhrase;
-    }
-    
-    // TODO remove from production code
-    public String getKey() {
-        return DatatypeConverter.printHexBinary(key);
-    }
-    
     public void setPassPhrase(String passPhraseStr) {
         passPhrase = passPhraseStr;
+        
+        // TODO clean up try/catch
         try {
+            // TODO replace MD5 with PBKDF2 for KDF
             final MessageDigest md = MessageDigest.getInstance("MD5");
-            key = md.digest(passPhrase.getBytes(
-                    Charset.forName( "UTF-8" )));
+            key = md.digest(passPhrase.getBytes(Charset.forName( "UTF-8" )));
         } catch (NoSuchAlgorithmException e) {
             System.out.println("Error while creating key: " + e);
         }
@@ -46,34 +38,37 @@ public class STATCrypto {
         return getTag(messageStr).equals(tagBase64Str);
     }
     
-    // TODO make private for production code
     public String getTag(String messageStr) {
+        
+        // TODO clean up try/catch
         try {
-            final Mac tag = Mac.getInstance("HmacSHA256");
-            final SecretKeySpec HMACSHA256Key = 
+            Mac tag = Mac.getInstance("HmacSHA256");
+            SecretKeySpec HMACSHA256Key = 
                     new SecretKeySpec(key, "HmacSHA256");
             tag.init(HMACSHA256Key);
-            final String tagBase64 = DatatypeConverter.printBase64Binary(
+            String tagBase64 = DatatypeConverter.printBase64Binary(
                    tag.doFinal(messageStr.getBytes(Charset.forName("UTF-8"))));
             
             return tagBase64;
         
         } catch (NoSuchAlgorithmException e) {
-            System.out.println("Error while creating tag: " + e);
+            System.out.println("Error while creating tag:" + e);
             return null;
         } catch (InvalidKeyException e) {
-            System.out.println("Bad pass phrase: " + e);
+            System.out.println("Bad pass phrase:" + e);
             return null;
         }
     }
     
     public String encrypt(String clearTextStr) {
+        
+        // TODO clean up try/catch
         try {
             final Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
             final SecretKeySpec AESKey = new SecretKeySpec(key, "AES");
             final int blockSize = cipher.getBlockSize();
             final byte[] ivData = new byte[blockSize];
-            final SecureRandom random = new SecureRandom();
+            final SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
             random.nextBytes(ivData);
             final IvParameterSpec iv = new IvParameterSpec(ivData);
             
@@ -102,6 +97,8 @@ public class STATCrypto {
     }
     
     public String decrypt(String cipherTextBase64Str) {
+        
+        // TODO clean up try/catch
         try {
             final Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
             final SecretKeySpec AESKey = new SecretKeySpec(key, "AES");
