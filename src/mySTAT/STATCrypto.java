@@ -38,7 +38,7 @@ public class STATCrypto {
         return getTag(messageStr).equals(tagBase64Str);
     }
     
-    public String getTag(String messageStr) {
+    public String getTag(String cipherTextBase64Str) {
         
         // TODO clean up try/catch
         try {
@@ -46,8 +46,9 @@ public class STATCrypto {
             SecretKeySpec HMACSHA256Key = 
                     new SecretKeySpec(key, "HmacSHA256");
             tag.init(HMACSHA256Key);
-            String tagBase64 = DatatypeConverter.printBase64Binary(
-                   tag.doFinal(messageStr.getBytes(Charset.forName("UTF-8"))));
+            
+            String tagBase64 = DatatypeConverter.printBase64Binary(tag.doFinal(
+                    cipherTextBase64Str.getBytes(Charset.forName("UTF-8"))));
             
             return tagBase64;
         
@@ -66,26 +67,26 @@ public class STATCrypto {
         try {
             final Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
             final SecretKeySpec AESKey = new SecretKeySpec(key, "AES");
+            
             final int blockSize = cipher.getBlockSize();
             final byte[] ivData = new byte[blockSize];
+            
             final SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
             random.nextBytes(ivData);
             final IvParameterSpec iv = new IvParameterSpec(ivData);
             
             cipher.init(Cipher.ENCRYPT_MODE, AESKey, iv);
+            
             final byte[] cipherText = cipher.doFinal(
                     clearTextStr.getBytes(Charset.forName( "UTF-8" )));
-            
             final byte[] ivWithCipherText = new byte[ivData.length 
                     + cipherText.length];
+            
             System.arraycopy(ivData, 0, ivWithCipherText, 0, blockSize);
             System.arraycopy(cipherText, 0, ivWithCipherText,
                     blockSize, cipherText.length);
-            
-            final String ivWithCipherTextBase64 = 
-                    DatatypeConverter.printBase64Binary(ivWithCipherText);
-            
-            return ivWithCipherTextBase64;
+
+            return DatatypeConverter.printBase64Binary(ivWithCipherText);
             
         } catch (InvalidKeyException e) {
             System.out.println("Bad pass phrase:" + e);
@@ -102,6 +103,7 @@ public class STATCrypto {
         try {
             final Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
             final SecretKeySpec AESKey = new SecretKeySpec(key, "AES");
+            
             final int blockSize = cipher.getBlockSize();
             final byte[] ivData = new byte[blockSize];
             
@@ -114,10 +116,10 @@ public class STATCrypto {
                     new byte[ivWithCipherText.length - blockSize];
             System.arraycopy(ivWithCipherText, blockSize, cipherText, 0, 
                     (ivWithCipherText.length - blockSize));
+            
             cipher.init(Cipher.DECRYPT_MODE, AESKey, iv);
-            final String clearText = new String(cipher.doFinal(cipherText));
 
-            return clearText;
+            return new String(cipher.doFinal(cipherText));
             
         } catch (InvalidKeyException e) {
             System.out.println("Bad pass phrase: " + e);
