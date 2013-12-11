@@ -870,6 +870,7 @@ public class STATUI extends javax.swing.JFrame {
         contentRelationshipArray,
         contentString));
 contentTable.setToolTipText("Click a cell to change the relationship strength");
+contentTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
 contentTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 contentTable.setFillsViewportHeight(true);
 contentTable.setRowSelectionAllowed(false);
@@ -904,6 +905,7 @@ contentTable.addFocusListener(new java.awt.event.FocusAdapter() {
     catcherTable.setModel(new javax.swing.table.DefaultTableModel(
         catcherRelationshipArray,
         catcherString));
+catcherTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
 catcherTable.setEnabled(false);
 
 influenceSaveButton.setText("<html><center>Save<br>Updates</center></html>");
@@ -1581,9 +1583,12 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         contentTable.setModel(new javax.swing.table.DefaultTableModel(
             contentRelationshipArray,
             contentString));
-
+        //adjust contenttable and catchertable columns to same size
+        TableColumnAdjuster headers = new TableColumnAdjuster(catcherTable);
+        headers.adjustColumns();
+        TableColumnAdjuster contents = new TableColumnAdjuster(contentTable);
+        contents.copyColumns(catcherTable);
         //add drop downs to the table
-            int influenceRow = contentTable.getSelectedRow();
             for (int c = 0; c < Stakeholders.size(); c++)
             {
                 TableColumn influenceColumn = contentTable.getColumnModel().getColumn(c);
@@ -1596,7 +1601,14 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 influenceColumn.setCellEditor(new DefaultCellEditor(magnitude));
                 //change cells of same row and col to black
                 influenceColumn.setCellRenderer(new CustomRenderer());
+                //if (r == c)
+                //{
+                //    contentTable.getComponentAt(r, c).setOpaque(true);
+                //    contentTable.getModel().
+                //    contentTable.setEnabled(false);
+                //}
             }
+        //}
         }//end of influenceTableUpdate
     //magnitude int converter
     public int magnitudeNumber(String strength){

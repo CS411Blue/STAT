@@ -1587,6 +1587,7 @@
                           <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    contentRelationshipArray,&#xa;    contentString)" type="code"/>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="Click a cell to change the relationship strength"/>
+                        <Property name="autoResizeMode" type="int" value="0"/>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0"/>
                         </Property>
@@ -1611,6 +1612,7 @@
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    catcherRelationshipArray,&#xa;    catcherString)" type="code"/>
                         </Property>
+                        <Property name="autoResizeMode" type="int" value="0"/>
                         <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                       <AuxValues>
