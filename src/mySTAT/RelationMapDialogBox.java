@@ -8,12 +8,8 @@ package mySTAT;
 
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.swing.mxGraphOutline;
-import com.mxgraph.view.mxGraph;
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import javax.swing.JFrame;
 
 /**
  *
@@ -43,7 +39,7 @@ public class RelationMapDialogBox extends javax.swing.JDialog {
             boolean modal, mxGraphComponent graphComponent) {
         super(parent, title, modal);
         outline = new mxGraphOutline(graphComponent);
-        outline.setPreferredSize(new Dimension(100, 100));
+        outline.setPreferredSize(new Dimension(200, 200));
         initComponents();
     }
 
@@ -195,25 +191,25 @@ public class RelationMapDialogBox extends javax.swing.JDialog {
         pack();
     }// </editor-fold>                        
 
-    
-    public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        frame.setSize(400, 400);
-        frame.setLocation(10, 10);
-        RelationMapPanel rPanel = new RelationMapPanel();
-        ArrayList<Stakeholder> stakes = new ArrayList<>();
-        Stakeholder A = new Stakeholder("A", null, true, true, false, true, true);
-        Stakeholder B = new Stakeholder("B", null, true, true, true, true, true);
-        A.addRelationship("B", 2);
-        stakes.add(A);
-        stakes.add(B);
-        rPanel.updateShVertexList(stakes);
-        frame.add(rPanel);
-        frame.setVisible(true);
-        RelationMapDialogBox miniMap = new RelationMapDialogBox(frame, "Mini Map", false, rPanel.getGraphOutline());
-        miniMap.setVisible(true);
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-    }
+    //for testing the indidvidual map dialog box
+//    public static void main(String[] args) {
+//        JFrame frame = new JFrame();
+//        frame.setSize(400, 400);
+//        frame.setLocation(10, 10);
+//        RelationMapPanel rPanel = new RelationMapPanel();
+//        ArrayList<Stakeholder> stakes = new ArrayList<>();
+//        Stakeholder A = new Stakeholder("A", null, true, true, false, true, true);
+//        Stakeholder B = new Stakeholder("B", null, true, true, true, true, true);
+//        A.addRelationship("B", 2);
+//        stakes.add(A);
+//        stakes.add(B);
+//        rPanel.updateShVertexList(stakes);
+//        frame.add(rPanel);
+//        frame.setVisible(true);
+//        RelationMapDialogBox miniMap = new RelationMapDialogBox(frame, "Mini Map", false, rPanel.getGraphOutline());
+//        miniMap.setVisible(true);
+//        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+//    }
     
     public void addOrganicListener(ActionListener listener)
     {fastOrganicBtn.addActionListener(listener);}
@@ -232,8 +228,6 @@ public class RelationMapDialogBox extends javax.swing.JDialog {
     
     public void addExportBtnListener(ActionListener listener)
     {exportBtn.addActionListener(listener);}
-    
-    private mxGraphOutline outline;
 
     // Variables declaration - do not modify                     
     private javax.swing.JLabel buttonLabel;
@@ -248,5 +242,6 @@ public class RelationMapDialogBox extends javax.swing.JDialog {
     private javax.swing.JButton lineBtn;
     private javax.swing.JButton exportBtn;
     private javax.swing.JPanel miniMapPanel;
+    private mxGraphOutline outline;
     // End of variables declaration                   
 }

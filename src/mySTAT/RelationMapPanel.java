@@ -7,33 +7,20 @@ package mySTAT;
 
 import com.mxgraph.layout.*;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
-import com.mxgraph.layout.mxIGraphLayout;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.swing.mxGraphOutline;
-import com.mxgraph.swing.util.mxMorphing;
-import com.mxgraph.util.mxEvent;
-import com.mxgraph.util.mxEventObject;
-import com.mxgraph.util.mxEventSource;
 import javax.swing.*;
-import com.mxgraph.view.mxGraph;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.LayoutManager;
-import java.awt.Rectangle;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.math.*;
 import java.util.Iterator;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
 /**
  * @author Brian_2
  */
@@ -46,7 +33,6 @@ public class RelationMapPanel extends JPanel
     private mxGraphComponent graphComponent;
     private Object graphParent;
     private int currentLayout;
-    private JPanel toolbar;
     
     public static final int FASTORGANIC = 0;
     public static final int CIRCLE = 1;
@@ -85,15 +71,7 @@ public class RelationMapPanel extends JPanel
         add(graphComponent, BorderLayout.CENTER);
         graphParent = panGraph.getDefaultParent();
         
-//        toolbar = new JPanel();
-//        toolbar.setLayout(new BorderLayout());
-        
-//        mxGraphOutline outline = new mxGraphOutline(graphComponent);
-//        outline.setPreferredSize(new Dimension(200, 200));
-//        toolbar.add(outline, BorderLayout.WEST);
-        
-//        add(toolbar, BorderLayout.SOUTH);
-        
+        //all of these limit user interaction with graph
         panGraph.setAllowDanglingEdges(false);
         panGraph.setCellsDisconnectable(false);
         panGraph.setCellsCloneable(false);
@@ -102,8 +80,6 @@ public class RelationMapPanel extends JPanel
         //Default layout
         layout = new mxFastOrganicLayout(panGraph);
         panGraph.setMultigraph(true);
-//        setSize(750, 394);
-//        setPreferredSize(new Dimension(400, 400));
     }
     
     public void setMxLayout(int l)
@@ -149,7 +125,7 @@ public class RelationMapPanel extends JPanel
                 finally{panGraph.getModel().endUpdate();}
                 s.setGraphNode(v);
             }
-            //What to do if a stakeholder is a "non-stakeholder"
+            //What to do if a stakeholder is a "non-stakeholder", currently adds nothing to graph
             else
             {
 //                v = panGraph.insertVertex(graphParent, null, null, 100, 100, s.getDiameter(), s.getDiameter(), s.getStyle());
@@ -189,9 +165,9 @@ public class RelationMapPanel extends JPanel
         panGraph.getModel().beginUpdate();
         layout.execute(graphParent);
         panGraph.getModel().endUpdate();
-//        fitToSize();
     }
     
+    //graphs the currentLayout
     public void graph()
     {
         if(currentLayout == FASTORGANIC)
@@ -218,6 +194,7 @@ public class RelationMapPanel extends JPanel
         graphComponent.setConnectable(false);
     }
     
+    //moves the elbows after a user clicks and moves a vertex manually
     public void snapEdgesToFit()
     {
         layout = new mxParallelEdgeLayout(panGraph);
@@ -258,11 +235,13 @@ public class RelationMapPanel extends JPanel
         return outline;
     }
     
+    //currently not being used
     public mxGraphComponent getGraphComponent()
     {
         return graphComponent;
     }
     
+    //currently not being used
     public void fitToSize()
     {
         double newScale = 1;
@@ -348,40 +327,4 @@ public class RelationMapPanel extends JPanel
             }
         };
     }
-    
-//    @Override
-//    public void repaint()
-//    {
-//        super.repaint();
-//        System.out.println("RelationMapPanel repaint()");
-//    }
-//    
-//    @Override
-//    public void repaint(Rectangle r)
-//    {
-//        super.repaint(r);
-//        System.out.println("RelationMapPanel repaint(rect)");
-//    }
-//    
-//    @Override
-//    public void repaint(long tm)
-//    {
-//        super.repaint(tm);
-//        System.out.println("RelationMapPanel repaint(tm)");
-//    }
-//    
-//    @Override
-//    public void repaint(int x, int y, int width, int height)
-//    {
-//        super.repaint(x, y, width, height);
-//        System.out.println("RelationMapPanel repaint(x,y,w,h)");
-//    }
-//    
-//    @Override
-//    public void repaint(long tm, int x, int y, int width, int height)
-//    {
-//        super.repaint(tm, x, y, width, height);
-//        System.out.printf("RelationMapPanel repaint(%d,%d,%d,%d,%d)\n", 
-//                tm, x, y, width, height);
-//    }
 }
