@@ -89,6 +89,7 @@ public class STATCrypto {
         final IvParameterSpec iv;
         final byte[] ivWithCipherTextBytes;
         final byte[] plainTextBytes = plainTextStr.getBytes(UTF8Charset);
+        final String cipherTextBase64Str;
 
         // TODO clean correct/cleanup try/catch
         try {
@@ -113,8 +114,10 @@ public class STATCrypto {
                     ivWithCipherTextBytes,
                     blockSize,
                     cipherTextBytes.length);
-
-            return DatatypeConverter.printBase64Binary(ivWithCipherTextBytes);
+            
+            cipherTextBase64Str = DatatypeConverter.printBase64Binary(ivWithCipherTextBytes);
+            
+            return cipherTextBase64Str;
             
         } catch (InvalidKeyException e) {
             System.out.println("Bad pass phrase: " + e);
