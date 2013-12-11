@@ -19,38 +19,56 @@ import java.nio.charset.Charset;
  */
 public class STATCrypto {
     private String passPhrase;
-    private byte[] key;
+    final private byte[] AESKey = new byte[16];
+    final private byte[] HMACKey = new byte[16];
+    static final private Charset UTF8Charset = Charset.forName("UTF-8");
     
     public void setPassPhrase(String passPhraseStr) {
         passPhrase = passPhraseStr;
+        final byte[] passPhraseBytes;
+        final byte[] masterKey;
         
-        // TODO clean up try/catch
+        // TODO clean correct/cleanup try/catch
         try {
-            // TODO replace MD5 with PBKDF2 for KDF
-            final MessageDigest md = MessageDigest.getInstance("MD5");
-            key = md.digest(passPhrase.getBytes(Charset.forName( "UTF-8" )));
+            // use SHA-2 as weak KDF to generate 256 bits for AES/HMAC keys
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            passPhraseBytes = passPhrase.getBytes(UTF8Charset);
+            masterKey = md.digest(passPhraseBytes);
+
+            // store leftmost 128 bits as AES key
+            System.arraycopy(masterKey, 0, AESKey, 0, 16);
+            
+            // store rightmost 128 bits as HMAC-SHA256 key
+            System.arraycopy(masterKey, 16, HMACKey, 0, 16);
+            
         } catch (NoSuchAlgorithmException e) {
             System.out.println("Error while creating key: " + e);
         }
     }
     
-    public boolean isTagCorrect(String tagBase64Str, String messageStr) {
+    public boolean isPassPhraseCorrect(String tagBase64Str, String messageStr) {
         return getTag(messageStr).equals(tagBase64Str);
     }
     
     public String getTag(String cipherTextBase64Str) {
-        
-        // TODO clean up try/catch
+        final String tagBase64Str;
+        final byte[] tagBytes;
+        final byte[] cipherTextBytes;
+        final String HMACType = "HmacSHA256";
+                
+        // TODO clean correct/cleanup try/catch
         try {
-            Mac tag = Mac.getInstance("HmacSHA256");
-            SecretKeySpec HMACSHA256Key = 
-                    new SecretKeySpec(key, "HmacSHA256");
-            tag.init(HMACSHA256Key);
+            SecretKeySpec SKSHMACKey = new SecretKeySpec(HMACKey, HMACType);
             
-            String tagBase64 = DatatypeConverter.printBase64Binary(tag.doFinal(
-                    cipherTextBase64Str.getBytes(Charset.forName("UTF-8"))));
+            Mac tag = Mac.getInstance(HMACType);
+            tag.init(SKSHMACKey);
             
-            return tagBase64;
+            cipherTextBytes = cipherTextBase64Str.getBytes(UTF8Charset);
+            tagBytes = tag.doFinal(cipherTextBytes);
+            
+            tagBase64Str = DatatypeConverter.printBase64Binary(tagBytes);
+            
+            return tagBase64Str;
         
         } catch (NoSuchAlgorithmException e) {
             System.out.println("Error while creating tag: " + e);
@@ -61,32 +79,45 @@ public class STATCrypto {
         }
     }
     
-    public String encrypt(String clearTextStr) {
-        
-        // TODO clean up try/catch
-        try {
-            final Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-            final SecretKeySpec AESKey = new SecretKeySpec(key, "AES");
-            
-            final int blockSize = cipher.getBlockSize();
-            final byte[] ivData = new byte[blockSize];
-            
-            final SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
-            random.nextBytes(ivData);
-            final IvParameterSpec iv = new IvParameterSpec(ivData);
-            
-            cipher.init(Cipher.ENCRYPT_MODE, AESKey, iv);
-            
-            final byte[] cipherText = cipher.doFinal(
-                    clearTextStr.getBytes(Charset.forName( "UTF-8" )));
-            final byte[] ivWithCipherText = new byte[ivData.length 
-                    + cipherText.length];
-            
-            System.arraycopy(ivData, 0, ivWithCipherText, 0, blockSize);
-            System.arraycopy(cipherText, 0, ivWithCipherText,
-                    blockSize, cipherText.length);
+    public String encrypt(String plainTextStr) {
+        final byte[] cipherTextBytes;
+        final Cipher cipher;
+        final SecretKeySpec SKSAESKey;
+        final int blockSize;
+        final byte[] ivBytes;
+        final SecureRandom random;
+        final IvParameterSpec iv;
+        final byte[] ivWithCipherTextBytes;
+        final byte[] plainTextBytes = plainTextStr.getBytes(UTF8Charset);
+        final String cipherTextBase64Str;
 
-            return DatatypeConverter.printBase64Binary(ivWithCipherText);
+        // TODO clean correct/cleanup try/catch
+        try {
+            cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+            SKSAESKey = new SecretKeySpec(AESKey, "AES");
+            
+            blockSize = cipher.getBlockSize();
+            ivBytes = new byte[blockSize];
+            
+            random = SecureRandom.getInstance("SHA1PRNG");
+            random.nextBytes(ivBytes);
+            iv = new IvParameterSpec(ivBytes);
+            
+            cipher.init(Cipher.ENCRYPT_MODE, SKSAESKey, iv);
+            
+            cipherTextBytes = cipher.doFinal(plainTextBytes);
+            ivWithCipherTextBytes = new byte[ivBytes.length + cipherTextBytes.length];
+            
+            System.arraycopy(ivBytes, 0, ivWithCipherTextBytes, 0, blockSize);
+            System.arraycopy(cipherTextBytes,
+                    0,
+                    ivWithCipherTextBytes,
+                    blockSize,
+                    cipherTextBytes.length);
+            
+            cipherTextBase64Str = DatatypeConverter.printBase64Binary(ivWithCipherTextBytes);
+            
+            return cipherTextBase64Str;
             
         } catch (InvalidKeyException e) {
             System.out.println("Bad pass phrase: " + e);
@@ -98,28 +129,41 @@ public class STATCrypto {
     }
     
     public String decrypt(String cipherTextBase64Str) {
+        final Cipher cipher;
+        final SecretKeySpec SKSAESKey;
+        final int blockSize;
+        final byte[] ivBytes;
+        final byte[] ivWithCipherTextBytes;
+        final IvParameterSpec iv;
+        final byte[] cipherTextBytes;
+        final String plainTextStr;
         
-        // TODO clean up try/catch
+        // TODO clean correct/cleanup try/catch
         try {
-            final Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-            final SecretKeySpec AESKey = new SecretKeySpec(key, "AES");
+            cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+            SKSAESKey = new SecretKeySpec(AESKey, "AES");
             
-            final int blockSize = cipher.getBlockSize();
-            final byte[] ivData = new byte[blockSize];
+            blockSize = cipher.getBlockSize();
+            ivBytes = new byte[blockSize];
             
-            final byte[] ivWithCipherText = 
-                    DatatypeConverter.parseBase64Binary(cipherTextBase64Str);
-            System.arraycopy(ivWithCipherText, 0, ivData, 0, blockSize);
-            final IvParameterSpec iv = new IvParameterSpec(ivData);
+            ivWithCipherTextBytes = DatatypeConverter.parseBase64Binary(cipherTextBase64Str);
             
-            final byte[] cipherText = 
-                    new byte[ivWithCipherText.length - blockSize];
-            System.arraycopy(ivWithCipherText, blockSize, cipherText, 0, 
-                    (ivWithCipherText.length - blockSize));
+            System.arraycopy(ivWithCipherTextBytes, 0, ivBytes, 0, blockSize);
+            iv = new IvParameterSpec(ivBytes);
             
-            cipher.init(Cipher.DECRYPT_MODE, AESKey, iv);
+            cipherTextBytes = new byte[ivWithCipherTextBytes.length - blockSize];
+            
+            System.arraycopy(ivWithCipherTextBytes,
+                    blockSize,
+                    cipherTextBytes,
+                    0, 
+                    (ivWithCipherTextBytes.length - blockSize));
+            
+            cipher.init(Cipher.DECRYPT_MODE, SKSAESKey, iv);
 
-            return new String(cipher.doFinal(cipherText));
+            plainTextStr = new String(cipher.doFinal(cipherTextBytes));
+            
+            return plainTextStr;
             
         } catch (InvalidKeyException e) {
             System.out.println("Bad pass phrase: " + e);
