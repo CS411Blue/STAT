@@ -9,6 +9,7 @@ import com.mxgraph.layout.*;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
 import com.mxgraph.layout.mxIGraphLayout;
 import com.mxgraph.swing.mxGraphComponent;
+import com.mxgraph.swing.mxGraphOutline;
 import com.mxgraph.swing.util.mxMorphing;
 import com.mxgraph.util.mxEvent;
 import com.mxgraph.util.mxEventObject;
@@ -17,6 +18,7 @@ import javax.swing.*;
 import com.mxgraph.view.mxGraph;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.LayoutManager;
 import java.awt.Rectangle;
@@ -43,6 +45,7 @@ public class RelationMapPanel extends JPanel
     private mxGraphComponent graphComponent;
     private Object graphParent;
     private int currentLayout;
+    private JPanel toolbar;
     
     public static final int FASTORGANIC = 0;
     public static final int CIRCLE = 1;
@@ -78,8 +81,18 @@ public class RelationMapPanel extends JPanel
         panGraph = new StatMxGraph();
         graphComponent = new mxGraphComponent(panGraph);
         
-        add(graphComponent);
+        add(graphComponent, BorderLayout.CENTER);
         graphParent = panGraph.getDefaultParent();
+        
+        toolbar = new JPanel();
+        toolbar.setLayout(new BorderLayout());
+        
+        mxGraphOutline outline = new mxGraphOutline(graphComponent);
+        outline.setPreferredSize(new Dimension(200, 200));
+        toolbar.add(outline, BorderLayout.WEST);
+        
+        add(toolbar, BorderLayout.SOUTH);
+        
         panGraph.setAllowDanglingEdges(false);
         panGraph.setCellsDisconnectable(false);
         panGraph.setCellsCloneable(false);
@@ -88,7 +101,8 @@ public class RelationMapPanel extends JPanel
         //Default layout
         layout = new mxFastOrganicLayout(panGraph);
         panGraph.setMultigraph(true);
-        setSize(750, 394);
+//        setSize(750, 394);
+//        setPreferredSize(new Dimension(400, 400));
     }
     
     public void setMxLayout(int l)
@@ -174,6 +188,7 @@ public class RelationMapPanel extends JPanel
         panGraph.getModel().beginUpdate();
         layout.execute(graphParent);
         panGraph.getModel().endUpdate();
+//        fitToSize();
     }
     
     public void graph()
@@ -218,6 +233,31 @@ public class RelationMapPanel extends JPanel
         } catch (IOException ex) {
             Logger.getLogger(RelationMapPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public mxGraphOutline getGraphOutline()
+    {
+        return new mxGraphOutline(graphComponent);
+    }
+    
+    public void fitToSize()
+    {
+        double newScale = 1;
+
+        Dimension graphSize = graphComponent.getGraphControl().getSize();
+        Dimension viewPortSize = graphComponent.getViewport().getSize();
+
+        int gw = (int) graphSize.getWidth();
+        int gh = (int) graphSize.getHeight();
+
+        if (gw > 0 && gh > 0) {
+            int w = (int) viewPortSize.getWidth();
+            int h = (int) viewPortSize.getHeight();
+
+            newScale = Math.min((double) w / gw, (double) h / gh);
+        }
+
+        graphComponent.zoom(newScale);
     }
     
 //    @Override

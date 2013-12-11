@@ -989,18 +989,18 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGap(0, 790, Short.MAX_VALUE)
         .addGroup(relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, relationMapParentPanelLayout.createSequentialGroup()
-                .addComponent(relationMapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
-                .addContainerGap()))
+            .addGroup(relationMapParentPanelLayout.createSequentialGroup()
+                .addComponent(relationMapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 31, Short.MAX_VALUE)))
     );
     relationMapParentPanelLayout.setVerticalGroup(
         relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 488, Short.MAX_VALUE)
+        .addGap(0, 490, Short.MAX_VALUE)
         .addGroup(relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(relationMapParentPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(relationMapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(relationMapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+                .addContainerGap()))
     );
 
     mainTabbedPane.addTab("<html> <br> Relation Map<br><br>", relationMapParentPanel);

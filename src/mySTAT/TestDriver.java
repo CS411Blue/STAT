@@ -35,7 +35,7 @@ public class TestDriver extends JFrame {
         super("Test Engine - FOR TESTING ONLY");
         this.stakeholders = stakeholders;
         setSize(400, 400);
-        setLocation(500,10);
+        setLocation(400,10);
         panel = new JPanel();
         makeSHButton = new JButton("Make Stakeholder");
         makeSHButton.addActionListener(new ActionListener() {
