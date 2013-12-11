@@ -260,6 +260,39 @@ public class RelationMapPanel extends JPanel
         graphComponent.zoom(newScale);
     }
     
+    public ActionListener getFastOrganicActionListener()
+    {
+        return new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setMxLayout(FASTORGANIC);
+            }
+        };
+    }
+    
+    public ActionListener getCircleActionListener()
+    {
+        return new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setMxLayout(CIRCLE);
+            }
+        };
+    }
+    
+    public ActionListener getHierarchicalActionListener()
+    {
+        return new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setMxLayout(HIERARCHICAL);
+            }
+        };
+    }
+    
 //    @Override
 //    public void repaint()
 //    {

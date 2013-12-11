@@ -62,7 +62,11 @@ public class STATUI extends javax.swing.JFrame {
         securityDialogBox = new SecurityJDialog(this, "Security", true);
         password = new String();
         isEncrypted = false;
-        
+        miniMapDialogBox = new RelationMiniMapDialog(this, "Graph Tool Box", false, JGraphPanel.getGraphOutline());
+        miniMapDialogBox.addOrganicListener(JGraphPanel.getFastOrganicActionListener());
+        miniMapDialogBox.addCircleListener(JGraphPanel.getCircleActionListener());
+        miniMapDialogBox.addTreeListener(JGraphPanel.getHierarchicalActionListener());
+        miniMapDialogBox.setDefaultCloseOperation(HIDE_ON_CLOSE);
     }
     private boolean mouseListenerExists = false;
 
@@ -1912,21 +1916,27 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
            Component currentTab = mainTabbedPane.getSelectedComponent();
            if(currentTab.equals(relationMapParentPanel)){
                JGraphPanel.updateShVertexList(Stakeholders);
+               miniMapDialogBox.setVisible(true);
            }
            else if(currentTab.equals(classificationPanel)){
+               miniMapDialogBox.setVisible(false);
                classificationDiagramUpdate();
            }
            else if(currentTab.equals(actionPanel)){
+               miniMapDialogBox.setVisible(false);
                actionTableUpdate();
            }
            else if(currentTab.equals(influencePanel)){
+               miniMapDialogBox.setVisible(false);
                influenceTableUpdate();
            }
            else if(currentTab.equals(managementPlanPanel)){
+               miniMapDialogBox.setVisible(false);
                situationalInfluenceUpdate();
                viewManagementPlan();
            }
            else{
+               miniMapDialogBox.setVisible(false);
                updateStakehodlerList();
                System.out.println("update catch branch failed for: tab " 
                        +mainTabbedPane.indexOfComponent(currentTab)
@@ -2143,6 +2153,12 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         if(isEncrypted)
             password = securityDialogBox.getPassword();
         System.out.println("<pswd>" + password + "</pswd>");
+    }
+    
+    public void miniMapWindow()
+    {
+        
+        
     }
     //Creates test Driver window
     private TestDriver testFrame;
@@ -2389,5 +2405,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private SecurityJDialog securityDialogBox;
     private boolean isEncrypted;
     private String password;
+    private RelationMiniMapDialog miniMapDialogBox;
 }
 
