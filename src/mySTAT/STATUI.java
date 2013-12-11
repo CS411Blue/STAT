@@ -928,7 +928,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                     .addComponent(influenceSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGap(18, 18, 18)
             .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
+                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, 1155, Short.MAX_VALUE)
                 .addComponent(catcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGap(20, 20, 20))
     );
@@ -957,11 +957,11 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addGap(35, 35, 35))
         .addGroup(influencePanelLayout.createSequentialGroup()
             .addGap(191, 191, 191)
-            .addComponent(influenceLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+            .addComponent(influenceLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
             .addGap(12, 12, 12)
-            .addComponent(influenceLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+            .addComponent(influenceLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
             .addGap(8, 8, 8)
-            .addComponent(influenceLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+            .addComponent(influenceLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
             .addGap(308, 308, 308))
     );
     influencePanelLayout.setVerticalGroup(
@@ -981,26 +981,24 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     relationMapScrollPane.setAutoscrolls(true);
     relationMapScrollPane.getVerticalScrollBar().setUnitIncrement(16);
     relationMapScrollPane.getHorizontalScrollBar().setUnitIncrement(16);
+
+    JGraphPanel.setAutoscrolls(true);
     relationMapScrollPane.setViewportView(JGraphPanel);
 
     javax.swing.GroupLayout relationMapParentPanelLayout = new javax.swing.GroupLayout(relationMapParentPanel);
     relationMapParentPanel.setLayout(relationMapParentPanelLayout);
     relationMapParentPanelLayout.setHorizontalGroup(
         relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 790, Short.MAX_VALUE)
-        .addGroup(relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(relationMapParentPanelLayout.createSequentialGroup()
-                .addComponent(relationMapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 31, Short.MAX_VALUE)))
+        .addGroup(relationMapParentPanelLayout.createSequentialGroup()
+            .addComponent(relationMapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE)
+            .addGap(5, 5, 5))
     );
     relationMapParentPanelLayout.setVerticalGroup(
         relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 490, Short.MAX_VALUE)
-        .addGroup(relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(relationMapParentPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(relationMapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
-                .addContainerGap()))
+        .addGroup(relationMapParentPanelLayout.createSequentialGroup()
+            .addGap(5, 5, 5)
+            .addComponent(relationMapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE)
+            .addGap(20, 20, 20))
     );
 
     mainTabbedPane.addTab("<html> <br> Relation Map<br><br>", relationMapParentPanel);
