@@ -57,15 +57,10 @@ public class STATUI extends javax.swing.JFrame {
         this.Stakeholders = new ArrayList<>();
         this.OriginalStakeholders = new ArrayList<>();
         miniMapCreated = false;
-//        testWindow();
+        testWindow();
         
         initComponents();
 
-        miniMapDialogBox = new RelationMiniMapDialog(this, "Graph Tool Box", false, JGraphPanel.getGraphOutline());
-        miniMapDialogBox.addOrganicListener(JGraphPanel.getFastOrganicActionListener());
-        miniMapDialogBox.addCircleListener(JGraphPanel.getCircleActionListener());
-        miniMapDialogBox.addTreeListener(JGraphPanel.getHierarchicalActionListener());
-        miniMapDialogBox.setDefaultCloseOperation(HIDE_ON_CLOSE);
         securityDialogBox = new SecurityJDialog(this, "Security", true);
         password = new String();
         isEncrypted = false;
@@ -1916,22 +1911,31 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
            Component currentTab = mainTabbedPane.getSelectedComponent();
            if(currentTab.equals(relationMapParentPanel)){
                JGraphPanel.updateShVertexList(Stakeholders);
+               if(!miniMapCreated)
+               {
+                   miniMapWindow();
+                   miniMapCreated = true;
+               }
                miniMapDialogBox.setVisible(true);
            }
            else if(currentTab.equals(classificationPanel)){
-               miniMapDialogBox.setVisible(false);
+               if(miniMapCreated)
+                    miniMapDialogBox.setVisible(false);
                classificationDiagramUpdate();
            }
            else if(currentTab.equals(actionPanel)){
-               miniMapDialogBox.setVisible(false);
+               if(miniMapCreated)
+                    miniMapDialogBox.setVisible(false);
                actionTableUpdate();
            }
            else if(currentTab.equals(influencePanel)){
-               miniMapDialogBox.setVisible(false);
+               if(miniMapCreated)
+                    miniMapDialogBox.setVisible(false);
                influenceTableUpdate();
            }
            else if(currentTab.equals(managementPlanPanel)){
-               miniMapDialogBox.setVisible(false);
+               if(miniMapCreated)
+                    miniMapDialogBox.setVisible(false);
                situationalInfluenceUpdate();
                viewManagementPlan();
            }
@@ -2156,10 +2160,19 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         System.out.println("<pswd>" + password + "</pswd>");
     }
     
+    //This is called once and only once. It creates the dialog box for the Rel Map
+    //The rest of the time, it is just its visibility that is toggled to make it disappear
     public void miniMapWindow()
     {
-        
-        
+        miniMapDialogBox = new RelationMapDialogBox(this, "Graph Tool Box", false, JGraphPanel.getGraphComponent());
+        miniMapDialogBox.addOrganicListener(JGraphPanel.getFastOrganicActionListener());
+        miniMapDialogBox.addCircleListener(JGraphPanel.getCircleActionListener());
+        miniMapDialogBox.addTreeListener(JGraphPanel.getHierarchicalActionListener());
+        miniMapDialogBox.addGraphBtnListener(JGraphPanel.getGraphBtnActionListener());
+        miniMapDialogBox.addLineBtnListener(JGraphPanel.getLineSnapActionListener());
+        miniMapDialogBox.addExportBtnListener(JGraphPanel.getExportMapActionListener());
+        miniMapDialogBox.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        miniMapDialogBox.setResizable(false);
     }
     //Creates test Driver window
     private TestDriver testFrame;
@@ -2226,11 +2239,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             }
         });
         
-        testFrame.exportMapToPNGButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JGraphPanel.exportToPNG("graph.png");
-            }
-        });
         
         testFrame.exportManagementPlanButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -2406,7 +2414,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private SecurityJDialog securityDialogBox;
     private boolean isEncrypted;
     private String password;
-    private RelationMiniMapDialog miniMapDialogBox;
+    private RelationMapDialogBox miniMapDialogBox;
     private boolean miniMapCreated;
 }
 

@@ -24,6 +24,7 @@ import java.awt.LayoutManager;
 import java.awt.Rectangle;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.math.*;
@@ -84,14 +85,14 @@ public class RelationMapPanel extends JPanel
         add(graphComponent, BorderLayout.CENTER);
         graphParent = panGraph.getDefaultParent();
         
-        toolbar = new JPanel();
-        toolbar.setLayout(new BorderLayout());
+//        toolbar = new JPanel();
+//        toolbar.setLayout(new BorderLayout());
         
-        mxGraphOutline outline = new mxGraphOutline(graphComponent);
-        outline.setPreferredSize(new Dimension(200, 200));
-        toolbar.add(outline, BorderLayout.WEST);
+//        mxGraphOutline outline = new mxGraphOutline(graphComponent);
+//        outline.setPreferredSize(new Dimension(200, 200));
+//        toolbar.add(outline, BorderLayout.WEST);
         
-        add(toolbar, BorderLayout.SOUTH);
+//        add(toolbar, BorderLayout.SOUTH);
         
         panGraph.setAllowDanglingEdges(false);
         panGraph.setCellsDisconnectable(false);
@@ -225,19 +226,41 @@ public class RelationMapPanel extends JPanel
     }
     
     //draws an image of the current map
-    public void exportToPNG(String filename)
+    public void exportToPNG()
     {
-        try {
-            BufferedImage bi = ScreenImage.createImage(graphComponent);
-            ScreenImage.writeImage(bi, filename);
-        } catch (IOException ex) {
-            Logger.getLogger(RelationMapPanel.class.getName()).log(Level.SEVERE, null, ex);
+        JFileChooser saveFileChooser = new JFileChooser();
+        int returnVal = saveFileChooser.showSaveDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = saveFileChooser.getSelectedFile();
+            String filename = file.getName();
+            if(!filename.contains("."))
+                filename = file.getPath() + ".png";
+            else
+                filename = file.getPath();
+            try {
+                JFrame frame = new JFrame();
+                mxGraphComponent graphCpnt = new mxGraphComponent(panGraph);
+                frame.setContentPane(graphCpnt);
+                frame.pack();
+                BufferedImage bi = ScreenImage.createImage(graphCpnt);
+                ScreenImage.writeImage(bi, filename);
+            } catch (IOException ex) {
+                Logger.getLogger(RelationMapPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
+    
     public mxGraphOutline getGraphOutline()
     {
-        return new mxGraphOutline(graphComponent);
+        mxGraphOutline outline = new mxGraphOutline(graphComponent);
+        outline.setPreferredSize(new Dimension(200, 200));
+        return outline;
+    }
+    
+    public mxGraphComponent getGraphComponent()
+    {
+        return graphComponent;
     }
     
     public void fitToSize()
@@ -289,6 +312,39 @@ public class RelationMapPanel extends JPanel
             @Override
             public void actionPerformed(ActionEvent e) {
                 setMxLayout(HIERARCHICAL);
+            }
+        };
+    }
+    
+    public ActionListener getGraphBtnActionListener()
+    {
+        return new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                graph();
+            }
+        };
+    }
+    
+    public ActionListener getLineSnapActionListener()
+    {
+        return new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                snapEdgesToFit();
+            }
+        };
+    }
+    
+    public ActionListener getExportMapActionListener()
+    {
+        return new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                exportToPNG();
             }
         };
     }
