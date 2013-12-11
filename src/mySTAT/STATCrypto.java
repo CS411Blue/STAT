@@ -21,7 +21,7 @@ public class STATCrypto {
     private String passPhrase;
     final private byte[] AESKey = new byte[16];
     final private byte[] HMACKey = new byte[16];
-    static final Charset UTF8Charset = Charset.forName("UTF-8");
+    static final private Charset UTF8Charset = Charset.forName("UTF-8");
     
     public void setPassPhrase(String passPhraseStr) {
         passPhrase = passPhraseStr;
