@@ -8,9 +8,9 @@ package mySTAT;
 
 import java.awt.Color;
 import java.awt.Component;
+import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -23,14 +23,12 @@ private static final long serialVersionUID = 6703872492730589499L;
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
     {
         Component cellComponent = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-
-        //if(table.getValueAt(row, column).equals("Y")){
-        //    cellComponent.setBackground(Color.YELLOW);
-        //} else if(table.getValueAt(row, column).equals("N")){
-        //    cellComponent.setBackground(Color.GRAY);
-        //}
+        setHorizontalAlignment( JLabel.CENTER );
         if (row == column)
-            cellComponent.setBackground(new java.awt.Color(70, 70, 70));
+        {
+            cellComponent.setBackground(new java.awt.Color(60, 60, 60));
+            this.setText("N/A");
+        }
         else
         {
             if (row%2 == 0)
