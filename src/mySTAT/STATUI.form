@@ -1483,7 +1483,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="influenceScrollPane" max="32767" attributes="0"/>
+                      <Component id="influenceScrollPane" pref="300" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -1542,7 +1542,7 @@
                               </Group>
                               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="contentTable" pref="1155" max="32767" attributes="0"/>
+                                  <Component id="contentTable" max="32767" attributes="0"/>
                                   <Component id="catcherTable" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
@@ -1600,6 +1600,9 @@
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
                       </Properties>
+                      <AccessibilityProperties>
+                        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+                      </AccessibilityProperties>
                       <Events>
                         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="contentTableFocusGained"/>
                       </Events>
@@ -1616,7 +1619,7 @@
                         <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                       <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String catcherRelationshipArray[][];&#xa;String[] catcherString = new String[Stakeholders.size()];&#xa;        for (int i = 0; i &lt; Stakeholders.size(); i++)&#xa;        {&#xa;             catcherString[i] = Stakeholders.get(i).getName();&#xa;        }&#xa;//Display already created stakeholder list items&#xa;if (!Stakeholders.isEmpty())&#xa;    {&#xa;        catcherRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];&#xa;        for (int c = 0; c &lt;= Stakeholders.size(); c++)&#xa;        {&#xa;            catcherRelationshipArray[0][c] = Stakeholders.get(c).getName();&#xa;        }&#xa;    }&#xa;//create fresh table for new projects (no stakeholders yet)&#xa;else {&#xa;    catcherRelationshipArray = new String [1][2];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        catcherRelationshipArray[0][i] = &quot;Empty&quot;;&#xa;        }&#xa;    }"/>
+                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//fill in the contents&#xa;String catcherRelationshipArray[][];&#xa;String[] catcherString = new String[Stakeholders.size()];&#xa;        for (int i = 0; i &lt; Stakeholders.size(); i++)&#xa;        {&#xa;             catcherString[i] = Stakeholders.get(i).getName();&#xa;        }&#xa;//Display already created stakeholder list items&#xa;if (!Stakeholders.isEmpty())&#xa;    {&#xa;        catcherRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];&#xa;        for (int c = 0; c &lt;= Stakeholders.size(); c++)&#xa;        {&#xa;            catcherRelationshipArray[0][c] = Stakeholders.get(c).getName();&#xa;        }&#xa;    }&#xa;//create fresh table for new projects (no stakeholders yet)&#xa;else {&#xa;    catcherRelationshipArray = new String [1][2];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        catcherRelationshipArray[0][i] = &quot;Empty&quot;;&#xa;        }&#xa;    }"/>
                       </AuxValues>
                     </Component>
                     <Component class="javax.swing.JButton" name="influenceSaveButton">
