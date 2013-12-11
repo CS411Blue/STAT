@@ -56,17 +56,19 @@ public class STATUI extends javax.swing.JFrame {
 //        setIconImage(statIcon.getImage());
         this.Stakeholders = new ArrayList<>();
         this.OriginalStakeholders = new ArrayList<>();
-        testWindow();
+        miniMapCreated = false;
+//        testWindow();
+        
         initComponents();
 
-        securityDialogBox = new SecurityJDialog(this, "Security", true);
-        password = new String();
-        isEncrypted = false;
         miniMapDialogBox = new RelationMiniMapDialog(this, "Graph Tool Box", false, JGraphPanel.getGraphOutline());
         miniMapDialogBox.addOrganicListener(JGraphPanel.getFastOrganicActionListener());
         miniMapDialogBox.addCircleListener(JGraphPanel.getCircleActionListener());
         miniMapDialogBox.addTreeListener(JGraphPanel.getHierarchicalActionListener());
         miniMapDialogBox.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        securityDialogBox = new SecurityJDialog(this, "Security", true);
+        password = new String();
+        isEncrypted = false;
     }
     private boolean mouseListenerExists = false;
 
@@ -1934,7 +1936,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                viewManagementPlan();
            }
            else{
-               miniMapDialogBox.setVisible(false);
+               if(miniMapCreated)
+                    miniMapDialogBox.setVisible(false);
                updateStakehodlerList();
                System.out.println("update catch branch failed for: tab " 
                        +mainTabbedPane.indexOfComponent(currentTab)
@@ -2404,5 +2407,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private boolean isEncrypted;
     private String password;
     private RelationMiniMapDialog miniMapDialogBox;
+    private boolean miniMapCreated;
 }
 
