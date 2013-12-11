@@ -9,38 +9,22 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.beans.PropertyChangeEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.Action;
 import javax.swing.DefaultCellEditor;
 import javax.swing.DefaultListModel;
-import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
-import javax.swing.JComponent;
 import javax.swing.JFileChooser;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumn;
-import javax.swing.table.TableColumnModel;
-import javax.swing.text.TableView.TableRow;
 
 /**
  *
@@ -1182,9 +1166,11 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         // TODO add your handling code here:
+        
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+   
     private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
         // TODO add your handling code here:
         int returnVal = openFileChooser.showOpenDialog(this);
@@ -2271,6 +2257,14 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         //</editor-fold>
 
         /* Create and display the form */
+        try
+        {
+            Thread.sleep(3000);
+        }
+        catch(InterruptedException ex)
+        {
+        
+        }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new STATUI().setVisible(true);
@@ -2410,6 +2404,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private void managmementPlanUpdate() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
     private SecurityJDialog securityDialogBox;
     private boolean isEncrypted;
     private String password;
