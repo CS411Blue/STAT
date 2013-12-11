@@ -28,6 +28,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
@@ -35,6 +36,8 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 import javax.swing.text.TableView.TableRow;
@@ -886,6 +889,7 @@ contentTable.addFocusListener(new java.awt.event.FocusAdapter() {
     }
     });
 
+    //fill in the contents
     String catcherRelationshipArray[][];
     String[] catcherString = new String[Stakeholders.size()];
     for (int i = 0; i < Stakeholders.size(); i++)
@@ -934,7 +938,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                     .addComponent(influenceSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGap(18, 18, 18)
             .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, 1155, Short.MAX_VALUE)
+                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(catcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGap(20, 20, 20))
     );
@@ -952,6 +956,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addGap(10, 10, 10))
     );
 
+    contentTable.getAccessibleContext().setAccessibleName("");
+
     influenceScrollPane.setViewportView(influenceMatrixPanel);
 
     javax.swing.GroupLayout influencePanelLayout = new javax.swing.GroupLayout(influencePanel);
@@ -959,7 +965,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     influencePanelLayout.setHorizontalGroup(
         influencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(influencePanelLayout.createSequentialGroup()
-            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
             .addGap(35, 35, 35))
         .addGroup(influencePanelLayout.createSequentialGroup()
             .addGap(191, 191, 191)
@@ -1587,15 +1593,19 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         contentTable.setModel(new javax.swing.table.DefaultTableModel(
             contentRelationshipArray,
             contentString));
-        //adjust contenttable and catchertable columns to same size
-        TableColumnAdjuster headers = new TableColumnAdjuster(catcherTable);
-        headers.adjustColumns();
-        TableColumnAdjuster contents = new TableColumnAdjuster(contentTable);
-        contents.copyColumns(catcherTable);
+        //adjust contenttable and catchertable columns to same size - if there are more than 10 stakeholders
+        if (Stakeholders.size() > 10)
+        {
+            TableColumnAdjuster headers = new TableColumnAdjuster(catcherTable);
+            headers.adjustColumns();
+            TableColumnAdjuster contents = new TableColumnAdjuster(contentTable);
+            contents.copyColumns(catcherTable);
+        }
         //add drop downs to the table
             for (int c = 0; c < Stakeholders.size(); c++)
             {
                 TableColumn influenceColumn = contentTable.getColumnModel().getColumn(c);
+                TableColumn influencedSHs = catcherTable.getColumnModel().getColumn(c);
                 JComboBox magnitude = new JComboBox();
                 magnitude.addItem("0");
                 magnitude.addItem("Low");
@@ -1605,12 +1615,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 influenceColumn.setCellEditor(new DefaultCellEditor(magnitude));
                 //change cells of same row and col to black
                 influenceColumn.setCellRenderer(new CustomRenderer());
-                //if (r == c)
-                //{
-                //    contentTable.getComponentAt(r, c).setOpaque(true);
-                //    contentTable.getModel().
-                //    contentTable.setEnabled(false);
-                //}
+                //center catcher Table
+                influencedSHs.setCellRenderer(new HeaderRenderer());
+
             }
         //}
         }//end of influenceTableUpdate
