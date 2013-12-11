@@ -22,6 +22,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JPopupMenu;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.table.TableColumn;
@@ -53,7 +54,7 @@ public class STATUI extends javax.swing.JFrame {
         isEncrypted = false;
     }
     private boolean mouseListenerExists = false;
-
+    private boolean saveMenuItemIsUsed = false;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1161,8 +1162,13 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         // TODO add your handling code here:
-        
-        System.exit(0);
+        if (saveMenuItemIsUsed == false)
+        { int n = JOptionPane.showConfirmDialog(null,"Are you sure that you want to exit without saving\nAll unsaved work will be lost", "Warning!", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            if(n == JOptionPane.YES_OPTION)
+             System.exit(0);  
+        }
+        else
+            System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
    
@@ -1961,6 +1967,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             ProjectStore project = ProjectStore.getInstance();
             project.saveProject(file.getPath(), Stakeholders, file.getName(), null, null, null);
         }
+        saveMenuItemIsUsed = true; 
     }//GEN-LAST:event_saveMenuItemActionPerformed
 
     private void newMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newMenuItemActionPerformed
