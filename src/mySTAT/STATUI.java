@@ -182,6 +182,22 @@ public class STATUI extends javax.swing.JFrame {
         managementPlanPanel = new javax.swing.JPanel();
         managementPlanScrollPane = new javax.swing.JScrollPane();
         managementPlanTable = new javax.swing.JTable();
+        RecActionsPanel = new javax.swing.JPanel();
+        involveLabel = new javax.swing.JLabel();
+        collaborateLabel = new javax.swing.JLabel();
+        defendLabel = new javax.swing.JLabel();
+        monitorLabel = new javax.swing.JLabel();
+        noActionLabel = new javax.swing.JLabel();
+        involveScrollPane = new javax.swing.JScrollPane();
+        involveList = new javax.swing.JList();
+        collaborateScrollPane = new javax.swing.JScrollPane();
+        collaborateList = new javax.swing.JList();
+        defendScrollPane = new javax.swing.JScrollPane();
+        defendList = new javax.swing.JList();
+        monitorScrollPane = new javax.swing.JScrollPane();
+        monitorList = new javax.swing.JList();
+        noActionScrollPane = new javax.swing.JScrollPane();
+        noActionList = new javax.swing.JList();
         MenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         newMenuItem = new javax.swing.JMenuItem();
@@ -947,7 +963,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     influencePanelLayout.setHorizontalGroup(
         influencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(influencePanelLayout.createSequentialGroup()
-            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
             .addGap(35, 35, 35))
         .addGroup(influencePanelLayout.createSequentialGroup()
             .addGap(191, 191, 191)
@@ -1072,6 +1088,92 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     );
 
     mainTabbedPane.addTab("<html>\n<br>\nManagement Plan<br>\n<br>", null, managementPlanPanel, "Click here to view the management plan");
+
+    involveLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    involveLabel.setText("Involve");
+    involveLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 0)));
+
+    collaborateLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    collaborateLabel.setText("Collaborate");
+    collaborateLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+
+    defendLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    defendLabel.setText("Defend");
+    defendLabel.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.orange));
+
+    monitorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    monitorLabel.setText("Monitor");
+    monitorLabel.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.yellow));
+
+    noActionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    noActionLabel.setText("No Action");
+    noActionLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+
+    involveList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 0)));
+    involveScrollPane.setViewportView(involveList);
+
+    collaborateList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+    collaborateScrollPane.setViewportView(collaborateList);
+
+    defendList.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.orange));
+    defendScrollPane.setViewportView(defendList);
+
+    monitorList.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.yellow));
+    monitorScrollPane.setViewportView(monitorList);
+
+    noActionList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    noActionScrollPane.setViewportView(noActionList);
+
+    javax.swing.GroupLayout RecActionsPanelLayout = new javax.swing.GroupLayout(RecActionsPanel);
+    RecActionsPanel.setLayout(RecActionsPanelLayout);
+    RecActionsPanelLayout.setHorizontalGroup(
+        RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(RecActionsPanelLayout.createSequentialGroup()
+            .addGap(45, 45, 45)
+            .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(involveScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(involveLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+            .addGap(20, 20, 20)
+            .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(RecActionsPanelLayout.createSequentialGroup()
+                    .addComponent(collaborateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                    .addGap(2, 2, 2))
+                .addComponent(collaborateScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+            .addGap(20, 20, 20)
+            .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(defendScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(defendLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+            .addGap(20, 20, 20)
+            .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(monitorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                .addComponent(monitorScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+            .addGap(22, 22, 22)
+            .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(noActionScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(noActionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+            .addGap(61, 61, 61))
+    );
+    RecActionsPanelLayout.setVerticalGroup(
+        RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(RecActionsPanelLayout.createSequentialGroup()
+            .addGap(10, 10, 10)
+            .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(involveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(defendLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(collaborateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(monitorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(noActionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8, 8, 8)
+            .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(collaborateScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+                .addComponent(involveScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+                .addComponent(noActionScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+                .addComponent(defendScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+                .addComponent(monitorScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+
+    mainTabbedPane.addTab("tab7", RecActionsPanel);
 
     MenuBar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     MenuBar.setName(""); // NOI18N
@@ -2129,39 +2231,104 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
       Mixed_DefinitiveBox.removeAllItems();
       NonSupportive_DefinitiveBox.removeAllItems();
       Marginal_DefinitiveBox.removeAllItems();
+      //new items for RecActionTab
+      DefaultListModel involveModel = new DefaultListModel();
+      DefaultListModel collaborateModel = new DefaultListModel();
+      DefaultListModel defendModel = new DefaultListModel();
+      DefaultListModel monitorModel = new DefaultListModel();
+      DefaultListModel noActionModel = new DefaultListModel();
+      //
       for(int i = 0; i < Stakeholders.size();i++)
+      {
+          Stakeholder obj=Stakeholders.get(i);
           if(Stakeholders.get(i).getPlacement().equals("Undefined")&&Stakeholders.get(i).getAttitude().equals("Supportive"))
-             Supportive_UndefinedBox.addItem(Stakeholders.get(i).getName());
+          {
+              Supportive_UndefinedBox.addItem(Stakeholders.get(i).getName());
+              noActionModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Undefined")&&Stakeholders.get(i).getAttitude().equals("Mixed"))
-             Mixed_UndefinedBox.addItem(Stakeholders.get(i).getName());
+          {
+              Mixed_UndefinedBox.addItem(Stakeholders.get(i).getName());
+              noActionModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Undefined")&&Stakeholders.get(i).getAttitude().equals("Non-Supportive"))
-             NonSupportive_UndefinedBox.addItem(Stakeholders.get(i).getName());
+          {
+              NonSupportive_UndefinedBox.addItem(Stakeholders.get(i).getName());
+              noActionModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Undefined")&&Stakeholders.get(i).getAttitude().equals("Marginal"))
-             Marginal_UndefinedBox.addItem(Stakeholders.get(i).getName());
+          {
+              Marginal_UndefinedBox.addItem(Stakeholders.get(i).getName());
+              noActionModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Latent")&&Stakeholders.get(i).getAttitude().equals("Supportive"))
-             Supportive_LatentBox.addItem(Stakeholders.get(i).getName());
+          {
+              Supportive_LatentBox.addItem(Stakeholders.get(i).getName());
+              involveModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Latent")&&Stakeholders.get(i).getAttitude().equals("Mixed"))
-             Mixed_LatentBox.addItem(Stakeholders.get(i).getName());
+          {
+              Mixed_LatentBox.addItem(Stakeholders.get(i).getName());
+              defendModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Latent")&&Stakeholders.get(i).getAttitude().equals("Non-Supportive"))
-             NonSupportive_LatentBox.addItem(Stakeholders.get(i).getName());
+          {
+              NonSupportive_LatentBox.addItem(Stakeholders.get(i).getName());
+              defendModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Latent")&&Stakeholders.get(i).getAttitude().equals("Marginal"))
-             Marginal_LatentBox.addItem(Stakeholders.get(i).getName());
+          {
+              Marginal_LatentBox.addItem(Stakeholders.get(i).getName());
+              monitorModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Expectant")&&Stakeholders.get(i).getAttitude().equals("Supportive"))
-             Supportive_ExpectantBox.addItem(Stakeholders.get(i).getName());
+          {
+              Supportive_ExpectantBox.addItem(Stakeholders.get(i).getName());
+              involveModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Expectant")&&Stakeholders.get(i).getAttitude().equals("Mixed"))
-             Mixed_ExpectantBox.addItem(Stakeholders.get(i).getName());
+          {
+              Mixed_ExpectantBox.addItem(Stakeholders.get(i).getName());
+              collaborateModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Expectant")&&Stakeholders.get(i).getAttitude().equals("Non-Supportive"))
-             NonSupportive_ExpectantBox.addItem(Stakeholders.get(i).getName());
+          {
+              NonSupportive_ExpectantBox.addItem(Stakeholders.get(i).getName());
+              defendModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Expectant")&&Stakeholders.get(i).getAttitude().equals("Marginal"))
-             Marginal_ExpectantBox.addItem(Stakeholders.get(i).getName());
+          {
+              Marginal_ExpectantBox.addItem(Stakeholders.get(i).getName());
+              monitorModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Definitive")&&Stakeholders.get(i).getAttitude().equals("Supportive"))
-             Supportive_DefinitiveBox.addItem(Stakeholders.get(i).getName());
+          {
+              Supportive_DefinitiveBox.addItem(Stakeholders.get(i).getName());
+              involveModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Definitive")&&Stakeholders.get(i).getAttitude().equals("Mixed"))
-             Mixed_DefinitiveBox.addItem(Stakeholders.get(i).getName());
+          {
+              Mixed_DefinitiveBox.addItem(Stakeholders.get(i).getName());
+              involveModel.addElement(obj.getName());
+          }
           else if(Stakeholders.get(i).getPlacement().equals("Definitive")&&Stakeholders.get(i).getAttitude().equals("Non-Supportive"))
-             NonSupportive_DefinitiveBox.addItem(Stakeholders.get(i).getName());
+          {
+              NonSupportive_DefinitiveBox.addItem(Stakeholders.get(i).getName());
+              collaborateModel.addElement(obj.getName());
+          }
           else
-              Marginal_DefinitiveBox.addItem(Stakeholders.get(i).getName());   
+          {
+              Marginal_DefinitiveBox.addItem(Stakeholders.get(i).getName());
+              defendModel.addElement(obj.getName());
+          }   
+      }
+          //for the new RecActions Tab
+          involveList.setModel(involveModel);
+          collaborateList.setModel(collaborateModel);
+          defendList.setModel(defendModel);
+          monitorList.setModel(monitorModel);
+          noActionList.setModel(noActionModel);
+          //
     }
     
     //export Management plan to CSV
@@ -2310,6 +2477,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JRadioButton PowerNRadioButton;
     private javax.swing.JRadioButton PowerYRadioButton;
     private javax.swing.ButtonGroup PowerbuttonGroup;
+    private javax.swing.JPanel RecActionsPanel;
     private javax.swing.ButtonGroup SHCooperationButtons;
     private javax.swing.JLabel SHCooperationLabel;
     private javax.swing.JRadioButton SHCooperationNRadioButton;
@@ -2366,7 +2534,13 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JTable catcherTable;
     private javax.swing.JLayeredPane classLayeredPane;
     private javax.swing.JPanel classificationPanel;
+    private javax.swing.JLabel collaborateLabel;
+    private javax.swing.JList collaborateList;
+    private javax.swing.JScrollPane collaborateScrollPane;
     private javax.swing.JTable contentTable;
+    private javax.swing.JLabel defendLabel;
+    private javax.swing.JList defendList;
+    private javax.swing.JScrollPane defendScrollPane;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenuItem exportMenuItem;
     private javax.swing.JMenu fileMenu;
@@ -2377,6 +2551,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JPanel influencePanel;
     private javax.swing.JButton influenceSaveButton;
     private javax.swing.JScrollPane influenceScrollPane;
+    private javax.swing.JLabel involveLabel;
+    private javax.swing.JList involveList;
+    private javax.swing.JScrollPane involveScrollPane;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
@@ -2385,7 +2562,13 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JPanel managementPlanPanel;
     private javax.swing.JScrollPane managementPlanScrollPane;
     private javax.swing.JTable managementPlanTable;
+    private javax.swing.JLabel monitorLabel;
+    private javax.swing.JList monitorList;
+    private javax.swing.JScrollPane monitorScrollPane;
     private javax.swing.JMenuItem newMenuItem;
+    private javax.swing.JLabel noActionLabel;
+    private javax.swing.JList noActionList;
+    private javax.swing.JScrollPane noActionScrollPane;
     private javax.swing.JFileChooser openFileChooser;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JTable pitcherTable;
