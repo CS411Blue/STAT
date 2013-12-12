@@ -1986,7 +1986,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             }
 //            System.out.println(file.toString());
             ProjectStore project = ProjectStore.getInstance();
-            project.saveProject(file.getPath(), Stakeholders, file.getName(), null, null, null);
+            project.saveProject(filePath, Stakeholders, filename, null, null, null);
             saveMenuItemIsUsed = true; 
         }
         
