@@ -1120,8 +1120,13 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     fileMenu.add(securityMenuItem);
 
     exportMenuItem.setForeground(new java.awt.Color(153, 153, 153));
-    exportMenuItem.setText("Export");
+    exportMenuItem.setText("Export Plan");
     exportMenuItem.setToolTipText("Export the Management Plan");
+    exportMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            exportMenuItemActionPerformed(evt);
+        }
+    });
     fileMenu.add(exportMenuItem);
     fileMenu.add(jSeparator4);
 
@@ -1945,9 +1950,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                if(miniMapCreated)
                     miniMapDialogBox.setVisible(false);
                updateStakehodlerList();
-               System.out.println("update catch branch failed for: tab " 
-                       +mainTabbedPane.indexOfComponent(currentTab)
-                       +"\n Component: "+currentTab.toString());
+//               System.out.println("update catch branch failed for: tab " 
+//                       +mainTabbedPane.indexOfComponent(currentTab)
+//                       +"\n Component: "+currentTab.toString());
            }
         }
     }//GEN-LAST:event_mainTabbedPaneStateChanged
@@ -1966,7 +1971,20 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         int returnVal = saveFileChooser.showSaveDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = saveFileChooser.getSelectedFile();
-            System.out.println(file.toString());
+            String filename = file.getName();
+            String filePath;
+            if(!filename.contains("."))
+            {
+                filename = filename + ".stat";
+                filePath = file.getPath() + ".stat";
+            }
+                
+            else
+            {
+                filename = file.getName();
+                filePath = file.getPath();
+            }
+//            System.out.println(file.toString());
             ProjectStore project = ProjectStore.getInstance();
             project.saveProject(file.getPath(), Stakeholders, file.getName(), null, null, null);
             saveMenuItemIsUsed = true; 
@@ -2049,6 +2067,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private void securityMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_securityMenuItemActionPerformed
         securityWindow();
     }//GEN-LAST:event_securityMenuItemActionPerformed
+
+    private void exportMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exportMenuItemActionPerformed
    
     private void classificationDiagramUpdate()
     {
@@ -2135,11 +2157,20 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     }
     
     //export Management plan to CSV
-    public void exportManagementToCSV(String filePath) throws FileNotFoundException
+    public void exportManagementToCSV() throws FileNotFoundException
     {
+        JFileChooser saveFileChooser = new JFileChooser();
+        int returnVal = saveFileChooser.showSaveDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = saveFileChooser.getSelectedFile();
+            String filename = file.getName();
+            if(!filename.contains("."))
+                filename = file.getPath() + ".csv";
+            else
+                filename = file.getPath();
             PrintWriter fileOut;
-            fileOut = new PrintWriter(filePath);
-            String str = str = "Name,Wants,Classification,Attitude,Influence,"
+            fileOut = new PrintWriter(filename);
+            String str = "Name,Wants,Classification,Attitude,Influence,"
                     +"Strategy,Method of Engagement,"
                     +"Last Engaged,Responsible Party,Notes,";
             fileOut.println(str);
@@ -2148,6 +2179,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 sh.exportStakeholderCSV(fileOut);
             }
             fileOut.close();
+        }
     }
     
     public void securityWindow()
@@ -2162,7 +2194,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         isEncrypted = securityDialogBox.getEncryptionChoice();
         if(isEncrypted)
             password = securityDialogBox.getPassword();
-        System.out.println("<pswd>" + password + "</pswd>");
+//        System.out.println("<pswd>" + password + "</pswd>");
     }
     
     //This is called once and only once. It creates the dialog box for the Rel Map
@@ -2185,75 +2217,13 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     {
         testFrame = new TestDriver(Stakeholders);
         testFrame.setVisible(true);
-        testFrame.layoutButtons.get(RelationMapPanel.FASTORGANIC).addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Fast Organic");
-                JGraphPanel.setMxLayout(RelationMapPanel.FASTORGANIC);
-            }
-        });
-        
-        testFrame.layoutButtons.get(RelationMapPanel.CIRCLE).addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Circle");
-                JGraphPanel.setMxLayout(RelationMapPanel.CIRCLE);
-            }
-        });
-        
-        testFrame.layoutButtons.get(RelationMapPanel.HIERARCHICAL).addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Hierachical");
-                JGraphPanel.setMxLayout(RelationMapPanel.HIERARCHICAL);
-            }
-        });
-        
-        testFrame.layoutButtons.get(RelationMapPanel.COMPACTTREE).addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Compact Tree");
-                JGraphPanel.setMxLayout(RelationMapPanel.COMPACTTREE);
-            }
-        });
-        
-        testFrame.layoutButtons.get(RelationMapPanel.PARALLEL).addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JGraphPanel.setMxLayout(RelationMapPanel.PARALLEL);
-            }
-        });
-        
-        testFrame.layoutButtons.get(RelationMapPanel.STACK).addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Stack");
-                JGraphPanel.setMxLayout(RelationMapPanel.STACK);
-            }
-        });
-        
-        testFrame.morphButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JGraphPanel.graph();
-            }
-        });
-        
         testFrame.updateShListButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 updateStakehodlerList();
             }
         });
         
-        testFrame.parallelButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JGraphPanel.snapEdgesToFit();
-            }
-        });
         
-        
-        testFrame.exportManagementPlanButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    exportManagementToCSV("managementPlan.csv");
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(STATUI.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
     }
     /**
      * @param args the command line arguments
