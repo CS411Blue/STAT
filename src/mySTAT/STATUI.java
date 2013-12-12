@@ -22,6 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultCellEditor;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -1399,6 +1400,12 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", null, influencePanel, "Click here to modify the stakeholder relationships");
 
+    relationMapParentPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            relationMapParentPanelMouseClicked(evt);
+        }
+    });
+
     relationMapScrollPane.setAutoscrolls(true);
     relationMapScrollPane.getVerticalScrollBar().setUnitIncrement(16);
     relationMapScrollPane.getHorizontalScrollBar().setUnitIncrement(16);
@@ -2647,7 +2654,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
         JFrame frame = (JFrame)evt.getSource();
-
+    //    if( saveMenuItemIsUsed == false){    
         int result = JOptionPane.showConfirmDialog(
             frame,
             "Are you sure you want to exit the application?",
@@ -2656,7 +2663,18 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
         if (result == JOptionPane.YES_OPTION)
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      //  }
+       // else
+         //   saveMenuItemIsUsed = false;
     }//GEN-LAST:event_formWindowClosing
+
+    private void relationMapParentPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_relationMapParentPanelMouseClicked
+        // TODO add your handling code here:
+        final ImageIcon icon1 = new javax.swing.ImageIcon(getClass().getResource("/myStat/relationship.png"));
+        JOptionPane.showMessageDialog(null, null
+                , "Relationship Map Legend",
+        JOptionPane.INFORMATION_MESSAGE,   icon1);
+    }//GEN-LAST:event_relationMapParentPanelMouseClicked
    
     private void classificationDiagramUpdate()
     {
