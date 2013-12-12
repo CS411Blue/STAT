@@ -198,6 +198,39 @@ public class STATUI extends javax.swing.JFrame {
         monitorList = new javax.swing.JList();
         noActionScrollPane = new javax.swing.JScrollPane();
         noActionList = new javax.swing.JList();
+        classificationsPanel = new javax.swing.JPanel();
+        definitiveLayeredPane = new javax.swing.JLayeredPane();
+        definitiveLabel = new javax.swing.JLabel();
+        definitiveScrollPane = new javax.swing.JScrollPane();
+        definitiveList = new javax.swing.JList();
+        dominantLayeredPane = new javax.swing.JLayeredPane();
+        dominantLabel = new javax.swing.JLabel();
+        dominantScrollPane = new javax.swing.JScrollPane();
+        dominantList = new javax.swing.JList();
+        dangerousLayeredPane = new javax.swing.JLayeredPane();
+        dangerousLabel = new javax.swing.JLabel();
+        dangerousScrollPane = new javax.swing.JScrollPane();
+        dangerousList = new javax.swing.JList();
+        dependentLayeredPane = new javax.swing.JLayeredPane();
+        dependentScrollPane = new javax.swing.JScrollPane();
+        dependentList = new javax.swing.JList();
+        dependentLabel = new javax.swing.JLabel();
+        demandingLayeredPane = new javax.swing.JLayeredPane();
+        demandingLabel = new javax.swing.JLabel();
+        demandingScrollPane = new javax.swing.JScrollPane();
+        demandingList = new javax.swing.JList();
+        dormantLayeredPane = new javax.swing.JLayeredPane();
+        dormantLabel = new javax.swing.JLabel();
+        dormantScrollPane = new javax.swing.JScrollPane();
+        dormantList = new javax.swing.JList();
+        discretionaryLayeredPane = new javax.swing.JLayeredPane();
+        discretionaryLabel = new javax.swing.JLabel();
+        discretionaryScrollPane = new javax.swing.JScrollPane();
+        discretionaryList = new javax.swing.JList();
+        nonStakeholderLayeredPane = new javax.swing.JLayeredPane();
+        nonStakeholderScrollPane = new javax.swing.JScrollPane();
+        nonStakeholderList = new javax.swing.JList();
+        nonStakeholderLabel = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         newMenuItem = new javax.swing.JMenuItem();
@@ -950,7 +983,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(pitcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE))
+                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE))
             .addGap(10, 10, 10))
     );
 
@@ -1083,7 +1116,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     managementPlanPanelLayout.setVerticalGroup(
         managementPlanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(managementPlanPanelLayout.createSequentialGroup()
-            .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
+            .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
             .addGap(20, 20, 20))
     );
 
@@ -1132,25 +1165,25 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addGap(45, 45, 45)
             .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(involveScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addComponent(involveLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                .addComponent(involveLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))
             .addGap(20, 20, 20)
             .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(RecActionsPanelLayout.createSequentialGroup()
-                    .addComponent(collaborateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                    .addComponent(collaborateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
                     .addGap(2, 2, 2))
-                .addComponent(collaborateScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+                .addComponent(collaborateScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
             .addGap(20, 20, 20)
             .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(defendScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addComponent(defendLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                .addComponent(defendLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
             .addGap(20, 20, 20)
             .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(monitorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                .addComponent(monitorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
                 .addComponent(monitorScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
             .addGap(22, 22, 22)
             .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(noActionScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addComponent(noActionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                .addComponent(noActionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
             .addGap(61, 61, 61))
     );
     RecActionsPanelLayout.setVerticalGroup(
@@ -1173,7 +1206,336 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addContainerGap())
     );
 
-    mainTabbedPane.addTab("tab7", RecActionsPanel);
+    mainTabbedPane.addTab("<html><br>Actions<br><br></html>", RecActionsPanel);
+
+    definitiveLayeredPane.setBackground(new java.awt.Color(143, 118, 172));
+    definitiveLayeredPane.setToolTipText("Power Legitimacy and Urgency");
+    definitiveLayeredPane.setOpaque(true);
+
+    definitiveLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    definitiveLabel.setText("Definitive");
+    definitiveLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102)));
+    definitiveLabel.setOpaque(true);
+
+    definitiveList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102)));
+    definitiveList.setToolTipText("Power Legitimacy and Urgency");
+    definitiveScrollPane.setViewportView(definitiveList);
+
+    javax.swing.GroupLayout definitiveLayeredPaneLayout = new javax.swing.GroupLayout(definitiveLayeredPane);
+    definitiveLayeredPane.setLayout(definitiveLayeredPaneLayout);
+    definitiveLayeredPaneLayout.setHorizontalGroup(
+        definitiveLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(definitiveLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(definitiveLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(definitiveLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(definitiveScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    definitiveLayeredPaneLayout.setVerticalGroup(
+        definitiveLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(definitiveLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(definitiveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(definitiveScrollPane)
+            .addGap(13, 13, 13))
+    );
+    definitiveLayeredPane.setLayer(definitiveLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+    definitiveLayeredPane.setLayer(definitiveScrollPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+    dominantLayeredPane.setBackground(new java.awt.Color(159, 138, 184));
+    dominantLayeredPane.setToolTipText("Power and Legitimacy");
+    dominantLayeredPane.setOpaque(true);
+
+    dominantLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    dominantLabel.setText("Dominant");
+    dominantLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(159, 138, 184)));
+    dominantLabel.setOpaque(true);
+
+    dominantList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(159, 138, 184)));
+    dominantList.setToolTipText("Power and Legitimacy");
+    dominantScrollPane.setViewportView(dominantList);
+
+    javax.swing.GroupLayout dominantLayeredPaneLayout = new javax.swing.GroupLayout(dominantLayeredPane);
+    dominantLayeredPane.setLayout(dominantLayeredPaneLayout);
+    dominantLayeredPaneLayout.setHorizontalGroup(
+        dominantLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(dominantLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(dominantLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(dominantScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(dominantLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    dominantLayeredPaneLayout.setVerticalGroup(
+        dominantLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(dominantLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(dominantLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(dominantScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+            .addGap(13, 13, 13))
+    );
+    dominantLayeredPane.setLayer(dominantLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+    dominantLayeredPane.setLayer(dominantScrollPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+    dangerousLayeredPane.setBackground(new java.awt.Color(159, 138, 184));
+    dangerousLayeredPane.setToolTipText("Power and Urgency");
+    dangerousLayeredPane.setOpaque(true);
+
+    dangerousLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    dangerousLabel.setText("Dangerous");
+    dangerousLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(159, 138, 184)));
+    dangerousLabel.setOpaque(true);
+
+    dangerousList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(159, 138, 184)));
+    dangerousList.setToolTipText("Power and Urgency");
+    dangerousScrollPane.setViewportView(dangerousList);
+
+    javax.swing.GroupLayout dangerousLayeredPaneLayout = new javax.swing.GroupLayout(dangerousLayeredPane);
+    dangerousLayeredPane.setLayout(dangerousLayeredPaneLayout);
+    dangerousLayeredPaneLayout.setHorizontalGroup(
+        dangerousLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(dangerousLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(dangerousLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(dangerousLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dangerousScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    dangerousLayeredPaneLayout.setVerticalGroup(
+        dangerousLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(dangerousLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(dangerousLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(dangerousScrollPane)
+            .addContainerGap())
+    );
+    dangerousLayeredPane.setLayer(dangerousLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+    dangerousLayeredPane.setLayer(dangerousScrollPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+    dependentLayeredPane.setBackground(new java.awt.Color(159, 138, 184));
+    dependentLayeredPane.setToolTipText("Legitimacy and Urgency");
+    dependentLayeredPane.setOpaque(true);
+
+    dependentList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(159, 138, 184)));
+    dependentList.setToolTipText("Legitimacy and Urgency");
+    dependentScrollPane.setViewportView(dependentList);
+
+    dependentLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    dependentLabel.setText("Dependent");
+    dependentLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(159, 138, 184)));
+    dependentLabel.setOpaque(true);
+
+    javax.swing.GroupLayout dependentLayeredPaneLayout = new javax.swing.GroupLayout(dependentLayeredPane);
+    dependentLayeredPane.setLayout(dependentLayeredPaneLayout);
+    dependentLayeredPaneLayout.setHorizontalGroup(
+        dependentLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(dependentLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(dependentLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(dependentLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dependentScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    dependentLayeredPaneLayout.setVerticalGroup(
+        dependentLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(dependentLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(dependentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(dependentScrollPane)
+            .addContainerGap())
+    );
+    dependentLayeredPane.setLayer(dependentScrollPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+    dependentLayeredPane.setLayer(dependentLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+    demandingLayeredPane.setBackground(new java.awt.Color(191, 177, 208));
+    demandingLayeredPane.setToolTipText("Urgency");
+    demandingLayeredPane.setOpaque(true);
+
+    demandingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    demandingLabel.setText("Demanding");
+    demandingLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(191, 177, 208)));
+    demandingLabel.setOpaque(true);
+
+    demandingList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(191, 177, 208)));
+    demandingList.setToolTipText("Urgency");
+    demandingScrollPane.setViewportView(demandingList);
+
+    javax.swing.GroupLayout demandingLayeredPaneLayout = new javax.swing.GroupLayout(demandingLayeredPane);
+    demandingLayeredPane.setLayout(demandingLayeredPaneLayout);
+    demandingLayeredPaneLayout.setHorizontalGroup(
+        demandingLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(demandingLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(demandingLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(demandingScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(demandingLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    demandingLayeredPaneLayout.setVerticalGroup(
+        demandingLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(demandingLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(demandingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(demandingScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+            .addGap(12, 12, 12))
+    );
+    demandingLayeredPane.setLayer(demandingLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+    demandingLayeredPane.setLayer(demandingScrollPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+    dormantLayeredPane.setBackground(new java.awt.Color(191, 177, 208));
+    dormantLayeredPane.setToolTipText("Power");
+    dormantLayeredPane.setOpaque(true);
+
+    dormantLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    dormantLabel.setText("Dormant");
+    dormantLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(191, 177, 208)));
+    dormantLabel.setOpaque(true);
+
+    dormantList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(191, 177, 208)));
+    dormantList.setToolTipText("Power");
+    dormantScrollPane.setViewportView(dormantList);
+
+    javax.swing.GroupLayout dormantLayeredPaneLayout = new javax.swing.GroupLayout(dormantLayeredPane);
+    dormantLayeredPane.setLayout(dormantLayeredPaneLayout);
+    dormantLayeredPaneLayout.setHorizontalGroup(
+        dormantLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(dormantLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(dormantLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(dormantLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dormantScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    dormantLayeredPaneLayout.setVerticalGroup(
+        dormantLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(dormantLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(dormantLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(dormantScrollPane)
+            .addContainerGap())
+    );
+    dormantLayeredPane.setLayer(dormantLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+    dormantLayeredPane.setLayer(dormantScrollPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+    discretionaryLayeredPane.setBackground(new java.awt.Color(191, 177, 208));
+    discretionaryLayeredPane.setToolTipText("Legitimacy");
+    discretionaryLayeredPane.setOpaque(true);
+
+    discretionaryLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    discretionaryLabel.setText("Discretionary");
+    discretionaryLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(191, 177, 208)));
+    discretionaryLabel.setOpaque(true);
+
+    discretionaryList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(191, 177, 208)));
+    discretionaryList.setToolTipText("Legitimacy");
+    discretionaryScrollPane.setViewportView(discretionaryList);
+
+    javax.swing.GroupLayout discretionaryLayeredPaneLayout = new javax.swing.GroupLayout(discretionaryLayeredPane);
+    discretionaryLayeredPane.setLayout(discretionaryLayeredPaneLayout);
+    discretionaryLayeredPaneLayout.setHorizontalGroup(
+        discretionaryLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, discretionaryLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(discretionaryLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(discretionaryLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                .addComponent(discretionaryScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    discretionaryLayeredPaneLayout.setVerticalGroup(
+        discretionaryLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(discretionaryLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(discretionaryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(discretionaryScrollPane)
+            .addContainerGap())
+    );
+    discretionaryLayeredPane.setLayer(discretionaryLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+    discretionaryLayeredPane.setLayer(discretionaryScrollPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+    nonStakeholderLayeredPane.setBackground(new java.awt.Color(204, 204, 204));
+    nonStakeholderLayeredPane.setToolTipText("No Power No Legitimacy No Urgency");
+    nonStakeholderLayeredPane.setOpaque(true);
+
+    nonStakeholderList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+    nonStakeholderList.setToolTipText("No Power No Legitimacy No Urgency");
+    nonStakeholderScrollPane.setViewportView(nonStakeholderList);
+
+    nonStakeholderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    nonStakeholderLabel.setText("Non-Stakeholder");
+    nonStakeholderLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+    nonStakeholderLabel.setOpaque(true);
+
+    javax.swing.GroupLayout nonStakeholderLayeredPaneLayout = new javax.swing.GroupLayout(nonStakeholderLayeredPane);
+    nonStakeholderLayeredPane.setLayout(nonStakeholderLayeredPaneLayout);
+    nonStakeholderLayeredPaneLayout.setHorizontalGroup(
+        nonStakeholderLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(nonStakeholderLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(nonStakeholderLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(nonStakeholderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                .addComponent(nonStakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    nonStakeholderLayeredPaneLayout.setVerticalGroup(
+        nonStakeholderLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(nonStakeholderLayeredPaneLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(nonStakeholderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(nonStakeholderScrollPane)
+            .addContainerGap())
+    );
+    nonStakeholderLayeredPane.setLayer(nonStakeholderScrollPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+    nonStakeholderLayeredPane.setLayer(nonStakeholderLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+    javax.swing.GroupLayout classificationsPanelLayout = new javax.swing.GroupLayout(classificationsPanel);
+    classificationsPanel.setLayout(classificationsPanelLayout);
+    classificationsPanelLayout.setHorizontalGroup(
+        classificationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(classificationsPanelLayout.createSequentialGroup()
+            .addGap(30, 30, 30)
+            .addGroup(classificationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(definitiveLayeredPane)
+                .addComponent(demandingLayeredPane))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(classificationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(dormantLayeredPane)
+                .addComponent(dominantLayeredPane))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(classificationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(dangerousLayeredPane)
+                .addComponent(discretionaryLayeredPane))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(classificationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(dependentLayeredPane)
+                .addComponent(nonStakeholderLayeredPane))
+            .addGap(63, 63, 63))
+    );
+    classificationsPanelLayout.setVerticalGroup(
+        classificationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(classificationsPanelLayout.createSequentialGroup()
+            .addGroup(classificationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(dangerousLayeredPane)
+                .addComponent(dependentLayeredPane)
+                .addComponent(dominantLayeredPane, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(definitiveLayeredPane, javax.swing.GroupLayout.Alignment.TRAILING))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(classificationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(nonStakeholderLayeredPane, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(dormantLayeredPane, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(discretionaryLayeredPane)
+                .addComponent(demandingLayeredPane)))
+    );
+
+    mainTabbedPane.addTab("<html> <br> Classifications<br> <br>", classificationsPanel);
 
     MenuBar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     MenuBar.setName(""); // NOI18N
@@ -2024,13 +2386,13 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                }
                miniMapDialogBox.setVisible(true);
            }
-           else if(currentTab.equals(classificationPanel)){
+           else if((currentTab.equals(classificationPanel))||(currentTab.equals(classificationsPanel))){
                exportMenuItem.setEnabled(false);
                if(miniMapCreated)
                     miniMapDialogBox.setVisible(false);
                classificationDiagramUpdate();
            }
-           else if(currentTab.equals(actionPanel)){
+           else if((currentTab.equals(actionPanel))||(currentTab.equals(RecActionsPanel))){
                exportMenuItem.setEnabled(false);
                if(miniMapCreated)
                     miniMapDialogBox.setVisible(false);
@@ -2192,25 +2554,70 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         DangerousStakeHolderList.removeAllItems();
         DependentStakeHolderList.removeAllItems();
         DemandingStakeHolderList.removeAllItems();
+        //new items for RecActionTab
+        DefaultListModel definitiveModel = new DefaultListModel();
+        DefaultListModel dominantModel = new DefaultListModel();
+        DefaultListModel dangerousModel = new DefaultListModel();
+        DefaultListModel dependentModel = new DefaultListModel();
+        DefaultListModel dormantModel = new DefaultListModel();
+        DefaultListModel discretionaryModel = new DefaultListModel();
+        DefaultListModel demandingModel = new DefaultListModel();
+        DefaultListModel nonStakeholderModel = new DefaultListModel();
+      //
         for(int i = 0;i < Stakeholders.size();i++)
+        {
+            Stakeholder obj=Stakeholders.get(i);
             if(Stakeholders.get(i).getClassification().equals("Non-Stakeholder"))
+            {
                 NonStakeHolderList.addItem(Stakeholders.get(i).getName());
+                nonStakeholderModel.addElement(obj.getName());
+            }
             else if(Stakeholders.get(i).getClassification().equals("Dormant"))
-               DormantStakeHolderList.addItem(Stakeholders.get(i).getName());
+            {
+                DormantStakeHolderList.addItem(Stakeholders.get(i).getName());
+                dormantModel.addElement(obj.getName());
+            }
             else if(Stakeholders.get(i).getClassification().equals("Discretionary"))
-               DiscretionaryStakeHolderList.addItem(Stakeholders.get(i).getName());
+            {
+                DiscretionaryStakeHolderList.addItem(Stakeholders.get(i).getName());
+                discretionaryModel.addElement(obj.getName());
+            }
             else if(Stakeholders.get(i).getClassification().equals("Dominant"))
-               DominantStakeHolderList.addItem(Stakeholders.get(i).getName());
+            {
+                DominantStakeHolderList.addItem(Stakeholders.get(i).getName());
+                dominantModel.addElement(obj.getName());
+            }
             else if(Stakeholders.get(i).getClassification().equals("Definitive"))
-               DefinitiveStakeHolderList.addItem(Stakeholders.get(i).getName());
+            {
+                DefinitiveStakeHolderList.addItem(Stakeholders.get(i).getName());
+                definitiveModel.addElement(obj.getName());
+            }
             else if(Stakeholders.get(i).getClassification().equals("Dangerous"))
-               DangerousStakeHolderList.addItem(Stakeholders.get(i).getName());
+            {
+                DangerousStakeHolderList.addItem(Stakeholders.get(i).getName());
+                dangerousModel.addElement(obj.getName());
+            }
             else if(Stakeholders.get(i).getClassification().equals("Dependent"))
-               DependentStakeHolderList.addItem(Stakeholders.get(i).getName());
+            {
+                DependentStakeHolderList.addItem(Stakeholders.get(i).getName());
+                dependentModel.addElement(obj.getName());
+            }
             else 
-               DemandingStakeHolderList.addItem(Stakeholders.get(i).getName());
-    
-    
+            {
+                DemandingStakeHolderList.addItem(Stakeholders.get(i).getName());
+                demandingModel.addElement(obj.getName());
+            }
+        }
+        //fill in new stakeholders tab
+        definitiveList.setModel(definitiveModel);
+        dominantList.setModel(dominantModel);
+        dangerousList.setModel(dangerousModel);
+        dependentList.setModel(dependentModel);
+        dormantList.setModel(dormantModel);
+        discretionaryList.setModel(discretionaryModel);
+        demandingList.setModel(demandingModel);
+        nonStakeholderList.setModel(nonStakeholderModel);
+       //////
     }
   
     private void actionTableUpdate()
@@ -2534,13 +2941,42 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JTable catcherTable;
     private javax.swing.JLayeredPane classLayeredPane;
     private javax.swing.JPanel classificationPanel;
+    private javax.swing.JPanel classificationsPanel;
     private javax.swing.JLabel collaborateLabel;
     private javax.swing.JList collaborateList;
     private javax.swing.JScrollPane collaborateScrollPane;
     private javax.swing.JTable contentTable;
+    private javax.swing.JLabel dangerousLabel;
+    private javax.swing.JLayeredPane dangerousLayeredPane;
+    private javax.swing.JList dangerousList;
+    private javax.swing.JScrollPane dangerousScrollPane;
     private javax.swing.JLabel defendLabel;
     private javax.swing.JList defendList;
     private javax.swing.JScrollPane defendScrollPane;
+    private javax.swing.JLabel definitiveLabel;
+    private javax.swing.JLayeredPane definitiveLayeredPane;
+    private javax.swing.JList definitiveList;
+    private javax.swing.JScrollPane definitiveScrollPane;
+    private javax.swing.JLabel demandingLabel;
+    private javax.swing.JLayeredPane demandingLayeredPane;
+    private javax.swing.JList demandingList;
+    private javax.swing.JScrollPane demandingScrollPane;
+    private javax.swing.JLabel dependentLabel;
+    private javax.swing.JLayeredPane dependentLayeredPane;
+    private javax.swing.JList dependentList;
+    private javax.swing.JScrollPane dependentScrollPane;
+    private javax.swing.JLabel discretionaryLabel;
+    private javax.swing.JLayeredPane discretionaryLayeredPane;
+    private javax.swing.JList discretionaryList;
+    private javax.swing.JScrollPane discretionaryScrollPane;
+    private javax.swing.JLabel dominantLabel;
+    private javax.swing.JLayeredPane dominantLayeredPane;
+    private javax.swing.JList dominantList;
+    private javax.swing.JScrollPane dominantScrollPane;
+    private javax.swing.JLabel dormantLabel;
+    private javax.swing.JLayeredPane dormantLayeredPane;
+    private javax.swing.JList dormantList;
+    private javax.swing.JScrollPane dormantScrollPane;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenuItem exportMenuItem;
     private javax.swing.JMenu fileMenu;
@@ -2569,6 +3005,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JLabel noActionLabel;
     private javax.swing.JList noActionList;
     private javax.swing.JScrollPane noActionScrollPane;
+    private javax.swing.JLabel nonStakeholderLabel;
+    private javax.swing.JLayeredPane nonStakeholderLayeredPane;
+    private javax.swing.JList nonStakeholderList;
+    private javax.swing.JScrollPane nonStakeholderScrollPane;
     private javax.swing.JFileChooser openFileChooser;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JTable pitcherTable;
