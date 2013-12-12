@@ -2604,7 +2604,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
           }
           else if(Stakeholders.get(i).getPlacement().equals("Latent")&&Stakeholders.get(i).getAttitude().equals("Supportive"))
           {
-              involveModel.addElement(obj.getName());
+              collaborateModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Latent")&&Stakeholders.get(i).getAttitude().equals("Mixed"))
           {
