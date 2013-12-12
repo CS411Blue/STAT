@@ -1989,6 +1989,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             updateStakehodlerList();
             mainTabbedPane.setSelectedComponent(StakeholdersPanel);
             InformationLabel.setText("New Project");
+            password = new String();
+            isEncrypted = false;
         }
     }//GEN-LAST:event_newMenuItemActionPerformed
 
