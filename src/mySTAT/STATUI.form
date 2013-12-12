@@ -267,7 +267,7 @@
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="WantsLabel" min="-2" pref="21" max="-2" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="WantsScrollPane" pref="38" max="32767" attributes="0"/>
+                              <Component id="WantsScrollPane" pref="42" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLayeredPane1" min="-2" max="-2" attributes="0"/>
@@ -276,7 +276,6 @@
                                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="SHPanel" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -306,6 +305,7 @@
                     <Property name="columns" type="int" value="20"/>
                     <Property name="lineWrap" type="boolean" value="true"/>
                     <Property name="rows" type="int" value="5"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Enter the stakeholder&apos;s wants"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -329,6 +329,7 @@
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Enter the stakeholder&apos;s name"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -346,6 +347,7 @@
                       <StringArray count="0"/>
                     </Property>
                     <Property name="selectionMode" type="int" value="0"/>
+                    <Property name="toolTipText" type="java.lang.String" value="List of stakeholders involved in the project"/>
                   </Properties>
                   <Events>
                     <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="StakeholderListValueChanged"/>
@@ -356,6 +358,7 @@
             <Component class="javax.swing.JButton" name="AddStakeholderButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click here to add this stakeholder"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddStakeholderButtonActionPerformed"/>
@@ -421,7 +424,7 @@
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="SHWantsLabel" pref="43" max="32767" attributes="0"/>
+                              <Component id="SHWantsLabel" pref="45" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="SHWantsScrollPane" pref="0" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -435,7 +438,6 @@
                                   <Component id="SHSaveButton" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="SHRemoveButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLayeredPane2" max="32767" attributes="0"/>
                           </Group>
@@ -460,6 +462,7 @@
                         <Property name="columns" type="int" value="20"/>
                         <Property name="lineWrap" type="boolean" value="true"/>
                         <Property name="rows" type="int" value="5"/>
+                        <Property name="toolTipText" type="java.lang.String" value="Edit the wants of the stakeholder"/>
                         <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -468,6 +471,7 @@
                 <Component class="javax.swing.JButton" name="SHRemoveButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Remove"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Click here to remove this stakeholder"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -482,6 +486,7 @@
                 <Component class="javax.swing.JButton" name="SHEditButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Edit"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Click here to edit the stakeholder"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -502,6 +507,7 @@
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
+                        <Property name="toolTipText" type="java.lang.String" value="Edit the name of the stakeholder"/>
                         <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -515,6 +521,7 @@
                 <Component class="javax.swing.JButton" name="SHSaveButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Save"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Click here to save your changes"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -522,6 +529,9 @@
                   </Events>
                 </Component>
                 <Container class="javax.swing.JLayeredPane" name="jLayeredPane2">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="Edit the attributes of the stakeholder"/>
+                  </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
@@ -793,6 +803,9 @@
               </Properties>
             </Component>
             <Container class="javax.swing.JLayeredPane" name="jLayeredPane1">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Choose the attributes that best describe the stakeholder"/>
+              </Properties>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -1004,1048 +1017,6 @@
                     </Property>
                     <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="No"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="classificationPanel">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Classifications&lt;br&gt;&#xa;&lt;br&gt;">
-                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Classifications&lt;br&gt;&#xa;&lt;br&gt;"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
-          <SubComponents>
-            <Container class="javax.swing.JLayeredPane" name="classLayeredPane">
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
-                  <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="1" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="1.0" weightY="1.0"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                <Property name="useNullLayout" type="boolean" value="true"/>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JComboBox" name="NonStakeHolderList">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="autoscrolls" type="boolean" value="true"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="300" y="340" width="70" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="DormantStakeHolderList">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="60" y="60" width="70" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="DiscretionaryStakeHolderList">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="260" y="130" width="70" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="DominantStakeHolderList">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="150" y="100" width="70" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="DefinitiveStakeHolderList">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="130" y="180" width="70" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="DangerousStakeHolderList">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="30" y="210" width="70" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="DependentStakeHolderList">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="190" y="260" width="70" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="DemandingStakeHolderList">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="80" y="300" width="70" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JLabel" name="vennLabel">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/mySTAT/classification.png"/>
-                    </Property>
-                  </Properties>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="0" y="0" width="646" height="454"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="actionPanel">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Actions&lt;br&gt;&#xa;&lt;br&gt;">
-                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Actions&lt;br&gt;&#xa;&lt;br&gt;"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
-          <SubComponents>
-            <Container class="javax.swing.JLayeredPane" name="actionLayeredPane">
-              <Properties>
-                <Property name="opaque" type="boolean" value="true"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
-                  <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="1" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="1.0" weightY="1.0"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                <Property name="useNullLayout" type="boolean" value="true"/>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JComboBox" name="Supportive_UndefinedBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="190" y="180" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="Mixed_UndefinedBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="190" y="210" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="NonSupportive_UndefinedBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="190" y="240" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="Marginal_UndefinedBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="190" y="270" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="Supportive_LatentBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="270" y="180" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="Mixed_LatentBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="270" y="210" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="NonSupportive_LatentBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="270" y="240" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="Marginal_LatentBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="270" y="270" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="Supportive_ExpectantBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="350" y="180" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="Mixed_ExpectantBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="350" y="210" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="NonSupportive_ExpectantBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="350" y="240" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="Marginal_ExpectantBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="350" y="270" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="Supportive_DefinitiveBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="430" y="180" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="Mixed_DefinitiveBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="430" y="210" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="NonSupportive_DefinitiveBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="430" y="240" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="Marginal_DefinitiveBox">
-                  <Properties>
-                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="10" type="code"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="430" y="270" width="60" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="javax.swing.JLabel" name="actionLabel">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/mySTAT/actionTable.png"/>
-                    </Property>
-                  </Properties>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="30" y="40" width="670" height="330"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="influencePanel">
-          <Properties>
-            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[800, 497]"/>
-            </Property>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Influences&lt;br&gt;&#xa;&lt;br&gt;" toolTip="Click here to modify the stakeholder relationships">
-                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Influences&lt;br&gt;&#xa;&lt;br&gt;"/>
-                <Property name="tabToolTip" type="java.lang.String" value="Click here to modify the stakeholder relationships"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="influenceScrollPane" pref="751" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
-                      <Component id="influenceLabel1" pref="89" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="influenceLabel2" pref="88" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Component id="influenceLabel3" pref="90" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="308" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="influenceLabel2" alignment="0" pref="22" max="32767" attributes="0"/>
-                          <Component id="influenceLabel1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="influenceLabel3" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="influenceScrollPane" pref="427" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="influenceScrollPane">
-              <Properties>
-                <Property name="autoscrolls" type="boolean" value="true"/>
-                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[200, 100]"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="influenceScrollPane.getVerticalScrollBar().setUnitIncrement(16);&#xa;influenceScrollPane.getHorizontalScrollBar().setUnitIncrement(16);"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Container class="javax.swing.JPanel" name="influenceMatrixPanel">
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="pitcherTable" min="-2" pref="121" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Component id="influenceSaveButton" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="contentTable" max="32767" attributes="0"/>
-                                  <Component id="catcherTable" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="catcherTable" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="influenceSaveButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="pitcherTable" alignment="3" max="32767" attributes="0"/>
-                                  <Component id="contentTable" alignment="3" pref="595" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JTable" name="pitcherTable">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    headerRelationshipArray,&#xa;    new String [] {&quot;Stakeholders&quot;})" type="code"/>
-                        </Property>
-                        <Property name="enabled" type="boolean" value="false"/>
-                        <Property name="fillsViewportHeight" type="boolean" value="true"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable()"/>
-                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String headerRelationshipArray[][];&#xa;String[] headerString = new String[Stakeholders.size()];&#xa;        for (int i = 0; i &lt; Stakeholders.size(); i++)&#xa;        {&#xa;             headerString[i] = Stakeholders.get(i).getName();&#xa;        }&#xa;       &#xa;        //Display already created stakeholder list items&#xa;        if (!Stakeholders.isEmpty()){&#xa;            headerRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];&#xa;            for (int r = 0; r &lt; Stakeholders.size(); r++)&#xa;                {&#xa;                    headerRelationshipArray[r][0] = headerString[r];}&#xa;                }        &#xa;        //create fresh table for new projects (no stakeholders yet)&#xa;        else {&#xa;                headerRelationshipArray = new String [2][1];&#xa;                for (int i = 0; i &lt; 2; i++)&#xa;                {&#xa;                    headerRelationshipArray[i][0] = &quot;nada&quot;;&#xa;                }&#xa;             }"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="javax.swing.JTable" name="contentTable">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    contentRelationshipArray,&#xa;    contentString)" type="code"/>
-                        </Property>
-                        <Property name="toolTipText" type="java.lang.String" value="Click a cell to change the relationship strength"/>
-                        <Property name="autoResizeMode" type="int" value="0"/>
-                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                          <TableColumnModel selectionModel="0"/>
-                        </Property>
-                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
-                        </Property>
-                        <Property name="fillsViewportHeight" type="boolean" value="true"/>
-                        <Property name="rowSelectionAllowed" type="boolean" value="false"/>
-                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                        </Property>
-                      </Properties>
-                      <AccessibilityProperties>
-                        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
-                      </AccessibilityProperties>
-                      <Events>
-                        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="contentTableFocusGained"/>
-                      </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//Array of strings to hold column names&#xa;String[] contentString = new String[Stakeholders.size()];&#xa;   for (int i = 0; i &lt; Stakeholders.size(); i++)&#xa;   {&#xa;&#x9;contentString[i] = Stakeholders.get(i).getName();&#xa;   }&#xa;String contentRelationshipArray[][];&#xa;//Display already created stakeholder list items&#xa;if (!Stakeholders.isEmpty()){&#xa;    contentRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];&#xa;    for (int r = 0; r &lt; Stakeholders.size(); r++)&#xa;&#x9;{&#xa;&#x9;for (int c = 0; c &lt; Stakeholders.size(); c++)&#xa;        {&#xa;            if (r == c)&#xa;            { contentRelationshipArray[r][c] = &quot;N/A&quot;;}&#xa;            else&#xa;            {&#xa;                if (!Stakeholders.get(c).getInfluences().isEmpty())&#xa;                {&#xa;                    int tempMagnitude = Stakeholders.get(c).getInfluenceNumber(r).getMagnitude();&#xa;                    contentRelationshipArray[r][c] = Integer.toString(tempMagnitude);&#xa;                }&#xa;                    else&#xa;                    { contentRelationshipArray[r][c] = &quot;select&quot;;}&#xa;            }//end of else&#xa;&#x9;}//end of column for loop&#xa;        }//end of row for loop&#xa;    }//end of if arraylist not empty&#xa;    //create fresh table for new projects (no stakeholders yet)&#xa;else {&#xa;    contentRelationshipArray = new String[2][2];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        for (int e = 0; e &lt; 2; e++){&#xa;        contentRelationshipArray[i][e] = &quot;0&quot;;&#xa;        }&#xa;       }&#xa;    }"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="javax.swing.JTable" name="catcherTable">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    catcherRelationshipArray,&#xa;    catcherString)" type="code"/>
-                        </Property>
-                        <Property name="autoResizeMode" type="int" value="0"/>
-                        <Property name="enabled" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//fill in the contents&#xa;String catcherRelationshipArray[][];&#xa;String[] catcherString = new String[Stakeholders.size()];&#xa;        for (int i = 0; i &lt; Stakeholders.size(); i++)&#xa;        {&#xa;             catcherString[i] = Stakeholders.get(i).getName();&#xa;        }&#xa;//Display already created stakeholder list items&#xa;if (!Stakeholders.isEmpty())&#xa;    {&#xa;        catcherRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];&#xa;        for (int c = 0; c &lt;= Stakeholders.size(); c++)&#xa;        {&#xa;            catcherRelationshipArray[0][c] = Stakeholders.get(c).getName();&#xa;        }&#xa;    }&#xa;//create fresh table for new projects (no stakeholders yet)&#xa;else {&#xa;    catcherRelationshipArray = new String [1][2];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        catcherRelationshipArray[0][i] = &quot;Empty&quot;;&#xa;        }&#xa;    }"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="influenceSaveButton">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;Save&lt;br&gt;Updates&lt;/center&gt;&lt;/html&gt;"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="influenceSaveButtonMouseClicked"/>
-                      </Events>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="influenceLabel1">
-            </Component>
-            <Component class="javax.swing.JLabel" name="influenceLabel2">
-            </Component>
-            <Component class="javax.swing.JLabel" name="influenceLabel3">
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="relationMapParentPanel">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&lt;html&gt; &lt;br&gt; Relation Map&lt;br&gt;&lt;br&gt;">
-                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt; &lt;br&gt; Relation Map&lt;br&gt;&lt;br&gt;"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="relationMapScrollPane" pref="781" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="relationMapScrollPane" pref="463" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="relationMapScrollPane">
-              <Properties>
-                <Property name="autoscrolls" type="boolean" value="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="relationMapScrollPane.getVerticalScrollBar().setUnitIncrement(16);&#xd;&#xa;relationMapScrollPane.getHorizontalScrollBar().setUnitIncrement(16);&#xd;&#xa;"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="mySTAT.RelationMapPanel" name="JGraphPanel">
-                  <Properties>
-                    <Property name="autoscrolls" type="boolean" value="true"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="managementPlanPanel">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Management Plan&lt;br&gt;&#xa;&lt;br&gt;" toolTip="Click here to view the management plan">
-                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Management Plan&lt;br&gt;&#xa;&lt;br&gt;"/>
-                <Property name="tabToolTip" type="java.lang.String" value="Click here to view the management plan"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="managementPlanScrollPane" pref="766" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="managementPlanScrollPane" pref="468" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="managementPlanScrollPane">
-              <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder>
-                      <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
-                    </TitledBorder>
-                  </Border>
-                </Property>
-                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[200, 100]"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTable" name="managementPlanTable">
-                  <Properties>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="managementPlanTable.getTableHeader().setPreferredSize(new Dimension(managementPlanTable.getColumnModel().getTotalColumnWidth(), 32));">
-                      <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    tempArray,&#xa;    new String [] {&#xa;        &quot;Name&quot;, &quot;Wants&quot;, &quot;Classification&quot;, &quot;Attitude&quot;, &quot;Influence&quot;, &quot;Strategy&quot;,&#xa;        &quot;&lt;html&gt;Method of&lt;br&gt;Engagement&quot;, &quot;&lt;html&gt;Last&lt;br&gt;Engaged&quot;,&#xa;        &quot;&lt;html&gt;Responsible&lt;br&gt;Party&quot;, &quot;Notes&quot;&#xa;    }&#xa;){&#xa;    boolean[] canEdit = new boolean [] {&#xa;        false, false, false, false, false, false, true, true, true, true&#xa;    };&#xa;&#xa;    public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;        return canEdit [columnIndex];&#xa;    }&#xa;}" type="code"/>
-                    </Property>
-                    <Property name="autoResizeMode" type="int" value="4"/>
-                    <Property name="cellSelectionEnabled" type="boolean" value="true"/>
-                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" postCode="//allow table word wrap&#xa;for (int i = 0; i &lt; 10; i++)&#xa;{ managementPlanTable.getColumnModel().getColumn(i).setCellRenderer(new TableCellLongTextRenderer ()); }">
-                      <TableColumnModel selectionModel="2"/>
-                    </Property>
-                    <Property name="fillsViewportHeight" type="boolean" value="true"/>
-                    <Property name="rowHeight" type="int" value="50"/>
-                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="managementPlanTablePropertyChange"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable()"/>
-                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String tempArray[][];&#xa;if (!Stakeholders.isEmpty()){&#xa;    tempArray = new String[Stakeholders.size()][10];&#xa;    for (int i = 0; i &lt; Stakeholders.size(); i++){&#xa;        tempArray[i][0] = Stakeholders.get(i).getName();&#xa;        tempArray[i][1] = Stakeholders.get(i).getWants();&#xa;        tempArray[i][2] = Stakeholders.get(i).getClassification();&#xa;        tempArray[i][3] = Stakeholders.get(i).getAttitude();&#xa;        tempArray[i][4] = String.format(&quot;%.3f&quot;, Stakeholders.get(i).getInfluence());&#xa;        tempArray[i][5] = Stakeholders.get(i).getStrategy();&#xa;        tempArray[i][6] = Stakeholders.get(i).getEngagement();&#xa;        tempArray[i][7] = Stakeholders.get(i).getLastEngaged();&#xa;        tempArray[i][8] = Stakeholders.get(i).getResponsible();&#xa;        tempArray[i][9] = Stakeholders.get(i).getNotes();&#xa;    }&#xa;}&#xa;else {&#xa;    tempArray = new String [2][10];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        for (int e = 0; e &lt; 10; e++){&#xa;        tempArray[i][e] = &quot;nada&quot;;&#xa;        }&#xa;       }&#xa;    }"/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="RecActionsPanel">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&lt;html&gt;&lt;br&gt;Actions&lt;br&gt;&lt;br&gt;&lt;/html&gt;">
-                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt;&lt;br&gt;Actions&lt;br&gt;&lt;br&gt;&lt;/html&gt;"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="involveScrollPane" pref="0" max="32767" attributes="0"/>
-                          <Component id="involveLabel" pref="115" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="collaborateLabel" pref="131" max="32767" attributes="0"/>
-                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="collaborateScrollPane" pref="133" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="defendScrollPane" pref="0" max="32767" attributes="0"/>
-                          <Component id="defendLabel" pref="115" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="monitorLabel" pref="114" max="32767" attributes="0"/>
-                          <Component id="monitorScrollPane" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="noActionScrollPane" pref="0" max="32767" attributes="0"/>
-                          <Component id="noActionLabel" pref="121" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="involveLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="defendLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="collaborateLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="monitorLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="noActionLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="collaborateScrollPane" pref="433" max="32767" attributes="0"/>
-                          <Component id="involveScrollPane" pref="433" max="32767" attributes="0"/>
-                          <Component id="noActionScrollPane" alignment="0" pref="433" max="32767" attributes="0"/>
-                          <Component id="defendScrollPane" alignment="0" pref="433" max="32767" attributes="0"/>
-                          <Component id="monitorScrollPane" alignment="0" pref="433" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="involveLabel">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Involve"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder thickness="4">
-                      <Color PropertyName="color" blue="0" green="cc" red="0" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="collaborateLabel">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Collaborate"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder thickness="4">
-                      <Color PropertyName="color" blue="0" green="0" red="ff" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="defendLabel">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Defend"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder thickness="4">
-                      <Color PropertyName="color" blue="0" green="c8" id="orange" palette="1" red="ff" type="palette"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="monitorLabel">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Monitor"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder thickness="4">
-                      <Color PropertyName="color" blue="0" green="ff" id="yellow" palette="1" red="ff" type="palette"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="noActionLabel">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="No Action"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder thickness="4">
-                      <Color PropertyName="color" blue="99" green="99" red="99" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="involveScrollPane">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="involveList">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder thickness="4">
-                          <Color PropertyName="color" blue="0" green="cc" red="0" type="rgb"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JScrollPane" name="collaborateScrollPane">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="collaborateList">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder thickness="4">
-                          <Color PropertyName="color" blue="0" green="0" red="ff" type="rgb"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JScrollPane" name="defendScrollPane">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="defendList">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder thickness="4">
-                          <Color PropertyName="color" blue="0" green="c8" id="orange" palette="1" red="ff" type="palette"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JScrollPane" name="monitorScrollPane">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="monitorList">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder thickness="4">
-                          <Color PropertyName="color" blue="0" green="ff" id="yellow" palette="1" red="ff" type="palette"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JScrollPane" name="noActionScrollPane">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="noActionList">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder thickness="4">
-                          <Color PropertyName="color" blue="99" green="99" red="99" type="rgb"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -2707,6 +1678,1063 @@
                     </Property>
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="RecActionsPanel">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="&lt;html&gt;&lt;br&gt;Actions&lt;br&gt;&lt;br&gt;&lt;/html&gt;">
+                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt;&lt;br&gt;Actions&lt;br&gt;&lt;br&gt;&lt;/html&gt;"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="involveScrollPane" pref="0" max="32767" attributes="0"/>
+                          <Component id="involveLabel" pref="115" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="collaborateLabel" pref="131" max="32767" attributes="0"/>
+                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="collaborateScrollPane" pref="133" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="defendScrollPane" pref="0" max="32767" attributes="0"/>
+                          <Component id="defendLabel" pref="115" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="monitorLabel" pref="114" max="32767" attributes="0"/>
+                          <Component id="monitorScrollPane" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="noActionScrollPane" pref="0" max="32767" attributes="0"/>
+                          <Component id="noActionLabel" pref="121" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="involveLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="defendLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="collaborateLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="monitorLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="noActionLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="collaborateScrollPane" pref="433" max="32767" attributes="0"/>
+                          <Component id="involveScrollPane" pref="433" max="32767" attributes="0"/>
+                          <Component id="noActionScrollPane" alignment="0" pref="433" max="32767" attributes="0"/>
+                          <Component id="defendScrollPane" alignment="0" pref="433" max="32767" attributes="0"/>
+                          <Component id="monitorScrollPane" alignment="0" pref="433" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="involveLabel">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Involve"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder thickness="4">
+                      <Color PropertyName="color" blue="0" green="cc" red="0" type="rgb"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="collaborateLabel">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Collaborate"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder thickness="4">
+                      <Color PropertyName="color" blue="0" green="0" red="ff" type="rgb"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="defendLabel">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Defend"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder thickness="4">
+                      <Color PropertyName="color" blue="0" green="c8" id="orange" palette="1" red="ff" type="palette"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="monitorLabel">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Monitor"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder thickness="4">
+                      <Color PropertyName="color" blue="0" green="ff" id="yellow" palette="1" red="ff" type="palette"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="noActionLabel">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="No Action"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder thickness="4">
+                      <Color PropertyName="color" blue="99" green="99" red="99" type="rgb"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="involveScrollPane">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="involveList">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder thickness="4">
+                          <Color PropertyName="color" blue="0" green="cc" red="0" type="rgb"/>
+                        </LineBorder>
+                      </Border>
+                    </Property>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="Involve these stakeholders in the project"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="collaborateScrollPane">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="collaborateList">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder thickness="4">
+                          <Color PropertyName="color" blue="0" green="0" red="ff" type="rgb"/>
+                        </LineBorder>
+                      </Border>
+                    </Property>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="Collaborate with these stakeholders"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="defendScrollPane">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="defendList">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder thickness="4">
+                          <Color PropertyName="color" blue="0" green="c8" id="orange" palette="1" red="ff" type="palette"/>
+                        </LineBorder>
+                      </Border>
+                    </Property>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="Defend against these stakeholders"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="monitorScrollPane">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="monitorList">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder thickness="4">
+                          <Color PropertyName="color" blue="0" green="ff" id="yellow" palette="1" red="ff" type="palette"/>
+                        </LineBorder>
+                      </Border>
+                    </Property>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="Monitor these stakeholders"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="noActionScrollPane">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="noActionList">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder thickness="4">
+                          <Color PropertyName="color" blue="99" green="99" red="99" type="rgb"/>
+                        </LineBorder>
+                      </Border>
+                    </Property>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="These stakeholders require no action"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="influencePanel">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[800, 497]"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Influences&lt;br&gt;&#xa;&lt;br&gt;" toolTip="Click here to modify the stakeholder relationships">
+                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Influences&lt;br&gt;&#xa;&lt;br&gt;"/>
+                <Property name="tabToolTip" type="java.lang.String" value="Click here to modify the stakeholder relationships"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="influenceScrollPane" pref="751" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
+                      <Component id="influenceLabel1" pref="89" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="influenceLabel2" pref="88" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="influenceLabel3" pref="90" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="308" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="influenceLabel2" alignment="0" pref="22" max="32767" attributes="0"/>
+                          <Component id="influenceLabel1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="influenceLabel3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="influenceScrollPane" pref="427" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="influenceScrollPane">
+              <Properties>
+                <Property name="autoscrolls" type="boolean" value="true"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 100]"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="influenceScrollPane.getVerticalScrollBar().setUnitIncrement(16);&#xa;influenceScrollPane.getHorizontalScrollBar().setUnitIncrement(16);"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="influenceMatrixPanel">
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="pitcherTable" min="-2" pref="121" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="influenceSaveButton" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="contentTable" max="32767" attributes="0"/>
+                                  <Component id="catcherTable" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="catcherTable" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="influenceSaveButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="pitcherTable" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="contentTable" alignment="3" pref="595" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="pitcherTable">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    headerRelationshipArray,&#xa;    new String [] {&quot;Stakeholders&quot;})" type="code"/>
+                        </Property>
+                        <Property name="toolTipText" type="java.lang.String" value="The Influencing Stakeholders"/>
+                        <Property name="enabled" type="boolean" value="false"/>
+                        <Property name="fillsViewportHeight" type="boolean" value="true"/>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable()"/>
+                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String headerRelationshipArray[][];&#xa;String[] headerString = new String[Stakeholders.size()];&#xa;        for (int i = 0; i &lt; Stakeholders.size(); i++)&#xa;        {&#xa;             headerString[i] = Stakeholders.get(i).getName();&#xa;        }&#xa;       &#xa;        //Display already created stakeholder list items&#xa;        if (!Stakeholders.isEmpty()){&#xa;            headerRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];&#xa;            for (int r = 0; r &lt; Stakeholders.size(); r++)&#xa;                {&#xa;                    headerRelationshipArray[r][0] = headerString[r];}&#xa;                }        &#xa;        //create fresh table for new projects (no stakeholders yet)&#xa;        else {&#xa;                headerRelationshipArray = new String [2][1];&#xa;                for (int i = 0; i &lt; 2; i++)&#xa;                {&#xa;                    headerRelationshipArray[i][0] = &quot;nada&quot;;&#xa;                }&#xa;             }"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JTable" name="contentTable">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    contentRelationshipArray,&#xa;    contentString)" type="code"/>
+                        </Property>
+                        <Property name="toolTipText" type="java.lang.String" value="Click a cell to change the relationship strength"/>
+                        <Property name="autoResizeMode" type="int" value="0"/>
+                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                          <TableColumnModel selectionModel="0"/>
+                        </Property>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Default Cursor"/>
+                        </Property>
+                        <Property name="fillsViewportHeight" type="boolean" value="true"/>
+                        <Property name="rowSelectionAllowed" type="boolean" value="false"/>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                        </Property>
+                      </Properties>
+                      <AccessibilityProperties>
+                        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+                      </AccessibilityProperties>
+                      <Events>
+                        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="contentTableFocusGained"/>
+                      </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//Array of strings to hold column names&#xa;String[] contentString = new String[Stakeholders.size()];&#xa;   for (int i = 0; i &lt; Stakeholders.size(); i++)&#xa;   {&#xa;&#x9;contentString[i] = Stakeholders.get(i).getName();&#xa;   }&#xa;String contentRelationshipArray[][];&#xa;//Display already created stakeholder list items&#xa;if (!Stakeholders.isEmpty()){&#xa;    contentRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];&#xa;    for (int r = 0; r &lt; Stakeholders.size(); r++)&#xa;&#x9;{&#xa;&#x9;for (int c = 0; c &lt; Stakeholders.size(); c++)&#xa;        {&#xa;            if (r == c)&#xa;            { contentRelationshipArray[r][c] = &quot;N/A&quot;;}&#xa;            else&#xa;            {&#xa;                if (!Stakeholders.get(c).getInfluences().isEmpty())&#xa;                {&#xa;                    int tempMagnitude = Stakeholders.get(c).getInfluenceNumber(r).getMagnitude();&#xa;                    contentRelationshipArray[r][c] = Integer.toString(tempMagnitude);&#xa;                }&#xa;                    else&#xa;                    { contentRelationshipArray[r][c] = &quot;select&quot;;}&#xa;            }//end of else&#xa;&#x9;}//end of column for loop&#xa;        }//end of row for loop&#xa;    }//end of if arraylist not empty&#xa;    //create fresh table for new projects (no stakeholders yet)&#xa;else {&#xa;    contentRelationshipArray = new String[2][2];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        for (int e = 0; e &lt; 2; e++){&#xa;        contentRelationshipArray[i][e] = &quot;0&quot;;&#xa;        }&#xa;       }&#xa;    }"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JTable" name="catcherTable">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    catcherRelationshipArray,&#xa;    catcherString)" type="code"/>
+                        </Property>
+                        <Property name="toolTipText" type="java.lang.String" value="The stakeholders being influenced"/>
+                        <Property name="autoResizeMode" type="int" value="0"/>
+                        <Property name="enabled" type="boolean" value="false"/>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//fill in the contents&#xa;String catcherRelationshipArray[][];&#xa;String[] catcherString = new String[Stakeholders.size()];&#xa;        for (int i = 0; i &lt; Stakeholders.size(); i++)&#xa;        {&#xa;             catcherString[i] = Stakeholders.get(i).getName();&#xa;        }&#xa;//Display already created stakeholder list items&#xa;if (!Stakeholders.isEmpty())&#xa;    {&#xa;        catcherRelationshipArray = new String[Stakeholders.size()][Stakeholders.size()];&#xa;        for (int c = 0; c &lt;= Stakeholders.size(); c++)&#xa;        {&#xa;            catcherRelationshipArray[0][c] = Stakeholders.get(c).getName();&#xa;        }&#xa;    }&#xa;//create fresh table for new projects (no stakeholders yet)&#xa;else {&#xa;    catcherRelationshipArray = new String [1][2];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        catcherRelationshipArray[0][i] = &quot;Empty&quot;;&#xa;        }&#xa;    }"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="influenceSaveButton">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;Save&lt;br&gt;Updates&lt;/center&gt;&lt;/html&gt;"/>
+                        <Property name="toolTipText" type="java.lang.String" value="Click here to save the relationships"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="influenceSaveButtonMouseClicked"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="influenceLabel1">
+            </Component>
+            <Component class="javax.swing.JLabel" name="influenceLabel2">
+            </Component>
+            <Component class="javax.swing.JLabel" name="influenceLabel3">
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="relationMapParentPanel">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="&lt;html&gt; &lt;br&gt; Relation Map&lt;br&gt;&lt;br&gt;">
+                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt; &lt;br&gt; Relation Map&lt;br&gt;&lt;br&gt;"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="relationMapScrollPane" pref="781" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                      <Component id="relationMapScrollPane" pref="463" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="relationMapScrollPane">
+              <Properties>
+                <Property name="autoscrolls" type="boolean" value="true"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="relationMapScrollPane.getVerticalScrollBar().setUnitIncrement(16);&#xd;&#xa;relationMapScrollPane.getHorizontalScrollBar().setUnitIncrement(16);&#xd;&#xa;"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="mySTAT.RelationMapPanel" name="JGraphPanel">
+                  <Properties>
+                    <Property name="autoscrolls" type="boolean" value="true"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="managementPlanPanel">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Management Plan&lt;br&gt;&#xa;&lt;br&gt;" toolTip="Click here to view the management plan">
+                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Management Plan&lt;br&gt;&#xa;&lt;br&gt;"/>
+                <Property name="tabToolTip" type="java.lang.String" value="Click here to view the management plan"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="managementPlanScrollPane" pref="766" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="managementPlanScrollPane" pref="468" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="managementPlanScrollPane">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder>
+                      <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
+                    </TitledBorder>
+                  </Border>
+                </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[200, 100]"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="managementPlanTable">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="managementPlanTable.getTableHeader().setPreferredSize(new Dimension(managementPlanTable.getColumnModel().getTotalColumnWidth(), 32));">
+                      <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    tempArray,&#xa;    new String [] {&#xa;        &quot;Name&quot;, &quot;Wants&quot;, &quot;Classification&quot;, &quot;Attitude&quot;, &quot;Influence&quot;, &quot;Strategy&quot;,&#xa;        &quot;&lt;html&gt;Method of&lt;br&gt;Engagement&quot;, &quot;&lt;html&gt;Last&lt;br&gt;Engaged&quot;,&#xa;        &quot;&lt;html&gt;Responsible&lt;br&gt;Party&quot;, &quot;Notes&quot;&#xa;    }&#xa;){&#xa;    boolean[] canEdit = new boolean [] {&#xa;        false, false, false, false, false, false, true, true, true, true&#xa;    };&#xa;&#xa;    public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;        return canEdit [columnIndex];&#xa;    }&#xa;}" type="code"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="Click a header to sort or double click a cell to edit"/>
+                    <Property name="autoResizeMode" type="int" value="4"/>
+                    <Property name="cellSelectionEnabled" type="boolean" value="true"/>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" postCode="//allow table word wrap&#xa;for (int i = 0; i &lt; 10; i++)&#xa;{ managementPlanTable.getColumnModel().getColumn(i).setCellRenderer(new TableCellLongTextRenderer ()); }">
+                      <TableColumnModel selectionModel="2"/>
+                    </Property>
+                    <Property name="fillsViewportHeight" type="boolean" value="true"/>
+                    <Property name="rowHeight" type="int" value="50"/>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="managementPlanTablePropertyChange"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable()"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String tempArray[][];&#xa;if (!Stakeholders.isEmpty()){&#xa;    tempArray = new String[Stakeholders.size()][10];&#xa;    for (int i = 0; i &lt; Stakeholders.size(); i++){&#xa;        tempArray[i][0] = Stakeholders.get(i).getName();&#xa;        tempArray[i][1] = Stakeholders.get(i).getWants();&#xa;        tempArray[i][2] = Stakeholders.get(i).getClassification();&#xa;        tempArray[i][3] = Stakeholders.get(i).getAttitude();&#xa;        tempArray[i][4] = String.format(&quot;%.3f&quot;, Stakeholders.get(i).getInfluence());&#xa;        tempArray[i][5] = Stakeholders.get(i).getStrategy();&#xa;        tempArray[i][6] = Stakeholders.get(i).getEngagement();&#xa;        tempArray[i][7] = Stakeholders.get(i).getLastEngaged();&#xa;        tempArray[i][8] = Stakeholders.get(i).getResponsible();&#xa;        tempArray[i][9] = Stakeholders.get(i).getNotes();&#xa;    }&#xa;}&#xa;else {&#xa;    tempArray = new String [2][10];&#xa;    for (int i = 0; i &lt; 2; i++){&#xa;        for (int e = 0; e &lt; 10; e++){&#xa;        tempArray[i][e] = &quot;nada&quot;;&#xa;        }&#xa;       }&#xa;    }"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="classificationPanel">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Classifications&lt;br&gt;&#xa;&lt;br&gt;">
+                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Classifications&lt;br&gt;&#xa;&lt;br&gt;"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JLayeredPane" name="classLayeredPane">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                  <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="1" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="1.0" weightY="1.0"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                <Property name="useNullLayout" type="boolean" value="true"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JComboBox" name="NonStakeHolderList">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="autoscrolls" type="boolean" value="true"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="300" y="340" width="70" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="DormantStakeHolderList">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="60" y="60" width="70" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="DiscretionaryStakeHolderList">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="260" y="130" width="70" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="DominantStakeHolderList">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="150" y="100" width="70" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="DefinitiveStakeHolderList">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="130" y="180" width="70" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="DangerousStakeHolderList">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="30" y="210" width="70" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="DependentStakeHolderList">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="190" y="260" width="70" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="DemandingStakeHolderList">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="80" y="300" width="70" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JLabel" name="vennLabel">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/mySTAT/classification.png"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="0" y="0" width="646" height="454"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="actionPanel">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Actions&lt;br&gt;&#xa;&lt;br&gt;">
+                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;br&gt;&#xa;Actions&lt;br&gt;&#xa;&lt;br&gt;"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JLayeredPane" name="actionLayeredPane">
+              <Properties>
+                <Property name="opaque" type="boolean" value="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                  <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="1" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="1.0" weightY="1.0"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                <Property name="useNullLayout" type="boolean" value="true"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JComboBox" name="Supportive_UndefinedBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="190" y="180" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Mixed_UndefinedBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="190" y="210" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="NonSupportive_UndefinedBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="190" y="240" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Marginal_UndefinedBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="190" y="270" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Supportive_LatentBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="270" y="180" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Mixed_LatentBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="270" y="210" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="NonSupportive_LatentBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="270" y="240" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Marginal_LatentBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="270" y="270" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Supportive_ExpectantBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="350" y="180" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Mixed_ExpectantBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="350" y="210" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="NonSupportive_ExpectantBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="350" y="240" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Marginal_ExpectantBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="350" y="270" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Supportive_DefinitiveBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="430" y="180" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Mixed_DefinitiveBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="430" y="210" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="NonSupportive_DefinitiveBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="430" y="240" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Marginal_DefinitiveBox">
+                  <Properties>
+                    <Property name="maximumRowCount" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="10" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new AutoComboBox()"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="430" y="270" width="60" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JLabel" name="actionLabel">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/mySTAT/actionTable.png"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="30" y="40" width="670" height="330"/>
+                    </Constraint>
+                  </Constraints>
                 </Component>
               </SubComponents>
             </Container>
