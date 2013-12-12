@@ -205,36 +205,6 @@ public class STATUI extends javax.swing.JFrame {
         managementPlanPanel = new javax.swing.JPanel();
         managementPlanScrollPane = new javax.swing.JScrollPane();
         managementPlanTable = new javax.swing.JTable();
-        classificationPanel = new javax.swing.JPanel();
-        classLayeredPane = new javax.swing.JLayeredPane();
-        NonStakeHolderList = new AutoComboBox();
-        DormantStakeHolderList = new AutoComboBox();
-        DiscretionaryStakeHolderList = new AutoComboBox();
-        DominantStakeHolderList = new AutoComboBox();
-        DefinitiveStakeHolderList = new AutoComboBox();
-        DangerousStakeHolderList = new AutoComboBox();
-        DependentStakeHolderList = new AutoComboBox();
-        DemandingStakeHolderList = new AutoComboBox();
-        vennLabel = new javax.swing.JLabel();
-        actionPanel = new javax.swing.JPanel();
-        actionLayeredPane = new javax.swing.JLayeredPane();
-        Supportive_UndefinedBox = new AutoComboBox();
-        Mixed_UndefinedBox = new AutoComboBox();
-        NonSupportive_UndefinedBox = new AutoComboBox();
-        Marginal_UndefinedBox = new AutoComboBox();
-        Supportive_LatentBox = new AutoComboBox();
-        Mixed_LatentBox = new AutoComboBox();
-        NonSupportive_LatentBox = new AutoComboBox();
-        Marginal_LatentBox = new AutoComboBox();
-        Supportive_ExpectantBox = new AutoComboBox();
-        Mixed_ExpectantBox = new AutoComboBox();
-        NonSupportive_ExpectantBox = new AutoComboBox();
-        Marginal_ExpectantBox = new AutoComboBox();
-        Supportive_DefinitiveBox = new AutoComboBox();
-        Mixed_DefinitiveBox = new AutoComboBox();
-        NonSupportive_DefinitiveBox = new AutoComboBox();
-        Marginal_DefinitiveBox = new AutoComboBox();
-        actionLabel = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         newMenuItem = new javax.swing.JMenuItem();
@@ -1400,6 +1370,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", null, influencePanel, "Click here to modify the stakeholder relationships");
 
+    relationMapParentPanel.setBackground(new java.awt.Color(0, 0, 204));
     relationMapParentPanel.addMouseListener(new java.awt.event.MouseAdapter() {
         public void mouseClicked(java.awt.event.MouseEvent evt) {
             relationMapParentPanelMouseClicked(evt);
@@ -1418,7 +1389,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     relationMapParentPanelLayout.setHorizontalGroup(
         relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(relationMapParentPanelLayout.createSequentialGroup()
-            .addComponent(relationMapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
+            .addGap(5, 5, 5)
+            .addComponent(relationMapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
             .addGap(5, 5, 5))
     );
     relationMapParentPanelLayout.setVerticalGroup(
@@ -1508,139 +1480,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     mainTabbedPane.addTab("<html>\n<br>\nManagement Plan<br>\n<br>", null, managementPlanPanel, "Click here to view the management plan");
 
-    classificationPanel.setEnabled(false);
-    classificationPanel.setLayout(new java.awt.GridBagLayout());
-
-    NonStakeHolderList.setMaximumRowCount(10);
-    NonStakeHolderList.setAutoscrolls(true);
-    classLayeredPane.add(NonStakeHolderList);
-    NonStakeHolderList.setBounds(300, 340, 70, 20);
-
-    DormantStakeHolderList.setMaximumRowCount(10);
-    classLayeredPane.add(DormantStakeHolderList);
-    DormantStakeHolderList.setBounds(60, 60, 70, 20);
-
-    DiscretionaryStakeHolderList.setMaximumRowCount(10);
-    classLayeredPane.add(DiscretionaryStakeHolderList);
-    DiscretionaryStakeHolderList.setBounds(260, 130, 70, 20);
-
-    DominantStakeHolderList.setMaximumRowCount(10);
-    classLayeredPane.add(DominantStakeHolderList);
-    DominantStakeHolderList.setBounds(150, 100, 70, 20);
-
-    DefinitiveStakeHolderList.setMaximumRowCount(10);
-    classLayeredPane.add(DefinitiveStakeHolderList);
-    DefinitiveStakeHolderList.setBounds(130, 180, 70, 20);
-
-    DangerousStakeHolderList.setMaximumRowCount(10);
-    classLayeredPane.add(DangerousStakeHolderList);
-    DangerousStakeHolderList.setBounds(30, 210, 70, 20);
-
-    DependentStakeHolderList.setMaximumRowCount(10);
-    classLayeredPane.add(DependentStakeHolderList);
-    DependentStakeHolderList.setBounds(190, 260, 70, 20);
-
-    DemandingStakeHolderList.setMaximumRowCount(10);
-    classLayeredPane.add(DemandingStakeHolderList);
-    DemandingStakeHolderList.setBounds(80, 300, 70, 20);
-
-    vennLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mySTAT/classification.png"))); // NOI18N
-    classLayeredPane.add(vennLabel);
-    vennLabel.setBounds(0, 0, 646, 454);
-
-    gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 0;
-    gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-    gridBagConstraints.weightx = 1.0;
-    gridBagConstraints.weighty = 1.0;
-    classificationPanel.add(classLayeredPane, gridBagConstraints);
-
-    mainTabbedPane.addTab("<html>\n<br>\nClassifications<br>\n<br>", classificationPanel);
-
-    actionPanel.setEnabled(false);
-    actionPanel.setLayout(new java.awt.GridBagLayout());
-
-    actionLayeredPane.setOpaque(true);
-
-    Supportive_UndefinedBox.setMaximumRowCount(10);
-    actionLayeredPane.add(Supportive_UndefinedBox);
-    Supportive_UndefinedBox.setBounds(190, 180, 60, 20);
-
-    Mixed_UndefinedBox.setMaximumRowCount(10);
-    actionLayeredPane.add(Mixed_UndefinedBox);
-    Mixed_UndefinedBox.setBounds(190, 210, 60, 20);
-
-    NonSupportive_UndefinedBox.setMaximumRowCount(10);
-    actionLayeredPane.add(NonSupportive_UndefinedBox);
-    NonSupportive_UndefinedBox.setBounds(190, 240, 60, 20);
-
-    Marginal_UndefinedBox.setMaximumRowCount(10);
-    actionLayeredPane.add(Marginal_UndefinedBox);
-    Marginal_UndefinedBox.setBounds(190, 270, 60, 20);
-
-    Supportive_LatentBox.setMaximumRowCount(10);
-    actionLayeredPane.add(Supportive_LatentBox);
-    Supportive_LatentBox.setBounds(270, 180, 60, 20);
-
-    Mixed_LatentBox.setMaximumRowCount(10);
-    actionLayeredPane.add(Mixed_LatentBox);
-    Mixed_LatentBox.setBounds(270, 210, 60, 20);
-
-    NonSupportive_LatentBox.setMaximumRowCount(10);
-    actionLayeredPane.add(NonSupportive_LatentBox);
-    NonSupportive_LatentBox.setBounds(270, 240, 60, 20);
-
-    Marginal_LatentBox.setMaximumRowCount(10);
-    actionLayeredPane.add(Marginal_LatentBox);
-    Marginal_LatentBox.setBounds(270, 270, 60, 20);
-
-    Supportive_ExpectantBox.setMaximumRowCount(10);
-    actionLayeredPane.add(Supportive_ExpectantBox);
-    Supportive_ExpectantBox.setBounds(350, 180, 60, 20);
-
-    Mixed_ExpectantBox.setMaximumRowCount(10);
-    actionLayeredPane.add(Mixed_ExpectantBox);
-    Mixed_ExpectantBox.setBounds(350, 210, 60, 20);
-
-    NonSupportive_ExpectantBox.setMaximumRowCount(10);
-    actionLayeredPane.add(NonSupportive_ExpectantBox);
-    NonSupportive_ExpectantBox.setBounds(350, 240, 60, 20);
-
-    Marginal_ExpectantBox.setMaximumRowCount(10);
-    actionLayeredPane.add(Marginal_ExpectantBox);
-    Marginal_ExpectantBox.setBounds(350, 270, 60, 20);
-
-    Supportive_DefinitiveBox.setMaximumRowCount(10);
-    actionLayeredPane.add(Supportive_DefinitiveBox);
-    Supportive_DefinitiveBox.setBounds(430, 180, 60, 20);
-
-    Mixed_DefinitiveBox.setMaximumRowCount(10);
-    actionLayeredPane.add(Mixed_DefinitiveBox);
-    Mixed_DefinitiveBox.setBounds(430, 210, 60, 20);
-
-    NonSupportive_DefinitiveBox.setMaximumRowCount(10);
-    actionLayeredPane.add(NonSupportive_DefinitiveBox);
-    NonSupportive_DefinitiveBox.setBounds(430, 240, 60, 20);
-
-    Marginal_DefinitiveBox.setMaximumRowCount(10);
-    actionLayeredPane.add(Marginal_DefinitiveBox);
-    Marginal_DefinitiveBox.setBounds(430, 270, 60, 20);
-
-    actionLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mySTAT/actionTable.png"))); // NOI18N
-    actionLayeredPane.add(actionLabel);
-    actionLabel.setBounds(30, 40, 670, 330);
-
-    gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 0;
-    gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-    gridBagConstraints.weightx = 1.0;
-    gridBagConstraints.weighty = 1.0;
-    actionPanel.add(actionLayeredPane, gridBagConstraints);
-
-    mainTabbedPane.addTab("<html>\n<br>\nActions<br>\n<br>", actionPanel);
-
     MenuBar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     MenuBar.setName(""); // NOI18N
 
@@ -1718,7 +1557,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     layout.setHorizontalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(layout.createSequentialGroup()
-            .addComponent(mainTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 889, Short.MAX_VALUE)
+            .addComponent(mainTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 889, Short.MAX_VALUE)
             .addGap(9, 9, 9))
     );
     layout.setVerticalGroup(
@@ -2495,13 +2334,13 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                }
                miniMapDialogBox.setVisible(true);
            }
-           else if((currentTab.equals(classificationPanel))||(currentTab.equals(classificationsPanel))){
+           else if(currentTab.equals(classificationsPanel)){
                exportMenuItem.setEnabled(false);
                if(miniMapCreated)
                     miniMapDialogBox.setVisible(false);
                classificationDiagramUpdate();
            }
-           else if((currentTab.equals(actionPanel))||(currentTab.equals(RecActionsPanel))){
+           else if(currentTab.equals(RecActionsPanel)){
                exportMenuItem.setEnabled(false);
                if(miniMapCreated)
                     miniMapDialogBox.setVisible(false);
@@ -2680,15 +2519,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
    
     private void classificationDiagramUpdate()
     {
-        NonStakeHolderList.removeAllItems();
-        DormantStakeHolderList.removeAllItems();
-        DiscretionaryStakeHolderList.removeAllItems();
-        DominantStakeHolderList.removeAllItems();
-        DefinitiveStakeHolderList.removeAllItems();
-        DangerousStakeHolderList.removeAllItems();
-        DependentStakeHolderList.removeAllItems();
-        DemandingStakeHolderList.removeAllItems();
-        //new items for RecActionTab
         DefaultListModel definitiveModel = new DefaultListModel();
         DefaultListModel dominantModel = new DefaultListModel();
         DefaultListModel dangerousModel = new DefaultListModel();
@@ -2703,46 +2533,38 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             Stakeholder obj=Stakeholders.get(i);
             if(Stakeholders.get(i).getClassification().equals("Non-Stakeholder"))
             {
-                NonStakeHolderList.addItem(Stakeholders.get(i).getName());
                 nonStakeholderModel.addElement(obj.getName());
             }
             else if(Stakeholders.get(i).getClassification().equals("Dormant"))
             {
-                DormantStakeHolderList.addItem(Stakeholders.get(i).getName());
                 dormantModel.addElement(obj.getName());
             }
             else if(Stakeholders.get(i).getClassification().equals("Discretionary"))
             {
-                DiscretionaryStakeHolderList.addItem(Stakeholders.get(i).getName());
                 discretionaryModel.addElement(obj.getName());
             }
             else if(Stakeholders.get(i).getClassification().equals("Dominant"))
             {
-                DominantStakeHolderList.addItem(Stakeholders.get(i).getName());
                 dominantModel.addElement(obj.getName());
             }
             else if(Stakeholders.get(i).getClassification().equals("Definitive"))
             {
-                DefinitiveStakeHolderList.addItem(Stakeholders.get(i).getName());
                 definitiveModel.addElement(obj.getName());
             }
             else if(Stakeholders.get(i).getClassification().equals("Dangerous"))
             {
-                DangerousStakeHolderList.addItem(Stakeholders.get(i).getName());
                 dangerousModel.addElement(obj.getName());
             }
             else if(Stakeholders.get(i).getClassification().equals("Dependent"))
             {
-                DependentStakeHolderList.addItem(Stakeholders.get(i).getName());
                 dependentModel.addElement(obj.getName());
             }
             else 
             {
-                DemandingStakeHolderList.addItem(Stakeholders.get(i).getName());
                 demandingModel.addElement(obj.getName());
             }
         }
-        //fill in new stakeholders tab
+        //fill in new stakeholder classification lists
         definitiveList.setModel(definitiveModel);
         dominantList.setModel(dominantModel);
         dangerousList.setModel(dangerousModel);
@@ -2751,28 +2573,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         discretionaryList.setModel(discretionaryModel);
         demandingList.setModel(demandingModel);
         nonStakeholderList.setModel(nonStakeholderModel);
-       //////
     }
   
     private void actionTableUpdate()
     {
-      Supportive_UndefinedBox.removeAllItems();
-      Mixed_UndefinedBox.removeAllItems();
-      NonSupportive_UndefinedBox.removeAllItems();
-      Marginal_UndefinedBox.removeAllItems();
-      Supportive_LatentBox.removeAllItems();
-      Mixed_LatentBox.removeAllItems();
-      NonSupportive_LatentBox.removeAllItems();
-      Marginal_LatentBox.removeAllItems();
-      Supportive_ExpectantBox.removeAllItems();
-      Mixed_ExpectantBox.removeAllItems();
-      NonSupportive_ExpectantBox.removeAllItems();
-      Marginal_ExpectantBox.removeAllItems();
-      Supportive_DefinitiveBox.removeAllItems();
-      Mixed_DefinitiveBox.removeAllItems();
-      NonSupportive_DefinitiveBox.removeAllItems();
-      Marginal_DefinitiveBox.removeAllItems();
-      //new items for RecActionTab
       DefaultListModel involveModel = new DefaultListModel();
       DefaultListModel collaborateModel = new DefaultListModel();
       DefaultListModel defendModel = new DefaultListModel();
@@ -2784,86 +2588,70 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
           Stakeholder obj=Stakeholders.get(i);
           if(Stakeholders.get(i).getPlacement().equals("Undefined")&&Stakeholders.get(i).getAttitude().equals("Supportive"))
           {
-              Supportive_UndefinedBox.addItem(Stakeholders.get(i).getName());
               noActionModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Undefined")&&Stakeholders.get(i).getAttitude().equals("Mixed"))
           {
-              Mixed_UndefinedBox.addItem(Stakeholders.get(i).getName());
               noActionModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Undefined")&&Stakeholders.get(i).getAttitude().equals("Non-Supportive"))
           {
-              NonSupportive_UndefinedBox.addItem(Stakeholders.get(i).getName());
               noActionModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Undefined")&&Stakeholders.get(i).getAttitude().equals("Marginal"))
           {
-              Marginal_UndefinedBox.addItem(Stakeholders.get(i).getName());
               noActionModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Latent")&&Stakeholders.get(i).getAttitude().equals("Supportive"))
           {
-              Supportive_LatentBox.addItem(Stakeholders.get(i).getName());
               involveModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Latent")&&Stakeholders.get(i).getAttitude().equals("Mixed"))
           {
-              Mixed_LatentBox.addItem(Stakeholders.get(i).getName());
               defendModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Latent")&&Stakeholders.get(i).getAttitude().equals("Non-Supportive"))
           {
-              NonSupportive_LatentBox.addItem(Stakeholders.get(i).getName());
               defendModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Latent")&&Stakeholders.get(i).getAttitude().equals("Marginal"))
           {
-              Marginal_LatentBox.addItem(Stakeholders.get(i).getName());
               monitorModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Expectant")&&Stakeholders.get(i).getAttitude().equals("Supportive"))
           {
-              Supportive_ExpectantBox.addItem(Stakeholders.get(i).getName());
               involveModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Expectant")&&Stakeholders.get(i).getAttitude().equals("Mixed"))
           {
-              Mixed_ExpectantBox.addItem(Stakeholders.get(i).getName());
               collaborateModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Expectant")&&Stakeholders.get(i).getAttitude().equals("Non-Supportive"))
           {
-              NonSupportive_ExpectantBox.addItem(Stakeholders.get(i).getName());
               defendModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Expectant")&&Stakeholders.get(i).getAttitude().equals("Marginal"))
           {
-              Marginal_ExpectantBox.addItem(Stakeholders.get(i).getName());
               monitorModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Definitive")&&Stakeholders.get(i).getAttitude().equals("Supportive"))
           {
-              Supportive_DefinitiveBox.addItem(Stakeholders.get(i).getName());
               involveModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Definitive")&&Stakeholders.get(i).getAttitude().equals("Mixed"))
           {
-              Mixed_DefinitiveBox.addItem(Stakeholders.get(i).getName());
               involveModel.addElement(obj.getName());
           }
           else if(Stakeholders.get(i).getPlacement().equals("Definitive")&&Stakeholders.get(i).getAttitude().equals("Non-Supportive"))
           {
-              NonSupportive_DefinitiveBox.addItem(Stakeholders.get(i).getName());
               collaborateModel.addElement(obj.getName());
           }
           else
           {
-              Marginal_DefinitiveBox.addItem(Stakeholders.get(i).getName());
               defendModel.addElement(obj.getName());
           }   
       }
-          //for the new RecActions Tab
+          //fill in the actions lists
           involveList.setModel(involveModel);
           collaborateList.setModel(collaborateModel);
           defendList.setModel(defendModel);
@@ -2983,36 +2771,16 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JRadioButton CooperationNRadioButton;
     private javax.swing.JRadioButton CooperationYRadioButton;
     private javax.swing.ButtonGroup CooperationbuttonGroup;
-    private javax.swing.JComboBox DangerousStakeHolderList;
-    private javax.swing.JComboBox DefinitiveStakeHolderList;
-    private javax.swing.JComboBox DemandingStakeHolderList;
-    private javax.swing.JComboBox DependentStakeHolderList;
-    private javax.swing.JComboBox DiscretionaryStakeHolderList;
-    private javax.swing.JComboBox DominantStakeHolderList;
-    private javax.swing.JComboBox DormantStakeHolderList;
     private javax.swing.JLabel InformationLabel;
     private mySTAT.RelationMapPanel JGraphPanel;
     private javax.swing.JLabel LegitimacyLabel;
     private javax.swing.JRadioButton LegitimacyNRadioButton;
     private javax.swing.JRadioButton LegitimacyYRadioButton;
     private javax.swing.ButtonGroup LegitimacybuttonGroup;
-    private javax.swing.JComboBox Marginal_DefinitiveBox;
-    private javax.swing.JComboBox Marginal_ExpectantBox;
-    private javax.swing.JComboBox Marginal_LatentBox;
-    private javax.swing.JComboBox Marginal_UndefinedBox;
     private javax.swing.JMenuBar MenuBar;
-    private javax.swing.JComboBox Mixed_DefinitiveBox;
-    private javax.swing.JComboBox Mixed_ExpectantBox;
-    private javax.swing.JComboBox Mixed_LatentBox;
-    private javax.swing.JComboBox Mixed_UndefinedBox;
     private javax.swing.JLabel NameLabel;
     private javax.swing.JScrollPane NameScrollPane;
     private javax.swing.JTextArea NameTextArea;
-    private javax.swing.JComboBox NonStakeHolderList;
-    private javax.swing.JComboBox NonSupportive_DefinitiveBox;
-    private javax.swing.JComboBox NonSupportive_ExpectantBox;
-    private javax.swing.JComboBox NonSupportive_LatentBox;
-    private javax.swing.JComboBox NonSupportive_UndefinedBox;
     private javax.swing.JLabel PotentialLabel;
     private javax.swing.JLabel PowerLabel;
     private javax.swing.JRadioButton PowerNRadioButton;
@@ -3054,10 +2822,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JLabel StakeholderListLabel;
     private javax.swing.JScrollPane StakeholderScrollPane;
     private javax.swing.JPanel StakeholdersPanel;
-    private javax.swing.JComboBox Supportive_DefinitiveBox;
-    private javax.swing.JComboBox Supportive_ExpectantBox;
-    private javax.swing.JComboBox Supportive_LatentBox;
-    private javax.swing.JComboBox Supportive_UndefinedBox;
     private javax.swing.JLabel ThreatLabel;
     private javax.swing.JRadioButton ThreatNRadioButton;
     private javax.swing.JRadioButton ThreatYRadioButton;
@@ -3069,12 +2833,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JLabel WantsLabel;
     private javax.swing.JScrollPane WantsScrollPane;
     private javax.swing.JTextArea WantsTextArea;
-    private javax.swing.JLabel actionLabel;
-    private javax.swing.JLayeredPane actionLayeredPane;
-    private javax.swing.JPanel actionPanel;
     private javax.swing.JTable catcherTable;
-    private javax.swing.JLayeredPane classLayeredPane;
-    private javax.swing.JPanel classificationPanel;
     private javax.swing.JPanel classificationsPanel;
     private javax.swing.JLabel collaborateLabel;
     private javax.swing.JList collaborateList;
@@ -3154,7 +2913,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JMenuItem securityMenuItem;
     private javax.swing.JPanel stakeholdersPanel;
-    private javax.swing.JLabel vennLabel;
     // End of variables declaration//GEN-END:variables
 
     private void managmementPlanUpdate() {
