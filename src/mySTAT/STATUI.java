@@ -2003,6 +2003,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             mainTabbedPane.setSelectedComponent(StakeholdersPanel);
             InformationLabel.setText("New Project");
             saveMenuItemIsUsed = false;
+            password = new String();
+            isEncrypted = false;
         }
     }//GEN-LAST:event_newMenuItemActionPerformed
 
