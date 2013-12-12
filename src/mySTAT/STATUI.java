@@ -1192,37 +1192,37 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     involveLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     involveLabel.setText("Involve");
-    involveLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 0)));
+    involveLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 0), 4));
 
     collaborateLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     collaborateLabel.setText("Collaborate");
-    collaborateLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+    collaborateLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 4));
 
     defendLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     defendLabel.setText("Defend");
-    defendLabel.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.orange));
+    defendLabel.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.orange, 4));
 
     monitorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     monitorLabel.setText("Monitor");
-    monitorLabel.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.yellow));
+    monitorLabel.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.yellow, 4));
 
     noActionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     noActionLabel.setText("No Action");
-    noActionLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    noActionLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
 
-    involveList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 0)));
+    involveList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 0), 4));
     involveScrollPane.setViewportView(involveList);
 
-    collaborateList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+    collaborateList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 4));
     collaborateScrollPane.setViewportView(collaborateList);
 
-    defendList.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.orange));
+    defendList.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.orange, 4));
     defendScrollPane.setViewportView(defendList);
 
-    monitorList.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.yellow));
+    monitorList.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.yellow, 4));
     monitorScrollPane.setViewportView(monitorList);
 
-    noActionList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    noActionList.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
     noActionScrollPane.setViewportView(noActionList);
 
     javax.swing.GroupLayout RecActionsPanelLayout = new javax.swing.GroupLayout(RecActionsPanel);
