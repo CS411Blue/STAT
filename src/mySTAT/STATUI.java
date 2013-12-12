@@ -24,6 +24,7 @@ import javax.swing.DefaultCellEditor;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.JTabbedPane;
@@ -257,7 +258,13 @@ public class STATUI extends javax.swing.JFrame {
             .addGap(0, 449, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("STAT");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         mainTabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         mainTabbedPane.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2636,6 +2643,20 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             Logger.getLogger(STATUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_exportMenuItemActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        JFrame frame = (JFrame)evt.getSource();
+
+        int result = JOptionPane.showConfirmDialog(
+            frame,
+            "Are you sure you want to exit the application?",
+            "Exit Application",
+            JOptionPane.YES_NO_OPTION);
+
+        if (result == JOptionPane.YES_OPTION)
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }//GEN-LAST:event_formWindowClosing
    
     private void classificationDiagramUpdate()
     {
