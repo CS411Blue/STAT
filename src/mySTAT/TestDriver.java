@@ -71,16 +71,16 @@ public class TestDriver extends JFrame {
 //        panel.add(morphButton);
         
         parallelButton  = new JButton("Snap Lines to Vertices");
-        panel.add(parallelButton);
+//        panel.add(parallelButton);
         
         updateShListButton = new JButton("Update Stakeholder List");
-        panel.add(updateShListButton);
+//        panel.add(updateShListButton);
         
         exportMapToPNGButton = new JButton("Export Relation Map");
-        panel.add(exportMapToPNGButton);
+//        panel.add(exportMapToPNGButton);
         
         exportManagementPlanButton = new JButton("Export Management Plan");
-        panel.add(exportManagementPlanButton);
+//        panel.add(exportManagementPlanButton);
         
         panel.setPreferredSize(new java.awt.Dimension(20,80));
         panel.setBorder(new LineBorder(Color.black));
