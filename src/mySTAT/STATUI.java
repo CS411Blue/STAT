@@ -1165,7 +1165,10 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         if (saveMenuItemIsUsed == false)
         { int n = JOptionPane.showConfirmDialog(null,"Are you sure that you want to exit without saving\nAll unsaved work will be lost", "Warning!", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if(n == JOptionPane.YES_OPTION)
-             System.exit(0);  
+             System.exit(0); 
+            else
+            
+                saveMenuItemIsUsed = false;
         }
         else
             System.exit(0);
@@ -1966,8 +1969,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             System.out.println(file.toString());
             ProjectStore project = ProjectStore.getInstance();
             project.saveProject(file.getPath(), Stakeholders, file.getName(), null, null, null);
+            saveMenuItemIsUsed = true; 
         }
-        saveMenuItemIsUsed = true; 
+        
     }//GEN-LAST:event_saveMenuItemActionPerformed
 
     private void newMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newMenuItemActionPerformed
@@ -1980,6 +1984,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             updateStakehodlerList();
             mainTabbedPane.setSelectedComponent(StakeholdersPanel);
             InformationLabel.setText("New Project");
+            saveMenuItemIsUsed = false;
         }
     }//GEN-LAST:event_newMenuItemActionPerformed
 
