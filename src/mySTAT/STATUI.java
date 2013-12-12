@@ -87,55 +87,57 @@ public class STATUI extends javax.swing.JFrame {
         WantsScrollPane = new javax.swing.JScrollPane();
         WantsTextArea = new javax.swing.JTextArea();
         WantsLabel = new javax.swing.JLabel();
-        PowerYRadioButton = new javax.swing.JRadioButton();
-        PowerNRadioButton = new javax.swing.JRadioButton();
-        LegitimacyYRadioButton = new javax.swing.JRadioButton();
-        LegitimacyNRadioButton = new javax.swing.JRadioButton();
-        UrgencyYRadioButton = new javax.swing.JRadioButton();
-        UrgencyNRadioButton = new javax.swing.JRadioButton();
-        PowerLabel = new javax.swing.JLabel();
-        LegitimacyLabel = new javax.swing.JLabel();
-        UrgencyLabel = new javax.swing.JLabel();
         NameScrollPane = new javax.swing.JScrollPane();
         NameTextArea = new javax.swing.JTextArea();
-        CooperationYRadioButton = new javax.swing.JRadioButton();
-        CooperationNRadioButton = new javax.swing.JRadioButton();
-        ThreatYRadioButton = new javax.swing.JRadioButton();
-        ThreatNRadioButton = new javax.swing.JRadioButton();
-        CooperationLabel = new javax.swing.JLabel();
-        ThreatLabel = new javax.swing.JLabel();
-        PotentialLabel = new javax.swing.JLabel();
         StakeholderScrollPane = new javax.swing.JScrollPane();
         StakeholderList = new javax.swing.JList();
         AddStakeholderButton = new javax.swing.JButton();
         SHPanel = new javax.swing.JPanel();
-        SHPotentialLabel = new javax.swing.JLabel();
         SHWantsScrollPane = new javax.swing.JScrollPane();
         SHWantsTextArea = new javax.swing.JTextArea();
-        SHCooperationLabel = new javax.swing.JLabel();
         SHRemoveButton = new javax.swing.JButton();
-        SHLegitimacyNRadioButton = new javax.swing.JRadioButton();
-        SHUrgencyLabel = new javax.swing.JLabel();
-        SHThreatNRadioButton = new javax.swing.JRadioButton();
-        SHCooperationNRadioButton = new javax.swing.JRadioButton();
-        SHPowerNRadioButton = new javax.swing.JRadioButton();
         SHWantsLabel = new javax.swing.JLabel();
-        SHThreatYRadioButton = new javax.swing.JRadioButton();
-        SHCooperationYRadioButton = new javax.swing.JRadioButton();
         SHEditButton = new javax.swing.JButton();
-        SHPowerLabel = new javax.swing.JLabel();
-        SHUrgencyNRadioButton = new javax.swing.JRadioButton();
         SHNameScrollPane = new javax.swing.JScrollPane();
         SHNameTextArea = new javax.swing.JTextArea();
-        SHLegitimacyYRadioButton = new javax.swing.JRadioButton();
-        SHLegitimacyLabel = new javax.swing.JLabel();
-        SHThreatLabel = new javax.swing.JLabel();
         SHNameLabel = new javax.swing.JLabel();
-        SHUrgencyYRadioButton = new javax.swing.JRadioButton();
         SHSaveButton = new javax.swing.JButton();
+        jLayeredPane2 = new javax.swing.JLayeredPane();
+        SHPotentialLabel = new javax.swing.JLabel();
+        SHCooperationYRadioButton = new javax.swing.JRadioButton();
+        SHPowerLabel = new javax.swing.JLabel();
+        SHUrgencyNRadioButton = new javax.swing.JRadioButton();
+        SHCooperationLabel = new javax.swing.JLabel();
+        SHUrgencyLabel = new javax.swing.JLabel();
+        SHThreatLabel = new javax.swing.JLabel();
         SHPowerYRadioButton = new javax.swing.JRadioButton();
+        SHLegitimacyNRadioButton = new javax.swing.JRadioButton();
+        SHPowerNRadioButton = new javax.swing.JRadioButton();
+        SHThreatYRadioButton = new javax.swing.JRadioButton();
+        SHCooperationNRadioButton = new javax.swing.JRadioButton();
+        SHLegitimacyYRadioButton = new javax.swing.JRadioButton();
+        SHThreatNRadioButton = new javax.swing.JRadioButton();
+        SHUrgencyYRadioButton = new javax.swing.JRadioButton();
+        SHLegitimacyLabel = new javax.swing.JLabel();
         InformationLabel = new javax.swing.JLabel();
         StakeholderListLabel = new javax.swing.JLabel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        CooperationYRadioButton = new javax.swing.JRadioButton();
+        CooperationLabel = new javax.swing.JLabel();
+        LegitimacyNRadioButton = new javax.swing.JRadioButton();
+        UrgencyYRadioButton = new javax.swing.JRadioButton();
+        PotentialLabel = new javax.swing.JLabel();
+        ThreatYRadioButton = new javax.swing.JRadioButton();
+        PowerYRadioButton = new javax.swing.JRadioButton();
+        PowerLabel = new javax.swing.JLabel();
+        PowerNRadioButton = new javax.swing.JRadioButton();
+        CooperationNRadioButton = new javax.swing.JRadioButton();
+        LegitimacyLabel = new javax.swing.JLabel();
+        ThreatNRadioButton = new javax.swing.JRadioButton();
+        UrgencyLabel = new javax.swing.JLabel();
+        ThreatLabel = new javax.swing.JLabel();
+        LegitimacyYRadioButton = new javax.swing.JRadioButton();
+        UrgencyNRadioButton = new javax.swing.JRadioButton();
         classificationPanel = new javax.swing.JPanel();
         classLayeredPane = new javax.swing.JLayeredPane();
         NonStakeHolderList = new AutoComboBox();
@@ -279,58 +281,11 @@ public class STATUI extends javax.swing.JFrame {
 
         WantsLabel.setText("Wants");
 
-        PowerbuttonGroup.add(PowerYRadioButton);
-        PowerYRadioButton.setText("Yes");
-
-        PowerbuttonGroup.add(PowerNRadioButton);
-        PowerNRadioButton.setSelected(true);
-        PowerNRadioButton.setText("No");
-
-        LegitimacybuttonGroup.add(LegitimacyYRadioButton);
-        LegitimacyYRadioButton.setText("Yes");
-
-        LegitimacybuttonGroup.add(LegitimacyNRadioButton);
-        LegitimacyNRadioButton.setSelected(true);
-        LegitimacyNRadioButton.setText("No");
-
-        UrgencybuttonGroup.add(UrgencyYRadioButton);
-        UrgencyYRadioButton.setText("Yes");
-
-        UrgencybuttonGroup.add(UrgencyNRadioButton);
-        UrgencyNRadioButton.setSelected(true);
-        UrgencyNRadioButton.setText("No");
-
-        PowerLabel.setText("Power");
-
-        LegitimacyLabel.setText("Legitimacy");
-
-        UrgencyLabel.setText("Urgency");
-
         NameScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         NameTextArea.setColumns(20);
         NameTextArea.setRows(5);
         NameScrollPane.setViewportView(NameTextArea);
-
-        CooperationbuttonGroup.add(CooperationYRadioButton);
-        CooperationYRadioButton.setText("High");
-
-        CooperationbuttonGroup.add(CooperationNRadioButton);
-        CooperationNRadioButton.setSelected(true);
-        CooperationNRadioButton.setText("Low");
-
-        ThreatbuttonGroup.add(ThreatYRadioButton);
-        ThreatYRadioButton.setText("High");
-
-        ThreatbuttonGroup.add(ThreatNRadioButton);
-        ThreatNRadioButton.setSelected(true);
-        ThreatNRadioButton.setText("Low");
-
-        CooperationLabel.setText("Cooperation");
-
-        ThreatLabel.setText("Threat");
-
-        PotentialLabel.setText("Potential For:");
 
         StakeholderList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         StakeholderList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
@@ -351,8 +306,6 @@ public class STATUI extends javax.swing.JFrame {
         SHPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         SHPanel.setForeground(new java.awt.Color(255, 204, 0));
 
-        SHPotentialLabel.setText("Potential For:");
-
         SHWantsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         SHWantsTextArea.setColumns(20);
@@ -360,8 +313,6 @@ public class STATUI extends javax.swing.JFrame {
         SHWantsTextArea.setRows(5);
         SHWantsTextArea.setEnabled(false);
         SHWantsScrollPane.setViewportView(SHWantsTextArea);
-
-        SHCooperationLabel.setText("Cooperation");
 
         SHRemoveButton.setText("Remove");
         SHRemoveButton.setEnabled(false);
@@ -371,39 +322,7 @@ public class STATUI extends javax.swing.JFrame {
             }
         });
 
-        SHLegitimacyNRadioButton.setBackground(new java.awt.Color(255, 204, 0));
-        SHLegitimacyButtons.add(SHLegitimacyNRadioButton);
-        SHLegitimacyNRadioButton.setText("No");
-        SHLegitimacyNRadioButton.setEnabled(false);
-
-        SHUrgencyLabel.setText("Urgency");
-
-        SHThreatNRadioButton.setBackground(new java.awt.Color(255, 204, 0));
-        SHThreatButtons.add(SHThreatNRadioButton);
-        SHThreatNRadioButton.setText("Low");
-        SHThreatNRadioButton.setEnabled(false);
-
-        SHCooperationNRadioButton.setBackground(new java.awt.Color(255, 204, 0));
-        SHCooperationButtons.add(SHCooperationNRadioButton);
-        SHCooperationNRadioButton.setText("Low");
-        SHCooperationNRadioButton.setEnabled(false);
-
-        SHPowerNRadioButton.setBackground(new java.awt.Color(255, 204, 0));
-        SHPowerButtons.add(SHPowerNRadioButton);
-        SHPowerNRadioButton.setText("No");
-        SHPowerNRadioButton.setEnabled(false);
-
         SHWantsLabel.setText("Wants");
-
-        SHThreatYRadioButton.setBackground(new java.awt.Color(255, 204, 0));
-        SHThreatButtons.add(SHThreatYRadioButton);
-        SHThreatYRadioButton.setText("High");
-        SHThreatYRadioButton.setEnabled(false);
-
-        SHCooperationYRadioButton.setBackground(new java.awt.Color(255, 204, 0));
-        SHCooperationButtons.add(SHCooperationYRadioButton);
-        SHCooperationYRadioButton.setText("High");
-        SHCooperationYRadioButton.setEnabled(false);
 
         SHEditButton.setText("Edit");
         SHEditButton.setEnabled(false);
@@ -413,13 +332,6 @@ public class STATUI extends javax.swing.JFrame {
             }
         });
 
-        SHPowerLabel.setText("Power");
-
-        SHUrgencyNRadioButton.setBackground(new java.awt.Color(255, 204, 0));
-        SHUrgencyButtons.add(SHUrgencyNRadioButton);
-        SHUrgencyNRadioButton.setText("No");
-        SHUrgencyNRadioButton.setEnabled(false);
-
         SHNameScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         SHNameTextArea.setColumns(20);
@@ -427,21 +339,7 @@ public class STATUI extends javax.swing.JFrame {
         SHNameTextArea.setEnabled(false);
         SHNameScrollPane.setViewportView(SHNameTextArea);
 
-        SHLegitimacyYRadioButton.setBackground(new java.awt.Color(255, 204, 0));
-        SHLegitimacyButtons.add(SHLegitimacyYRadioButton);
-        SHLegitimacyYRadioButton.setText("Yes");
-        SHLegitimacyYRadioButton.setEnabled(false);
-
-        SHLegitimacyLabel.setText("Legitimacy");
-
-        SHThreatLabel.setText("Threat");
-
         SHNameLabel.setText("Name");
-
-        SHUrgencyYRadioButton.setBackground(new java.awt.Color(255, 204, 0));
-        SHUrgencyButtons.add(SHUrgencyYRadioButton);
-        SHUrgencyYRadioButton.setText("Yes");
-        SHUrgencyYRadioButton.setEnabled(false);
 
         SHSaveButton.setText("Save");
         SHSaveButton.setEnabled(false);
@@ -451,253 +349,423 @@ public class STATUI extends javax.swing.JFrame {
             }
         });
 
+        SHPotentialLabel.setText("                                                                        Potential For:");
+
+        SHCooperationYRadioButton.setBackground(new java.awt.Color(255, 204, 0));
+        SHCooperationButtons.add(SHCooperationYRadioButton);
+        SHCooperationYRadioButton.setText("High");
+        SHCooperationYRadioButton.setEnabled(false);
+
+        SHPowerLabel.setText("Power");
+
+        SHUrgencyNRadioButton.setBackground(new java.awt.Color(255, 204, 0));
+        SHUrgencyButtons.add(SHUrgencyNRadioButton);
+        SHUrgencyNRadioButton.setText("No");
+        SHUrgencyNRadioButton.setEnabled(false);
+
+        SHCooperationLabel.setText("Cooperation");
+
+        SHUrgencyLabel.setText("Urgency");
+
+        SHThreatLabel.setText("Threat");
+
         SHPowerYRadioButton.setBackground(new java.awt.Color(255, 204, 0));
         SHPowerButtons.add(SHPowerYRadioButton);
         SHPowerYRadioButton.setText("Yes");
         SHPowerYRadioButton.setEnabled(false);
+
+        SHLegitimacyNRadioButton.setBackground(new java.awt.Color(255, 204, 0));
+        SHLegitimacyButtons.add(SHLegitimacyNRadioButton);
+        SHLegitimacyNRadioButton.setText("No");
+        SHLegitimacyNRadioButton.setEnabled(false);
+
+        SHPowerNRadioButton.setBackground(new java.awt.Color(255, 204, 0));
+        SHPowerButtons.add(SHPowerNRadioButton);
+        SHPowerNRadioButton.setText("No");
+        SHPowerNRadioButton.setEnabled(false);
+
+        SHThreatYRadioButton.setBackground(new java.awt.Color(255, 204, 0));
+        SHThreatButtons.add(SHThreatYRadioButton);
+        SHThreatYRadioButton.setText("High");
+        SHThreatYRadioButton.setEnabled(false);
+
+        SHCooperationNRadioButton.setBackground(new java.awt.Color(255, 204, 0));
+        SHCooperationButtons.add(SHCooperationNRadioButton);
+        SHCooperationNRadioButton.setText("Low");
+        SHCooperationNRadioButton.setEnabled(false);
+
+        SHLegitimacyYRadioButton.setBackground(new java.awt.Color(255, 204, 0));
+        SHLegitimacyButtons.add(SHLegitimacyYRadioButton);
+        SHLegitimacyYRadioButton.setText("Yes");
+        SHLegitimacyYRadioButton.setEnabled(false);
+
+        SHThreatNRadioButton.setBackground(new java.awt.Color(255, 204, 0));
+        SHThreatButtons.add(SHThreatNRadioButton);
+        SHThreatNRadioButton.setText("Low");
+        SHThreatNRadioButton.setEnabled(false);
+
+        SHUrgencyYRadioButton.setBackground(new java.awt.Color(255, 204, 0));
+        SHUrgencyButtons.add(SHUrgencyYRadioButton);
+        SHUrgencyYRadioButton.setText("Yes");
+        SHUrgencyYRadioButton.setEnabled(false);
+
+        SHLegitimacyLabel.setText("Legitimacy");
+
+        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
+        jLayeredPane2.setLayout(jLayeredPane2Layout);
+        jLayeredPane2Layout.setHorizontalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(SHPowerNRadioButton)
+                                    .addComponent(SHPowerYRadioButton))
+                                .addGap(22, 22, 22)
+                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(SHLegitimacyYRadioButton)
+                                    .addComponent(SHLegitimacyNRadioButton)))
+                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                .addComponent(SHPowerLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(SHLegitimacyLabel)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SHUrgencyYRadioButton)
+                            .addComponent(SHUrgencyNRadioButton)
+                            .addComponent(SHUrgencyLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(SHCooperationLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SHCooperationYRadioButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SHCooperationNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SHThreatYRadioButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                            .addComponent(SHThreatLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SHThreatNRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                        .addComponent(SHPotentialLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(24, 24, 24))))
+        );
+        jLayeredPane2Layout.setVerticalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(SHPotentialLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SHPowerLabel)
+                    .addComponent(SHLegitimacyLabel)
+                    .addComponent(SHUrgencyLabel)
+                    .addComponent(SHCooperationLabel)
+                    .addComponent(SHThreatLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(SHPowerYRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SHPowerNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                        .addComponent(SHLegitimacyYRadioButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SHLegitimacyNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                        .addComponent(SHUrgencyYRadioButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SHUrgencyNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SHCooperationYRadioButton)
+                            .addComponent(SHThreatYRadioButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SHCooperationNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SHThreatNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+        jLayeredPane2.setLayer(SHPotentialLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHCooperationYRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHPowerLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHUrgencyNRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHCooperationLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHUrgencyLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHThreatLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHPowerYRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHLegitimacyNRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHPowerNRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHThreatYRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHCooperationNRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHLegitimacyYRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHThreatNRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHUrgencyYRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(SHLegitimacyLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout SHPanelLayout = new javax.swing.GroupLayout(SHPanel);
         SHPanel.setLayout(SHPanelLayout);
         SHPanelLayout.setHorizontalGroup(
             SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SHPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(SHPanelLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(SHPanelLayout.createSequentialGroup()
-                                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(SHPowerNRadioButton)
-                                    .addComponent(SHPowerYRadioButton))
-                                .addGap(22, 22, 22)
-                                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(SHLegitimacyYRadioButton)
-                                    .addComponent(SHLegitimacyNRadioButton)))
-                            .addGroup(SHPanelLayout.createSequentialGroup()
-                                .addComponent(SHPowerLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(SHLegitimacyLabel)))
-                        .addGap(18, 18, 18)
-                        .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SHUrgencyYRadioButton)
-                            .addComponent(SHUrgencyNRadioButton)
-                            .addComponent(SHUrgencyLabel))
-                        .addGap(18, 18, 18)
+                            .addComponent(SHEditButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SHSaveButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SHRemoveButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)))
+                    .addGroup(SHPanelLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
                         .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(SHPanelLayout.createSequentialGroup()
-                                .addComponent(SHCooperationLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(SHThreatLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(SHPanelLayout.createSequentialGroup()
-                                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(SHCooperationYRadioButton)
-                                    .addComponent(SHCooperationNRadioButton))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(SHThreatNRadioButton)
-                                    .addComponent(SHThreatYRadioButton))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(SHRemoveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SHSaveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SHPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                                .addGap(4, 4, 4)
+                                .addComponent(SHNameLabel))
+                            .addComponent(SHWantsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SHPanelLayout.createSequentialGroup()
-                                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(SHPanelLayout.createSequentialGroup()
-                                        .addComponent(SHWantsLabel)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SHPanelLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(SHNameLabel)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(SHWantsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
-                                    .addComponent(SHNameScrollPane)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SHPanelLayout.createSequentialGroup()
-                                .addComponent(SHPotentialLabel)
-                                .addGap(53, 53, 53)
-                                .addComponent(SHEditButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
+                            .addComponent(SHNameScrollPane)
+                            .addComponent(SHWantsScrollPane))))
+                .addGap(15, 15, 15))
         );
         SHPanelLayout.setVerticalGroup(
             SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SHPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(SHNameScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SHNameLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SHNameScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(SHNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SHWantsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SHPanelLayout.createSequentialGroup()
-                        .addComponent(SHWantsLabel)
-                        .addGap(18, 18, 18)))
-                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SHPotentialLabel)
-                    .addComponent(SHEditButton))
-                .addGap(2, 2, 2)
+                    .addComponent(SHWantsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                    .addGroup(SHPanelLayout.createSequentialGroup()
+                        .addComponent(SHWantsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(4, 4, 4)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SHPanelLayout.createSequentialGroup()
-                        .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(SHPowerLabel)
-                            .addComponent(SHLegitimacyLabel)
-                            .addComponent(SHUrgencyLabel)
-                            .addComponent(SHCooperationLabel)
-                            .addComponent(SHThreatLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(SHPanelLayout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(SHPowerYRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SHPowerNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(SHPanelLayout.createSequentialGroup()
-                                .addComponent(SHLegitimacyYRadioButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(SHLegitimacyNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(SHPanelLayout.createSequentialGroup()
-                                .addComponent(SHUrgencyYRadioButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(SHUrgencyNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(SHPanelLayout.createSequentialGroup()
-                                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(SHCooperationYRadioButton)
-                                    .addComponent(SHThreatYRadioButton))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(SHPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(SHCooperationNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SHThreatNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(SHPanelLayout.createSequentialGroup()
+                        .addComponent(SHEditButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(SHSaveButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(SHRemoveButton)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                        .addComponent(SHRemoveButton)
+                        .addGap(0, 0, 0))
+                    .addComponent(jLayeredPane2))
+                .addGap(5, 5, 5))
         );
 
         InformationLabel.setForeground(new java.awt.Color(255, 0, 0));
 
+        StakeholderListLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         StakeholderListLabel.setText("List of Stakeholders");
+
+        CooperationbuttonGroup.add(CooperationYRadioButton);
+        CooperationYRadioButton.setText("High");
+
+        CooperationLabel.setText("Cooperation");
+
+        LegitimacybuttonGroup.add(LegitimacyNRadioButton);
+        LegitimacyNRadioButton.setSelected(true);
+        LegitimacyNRadioButton.setText("No");
+
+        UrgencybuttonGroup.add(UrgencyYRadioButton);
+        UrgencyYRadioButton.setText("Yes");
+
+        PotentialLabel.setText("Potential For:");
+
+        ThreatbuttonGroup.add(ThreatYRadioButton);
+        ThreatYRadioButton.setText("High");
+
+        PowerbuttonGroup.add(PowerYRadioButton);
+        PowerYRadioButton.setText("Yes");
+
+        PowerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PowerLabel.setText("Power");
+
+        PowerbuttonGroup.add(PowerNRadioButton);
+        PowerNRadioButton.setSelected(true);
+        PowerNRadioButton.setText("No");
+
+        CooperationbuttonGroup.add(CooperationNRadioButton);
+        CooperationNRadioButton.setSelected(true);
+        CooperationNRadioButton.setText("Low");
+
+        LegitimacyLabel.setText("Legitimacy");
+
+        ThreatbuttonGroup.add(ThreatNRadioButton);
+        ThreatNRadioButton.setSelected(true);
+        ThreatNRadioButton.setText("Low");
+
+        UrgencyLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        UrgencyLabel.setText("Urgency");
+
+        ThreatLabel.setText("Threat");
+
+        LegitimacybuttonGroup.add(LegitimacyYRadioButton);
+        LegitimacyYRadioButton.setText("Yes");
+
+        UrgencybuttonGroup.add(UrgencyNRadioButton);
+        UrgencyNRadioButton.setSelected(true);
+        UrgencyNRadioButton.setText("No");
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PowerYRadioButton)
+                            .addComponent(PowerNRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PowerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LegitimacyYRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LegitimacyNRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LegitimacyLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(UrgencyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UrgencyYRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UrgencyNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CooperationLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                            .addComponent(CooperationYRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CooperationNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(ThreatYRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ThreatLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ThreatNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
+                        .addComponent(PotentialLabel)
+                        .addGap(57, 57, 57))))
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(PotentialLabel)
+                .addGap(2, 2, 2)
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PowerLabel)
+                            .addComponent(LegitimacyLabel)
+                            .addComponent(UrgencyLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PowerYRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LegitimacyYRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UrgencyYRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PowerNRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LegitimacyNRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UrgencyNRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CooperationLabel)
+                            .addComponent(ThreatLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CooperationYRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ThreatYRadioButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CooperationNRadioButton)
+                            .addComponent(ThreatNRadioButton))))
+                .addContainerGap())
+        );
+        jLayeredPane1.setLayer(CooperationYRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(CooperationLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(LegitimacyNRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(UrgencyYRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(PotentialLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(ThreatYRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(PowerYRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(PowerLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(PowerNRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(CooperationNRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(LegitimacyLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(ThreatNRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(UrgencyLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(ThreatLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(LegitimacyYRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(UrgencyNRadioButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout StakeholdersPanelLayout = new javax.swing.GroupLayout(StakeholdersPanel);
         StakeholdersPanel.setLayout(StakeholdersPanelLayout);
         StakeholdersPanelLayout.setHorizontalGroup(
             StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(26, 26, 26)
                 .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                        .addComponent(InformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(147, 147, 147)
-                        .addComponent(StakeholderListLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(StakeholdersPanelLayout.createSequentialGroup()
                         .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(NameLabel)
-                                .addComponent(NameScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(WantsLabel)
-                                .addComponent(WantsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                    .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(PowerYRadioButton)
-                                                .addComponent(PowerNRadioButton))
-                                            .addGap(18, 18, 18)
-                                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(LegitimacyYRadioButton)
-                                                .addComponent(LegitimacyNRadioButton)))
-                                        .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                            .addComponent(PowerLabel)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(LegitimacyLabel)))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(UrgencyYRadioButton)
-                                        .addComponent(UrgencyNRadioButton)
-                                        .addComponent(UrgencyLabel))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(CooperationYRadioButton)
-                                                .addComponent(CooperationNRadioButton))
-                                            .addGap(18, 18, 18)
-                                            .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(ThreatYRadioButton)
-                                                .addComponent(ThreatNRadioButton)))
-                                        .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                            .addComponent(CooperationLabel)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(ThreatLabel)))
-                                    .addGap(24, 24, 24)
-                                    .addComponent(AddStakeholderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StakeholdersPanelLayout.createSequentialGroup()
-                                    .addComponent(PotentialLabel)
-                                    .addGap(102, 102, 102)))
-                            .addComponent(SHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(57, 57, 57)
-                        .addComponent(StakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(109, 109, 109))
+                            .addComponent(NameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(StakeholdersPanelLayout.createSequentialGroup()
+                                .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(WantsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(NameScrollPane)
+                                    .addComponent(WantsScrollPane))
+                                .addGap(56, 56, 56)))
+                        .addGap(59, 59, 59))
+                    .addGroup(StakeholdersPanelLayout.createSequentialGroup()
+                        .addComponent(InformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StakeholdersPanelLayout.createSequentialGroup()
+                        .addComponent(SHPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(58, 58, 58))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StakeholdersPanelLayout.createSequentialGroup()
+                        .addGap(0, 20, Short.MAX_VALUE)
+                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(AddStakeholderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)))
+                .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(StakeholderListLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                    .addComponent(StakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(44, 44, 44))
         );
         StakeholdersPanelLayout.setVerticalGroup(
             StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(InformationLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(StakeholderListLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                        .addComponent(NameLabel)
+                        .addComponent(StakeholderScrollPane)
+                        .addGap(21, 21, 21))
+                    .addGroup(StakeholdersPanelLayout.createSequentialGroup()
+                        .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(NameScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(WantsLabel)
+                        .addComponent(WantsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(WantsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(WantsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PotentialLabel)
+                        .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StakeholdersPanelLayout.createSequentialGroup()
+                                .addComponent(AddStakeholderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(PowerLabel)
-                                    .addComponent(LegitimacyLabel)
-                                    .addComponent(UrgencyLabel)
-                                    .addComponent(CooperationLabel)
-                                    .addComponent(ThreatLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                        .addComponent(PowerYRadioButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(PowerNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                        .addComponent(LegitimacyYRadioButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(LegitimacyNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                        .addComponent(UrgencyYRadioButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(UrgencyNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                        .addComponent(CooperationYRadioButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(CooperationNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(StakeholdersPanelLayout.createSequentialGroup()
-                                .addGroup(StakeholdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(AddStakeholderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(ThreatYRadioButton))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(ThreatNRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(StakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(SHPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         mainTabbedPane.addTab("<html>\n<br>\nStakeholders<br>\n<br>", null, StakeholdersPanel, "");
@@ -996,15 +1064,15 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     influencePanelLayout.setHorizontalGroup(
         influencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(influencePanelLayout.createSequentialGroup()
-            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
+            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE)
             .addGap(35, 35, 35))
         .addGroup(influencePanelLayout.createSequentialGroup()
             .addGap(191, 191, 191)
-            .addComponent(influenceLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+            .addComponent(influenceLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
             .addGap(12, 12, 12)
-            .addComponent(influenceLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+            .addComponent(influenceLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
             .addGap(8, 8, 8)
-            .addComponent(influenceLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+            .addComponent(influenceLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
             .addGap(308, 308, 308))
     );
     influencePanelLayout.setVerticalGroup(
@@ -1033,7 +1101,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     relationMapParentPanelLayout.setHorizontalGroup(
         relationMapParentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(relationMapParentPanelLayout.createSequentialGroup()
-            .addComponent(relationMapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE)
+            .addComponent(relationMapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE)
             .addGap(5, 5, 5))
     );
     relationMapParentPanelLayout.setVerticalGroup(
@@ -1110,7 +1178,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     managementPlanPanelLayout.setHorizontalGroup(
         managementPlanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(managementPlanPanelLayout.createSequentialGroup()
-            .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
+            .addComponent(managementPlanScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 766, Short.MAX_VALUE)
             .addGap(20, 20, 20))
     );
     managementPlanPanelLayout.setVerticalGroup(
@@ -1165,25 +1233,25 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addGap(45, 45, 45)
             .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(involveScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addComponent(involveLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))
+                .addComponent(involveLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
             .addGap(20, 20, 20)
             .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(RecActionsPanelLayout.createSequentialGroup()
-                    .addComponent(collaborateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                    .addComponent(collaborateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                     .addGap(2, 2, 2))
-                .addComponent(collaborateScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+                .addComponent(collaborateScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
             .addGap(20, 20, 20)
             .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(defendScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addComponent(defendLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
+                .addComponent(defendLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
             .addGap(20, 20, 20)
             .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(monitorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                .addComponent(monitorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                 .addComponent(monitorScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
             .addGap(22, 22, 22)
             .addGroup(RecActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(noActionScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addComponent(noActionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+                .addComponent(noActionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
             .addGap(61, 61, 61))
     );
     RecActionsPanelLayout.setVerticalGroup(
@@ -1265,7 +1333,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addContainerGap()
             .addGroup(dominantLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(dominantScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addComponent(dominantLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                .addComponent(dominantLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
             .addContainerGap())
     );
     dominantLayeredPaneLayout.setVerticalGroup(
@@ -1373,7 +1441,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addContainerGap()
             .addGroup(demandingLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(demandingScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addComponent(demandingLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                .addComponent(demandingLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
             .addContainerGap())
     );
     demandingLayeredPaneLayout.setVerticalGroup(
@@ -1444,7 +1512,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, discretionaryLayeredPaneLayout.createSequentialGroup()
             .addContainerGap()
             .addGroup(discretionaryLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(discretionaryLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                .addComponent(discretionaryLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
                 .addComponent(discretionaryScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
             .addContainerGap())
     );
@@ -1480,7 +1548,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         .addGroup(nonStakeholderLayeredPaneLayout.createSequentialGroup()
             .addContainerGap()
             .addGroup(nonStakeholderLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addComponent(nonStakeholderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                .addComponent(nonStakeholderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
                 .addComponent(nonStakeholderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
             .addContainerGap())
     );
@@ -2990,6 +3058,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JLabel involveLabel;
     private javax.swing.JList involveList;
     private javax.swing.JScrollPane involveScrollPane;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
