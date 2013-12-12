@@ -2676,6 +2676,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         JOptionPane.showMessageDialog(null, null
                 , "Relationship Map Legend",
         JOptionPane.INFORMATION_MESSAGE,   icon1);
+        saveMenuItemIsUsed = true;
     }//GEN-LAST:event_relationMapParentPanelMouseClicked
    
     private void classificationDiagramUpdate()
