@@ -218,7 +218,6 @@ public class RelationMapPanel extends JPanel
                 JFrame frame = new JFrame();
                 mxGraphComponent graphCpnt = new mxGraphComponent(panGraph);
                 frame.setContentPane(graphCpnt);
-                frame.pack();
                 BufferedImage bi = ScreenImage.createImage(graphCpnt);
                 ScreenImage.writeImage(bi, filename);
             } catch (IOException ex) {
