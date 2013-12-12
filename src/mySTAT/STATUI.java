@@ -2511,7 +2511,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
     private void relationMapParentPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_relationMapParentPanelMouseClicked
         // TODO add your handling code here:
-        final ImageIcon icon1 = new javax.swing.ImageIcon(getClass().getResource("/myStat/relationship.png"));
+        final ImageIcon icon1 = new javax.swing.ImageIcon(getClass().getResource("/images/relationship.png"));
         JOptionPane.showMessageDialog(null, null
                 , "Relationship Map Legend",
         JOptionPane.INFORMATION_MESSAGE,   icon1);
