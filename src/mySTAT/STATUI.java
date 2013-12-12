@@ -2454,6 +2454,9 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         //calculate each stakeholder's situational influence
         for (int i = 0; i < Stakeholders.size(); i++)
         {
+            if (stakeholderDenominator == 0)
+                {stakeholderDenominator = 1;}
+            else {}
             double situationalInfluence = stakeholderNumerators[i]/stakeholderDenominator;
             //save each stakeholder's individual situational influence
             Stakeholders.get(i).setInfluence(situationalInfluence);
