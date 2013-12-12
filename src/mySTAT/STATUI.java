@@ -191,7 +191,6 @@ public class STATUI extends javax.swing.JFrame {
         exportMenuItem = new javax.swing.JMenuItem();
         jSeparator4 = new javax.swing.JPopupMenu.Separator();
         exitMenuItem = new javax.swing.JMenuItem();
-        editMenu = new javax.swing.JMenu();
 
         javax.swing.GroupLayout stakeholdersPanelLayout = new javax.swing.GroupLayout(stakeholdersPanel);
         stakeholdersPanel.setLayout(stakeholdersPanelLayout);
@@ -1119,7 +1118,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     });
     fileMenu.add(securityMenuItem);
 
-    exportMenuItem.setForeground(new java.awt.Color(153, 153, 153));
     exportMenuItem.setText("Export Plan");
     exportMenuItem.setToolTipText("Export the Management Plan");
     exportMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -1141,11 +1139,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     fileMenu.add(exitMenuItem);
 
     MenuBar.add(fileMenu);
-
-    editMenu.setForeground(new java.awt.Color(153, 153, 153));
-    editMenu.setText("Edit");
-    editMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-    MenuBar.add(editMenu);
 
     setJMenuBar(MenuBar);
 
@@ -1917,6 +1910,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
            JTabbedPane pane = (JTabbedPane) evt.getSource();
            Component currentTab = mainTabbedPane.getSelectedComponent();
            if(currentTab.equals(relationMapParentPanel)){
+               exportMenuItem.setEnabled(false);
                JGraphPanel.updateShVertexList(Stakeholders);
                if(!miniMapCreated)
                {
@@ -1926,27 +1920,32 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                miniMapDialogBox.setVisible(true);
            }
            else if(currentTab.equals(classificationPanel)){
+               exportMenuItem.setEnabled(false);
                if(miniMapCreated)
                     miniMapDialogBox.setVisible(false);
                classificationDiagramUpdate();
            }
            else if(currentTab.equals(actionPanel)){
+               exportMenuItem.setEnabled(false);
                if(miniMapCreated)
                     miniMapDialogBox.setVisible(false);
                actionTableUpdate();
            }
            else if(currentTab.equals(influencePanel)){
+               exportMenuItem.setEnabled(false);
                if(miniMapCreated)
                     miniMapDialogBox.setVisible(false);
                influenceTableUpdate();
            }
            else if(currentTab.equals(managementPlanPanel)){
+               exportMenuItem.setEnabled(true);
                if(miniMapCreated)
                     miniMapDialogBox.setVisible(false);
                situationalInfluenceUpdate();
                viewManagementPlan();
            }
            else{
+               exportMenuItem.setEnabled(false);
                if(miniMapCreated)
                     miniMapDialogBox.setVisible(false);
                updateStakehodlerList();
@@ -2071,7 +2070,11 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     }//GEN-LAST:event_securityMenuItemActionPerformed
 
     private void exportMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportMenuItemActionPerformed
-        // TODO add your handling code here:
+        try {
+            exportManagementToCSV();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(STATUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_exportMenuItemActionPerformed
    
     private void classificationDiagramUpdate()
@@ -2361,7 +2364,6 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JLayeredPane classLayeredPane;
     private javax.swing.JPanel classificationPanel;
     private javax.swing.JTable contentTable;
-    private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenuItem exportMenuItem;
     private javax.swing.JMenu fileMenu;
