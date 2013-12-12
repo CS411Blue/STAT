@@ -1361,8 +1361,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(influenceMatrixPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(pitcherTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE))
-            .addGap(10, 10, 10))
+                .addComponent(contentTable, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE))
+            .addGap(23, 23, 23))
     );
 
     contentTable.getAccessibleContext().setAccessibleName("");
@@ -1374,8 +1374,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     influencePanelLayout.setHorizontalGroup(
         influencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(influencePanelLayout.createSequentialGroup()
-            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
-            .addGap(35, 35, 35))
+            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 745, Short.MAX_VALUE)
+            .addGap(15, 15, 15))
         .addGroup(influencePanelLayout.createSequentialGroup()
             .addGap(191, 191, 191)
             .addComponent(influenceLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
@@ -1393,8 +1393,8 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 .addComponent(influenceLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(influenceLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
-            .addGap(33, 33, 33))
+            .addComponent(influenceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+            .addGap(10, 10, 10))
     );
 
     mainTabbedPane.addTab("<html>\n<br>\nInfluences<br>\n<br>", null, influencePanel, "Click here to modify the stakeholder relationships");
