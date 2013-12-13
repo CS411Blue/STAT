@@ -50,7 +50,7 @@ public class STATUI extends javax.swing.JFrame {
         this.Stakeholders = new ArrayList<>();
         this.OriginalStakeholders = new ArrayList<>();
         miniMapCreated = false;
-        testWindow();
+        //testWindow();
         
         initComponents();
 
@@ -1594,7 +1594,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             this.Stakeholders = project.openProjectFile(file.getPath());
             
             updateStakehodlerList();
-            testFrame.updateModel(Stakeholders);
+            //testFrame.updateModel(Stakeholders);
             //} else {
             //   System.out.println("File access cancelled by user.");
         }
