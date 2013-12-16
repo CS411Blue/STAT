@@ -17,13 +17,46 @@ import java.nio.charset.Charset;
  *
  * @author Chris S.
  */
-public class STATCrypto {
+public class ProjectCrypto {
     private String passPhrase;
     final private byte[] AESKey = new byte[16];
     final private byte[] HMACKey = new byte[16];
-    static final private Charset UTF8Charset = Charset.forName("UTF-8");
+    final private Charset UTF8Charset = Charset.forName("UTF-8");
+
+    public boolean isPassphraseCorrect(String tagBase64Str, String compSHDataStr) {
+        return getTag(compSHDataStr).equals(tagBase64Str);
+    }
     
-    public void setPassPhrase(String passPhraseStr) {
+    public String getTag(String compSHDataStr) {
+        final String tagBase64Str;
+        final byte[] tagBytes;
+        final byte[] cipherTextBytes;
+        final String HMACType = "HmacSHA256";
+
+        // TODO clean correct/cleanup try/catch
+        try {
+            SecretKeySpec SKSHMACKey = new SecretKeySpec(HMACKey, HMACType);
+
+            Mac tag = Mac.getInstance(HMACType);
+            tag.init(SKSHMACKey);
+
+            cipherTextBytes = compSHDataStr.getBytes(UTF8Charset);
+            tagBytes = tag.doFinal(cipherTextBytes);
+            
+            tagBase64Str = DatatypeConverter.printBase64Binary(tagBytes);
+            
+            return tagBase64Str;
+        
+        } catch (NoSuchAlgorithmException e) {
+            System.out.println("Error while creating tag: " + e);
+            return null;
+        } catch (InvalidKeyException e) {
+            System.out.println("Bad pass phrase: " + e);
+            return null;
+        }
+    }
+
+    public void setPassphrase(String passPhraseStr) {
         passPhrase = passPhraseStr;
         final byte[] passPhraseBytes;
         final byte[] masterKey;
@@ -45,40 +78,7 @@ public class STATCrypto {
             System.out.println("Error while creating key: " + e);
         }
     }
-    
-    public boolean isPassPhraseCorrect(String tagBase64Str, String messageStr) {
-        return getTag(messageStr).equals(tagBase64Str);
-    }
-    
-    public String getTag(String cipherTextBase64Str) {
-        final String tagBase64Str;
-        final byte[] tagBytes;
-        final byte[] cipherTextBytes;
-        final String HMACType = "HmacSHA256";
-                
-        // TODO clean correct/cleanup try/catch
-        try {
-            SecretKeySpec SKSHMACKey = new SecretKeySpec(HMACKey, HMACType);
-            
-            Mac tag = Mac.getInstance(HMACType);
-            tag.init(SKSHMACKey);
-            
-            cipherTextBytes = cipherTextBase64Str.getBytes(UTF8Charset);
-            tagBytes = tag.doFinal(cipherTextBytes);
-            
-            tagBase64Str = DatatypeConverter.printBase64Binary(tagBytes);
-            
-            return tagBase64Str;
-        
-        } catch (NoSuchAlgorithmException e) {
-            System.out.println("Error while creating tag: " + e);
-            return null;
-        } catch (InvalidKeyException e) {
-            System.out.println("Bad pass phrase: " + e);
-            return null;
-        }
-    }
-    
+
     public String encrypt(String plainTextStr) {
         final byte[] cipherTextBytes;
         final Cipher cipher;

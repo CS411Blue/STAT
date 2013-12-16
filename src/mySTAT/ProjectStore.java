@@ -35,6 +35,9 @@ public class ProjectStore {
 
     private Map<String, String> metaData; //key/value pairs that contain project meta-data
     private Map<String, Stakeholder> stakeholders; //stakeholderId/stakeholder objects
+    
+    ProjectCrypto crypto;
+    private static boolean isEncrypted = false;
 
     private ProjectStore() {
         metaData = new HashMap<>();
@@ -118,8 +121,15 @@ public class ProjectStore {
                 }
 
                 metaData.put("datesaved", tempAttrib);
+
+                //read encrypted tag
+                tempAttrib = meta.getChildText("encrypted");
                 
-               
+                if (tempAttrib != null && !tempAttrib.isEmpty()) {
+                    metaData.put("encrypted", tempAttrib);
+                    
+                    isEncrypted = true;
+                }
 
                 //read in project stakeholders
                 if(rootNode.getChild("stakeholders") == null)
@@ -127,6 +137,51 @@ public class ProjectStore {
                 
                 List<Element> stakeholdersChildren = rootNode.getChild("stakeholders").getChildren();
                 Iterator<Element> stakeItr = stakeholdersChildren.iterator();
+                
+                if (isEncrypted) {
+                    String compStakeholderData = new String();
+                    
+                    // decrypt stakeholder attributes
+                    while (stakeItr.hasNext()) {
+                        Element stakeholder = stakeItr.next();
+                        
+                        // decrypt stakeholder attributes content
+                        for(String childElement : STAKEHOLDER_ATTRIBS) {
+                            
+                            String cipherText = stakeholder.getChildText(childElement);
+                            if (cipherText != null && !cipherText.isEmpty()) {
+                                String clearText = crypto.decrypt(cipherText);
+                                stakeholder.getChild(childElement).setText(clearText);
+                                compStakeholderData += cipherText;
+                            }
+                        }
+                        
+                        // decrypt stakeholder influences
+                        List<Element> stakeholderInfluences = stakeholder.getChild("influences").getChildren("influence");
+                        Iterator<Element> influencesItr = stakeholderInfluences.iterator();
+                        while (influencesItr.hasNext()) {
+                            Element influence = influencesItr.next();
+                            String idCipherText = influence.getChild("id").getText();
+                            String strengthCipherText = influence.getChild("strength").getText();
+                            
+                            String idClearText = crypto.decrypt(idCipherText);
+                            String strengthClearText = crypto.decrypt(strengthCipherText);
+                            
+                            influence.getChild("id").setText(idClearText);
+                            influence.getChild("strength").setText(strengthClearText);
+                            compStakeholderData += idCipherText + strengthCipherText;
+                        }
+                    }
+
+                    // Verify HMAC
+                    if (!crypto.isPassphraseCorrect(metaData.get("encrypted"), compStakeholderData)) {
+                        return null;
+                    }
+                }
+                
+                // reset iterator
+                stakeItr = stakeholdersChildren.iterator();
+                
                 while (stakeItr.hasNext()) {
                     Map<String, String> stakeholderAttributes = new HashMap<>();
                     Element stakeElement = stakeItr.next();
@@ -270,11 +325,14 @@ public class ProjectStore {
             ex.printStackTrace();
             System.exit(1);
         }
-        
+
         return stakeholdersList;
     }
 
-    public void saveProject(String statFilePath, ArrayList<Stakeholder> stakeholders, String title, String description, String createdBy, String dateCreated) {
+    public void saveProject(String statFilePath, ArrayList<Stakeholder> stakeholders, String title, String description, String createdBy, String dateCreated, boolean isEncrypted) {
+        
+        this.isEncrypted = isEncrypted;
+        
         //TODO add asserts for valid data
         Date date= new Date();
         Element stat = new Element("stat");
@@ -302,9 +360,7 @@ public class ProjectStore {
         metaDataElement.addContent(new Element("datecreated").setText(dateCreated));     
         
         metaDataElement.addContent(new Element("datesaved").setText(new Timestamp(date.getTime()).toString()));
-        
-        statDoc.getRootElement().addContent(metaDataElement);
-        
+
         
         //load stakeholders
         Element stakeholdersElement = new Element("stakeholders");
@@ -371,6 +427,52 @@ public class ProjectStore {
             
         }
         
+        // encrypt stakeholder elements
+        if (isEncrypted) {
+            String compStakeholderData = new String();
+
+            List<Element> stakeholdersChildren = stakeholdersElement.getChildren("stakeholder");
+            Iterator<Element> stakeholdersItr = stakeholdersChildren.iterator();
+            
+            // encrypt each child stakeholder elements in stakeholders element
+            while (stakeholdersItr.hasNext()) {
+                Element stakeholder = stakeholdersItr.next();
+                
+                // encrypt stakeholder attributes content
+                for(String childElement : STAKEHOLDER_ATTRIBS) {
+                    
+                    String clearText = stakeholder.getChildText(childElement);
+                    if (clearText != null && !clearText.isEmpty()) {
+                        String cipherText = crypto.encrypt(clearText);
+                        stakeholder.getChild(childElement).setText(cipherText);
+                        compStakeholderData += cipherText;
+                    }
+                }
+                
+                // encrypt stakeholder influences
+                List<Element> stakeholderInfluences = stakeholder.getChild("influences").getChildren("influence");
+                Iterator<Element> influencesItr = stakeholderInfluences.iterator();
+                while (influencesItr.hasNext()) {
+                    Element influence = influencesItr.next();
+                    String idClearText = influence.getChild("id").getText();
+                    String srengthClearText = influence.getChild("strength").getText();
+                    
+                    String idCipherText = crypto.encrypt(idClearText);
+                    String strengthCipherText = crypto.encrypt(srengthClearText);
+                    
+                    influence.getChild("id").setText(idCipherText);
+                    influence.getChild("strength").setText(strengthCipherText);
+                    
+                    compStakeholderData += idCipherText + strengthCipherText;
+                }
+            }
+            
+            // add MAC to "encrypted" element
+            String tag = crypto.getTag(compStakeholderData);
+            metaDataElement.addContent(new Element("encrypted").setText(tag));
+        }
+        
+        statDoc.getRootElement().addContent(metaDataElement);
         statDoc.getRootElement().addContent(stakeholdersElement);
 
         XMLOutputter statOutput = new XMLOutputter(Format.getPrettyFormat());
@@ -434,6 +536,53 @@ public class ProjectStore {
         }
 
     }
+    
+    public ArrayList<Stakeholder> openEncryptedProjectFile(String statFilePath, String passPhrase) {
+        crypto = new ProjectCrypto();
+        crypto.setPassphrase(passPhrase);
+        isEncrypted = true;
+
+        return openProjectFile(statFilePath);
+    }
+    
+    public void saveEncryptedProject(String statFilePath, ArrayList<Stakeholder> stakeholders, String title, String description, String createdBy, String dateCreated, boolean isEncrypted, String passPhrase) {
+        crypto = new ProjectCrypto();
+        crypto.setPassphrase(passPhrase);
+
+        saveProject(statFilePath, stakeholders, title, description, createdBy, dateCreated, isEncrypted);
+    }
+    
+    public boolean isEncrypted(String statFilePath) {
+        // quick read of metadata to look for MAC; needs improvment
+        try {
+            SAXBuilder builder = new SAXBuilder();
+            File statFile = new File(statFilePath);
+
+            Document document = (Document) builder.build(statFile);
+            Element rootNode = document.getRootElement();
+
+            try {
+                Element meta = rootNode.getChild("metadata");
+
+                if (meta == null) {
+                    throw new ProjectStoreException("No metadata tag found");
+                }
+                
+                String tag = meta.getChildText("encrypted");
+                return (tag != null && !tag.isEmpty());
+                
+            } catch (ProjectStoreException w) {
+                JOptionPane.showMessageDialog(null,
+                        "Invalid .stat project file. " + w.getMessage(),
+                        "Error opening project",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception w) {
+            w.printStackTrace();
+            System.exit(1);
+        }
+        return false;
+    }
 
     public String getStakeholderName(String id) {
         return stakeholders.get(id).getName();
@@ -478,7 +627,7 @@ public class ProjectStore {
     public Map<String, Stakeholder> getAllStakeholders() {
         return stakeholders;
     }
-
+    
     //public void putStakeholder(Stakeholder stakeholder) {
     //    stakeholders.put(stakeholder.getId(), stakeholder);
     //}

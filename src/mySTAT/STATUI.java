@@ -55,6 +55,7 @@ public class STATUI extends javax.swing.JFrame {
         initComponents();
 
         securityDialogBox = new SecurityJDialog(this, "Security", true);
+        passwordPromptDialogBox = new PasswordPromptJDialog(this, "Enter Passphrase", true);
         password = new String();
         isEncrypted = false;
     }
@@ -1590,10 +1591,32 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
         int returnVal = openFileChooser.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = openFileChooser.getSelectedFile();
-            ProjectStore project = ProjectStore.getInstance();
-            this.Stakeholders = project.openProjectFile(file.getPath());
             
-            updateStakehodlerList();
+            ProjectStore project = ProjectStore.getInstance();
+
+            // check if stakeholders data is encrypted
+            if (project.isEncrypted(file.getPath())) {
+
+                // prompt for passphrase
+                passwordPromptWindow();
+                
+                this.Stakeholders = project.openEncryptedProjectFile(file.getPath(), password);
+ 
+                // check if password is correct
+                if (Stakeholders != null) {
+                    updateStakehodlerList();
+                    isEncrypted = true;
+                } else {
+                    // TODO implement better user notification of bad password
+                    System.out.println("HMAC failed for file and password of " + password);
+                } 
+                
+            } else {
+                // open project as normal
+                this.Stakeholders = project.openProjectFile(file.getPath());
+                updateStakehodlerList();
+            }
+
             //testFrame.updateModel(Stakeholders);
             //} else {
             //   System.out.println("File access cancelled by user.");
@@ -2400,8 +2423,15 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             }
 //            System.out.println(file.toString());
             ProjectStore project = ProjectStore.getInstance();
-            project.saveProject(filePath, Stakeholders, filename, null, null, null);
-            saveMenuItemIsUsed = true; 
+            
+            // if the project needs to be encrypted then save accordingly
+            if (isEncrypted) {
+                project.saveEncryptedProject(filePath, Stakeholders, filename, null, null, null, true, password);
+            } else {
+                project.saveProject(filePath, Stakeholders, filename, null, null, null, false);
+            }
+ 
+            saveMenuItemIsUsed = true;
         }
         
     }//GEN-LAST:event_saveMenuItemActionPerformed
@@ -2701,6 +2731,15 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 //        System.out.println("<pswd>" + password + "</pswd>");
     }
     
+    public void passwordPromptWindow()
+    {
+        passwordPromptDialogBox.setResizable(false);
+        passwordPromptDialogBox.setVisible(true);
+        passwordPromptDialogBox.setDefaultCloseOperation(HIDE_ON_CLOSE);
+
+        password = passwordPromptDialogBox.getPassword();
+    }
+    
     //This is called once and only once. It creates the dialog box for the Rel Map
     //The rest of the time, it is just its visibility that is toggled to make it disappear
     public void miniMapWindow()
@@ -2920,6 +2959,7 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
     }
     
     private SecurityJDialog securityDialogBox;
+    private PasswordPromptJDialog passwordPromptDialogBox;
     private boolean isEncrypted;
     private String password;
     private RelationMapDialogBox miniMapDialogBox;
