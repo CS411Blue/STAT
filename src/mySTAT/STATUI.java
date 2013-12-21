@@ -1596,14 +1596,17 @@ influenceSaveButton.addMouseListener(new java.awt.event.MouseAdapter() {
 
             // check if stakeholders data is encrypted
             if (project.isEncrypted(file.getPath())) {
+                
+                ArrayList<Stakeholder> tmpStakeholders;
 
                 // prompt for passphrase
                 passwordPromptWindow();
                 
-                this.Stakeholders = project.openEncryptedProjectFile(file.getPath(), password);
+                tmpStakeholders = project.openEncryptedProjectFile(file.getPath(), password);
  
                 // check if password is correct
-                if (Stakeholders != null) {
+                if (tmpStakeholders != null) {
+                    Stakeholders = tmpStakeholders;
                     updateStakehodlerList();
                     isEncrypted = true;
                 } else {
